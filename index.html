@@ -21,12 +21,32 @@
     *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
     body{background:var(--bg);color:var(--ink);line-height:1.5;}
 
-    header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:var(--surface);position:sticky;top:0;z-index:50;}
+    /* ===== HEADER ===== */
+    header{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:16px 24px;background:var(--surface);position:sticky;top:0;z-index:50;
+    }
     header .logo{font-weight:800;font-size:20px;color:#fff;}
-    header nav{display:flex;gap:20px;}
+    header nav{
+      display:none;flex-direction:column;gap:16px;
+      position:absolute;top:60px;right:24px;
+      background:var(--surface);padding:20px;border-radius:8px;
+      box-shadow:0 4px 12px rgba(0,0,0,.4);
+    }
     header nav a{color:var(--ink);text-decoration:none;font-weight:500;font-size:15px;}
-    header .cta{background:var(--brand);color:#fff;padding:8px 14px;border-radius:8px;font-weight:600;text-decoration:none;}
+    header .cta{background:var(--brand);color:#fff;padding:8px 14px;
+      border-radius:8px;font-weight:600;text-decoration:none;}
+    .menu-toggle{cursor:pointer;display:block;width:28px;height:20px;position:relative;}
+    .menu-toggle span{position:absolute;height:3px;width:100%;background:#fff;left:0;transition:.3s;}
+    .menu-toggle span:nth-child(1){top:0;}
+    .menu-toggle span:nth-child(2){top:8px;}
+    .menu-toggle span:nth-child(3){top:16px;}
+    .menu-open nav{display:flex;}
+    .menu-open .menu-toggle span:nth-child(1){transform:rotate(45deg);top:8px;}
+    .menu-open .menu-toggle span:nth-child(2){opacity:0;}
+    .menu-open .menu-toggle span:nth-child(3){transform:rotate(-45deg);top:8px;}
 
+    /* ===== HERO ===== */
     .hero{padding:48px 24px;text-align:center;position:relative;}
     .hero h1{font-size:28px;font-weight:800;margin-bottom:20px;}
     .hero p{color:var(--muted);margin-bottom:20px;font-size:15px;}
@@ -35,41 +55,64 @@
     .cta-primary{display:inline-block;background:var(--brand);padding:12px 20px;border-radius:10px;color:#fff;font-weight:700;text-decoration:none;margin-bottom:10px;}
     .cta-secondary{display:block;margin:auto;width:max-content;padding:10px 18px;border:1px solid var(--border);border-radius:8px;color:var(--ink);text-decoration:none;font-weight:600;}
 
-    /* ——— Desktop ajustes ——— */
+    /* ===== PLANES ===== */
+    .plans{padding:60px 24px;text-align:center;}
+    .plans h2{font-size:32px;font-weight:800;margin-bottom:40px;}
+    .plan-grid{display:grid;gap:24px;}
+    .plan{background:var(--surface);padding:32px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.2);}
+    .plan h3{font-size:20px;font-weight:700;margin-bottom:12px;}
+    .plan p{color:var(--muted);margin-bottom:16px;font-size:14px;}
+    .plan .price{font-size:28px;font-weight:800;margin-bottom:16px;}
+    .plan .btn{background:var(--brand);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600;}
+
+    /* ===== CONTACTO ===== */
+    .contact{padding:60px 24px;text-align:center;}
+    .contact h2{font-size:28px;font-weight:800;margin-bottom:20px;}
+    .contact p{margin-bottom:10px;}
+    .contact a{color:var(--link);font-weight:600;text-decoration:none;}
+
+    /* ===== FAQ ===== */
+    .faq{padding:60px 24px;}
+    .faq h2{font-size:28px;font-weight:800;margin-bottom:30px;text-align:center;}
+    .faq-item{margin-bottom:20px;}
+    .faq-item h3{font-size:18px;font-weight:700;margin-bottom:8px;}
+    .faq-item p{color:var(--muted);}
+
+    /* ===== FOOTER ===== */
+    footer{padding:30px 24px;text-align:center;background:var(--surface);color:var(--muted);font-size:14px;}
+
+    /* ===== Desktop ===== */
     @media (min-width:1024px){
-      .container{max-width:1180px;margin-inline:auto;padding-inline:32px;}
       header{padding-block:18px;}
       header .logo{font-size:26px;}
+      header nav{position:static;display:flex!important;flex-direction:row;gap:24px;background:none;box-shadow:none;padding:0;}
       header nav a{font-size:16px;}
       header .cta{padding:10px 18px;font-size:15px;}
+      .menu-toggle{display:none;}
       .hero{padding-block:80px;}
       .hero h1{max-width:22ch;margin:auto;font-size:52px;line-height:1.1;}
       .hero p{max-width:60ch;margin:auto;font-size:18px;line-height:1.6;}
-      .badges{gap:14px 20px;margin-top:24px;}
-      .badge{padding:10px 14px;font-size:14px;}
-      .cta-primary{margin-top:30px;padding:16px 22px;font-size:18px;box-shadow:0 10px 30px rgba(0,0,0,.25);}
-      .cta-secondary{margin-top:14px;}
-      .hero::before{
-        content:"";position:absolute;inset:-40px 0 auto 50%;
-        width:900px;height:900px;transform:translateX(-50%);
-        background:radial-gradient(closest-side,rgba(56,189,248,.10),rgba(0,0,0,0));
-        pointer-events:none;filter:blur(2px);
-      }
+      .plans .plan-grid{grid-template-columns:repeat(3,1fr);}
     }
   </style>
 </head>
 <body>
-  <header>
+  <!-- HEADER -->
+  <header id="header">
     <div class="logo">TuReclamoExpres</div>
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#nosotros">Nosotros</a>
       <a href="#faq">Preguntas frecuentes</a>
-      <a href="#blog">Blog</a>
+      <a href="#contacto">Contacto</a>
     </nav>
     <a href="#subir" class="cta">Sube tu factura</a>
+    <div class="menu-toggle" id="menu-btn">
+      <span></span><span></span><span></span>
+    </div>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="badges">
       <span class="badge">Revisión inicial GRATIS</span>
@@ -86,5 +129,66 @@
     <a href="#subir" class="cta-primary">Enviar factura GRATIS</a>
     <a href="#formulario" class="cta-secondary">Subir por formulario</a>
   </section>
+
+  <!-- PLANES -->
+  <section class="plans" id="planes">
+    <h2>Elige tu plan</h2>
+    <div class="plan-grid">
+      <div class="plan">
+        <h3>Básico</h3>
+        <p>Descarga tu reclamación lista para enviar</p>
+        <div class="price">14,9 €</div>
+        <a href="#" class="btn">Elegir</a>
+      </div>
+      <div class="plan">
+        <h3>Completo</h3>
+        <p>Nosotros enviamos la reclamación en tu nombre</p>
+        <div class="price">29,9 €</div>
+        <a href="#" class="btn">Elegir</a>
+      </div>
+      <div class="plan">
+        <h3>Premium</h3>
+        <p>Incluye seguimiento y respuesta de la compañía</p>
+        <div class="price">49,9 €</div>
+        <a href="#" class="btn">Elegir</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact" id="contacto">
+    <h2>Contacto</h2>
+    <p>📧 Escríbenos a <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a></p>
+    <p>📞 Tel.: 953 818 494</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-item">
+      <h3>¿Qué necesito para empezar?</h3>
+      <p>Solo tu factura en PDF o foto clara. Nosotros hacemos la revisión inicial gratis.</p>
+    </div>
+    <div class="faq-item">
+      <h3>¿Es un servicio legal?</h3>
+      <p>No prestamos servicios de abogacía ni representación letrada. Colaboramos con abogados externos colegiados.</p>
+    </div>
+    <div class="faq-item">
+      <h3>¿Cómo pago?</h3>
+      <p>De forma segura mediante Stripe con tarjeta de crédito o débito.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 TuReclamoExpres · Todos los derechos reservados
+  </footer>
+
+  <script>
+    // JS menú hamburguesa
+    const header = document.getElementById("header");
+    const btn = document.getElementById("menu-btn");
+    btn.addEventListener("click", ()=> header.classList.toggle("menu-open"));
+  </script>
 </body>
 </html>
