@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TuReclamoExpres – Revisión de facturas GRATIS</title>
+  <meta name="description" content="Sube tu factura gratis. Detectamos cobros indebidos y te decimos cuánto puedes reclamar. Después eliges si quieres el plan Básico, Completo o Premium.">
+  <meta name="author" content="TuReclamoExpres">
+  <link rel="icon" href="/favicon.ico">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin:0; font-family:'Poppins',sans-serif; background:#0f172a; color:#e5e7eb;
+      line-height:1.6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    header,main,footer {max-width:1100px;margin:0 auto;padding:20px}
+    h1{font-size:clamp(28px,5vw,42px);margin-bottom:10px}
+    .btn{display:inline-block;padding:12px 20px;border-radius:12px;font-weight:700;cursor:pointer;text-decoration:none}
+    .btn-primary{background:#22c55e;color:#052e16}
+    .btn-outline{border:1px solid #374151;color:#e5e7eb}
+    .hero{text-align:center;padding:50px 20px}
+    .hero p{max-width:700px;margin:0 auto 20px;color:#9ca3af}
+    form{background:#111827;border:1px solid #1f2937;border-radius:16px;padding:20px;margin-top:20px}
+    input,textarea{width:100%;background:#1f2937;color:#fff;border:1px solid #374151;border-radius:8px;padding:10px;margin-top:6px}
+    label{margin-top:10px;display:block}
+    .plans{display:grid;gap:16px;margin-top:40px}
+    .plan{background:#111827;border:1px solid #1f2937;border-radius:16px;padding:20px}
+    .plan .price{font-size:24px;font-weight:800;margin:10px 0}
+    footer{border-top:1px solid #1f2937;margin-top:40px;padding-top:20px;color:#9ca3af;font-size:14px}
+    footer a{color:#60a5fa;text-decoration:none;font-size:14px}
+    footer a:hover{text-decoration:underline}
+    /* Modal legal */
+    #legal-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1000;align-items:center;justify-content:center}
+    #legal-modal .wrap{background:#111827;color:#a1a1aa;padding:20px;max-width:800px;max-height:80vh;overflow:auto;border-radius:12px;font-size:12px;line-height:1.5}
+    #legal-modal button{background:none;border:0;color:#fff;font-size:20px;float:right;cursor:pointer}
+  </style>
+</head>
+<body>
+  <header>
+    <h2>TuReclamoExpres</h2>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Sube tu factura GRATIS</h1>
+      <p>El 78% de las facturas esconden cobros indebidos. Te decimos cuánto podrías estar pagando de más y te preparamos tu reclamación lista.</p>
+      <a class="btn btn-primary" href="#formulario">Revisar mi factura GRATIS</a>
+      <a class="btn btn-outline" href="https://wa.me/34953818494?text=Hola,%20quiero%20revisar%20mi%20factura">WhatsApp</a>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section id="formulario">
+      <form action="https://formspree.io/f/mczmwall" method="POST" enctype="multipart/form-data">
+        <label for="nombre">Nombre y apellidos</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="_replyto" required>
+        <label for="adjuntos">Sube tu factura (PDF o imagen)</label>
+        <input type="file" id="adjuntos" name="adjuntos" required>
+        <label style="display:flex;gap:8px;align-items:flex-start;margin-top:12px">
+          <input type="checkbox" id="rgpd" name="rgpd_consent" required>
+          <span>Acepto la <a href="#" id="openLegal">Política de Privacidad</a> y consiento el tratamiento de mis datos para la revisión gratuita.</span>
+        </label>
+        <button type="submit" class="btn btn-primary">Enviar factura</button>
+      </form>
+    </section>
+
+    <!-- CASOS -->
+    <section style="margin-top:40px">
+      <h3>Casos reales</h3>
+      <ul>
+        <li>Factura de luz (Sevilla): +118 € en 6 meses</li>
+        <li>Factura de gas (Madrid): +27 €/mes</li>
+        <li>Factura de teléfono (Jaén): +64 € en 3 meses</li>
+      </ul>
+    </section>
+
+    <!-- PLANES -->
+    <section style="margin-top:40px">
+      <h3>Elige tu plan (tras la revisión)</h3>
+      <div class="plans">
+        <div class="plan">
+          <div>Básico</div>
+          <div class="price">14,90 €</div>
+          <ul><li>PDF automático listo para enviar</li></ul>
+          <a class="btn btn-outline" href="https://buy.stripe.com/dRm6oIduabj13JtgLT8og01">Lo quiero</a>
+        </div>
+        <div class="plan">
+          <div>Completo (más elegido)</div>
+          <div class="price">29,90 €</div>
+          <ul><li>PDF + guía paso a paso + soporte</li></ul>
+          <a class="btn btn-primary" href="https://buy.stripe.com/cNi14o0Ho3Qz93N1QZ8og02">Lo quiero</a>
+        </div>
+        <div class="plan">
+          <div>Premium</div>
+          <div class="price">49,90 €</div>
+          <ul><li>Nosotros lo enviamos por ti</li></ul>
+          <a class="btn btn-outline" href="https://buy.stripe.com/7sYdRa89Qdr9dk3brz8og03">Lo quiero</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GARANTÍA -->
+    <section style="margin-top:40px;background:#1f2937;padding:20px;border-radius:12px">
+      <h3>Garantía sin riesgo</h3>
+      <p>Si no detectamos cobros indebidos en tu factura, te devolvemos el dinero de tu plan.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-top:40px">
+      <h3>Preguntas frecuentes</h3>
+      <p><strong>¿Cuánto tardáis?</strong> En menos de 24h te respondemos.</p>
+      <p><strong>¿Qué facturas aceptáis?</strong> Luz, gas, telefonía y banca.</p>
+      <p><strong>¿Necesito abogado?</strong> No. Solo en casos complejos te ponemos en contacto con abogados colaboradores.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <span>© <span id="year"></span> TuReclamoExpres.com</span><br>
+      <a href="#" id="openLegalFooter">Privacidad | Condiciones | Aviso Legal</a>
+    </div>
+  </footer>
+
+  <!-- MODAL LEGAL -->
+  <div id="legal-modal">
+    <div class="wrap">
+      <button id="closeLegal">×</button>
+      <h4>Información Legal</h4>
+      <p>El presente sitio web (www.tureclamoexpres.com) es titularidad de Sergio Arnes Gómez, NIF 78687563D, con domicilio a efectos administrativos en C/ Ibañez Marín, Andújar (Jaén, España). Dirección sin atención presencial. Contacto: info@tureclamoexpres.com</p>
+      <p>La recogida y tratamiento de datos se realiza conforme al Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD). Finalidad: revisar la factura y generar la documentación de reclamación. Los datos se eliminan tras el servicio. Derechos: acceso, rectificación, supresión y demás en la dirección indicada.</p>
+      <p>Condiciones: el servicio consiste en revisión de factura y generación/envío de modelos de reclamación. No es asesoramiento jurídico ni representación letrada. Precios: 14,90 / 29,90 / 49,90 € IVA incl. Pago vía Stripe. El éxito de la reclamación no está garantizado. Devoluciones: al tratarse de contenido digital inmediato, no aplica desistimiento (art. 103.m TRLGDCU), salvo incidencias técnicas.</p>
+      <p>En supuestos que requieran defensa jurídica, TuReclamoExpres cuenta con abogados colaboradores externos, colegiados y responsables de sus propios servicios y honorarios, siempre con consentimiento del interesado.</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const modal=document.getElementById('legal-modal');
+    document.getElementById('openLegal').onclick=e=>{e.preventDefault();modal.style.display='flex';};
+    document.getElementById('openLegalFooter').onclick=e=>{e.preventDefault();modal.style.display='flex';};
+    document.getElementById('closeLegal').onclick=()=>{modal.style.display='none';};
+    modal.onclick=e=>{if(e.target===modal) modal.style.display='none';};
+  </script>
+</body>
+</html>
