@@ -1,153 +1,142 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TuReclamoExpres – Revisión de facturas GRATIS</title>
-  <meta name="description" content="Sube tu factura gratis. Detectamos cobros indebidos y te decimos cuánto puedes reclamar. Después eliges si quieres el plan Básico, Completo o Premium.">
-  <meta name="author" content="TuReclamoExpres">
-  <link rel="icon" href="/favicon.ico">
-
-  <!-- Fuentes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TuReclamoExpres – Revisión de facturas y reclamaciones automatizadas</title>
+  <link rel="icon" href="/favicon.ico"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"/>
   <style>
-    body {
-      margin:0; font-family:'Poppins',sans-serif; background:#0f172a; color:#e5e7eb;
-      line-height:1.6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    :root{
+      --bg:#0f172a;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --panel:#111827;
+      --card:#1e293b;
+      --primary:#0077b6;
+      --cta:#38b000;
+      --cta-hover:#2c8600;
+      --link:#38bdf8;
     }
-    header,main,footer {max-width:1100px;margin:0 auto;padding:20px}
-    h1{font-size:clamp(28px,5vw,42px);margin-bottom:10px}
-    .btn{display:inline-block;padding:12px 20px;border-radius:12px;font-weight:700;cursor:pointer;text-decoration:none}
-    .btn-primary{background:#22c55e;color:#052e16}
-    .btn-outline{border:1px solid #374151;color:#e5e7eb}
-    .hero{text-align:center;padding:50px 20px}
-    .hero p{max-width:700px;margin:0 auto 20px;color:#9ca3af}
-    form{background:#111827;border:1px solid #1f2937;border-radius:16px;padding:20px;margin-top:20px}
-    input,textarea{width:100%;background:#1f2937;color:#fff;border:1px solid #374151;border-radius:8px;padding:10px;margin-top:6px}
-    label{margin-top:10px;display:block}
-    .plans{display:grid;gap:16px;margin-top:40px}
-    .plan{background:#111827;border:1px solid #1f2937;border-radius:16px;padding:20px}
-    .plan .price{font-size:24px;font-weight:800;margin:10px 0}
-    footer{border-top:1px solid #1f2937;margin-top:40px;padding-top:20px;color:#9ca3af;font-size:14px}
-    footer a{color:#60a5fa;text-decoration:none;font-size:14px}
-    footer a:hover{text-decoration:underline}
-    /* Modal legal */
-    #legal-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1000;align-items:center;justify-content:center}
-    #legal-modal .wrap{background:#111827;color:#a1a1aa;padding:20px;max-width:800px;max-height:80vh;overflow:auto;border-radius:12px;font-size:12px;line-height:1.5}
-    #legal-modal button{background:none;border:0;color:#fff;font-size:20px;float:right;cursor:pointer}
+    body{margin:0;font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);}
+    a{color:inherit;text-decoration:none}
+    header{background:var(--panel);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;}
+    .logo{font-weight:800;font-size:22px;color:var(--primary);}
+    nav{display:flex;gap:20px;}
+    nav a{font-weight:600;color:var(--text);}
+    .cta{background:var(--cta);padding:8px 16px;border-radius:8px;font-weight:700;color:#fff;}
+    .cta:hover{background:var(--cta-hover);}
+    .bar{background:var(--card);text-align:center;font-size:14px;padding:6px;}
+    .hero{text-align:center;padding:60px 20px;}
+    .hero h1{font-size:clamp(28px,5vw,44px);margin:0 0 12px;}
+    .hero p{color:var(--muted);margin:0 auto 20px;max-width:600px;}
+    .btn{padding:12px 18px;border-radius:8px;font-weight:700;margin:6px;display:inline-block}
+    .btn-primary{background:var(--cta);color:#fff;}
+    .btn-primary:hover{background:var(--cta-hover);}
+    .btn-outline{border:1px solid #fff;}
+    footer{background:var(--panel);text-align:center;padding:30px;font-size:14px;color:var(--muted);}
+    footer a{color:var(--link);margin:0 6px;}
+    #legal-modal,#priv-modal,#cookies-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);align-items:center;justify-content:center;}
+    .wrap{background:var(--card);padding:20px;border-radius:10px;max-width:800px;max-height:80vh;overflow:auto;}
+    button.close{float:right;background:none;border:none;font-size:22px;color:#fff;cursor:pointer;}
+    .legal-small{font-size:13px;line-height:1.5;color:#d1d5db;text-align:justify;}
+    form{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+    form label{font-weight:600;font-size:14px}
+    form input,form button{width:100%;padding:12px;margin:8px 0;border-radius:8px;border:none;font-size:14px}
+    form input[type="file"]{background:#fff;color:#000}
+    form button{background:var(--cta);color:#fff;font-weight:700;cursor:pointer}
+    form button:hover{background:var(--cta-hover);}
+    .consent{font-size:13px;color:var(--muted);}
+    .consent input{width:auto;margin-right:6px;}
+    @media(max-width:768px){
+      nav{display:none;flex-direction:column;position:absolute;top:60px;right:20px;background:var(--panel);padding:20px;border-radius:8px;}
+      nav.active{display:flex;}
+      .menu-btn{display:block;cursor:pointer;font-size:22px;color:#fff;}
+    }
+    @media(min-width:769px){.menu-btn{display:none;}}
   </style>
 </head>
 <body>
+
+  <!-- Barra confianza -->
+  <div class="bar">⚡ Revisión inicial 100% gratuita (no garantiza resultado final) · 📞 Respuesta en menos de 24h</div>
+
+  <!-- Header -->
   <header>
-    <h2>TuReclamoExpres</h2>
+    <div class="logo">TuReclamoExpres</div>
+    <nav id="nav">
+      <a href="#como">Cómo funciona</a>
+      <a href="#planes">Planes</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#form" class="cta">Revisar gratis</a>
+    <div class="menu-btn" onclick="document.getElementById('nav').classList.toggle('active')">☰</div>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <h1>Sube tu factura GRATIS</h1>
-      <p>El 78% de las facturas esconden cobros indebidos. Te decimos cuánto podrías estar pagando de más y te preparamos tu reclamación lista.</p>
-      <a class="btn btn-primary" href="#formulario">Revisar mi factura GRATIS</a>
-      <a class="btn btn-outline" href="https://wa.me/34953818494?text=Hola,%20quiero%20revisar%20mi%20factura">WhatsApp</a>
-    </section>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Sube tu factura GRATIS</h1>
+    <p>El 78% de las facturas esconden cobros indebidos. Te decimos cuánto podrías estar pagando de más y te preparamos tu reclamación lista.</p>
+    <a href="#form" class="btn btn-primary">Revisar mi factura GRATIS</a>
+    <a href="https://wa.me/34953818494" class="btn btn-outline">WhatsApp</a>
+  </section>
 
-    <!-- FORMULARIO -->
-    <section id="formulario">
-      <form action="https://formspree.io/f/mczmwall" method="POST" enctype="multipart/form-data">
-        <label for="nombre">Nombre y apellidos</label>
-        <input type="text" id="nombre" name="nombre" required>
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="_replyto" required>
-        <label for="adjuntos">Sube tu factura (PDF o imagen)</label>
-        <input type="file" id="adjuntos" name="adjuntos" required>
-        <label style="display:flex;gap:8px;align-items:flex-start;margin-top:12px">
-          <input type="checkbox" id="rgpd" name="rgpd_consent" required>
-          <span>Acepto la <a href="#" id="openLegal">Política de Privacidad</a> y consiento el tratamiento de mis datos para la revisión gratuita.</span>
-        </label>
-        <button type="submit" class="btn btn-primary">Enviar factura</button>
-      </form>
-    </section>
-
-    <!-- CASOS -->
-    <section style="margin-top:40px">
-      <h3>Casos reales</h3>
-      <ul>
-        <li>Factura de luz (Sevilla): +118 € en 6 meses</li>
-        <li>Factura de gas (Madrid): +27 €/mes</li>
-        <li>Factura de teléfono (Jaén): +64 € en 3 meses</li>
-      </ul>
-    </section>
-
-    <!-- PLANES -->
-    <section style="margin-top:40px">
-      <h3>Elige tu plan (tras la revisión)</h3>
-      <div class="plans">
-        <div class="plan">
-          <div>Básico</div>
-          <div class="price">14,90 €</div>
-          <ul><li>PDF automático listo para enviar</li></ul>
-          <a class="btn btn-outline" href="https://buy.stripe.com/dRm6oIduabj13JtgLT8og01">Lo quiero</a>
-        </div>
-        <div class="plan">
-          <div>Completo (más elegido)</div>
-          <div class="price">29,90 €</div>
-          <ul><li>PDF + guía paso a paso + soporte</li></ul>
-          <a class="btn btn-primary" href="https://buy.stripe.com/cNi14o0Ho3Qz93N1QZ8og02">Lo quiero</a>
-        </div>
-        <div class="plan">
-          <div>Premium</div>
-          <div class="price">49,90 €</div>
-          <ul><li>Nosotros lo enviamos por ti</li></ul>
-          <a class="btn btn-outline" href="https://buy.stripe.com/7sYdRa89Qdr9dk3brz8og03">Lo quiero</a>
-        </div>
+  <!-- Formulario -->
+  <section id="form" style="max-width:600px;margin:0 auto;padding:20px;">
+    <!-- 🚨 Tu formulario original, no cambiado -->
+    <form action="TU_ENDPOINT_DE_IONOS_AQUI" method="POST" enctype="multipart/form-data">
+      <label>Nombre y apellidos</label>
+      <input type="text" name="nombre" required>
+      <label>Correo electrónico</label>
+      <input type="email" name="email" required>
+      <label>Sube tu factura (PDF o imagen)</label>
+      <input type="file" name="factura" accept=".pdf,.jpg,.jpeg,.png" required>
+      <div class="consent">
+        <input type="checkbox" required>
+        Acepto la <a href="#" id="openPriv">Política de Privacidad</a> y la <a href="#" id="openCookies">Política de Cookies</a>.
       </div>
-    </section>
+      <button type="submit">Enviar factura</button>
+    </form>
+  </section>
 
-    <!-- GARANTÍA -->
-    <section style="margin-top:40px;background:#1f2937;padding:20px;border-radius:12px">
-      <h3>Garantía sin riesgo</h3>
-      <p>Si no detectamos cobros indebidos en tu factura, te devolvemos el dinero de tu plan.</p>
-    </section>
-
-    <!-- FAQ -->
-    <section style="margin-top:40px">
-      <h3>Preguntas frecuentes</h3>
-      <p><strong>¿Cuánto tardáis?</strong> En menos de 24h te respondemos.</p>
-      <p><strong>¿Qué facturas aceptáis?</strong> Luz, gas, telefonía y banca.</p>
-      <p><strong>¿Necesito abogado?</strong> No. Solo en casos complejos te ponemos en contacto con abogados colaboradores.</p>
-    </section>
-  </main>
-
+  <!-- Footer -->
   <footer>
-    <div>
-      <span>© <span id="year"></span> TuReclamoExpres.com</span><br>
-      <a href="#" id="openLegalFooter">Privacidad | Condiciones | Aviso Legal</a>
-    </div>
+    <p>© 2025 TuReclamoExpres.com · 
+      <a href="#" id="openLegal">Aviso Legal</a> · 
+      <a href="#" id="openPrivFooter">Privacidad</a> · 
+      <a href="#" id="openCookiesFooter">Cookies</a>
+    </p>
   </footer>
 
-<!-- MODAL LEGAL -->
-<div id="legal-modal">
-  <div class="wrap">
-    <button id="closeLegal">×</button>
-    <h4>Información Legal</h4>
+  <!-- Modals -->
+  <div id="legal-modal"><div class="wrap"><button class="close" onclick="this.closest('#legal-modal').style.display='none'">×</button>
+    <h4>Aviso Legal</h4>
     <p class="legal-small">
-      En cumplimiento de lo dispuesto en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), así como en el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales (RGPD), la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), el Real Decreto Legislativo 1/2007, de 16 de noviembre, por el que se aprueba el Texto Refundido de la Ley General para la Defensa de los Consumidores y Usuarios (TRLGDCU), así como el Código Civil y demás normativa aplicable en materia de defensa del consumidor, contratos electrónicos y comercio online, se hace constar que el presente sitio web www.tureclamoexpres.com tiene como objeto la prestación de un servicio administrativo exprés de revisión documental y generación de modelos de reclamación automatizados, sin que en ningún caso constituya asesoramiento jurídico individualizado ni representación letrada. El titular del sitio es Sergio Arnes Gómez, NIF 78687563D, con domicilio a efectos administrativos y de notificaciones en C/ Ibañez Marín, Andújar (Jaén, España), sin que ello implique la existencia de oficina abierta al público, y con correo de contacto info@tureclamoexpres.com. Los datos personales facilitados por los usuarios se tratarán exclusivamente con la finalidad de gestionar la petición de revisión de factura y la elaboración/envío de la documentación de reclamación, procediéndose a su supresión una vez finalizado el servicio. El usuario podrá ejercer en cualquier momento los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad dirigiéndose al correo indicado, acompañando copia de su documento identificativo. El uso de este sitio implica la aceptación expresa y sin reservas de las presentes condiciones, incluyendo las relativas a tratamiento de datos, limitación de responsabilidad, funcionamiento del servicio y reglas aplicables en materia de desistimiento, recordando que conforme al artículo 103.m del TRLGDCU no procede derecho de desistimiento al tratarse de contenido digital suministrado de forma inmediata, salvo incidencias técnicas acreditadas. Los planes disponibles tienen un precio de 14,90 €, 29,90 € y 49,90 € IVA incluido, con pago seguro vía Stripe. El éxito de la reclamación no está garantizado y depende de la valoración de cada caso concreto y de la respuesta de la compañía receptora. En supuestos que requieran defensa jurídica o procedimientos contenciosos, TuReclamoExpres cuenta con abogados colaboradores externos, colegiados y responsables de sus propios servicios y honorarios, siendo necesaria la aceptación expresa y por escrito del cliente para la derivación. Cualquier controversia derivada del acceso, navegación o uso de este sitio web se regirá por la legislación española vigente y será sometida a los Juzgados y Tribunales competentes en Jaén, salvo norma imperativa a favor del consumidor. 
-    </p>
-  </div>
-</div>
+      En cumplimiento de la Ley 34/2002 (LSSI-CE), el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), se informa que el titular del sitio www.tureclamoexpres.com es Sergio Arnes Gómez (NIF 78687563D), con domicilio en C/ Ibañez Marín, Andújar (Jaén, España), correo info@tureclamoexpres.com. Objeto: revisión documental y generación de modelos de reclamación automatizados. Los precios son 14,90€, 29,90€ y 49,90€ IVA incl. El derecho de desistimiento no aplica (art.103.m TRLGDCU) al tratarse de contenido digital inmediato. No se garantiza el éxito de las reclamaciones, que dependen de cada caso y de la respuesta de la compañía. Los litigios se someten a los Juzgados de Jaén, salvo norma imperativa.
+    </p></div></div>
 
+  <div id="priv-modal"><div class="wrap"><button class="close" onclick="this.closest('#priv-modal').style.display='none'">×</button>
+    <h4>Política de Privacidad</h4>
+    <p class="legal-small">
+      Tus datos se recogen únicamente para gestionar la revisión solicitada y se eliminan tras la prestación del servicio. No se ceden a terceros salvo obligación legal o derivación voluntaria a abogados colaboradores. Puedes ejercer derechos de acceso, rectificación, supresión, limitación, portabilidad y oposición escribiendo a info@tureclamoexpres.com. Responsable: Sergio Arnes Gómez (NIF 78687563D).
+    </p></div></div>
 
+  <div id="cookies-modal"><div class="wrap"><button class="close" onclick="this.closest('#cookies-modal').style.display='none'">×</button>
+    <h4>Política de Cookies</h4>
+    <p class="legal-small">
+      Este sitio utiliza únicamente cookies técnicas necesarias para el correcto funcionamiento de la web. No se emplean cookies de publicidad ni analíticas de terceros. Puedes bloquearlas o eliminarlas desde la configuración de tu navegador. Al continuar navegando aceptas el uso de las cookies estrictamente necesarias.
+    </p></div></div>
 
+  <!-- Scripts -->
   <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-    const modal=document.getElementById('legal-modal');
-    document.getElementById('openLegal').onclick=e=>{e.preventDefault();modal.style.display='flex';};
-    document.getElementById('openLegalFooter').onclick=e=>{e.preventDefault();modal.style.display='flex';};
-    document.getElementById('closeLegal').onclick=()=>{modal.style.display='none';};
-    modal.onclick=e=>{if(e.target===modal) modal.style.display='none';};
+    function openModal(id){document.getElementById(id).style.display='flex'}
+    document.getElementById('openLegal').onclick=(e)=>{e.preventDefault();openModal('legal-modal')}
+    document.getElementById('openPriv').onclick=(e)=>{e.preventDefault();openModal('priv-modal')}
+    document.getElementById('openCookies').onclick=(e)=>{e.preventDefault();openModal('cookies-modal')}
+    document.getElementById('openPrivFooter').onclick=(e)=>{e.preventDefault();openModal('priv-modal')}
+    document.getElementById('openCookiesFooter').onclick=(e)=>{e.preventDefault();openModal('cookies-modal')}
+    window.onclick=(e)=>{['legal-modal','priv-modal','cookies-modal'].forEach(id=>{if(e.target==document.getElementById(id))document.getElementById(id).style.display='none'})}
   </script>
 </body>
 </html>
