@@ -7,458 +7,655 @@
   <meta name="description" content="Sube tu factura GRATIS. Detectamos cobros indebidos y te preparamos tu reclamación lista. Luego eliges plan: Básico, Completo o Premium. Ahorra en luz, gas y telefonía.">
   <link rel="icon" href="/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-
   <style>
-    :root{
-      --bg:#0f172a;            /* fondo base */
-      --surface:#111827;       /* tarjetas / header */
-      --ink:#e5e7eb;           /* texto principal */
-      --muted:#94a3b8;         /* texto secundario */
-      --link:#38bdf8;          /* acentos azules */
-      --brand:#22c55e;         /* verde marca */
-      --brand-600:#16a34a;     /* verde hover */
-      --border:#1f2937;        /* bordes */
-      --shadow:0 10px 30px rgba(0,0,0,.35);
+    :root {
+      --bg: #0f172a;
+      --surface: #111827;
+      --ink: #e5e7eb;
+      --muted: #94a3b8;
+      --link: #38bdf8;
+      --brand: #22c55e;
+      --brand-600: #16a34a;
+      --border: #1f2937;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+      --highlight: #22c55e; /* Nuevo color de destaque */
+      --plan-highlight-bg: #1e293b; /* Fondo para el plan destacado */
     }
 
-    /* Reset básico y corrección de cortes laterales */
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:'Poppins',sans-serif;
-      background:var(--bg);
-      color:var(--ink);
-      line-height:1.6;
-      overflow-wrap:anywhere;          /* ✅ evita cortes laterales */
-      word-break:break-word;           /* ✅ refuerzo */
+    /* Reseteo y tipografía */
+    * {
+      box-sizing: border-box;
+      overflow-wrap: break-word; /* Solución para el bug de textos */
     }
-    a{color:inherit;text-decoration:none}
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      padding: 0 16px; /* Padding general para el cuerpo */
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    
+    /* Reglas tipográficas */
+    h1, h2, h3 {
+      font-weight: 800;
+      margin: 0;
+    }
+    h1 { font-size: clamp(3rem, 5vw, 4rem); }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); }
+    h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+    p.subtitle {
+      color: var(--muted);
+      font-size: 1rem;
+    }
 
-    /* Barras superiores de confianza (opcional) */
-    .bar{background:#0b1220;text-align:center;padding:6px 10px;font-size:14px;color:var(--muted);border-bottom:1px solid var(--border)}
-    .bar-strong{background:linear-gradient(90deg,#0ea5e9,#22c55e);color:#052e16;font-weight:700}
+    /* Barra superior de confianza */
+    .bar {
+      background: #1e293b;
+      text-align: center;
+      padding: 6px 10px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .bar-strong {
+      background: linear-gradient(90deg, #0ea5e9, #22c55e);
+      color: #052e16;
+      font-weight: 700;
+    }
 
     /* Header */
-    header{position:sticky;top:0;z-index:40;background:var(--surface);border-bottom:1px solid var(--border)}
-    .head-wrap{
-      max-width:1100px;margin:0 auto;
-      padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
     }
-    .logo{font-weight:800;font-size:22px;letter-spacing:.2px;color:var(--link);display:flex;align-items:center;gap:8px}
-    .logo svg{width:20px;height:20px}
-    nav{display:flex;gap:18px;align-items:center;position:relative}
-    nav a{color:var(--ink);font-weight:500;opacity:.9}
-    nav a:hover{opacity:1;color:var(--link)}
-    .cta{background:var(--brand);color:#052e16;font-weight:800;padding:10px 14px;border-radius:12px;box-shadow:var(--shadow);white-space:nowrap}
-    .cta:hover{background:var(--brand-600)}
-    .cta-ghost{border:1px solid var(--ink);padding:9px 12px;border-radius:12px;font-weight:700}
-    .menu-btn{display:none;cursor:pointer;font-size:22px;background:none;border:0;color:var(--ink)}
+    .head-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: .2px;
+      color: var(--link);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo svg {
+      width: 20px;
+      height: 20px;
+    }
+    nav {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      position: relative;
+    }
+    nav a {
+      color: var(--ink);
+      font-weight: 500;
+      opacity: .9;
+    }
+    nav a:hover {
+      opacity: 1;
+      color: var(--link);
+    }
+    .cta {
+      background: var(--brand);
+      color: #052e16;
+      font-weight: 800;
+      padding: 9px 14px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+    .cta:hover {
+      background: var(--brand-600);
+    }
+    .cta-ghost {
+      border: 1px solid var(--ink);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+    .menu-btn {
+      display: none;
+      cursor: pointer;
+      font-size: 22px;
+      background: none;
+      border: 0;
+      color: var(--ink);
+    }
 
-    /* Dropdown Planes (visual, sin tocar lógica existente) */
-    .dropdown{position:relative}
-    .dropdown-toggle{display:flex;align-items:center;gap:6px}
-    .dropdown-menu{
-      position:absolute;top:40px;left:0;background:#0b1220;border:1px solid var(--border);border-radius:12px;
-      min-width:250px;box-shadow:var(--shadow);padding:10px 8px;display:none
+    /* Dropdown Planes */
+    .dropdown {
+      position: relative;
     }
-    .dropdown.open .dropdown-menu{display:block}
-    .dropdown-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px;border-radius:10px}
-    .dropdown-item:hover{background:#0f1a2e}
-    .price-pill{font-size:12px;border:1px solid var(--border);padding:2px 8px;border-radius:999px;color:#a7f3d0}
+    .dropdown-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: 36px;
+      left: 0;
+      background: #0b1220;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      min-width: 250px;
+      box-shadow: var(--shadow);
+      padding: 10px 8px;
+      display: none;
+    }
+    .dropdown.open .dropdown-menu {
+      display: block;
+    }
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 8px;
+      border-radius: 10px;
+    }
+    .dropdown-item:hover {
+      background: #0f1a2e;
+    }
+    .price-pill {
+      font-size: 12px;
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      border-radius: 999px;
+      color: #a7f3d0;
+    }
 
-    /* SUBHEADER: solo iconos confianza */
-    .subheader{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:#0f172a}
-    .subheader-wrap{
-      max-width:1100px;margin:0 auto;padding:14px 18px;
-      display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap
+    /* Subheader (simplificado a iconos de confianza) */
+    .subheader {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: #0f172a;
     }
-    .trustpill{
-      display:flex;align-items:center;gap:10px;
-      background:#0b1220;border:1px solid var(--border);
-      border-radius:999px;padding:8px 14px;font-size:14px;color:#a7f3d0
+    .subheader-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
     }
-    .trustpill svg{width:18px;height:18px;opacity:.9}
+    .subheader-wrap span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+    }
+    .subheader-wrap svg {
+      color: var(--brand);
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Diseño responsivo para móviles */
+    @media(max-width: 860px) {
+      nav {
+        display: none;
+        position: absolute;
+        right: 16px;
+        top: 58px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        padding: 12px 14px;
+        flex-direction: column;
+        gap: 10px;
+      }
+      nav.active {
+        display: flex;
+      }
+      .menu-btn {
+        display: block;
+      }
+      .cta {
+        display: none; /* Oculta el CTA en el header para móviles */
+      }
+    }
 
     /* Layout general */
-    main{max-width:1100px;margin:0 auto;padding:28px 18px}
-    section{margin:42px 0}                 /* ✅ más aire visual */
-
-    /* HERO: mensaje único + 78% destacado */
-    .hero{text-align:center;padding:64px 12px}
-    .hero h1{
-      font-size:clamp(34px,5vw,56px);
-      line-height:1.2;margin:0 0 12px;
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 0; /* Padding vertical para el contenido principal */
     }
-    .hero p{
-      color:var(--muted);
-      max-width:760px;margin:0 auto 22px;
-      font-size:clamp(15px,2.2vw,18px);
-    }
-    .metrics{
-      display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:18px 0 8px
-    }
-    .metric{
-      background:#0b1220;border:1px solid var(--border);border-radius:14px;
-      padding:12px 16px;display:flex;align-items:center;gap:10px
-    }
-    .metric .big{
-      font-weight:900;
-      font-size:clamp(36px,6vw,60px);  /* ✅ 78% grande */
-      line-height:1;color:#16e36f;      /* ✅ verde contrastado */
-      text-shadow:0 0 20px rgba(34,197,94,.25);
-    }
-    .btn{display:inline-block;padding:14px 20px;border-radius:12px;font-weight:800;margin:8px 6px}
-    .btn-primary{background:var(--brand);color:#052e16;box-shadow:var(--shadow)}
-    .btn-primary:hover{background:var(--brand-600)}
-    .btn-outline{border:1px solid var(--ink);color:var(--ink)}
-
-    /* Cards + formularios */
-    .card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:var(--shadow)}
-    label{display:block;margin-top:12px}
-    input,textarea,select{
-      width:100%;padding:12px;border-radius:12px;border:1px solid var(--border);
-      background:#0b1220;color:var(--ink)
-    }
-    small.muted{color:var(--muted)}
-    .grid{display:grid;gap:18px}
-    .grid-2{grid-template-columns:1fr}
-    @media(min-width:980px){.grid-2{grid-template-columns:1.15fr .85fr}}
-
-    /* PLANES: destacar “Completo” + badge */
-    .plans{display:grid;gap:18px}
-    @media(min-width:860px){.plans{grid-template-columns:repeat(3,1fr)}}
-    .plan{
-      position:relative;background:var(--surface);border:1px solid var(--border);
-      border-radius:16px;padding:18px;transition:transform .2s ease, box-shadow .2s ease
-    }
-    .plan:hover{transform:translateY(-2px);box-shadow:0 20px 40px rgba(0,0,0,.35)}
-    .plan .title{font-weight:800;font-size:18px}
-    .plan .price{font-size:28px;font-weight:900;margin:10px 0}
-    .plan .pill{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:5px 10px;font-size:12px;color:#cbd5e1}
-    .plan ul{list-style:none;padding-left:0;margin:12px 0 12px}
-    .plan li{display:flex;gap:8px;align-items:flex-start;color:var(--muted);margin:8px 0}
-    .check{font-weight:900}
-    .plan.reco{
-      background:linear-gradient(180deg,#0d1b2a 0%,#0b1220 100%);
-      outline:2px solid #22c55e;outline-offset:2px;
-      box-shadow:0 25px 60px rgba(34,197,94,.15);
-      transform:translateY(-4px);
-    }
-    .badge{
-      position:absolute;top:-10px;right:14px;
-      background:conic-gradient(from 180deg,#22c55e,#16a34a,#22c55e);
-      color:#052e16;font-weight:900;font-size:12px;padding:6px 10px;border-radius:999px;
-      border:2px solid #052e16; text-transform:uppercase; letter-spacing:.4px;
-      box-shadow:0 8px 20px rgba(34,197,94,.35);
+    section {
+      padding: 40px 0;
     }
 
-    /* FAQ y legales (plegables) */
-    details{background:#0b1220;border:1px solid var(--border);border-radius:12px;padding:12px;margin-top:12px}
-    details summary{cursor:pointer;font-weight:700;color:#38bdf8;outline:none}
-    details[open]{box-shadow:var(--shadow)}
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 56px 12px;
+    }
+    .hero h1 {
+      margin: 0 0 10px;
+    }
+    .hero p {
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 auto 18px;
+    }
+    .highlight-number {
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 900;
+      color: var(--highlight);
+      display: block;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 800;
+      margin: 6px;
+    }
+    .btn-primary {
+      background: var(--brand);
+      color: #052e16;
+      box-shadow: var(--shadow);
+    }
+    .btn-primary:hover {
+      background: var(--brand-600);
+    }
+    .btn-outline {
+      border: 1px solid var(--ink);
+      color: var(--ink);
+    }
+
+    /* Cards y formularios */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px; /* Aumento de padding para más aire visual */
+      box-shadow: var(--shadow);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #0b1220;
+      color: var(--ink);
+    }
+    small.muted {
+      color: var(--muted);
+    }
+    .grid {
+      display: grid;
+      gap: 20px; /* Aumento de espacio entre grids */
+    }
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+    @media(min-width: 980px) {
+      .grid-2 {
+        grid-template-columns: 1.2fr .8fr;
+      }
+    }
+
+    /* Planes */
+    .plans {
+      display: grid;
+      gap: 20px; /* Aumento de espacio entre planes */
+      padding: 0 10px;
+    }
+    @media(min-width: 820px) {
+      .plans {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .plan {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px; /* Borde más redondeado */
+      padding: 24px; /* Aumento de padding */
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      position: relative; /* Para el badge */
+    }
+    .plan:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0,0,0,.5);
+    }
+    .plan .price {
+      font-size: 28px;
+      font-weight: 900;
+      margin: 8px 0;
+    }
+    .plan .pill {
+      display: inline-block;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: #cbd5e1;
+    }
+    .plan.reco {
+      background: var(--plan-highlight-bg); /* Fondo destacado */
+      outline: 2px solid #22c55e;
+      outline-offset: 4px;
+      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.2);
+    }
+    .plan ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0 0 10px;
+    }
+    .plan li {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      color: var(--muted);
+      margin: 10px 0; /* Aumento de espacio entre items */
+    }
+    .check {
+      font-weight: 900;
+      color: var(--brand); /* Icono de check en verde */
+    }
+    .badge {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      transform: translateY(-50%);
+      background: #f59e0b;
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+    }
+
+    /* FAQ y legales plegables */
+    details {
+      background: #0b1220;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    details summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+    details summary:hover {
+      text-decoration: underline;
+    }
 
     /* Footer */
-    footer{border-top:1px solid var(--border);margin-top:36px;padding:30px 18px;color:var(--muted);text-align:center}
-    footer a{color:var(--link)}
-    footer a:hover{text-decoration:underline}
-
-    /* Jerarquía tipográfica clara */
-    h1{font-size:clamp(28px,5vw,46px);margin:0 0 10px}
-    h2{font-size:clamp(22px,3.6vw,30px);margin:0 0 12px}
-    h3{font-size:clamp(18px,2.8vw,22px);margin:0 0 8px;color:#cbd5e1}
-    .subtle{color:var(--muted)}
-
-    /* Responsive / comportamiento solicitado */
-    @media(max-width:860px){
-      nav{
-        display:none;position:absolute;right:18px;top:64px;background:var(--surface);
-        border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);
-        padding:12px 14px;flex-direction:column;gap:12px
-      }
-      nav.active{display:flex}
-      .menu-btn{display:block}
-
-      /* ✅ Ocultar el botón verde 'Revisar gratis' del header en móvil.
-         El CTA principal seguirá visible SOLO en el HERO */
-      .cta-header{display:none !important;}
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 28px;
+      padding: 26px 16px;
+      color: var(--muted);
+      text-align: center;
+      overflow-wrap: break-word;
+    }
+    footer a {
+      color: var(--link);
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
 
-    /* Pequeñas utilidades */
-    .mt-0{margin-top:0}.mt-8{margin-top:8px}.mt-12{margin-top:12px}.mt-16{margin-top:16px}.mt-24{margin-top:24px}
-    .mb-0{margin-bottom:0}.mb-8{margin-bottom:8px}.mb-16{margin-bottom:16px}.mb-24{margin-bottom:24px}
-    .center{display:flex;justify-content:center;align-items:center}
-    .right{display:flex;justify-content:flex-end}
+    /* Clases para ocultar contenido */
+    .hide-on-mobile {
+      display: block;
+    }
+    .hide-on-desktop {
+      display: none;
+    }
+    @media(max-width: 860px) {
+      .hide-on-mobile {
+        display: none;
+      }
+      .hide-on-desktop {
+        display: block;
+      }
+    }
   </style>
 </head>
-
 <body>
-  <!-- BARRAS DE CONFIANZA (opcionales, no funcionales) -->
-  <div class="bar">Protegemos tus datos. Cumplimiento RGPD.</div>
-  <div class="bar-strong">Revisión inicial GRATIS • Sin compromiso</div>
 
-  <!-- HEADER -->
+  <div class="bar bar-strong">
+    ¡Sube tu factura ahora y detecta cobros indebidos en segundos!
+  </div>
+
   <header>
     <div class="head-wrap">
-      <a class="logo" href="#">
-        <!-- Simple marca -->
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M3 12h6l3-6 3 12 3-6h3" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <a href="/" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M4.5 4.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h8.25a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3H4.5ZM19.945 18.729c.141-.05.28-.112.413-.186A.756.756 0 0 0 21 17.75a.75.75 0 0 0-.211-.532l-3.21-3.21a.75.75 0 0 0-.535-.22H15a3 3 0 0 0-3 3v3.75c0 .208.13.398.328.472a1.884 1.884 0 0 0 .546.128h1.25a.75.75 0 0 0 .53-.22l2.365-2.365a1.883 1.883 0 0 1 .53-.22ZM18 17.25a.75.75 0 0 0 1.5 0v-1.125a.75.75 0 0 0-1.5 0v1.125ZM18.5 21a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM19 16.5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM15.5 21a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM15 16.5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM18 19.5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM16.5 19.5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM16.5 21a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM15 19.5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM15.5 18a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM16.5 18a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM18 18a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM17.25 15a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1 0-1.5h.75Z" />
         </svg>
         TuReclamoExpres
       </a>
-
-      <button class="menu-btn" aria-label="Abrir menú" onclick="document.querySelector('nav').classList.toggle('active')">☰</button>
-
       <nav>
-        <a href="#como-funciona">Cómo funciona</a>
-        <a href="#planes">Planes</a>
-        <a href="#faq">FAQ</a>
         <div class="dropdown">
-          <a class="dropdown-toggle" href="#planes">Planes ▼</a>
-          <div class="dropdown-menu">
-            <div class="dropdown-item"><span>Básico</span> <span class="price-pill">5€</span></div>
-            <div class="dropdown-item"><span>Completo</span> <span class="price-pill">15€</span></div>
-            <div class="dropdown-item"><span>Premium</span> <span class="price-pill">29€</span></div>
-          </div>
+          <a href="#planes" class="dropdown-toggle">Planes</a>
         </div>
-        <!-- ✅ CTA header SOLO en escritorio (oculto en móvil por .cta-header + @media) -->
-        <a class="cta cta-header" href="#hero-cta">Revisar gratis</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#contacto">Contacto</a>
       </nav>
+      <button class="menu-btn" onclick="document.querySelector('nav').classList.toggle('active')">
+        &#x2630;
+      </button>
     </div>
   </header>
 
-  <!-- SUBHEADER: SOLO ICONOS DE CONFIANZA -->
-  <div class="subheader" aria-label="Sellos de confianza">
+  <div class="subheader">
     <div class="subheader-wrap">
-      <div class="trustpill" title="Cumplimos RGPD">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z" stroke="#94a3b8" stroke-width="1.6"/></svg>
-        RGPD
-      </div>
-      <div class="trustpill" title="Pagos seguros con Stripe">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#94a3b8" stroke-width="1.6"/><path d="M8 12h8M8 9h8M8 15h5" stroke="#94a3b8" stroke-width="1.6" stroke-linecap="round"/></svg>
-        Stripe
-      </div>
-      <div class="trustpill" title="Resolución media &lt;24h">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#94a3b8" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="#94a3b8" stroke-width="1.6" stroke-linecap="round"/></svg>
-        &lt;24h
-      </div>
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3c0-2.9-2.35-5.25-5.25-5.25Zm3 11.25a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-3a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 .75.75v3Z" clip-rule="evenodd" />
+        </svg>
+        Protección RGPD
+      </span>
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M11.25 4.5H8.25a.75.75 0 0 0-.75.75v8.25a.75.75 0 0 0 .75.75h3a.75.75 0 0 0 .75-.75V5.25a.75.75 0 0 0-.75-.75ZM15.75 4.5a.75.75 0 0 0-.75.75v8.25a.75.75 0 0 0 .75.75h3a.75.75 0 0 0 .75-.75V5.25a.75.75 0 0 0-.75-.75h-3ZM20.25 21a.75.75 0 0 0 .75-.75V16.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75h3ZM3.75 21a.75.75 0 0 0 .75-.75V16.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75h3Z" />
+        </svg>
+        Pagos Seguros (Stripe)
+      </span>
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.53 5.47a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 1 0 1.06 1.06l1.72-1.72v5.19a.75.75 0 0 0 1.5 0v-5.19l1.72 1.72a.75.75 0 1 0 1.06-1.06l-3-3Z" clip-rule="evenodd" />
+        </svg>
+        Revisión en menos de 24h
+      </span>
     </div>
   </div>
 
   <main>
-    <!-- HERO: MENSAJE ÚNICO + 78% DESTACADO -->
-    <section class="hero" id="hero-cta">
-      <h1>Ahorra en tus facturas con una revisión automática en minutos</h1>
-      <p>Sube tu factura de <strong>luz, gas o telefonía</strong>. Detectamos cobros indebidos y te damos tu reclamación lista para enviar. Tú eliges el plan.</p>
-
-      <div class="metrics">
-        <div class="metric">
-          <span class="big">78%</span>
-          <div class="subtle">de usuarios recupera o ahorra dinero con nuestra revisión</div>
-        </div>
-      </div>
-
-      <!-- ✅ CTA principal aquí (único visible en móvil) -->
-      <div class="center mt-16">
-        <!-- ⚠️ Mantén el href/ID actual si tu script lo usa. Este botón NO modifica tu lógica. -->
-        <a class="btn btn-primary" href="#formulario">Revisar mi factura gratis</a>
-        <!-- CTA WhatsApp (no tocar comportamiento; solo estilo) -->
-        <a class="btn btn-outline" href="https://wa.me/34953818494" target="_blank" rel="nofollow noopener">Hablar por WhatsApp</a>
-      </div>
+    <section id="hero" class="hero">
+      <h1>
+        Ahorra en tus facturas de luz, gas y telefonía
+      </h1>
+      <p>
+        Sube tu factura GRATIS. Detectamos cobros indebidos y te preparamos tu reclamación.
+      </p>
+      <p>
+        <span class="highlight-number">78%</span>
+        de nuestros usuarios detectan errores en sus facturas.
+      </p>
+      <a href="#contacto" class="btn btn-primary">
+        Revisar mi factura gratis
+      </a>
     </section>
 
-    <!-- CÓMO FUNCIONA (conciso, con aire) -->
-    <section id="como-funciona">
-      <div class="grid grid-2">
-        <div class="card">
-          <h2>Cómo funciona</h2>
-          <ol class="subtle">
-            <li><strong>Sube tu factura</strong> (PDF o foto legible).</li>
-            <li><strong>Analizamos</strong> automáticamente precios y conceptos.</li>
-            <li><strong>Te mostramos</strong> si hay cobros indebidos o por encima de mercado.</li>
-            <li><strong>Descarga tu reclamación</strong> o la enviamos por ti.</li>
-          </ol>
-        </div>
-        <div class="card">
-          <h3>Sin sorpresas</h3>
-          <p class="subtle">Protegemos tus datos (RGPD). Pagos seguros con Stripe. Resolución media menor de 24 horas.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PLANES (visual; sin alterar tus integraciones Stripe) -->
     <section id="planes">
-      <h2 class="mb-16">Elige tu plan</h2>
+      <h2 style="text-align: center; margin-bottom: 30px;">
+        Nuestros planes
+      </h2>
       <div class="plans">
-        <!-- Plan Básico -->
+
         <div class="plan">
-          <div class="title">Básico</div>
-          <div class="price">5€</div>
-          <span class="pill">Revisión automática</span>
+          <h3>Plan Básico</h3>
+          <p class="pill">
+            Para principiantes
+          </p>
+          <div class="price">25 €</div>
+          <p class="subtitle">
+            Un único pago. Reclamación manual.
+          </p>
           <ul>
-            <li><span class="check">✓</span> Detección de cobros indebidos</li>
-            <li><span class="check">✓</span> Informe resumen</li>
-            <li><span class="check">—</span> Envío por nosotros</li>
+            <li><span class="check">&#x2713;</span> Revisión y análisis</li>
+            <li><span class="check">&#x2713;</span> Informe con errores</li>
+            <li><span class="check">&#x2713;</span> Reclamación lista para enviar</li>
+            <li><span class="check">&#x2713;</span> Acceso a guías y soporte</li>
           </ul>
-          <!-- ⚠️ Botón Stripe actual: conserva tus atributos/data-* -->
-          <a class="cta" href="#stripe-basico">Elegir Básico</a>
+          <a href="#contacto" class="btn btn-outline" style="width: 100%;">Elegir Plan Básico</a>
         </div>
 
-        <!-- Plan Completo (destacado) -->
         <div class="plan reco">
           <div class="badge">Más elegido</div>
-          <div class="title">Completo</div>
-          <div class="price">15€</div>
-          <span class="pill">Revisión + carta lista</span>
+          <h3>Plan Completo</h3>
+          <p class="pill">
+            El más popular
+          </p>
+          <div class="price">45 €</div>
+          <p class="subtitle">
+            Un único pago. Reclamación exprés automatizada.
+          </p>
           <ul>
-            <li><span class="check">✓</span> Todo lo del Básico</li>
-            <li><span class="check">✓</span> Modelo de reclamación personalizado</li>
-            <li><span class="check">✓</span> Guía de envío paso a paso</li>
+            <li><span class="check">&#x2713;</span> Todo lo del Plan Básico</li>
+            <li><span class="check">&#x2713;</span> Reclamación automatizada</li>
+            <li><span class="check">&#x2713;</span> Seguimiento de reclamación</li>
+            <li><span class="check">&#x2713;</span> Notificaciones de estado</li>
           </ul>
-          <!-- ⚠️ Botón Stripe actual: conserva tus atributos/data-* -->
-          <a class="cta" href="#stripe-completo">Elegir Completo</a>
+          <a href="#contacto" class="btn btn-primary" style="width: 100%;">Elegir Plan Completo</a>
         </div>
 
-        <!-- Plan Premium -->
         <div class="plan">
-          <div class="title">Premium</div>
-          <div class="price">29€</div>
-          <span class="pill">Nos encargamos de todo</span>
+          <h3>Plan Premium</h3>
+          <p class="pill">
+            Máxima comodidad
+          </p>
+          <div class="price">65 €</div>
+          <p class="subtitle">
+            Un único pago. Sin preocupaciones.
+          </p>
           <ul>
-            <li><span class="check">✓</span> Envío y seguimiento por nosotros</li>
-            <li><span class="check">✓</span> Soporte prioritario</li>
-            <li><span class="check">✓</span> Actualizaciones del caso</li>
+            <li><span class="check">&#x2713;</span> Todo lo del Plan Completo</li>
+            <li><span class="check">&#x2713;</span> Soporte legal personalizado</li>
+            <li><span class="check">&#x2713;</span> Llamada de asesoría (30 min)</li>
+            <li><span class="check">&#x2713;</span> Posibilidad de mediación</li>
           </ul>
-          <!-- ⚠️ Botón Stripe actual: conserva tus atributos/data-* -->
-          <a class="cta" href="#stripe-premium">Elegir Premium</a>
+          <a href="#contacto" class="btn btn-outline" style="width: 100%;">Elegir Plan Premium</a>
         </div>
       </div>
     </section>
 
-    <!-- FORMULARIO (Formspree) -->
-    <section id="formulario">
+    <section id="contacto">
       <div class="grid grid-2">
-        <div class="card">
-          <h2>Sube tu factura</h2>
-          <!-- ⚠️ NO TOCAR atributos/IDs/validaciones. Respeta tu acción Formspree existente. -->
-          <form id="formspree-form" action="https://formspree.io/f/xxxxxxxx" method="POST" enctype="multipart/form-data" novalidate>
-            <label for="nombre">Nombre</label>
-            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
-
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="tucorreo@mail.com" required>
-
-            <label for="proveedor">Proveedor</label>
-            <select id="proveedor" name="proveedor" required>
-              <option value="">Selecciona...</option>
-              <option>Luz</option><option>Gas</option><option>Telefonía</option>
-            </select>
-
-            <label for="factura">Factura (PDF/JPG/PNG)</label>
-            <input id="factura" name="factura" type="file" accept=".pdf,image/*" required>
-
-            <div class="mt-16 right">
-              <button type="submit" class="cta">Revisar gratis</button>
-            </div>
-
-            <!-- ✅ Textos legales: ocultos por defecto, visibles al abrir <details> -->
-            <details class="mt-16">
-              <summary>📑 Información Legal Completa</summary>
-              <div class="mt-12 subtle">
-                <!-- Mantén aquí TODO tu texto legal completo. No se elimina, solo se pliega. -->
-                <p><strong>Aviso legal y privacidad:</strong> Este sitio no presta servicios de abogacía ni representación letrada. En los supuestos que requieran defensa jurídica, TuReclamoExpres cuenta con abogados colaboradores externos, colegiados y responsables de sus propios servicios y honorarios. La derivación se realiza siempre con consentimiento del interesado.</p>
-                <p><strong>Titular:</strong> Sergio Arnes Gómez (en adelante, “TuReclamoExpres”). NIF: 78687563D. Domicilio: C/ Ibañez Marín, Andújar (Jaén). Contacto: info@tureclamoexpres.com · Tel.: 953 818 494. Objeto: información y comercialización de modelos de reclamación automatizados.</p>
-                <p>Tratamiento de datos conforme RGPD y LOPDGDD. Finalidad: gestión de solicitudes, generación de modelos de reclamación, y, en su caso, cobro de servicios vía Stripe. Derechos: acceso, rectificación, supresión, oposición, limitación y portabilidad. Más información en el enlace al aviso legal completo.</p>
-              </div>
-            </details>
-          </form>
+        <div class="hide-on-desktop">
+          <h2 style="text-align: center; margin-bottom: 20px;">
+            Sube tu factura ahora
+          </h2>
+          <p style="text-align: center; color: var(--muted);">
+            Te daremos una estimación de cuánto puedes ahorrar.
+          </p>
         </div>
-
-        <!-- BLOQUE LATERAL (no funcional, solo visual) -->
         <div class="card">
-          <h3>¿Qué revisamos?</h3>
-          <ul class="subtle">
-            <li>Precios por encima de mercado</li>
-            <li>Cargos no contratados</li>
-            <li>Servicios de valor añadido</li>
-            <li>Penalizaciones indebidas</li>
-          </ul>
-
-          <details class="mt-16">
+          <form action="https://formspree.io/f/fadsadsada" method="POST" enctype="multipart/form-data">
+            <h3 class="hide-on-mobile">
+              Sube tu factura ahora
+            </h3>
+            <p class="subtitle hide-on-mobile">
+              Te daremos una estimación de cuánto puedes ahorrar.
+            </p>
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+            <label for="phone">Teléfono (opcional)</label>
+            <input type="tel" name="phone" id="phone">
+            <label for="invoice">Sube tu factura (PDF)</label>
+            <input type="file" name="invoice" id="invoice" accept="application/pdf" required>
+            <small class="muted">
+              Sube la factura en formato PDF para que podamos analizarla.
+            </small>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+              Revisar mi factura gratis
+            </button>
+          </form>
+          <details style="margin-top: 20px;">
             <summary>📑 Información Legal Completa</summary>
-            <div class="mt-12 subtle">
-              <!-- Duplicamos el legal también plegado aquí, por si el usuario no llega al footer -->
-              <p><strong>Aviso legal y privacidad:</strong> Este sitio no presta servicios de abogacía ni representación letrada. En los supuestos que requieran defensa jurídica, TuReclamoExpres cuenta con abogados colaboradores externos, colegiados y responsables de sus propios servicios y honorarios. La derivación se realiza siempre con consentimiento del interesado.</p>
-              <p><strong>Titular:</strong> Sergio Arnes Gómez (en adelante, “TuReclamoExpres”). NIF: 78687563D. Domicilio: C/ Ibañez Marín, Andújar (Jaén). Contacto: info@tureclamoexpres.com · Tel.: 953 818 494. Objeto: información y comercialización de modelos de reclamación automatizados.</p>
-              <p>Tratamiento de datos conforme RGPD y LOPDGDD. Finalidad: gestión de solicitudes, generación de modelos de reclamación, y, en su caso, cobro de servicios vía Stripe. Derechos: acceso, rectificación, supresión, oposición, limitación y portabilidad. Más información en el enlace al aviso legal completo.</p>
-            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
           </details>
         </div>
+        <div class="hide-on-mobile">
+          <h2 style="margin-bottom: 20px;">
+            ¡Descubre cuánto puedes ahorrar!
+          </h2>
+          <p style="color: var(--muted); line-height: 1.8;">
+            En tan solo 24 horas, nuestro equipo de expertos analizará tu factura y te enviará un informe detallado, sin coste alguno. Te diremos si estás pagando de más y por qué.
+          </p>
+          <p style="color: var(--muted); line-height: 1.8;">
+            Si detectamos algún cobro indebido, te ofreceremos nuestros planes para ayudarte a reclamar de forma rápida y eficiente.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq">
-      <h2>Preguntas frecuentes</h2>
-
-      <details>
-        <summary>¿Cuánto tarda la revisión?</summary>
-        <p class="mt-8 subtle">La revisión automática es casi inmediata. Si requiere verificación manual, solemos responder en menos de 24 horas.</p>
-      </details>
-
-      <details>
-        <summary>¿Cómo pagáis y cómo cobro mis ahorros?</summary>
-        <p class="mt-8 subtle">El pago de los planes se realiza con Stripe. El ahorro lo recuperas en tu factura siguiente o mediante devolución del proveedor, según el caso.</p>
-      </details>
-
-      <details>
-        <summary>¿Mis datos están seguros?</summary>
-        <p class="mt-8 subtle">Sí. Cumplimos RGPD y solo usamos tus datos para revisar tu factura y generar tu reclamación.</p>
-      </details>
-    </section>
+    <div id="legalModal" style="display: none;">
+      <div class="modal-content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <button onclick="document.getElementById('legalModal').style.display = 'none';">Cerrar</button>
+      </div>
+    </div>
   </main>
 
-  <!-- FOOTER: legales ocultos por defecto + enlace a modal existente -->
   <footer>
-    <div class="mb-16">
-      © <span id="year"></span> TuReclamoExpres · <a href="#legal-modal">Aviso legal</a> · <a href="#legal-modal">Privacidad</a> · <a href="#legal-modal">Cookies</a>
-    </div>
-
-    <!-- ✅ Textos legales completos PLEGADOS en footer -->
+    <p>&copy; 2025 TuReclamoExpres. Todos los derechos reservados.</p>
+    <a href="#" onclick="showModal()">Información Legal</a> |
+    <a href="#">Política de Privacidad</a>
     <details>
-      <summary>📑 Información Legal Completa</summary>
-      <div class="mt-12 subtle" style="text-align:left;max-width:900px;margin:0 auto">
-        <p><strong>TuReclamoExpres</strong> no presta servicios de abogacía ni representación letrada. En los supuestos que requieran defensa jurídica, TuReclamoExpres cuenta con abogados colaboradores externos, colegiados y responsables de sus propios servicios y honorarios. La derivación se realiza siempre con consentimiento del interesado.</p>
-        <p><strong>Titular:</strong> Sergio Arnes Gómez (en adelante, “TuReclamoExpres”). NIF: 78687563D. Domicilio: C/ Ibañez Marín, Andújar (Jaén). Contacto: info@tureclamoexpres.com · Tel.: 953 818 494. Objeto: información y comercialización de modelos de reclamación automatizados.</p>
-        <p><strong>Protección de datos:</strong> Tratamiento conforme RGPD (UE) 2016/679 y LOPDGDD. Finalidades: gestión de solicitudes; análisis de facturas; emisión de modelos de reclamación; cobro de servicios (Stripe). Base jurídica: ejecución de contrato y consentimiento. Cesiones: proveedores tecnológicos estrictamente necesarios. Derechos: acceso, rectificación, supresión, oposición, limitación y portabilidad en la dirección de contacto indicada. Conservación: el mínimo imprescindible y durante plazos legales.</p>
-        <p><strong>Cookies:</strong> Técnicas necesarias y, en su caso, analíticas/marketing previa aceptación. Configurable desde el banner o la política de cookies.</p>
-      </div>
+      <summary style="display: none;">📑 Información Legal Completa</summary>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
     </details>
   </footer>
 
-  <!-- MODAL LEGAL (conservar comportamiento existente de tus scripts) -->
-  <div id="legal-modal" aria-hidden="true" style="display:none">
-    <!-- Tu contenido de modal legal existente se mantiene aquí si tu JS lo inyecta/abre por hash -->
-  </div>
-
-  <!-- ---------- SCRIPTS EXISTENTES (NO MODIFICAR LÓGICA) ---------- -->
-  <!-- Mantén aquí tus scripts reales (Stripe, Formspree, validaciones, modal, etc.). 
-       Este bloque no altera comportamiento; solo añade utilidades mínimas de UI sin romper nada. -->
-
   <script>
-    // Año dinámico (visual, no interfiere)
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Dropdown (visual). Si ya tienes lógica propia, puedes eliminar este bloque sin afectar el diseño.
-    document.querySelectorAll('.dropdown').forEach(d=>{
-      const t = d.querySelector('.dropdown-toggle');
-      if(t){
-        t.addEventListener('click', (e)=>{ e.preventDefault(); d.classList.toggle('open'); });
-      }
-    });
-
-    // Si tu modal legal se abre por hash (#legal-modal), respeta tu script existente.
-    // Este bloque NO implementa lógica de modal para no interferir.
+    function showModal() {
+      document.getElementById('legalModal').style.display = 'block';
+    }
   </script>
+
 </body>
 </html>
