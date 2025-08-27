@@ -1,518 +1,388 @@
 <!DOCTYPE html>
-<html lang="es" style="scroll-behavior:smooth">
+<html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TuReclamoExpres – Revisión GRATIS de facturas y reclamaciones automatizadas</title>
-  <meta name="description" content="Envía tu factura GRATIS por WhatsApp o formulario. Te confirmamos si hay cobros indebidos y el importe recuperable. Solo pagas si hay reclamación viable." />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://www.tureclamoexpres.com/">
-  <meta name="referrer" content="no-referrer-when-downgrade">
-
-  <!-- OpenGraph / Twitter -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="TuReclamoExpres – Revisión GRATIS de facturas y reclamaciones automatizadas">
-  <meta property="og:description" content="Diagnóstico sin coste: envía tu factura por WhatsApp o formulario. Solo pagas si hay reclamación viable.">
-  <meta property="og:url" content="https://www.tureclamoexpres.com/">
-  <meta property="og:image" content="https://www.tureclamoexpres.com/og-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TuReclamoExpres – Revisión GRATIS de facturas</title>
+  <meta name="description" content="Envía tu factura GRATIS por WhatsApp o formulario. Te confirmamos si hay cobros indebidos y el importe recuperable. Solo pagas si hay reclamación viable.">
   <link rel="icon" href="/favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#0f172a; --card:#0b1120; --text:#e5e7eb; --muted:#9ca3af;
-      --accent:#22c55e; --danger:#ef4444; --link:#60a5fa; --border:#1f2937;
-      --shadow:0 10px 30px rgba(0,0,0,.25);
-      --shadow2:0 15px 40px rgba(0,0,0,.35);
-      --t:.2s;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    @media (prefers-reduced-motion: reduce){
-      html{scroll-behavior:auto}
-      *{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important}
-    }
-    body{
-      margin:0; font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:linear-gradient(180deg,#0b1024,#0f172a); color:var(--text);
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; line-height:1.6;
-    }
+    :root{--bg:#0f172a;--card:#0b1120;--text:#e5e7eb;--muted:#9ca3af;--accent:#22c55e;--link:#60a5fa;--border:#1f2937}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;background:linear-gradient(180deg,#0b1024,#0f172a);color:var(--text);line-height:1.6}
     header,main,footer{max-width:1100px;margin:0 auto;padding:20px}
-    header{padding-top:36px}
 
-    /* Header + nav */
-    .site-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;position:sticky;top:0;background:var(--bg);z-index:999;border-bottom:1px solid var(--border);box-shadow:0 4px 15px rgba(0,0,0,.15)}
-    .logo{font-weight:700;text-decoration:none;color:var(--text);font-size:1.4rem}
-    .logo:focus,.logo:hover{color:var(--accent);outline:none}
-    .nav{display:block}
-    .nav-links{display:flex;gap:16px;list-style:none;margin:0;padding:0}
-    .nav-links a{text-decoration:none;color:var(--text);font-weight:600;padding:8px 0;transition:color var(--t) ease-in-out}
-    .nav-links a:hover,.nav-links a:focus{color:var(--accent);outline:none}
-    .nav-phone a{font-weight:700;color:var(--accent);display:flex;align-items:center;gap:5px}
-    .nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px;position:relative;z-index:1000}
-    .nav-toggle-bar{display:block;width:24px;height:2px;margin:5px 0;background:var(--text);transition:all .2s ease-in-out}
-    .nav-toggle.open .nav-toggle-bar:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-    .nav-toggle.open .nav-toggle-bar:nth-child(2){opacity:0}
-    .nav-toggle.open .nav-toggle-bar:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-    @media (max-width:768px){
+    /* Header */
+    .site-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;position:sticky;top:0;background:var(--bg);z-index:999;border-bottom:1px solid var(--border)}
+    .logo{font-weight:700;font-size:1.4rem;color:var(--text);text-decoration:none}
+    .nav-links{list-style:none;display:flex;gap:16px}
+    .nav-links a{color:var(--text);font-weight:600;text-decoration:none}
+    .nav-toggle{display:none;background:none;border:0;cursor:pointer}
+    .nav-toggle-bar{display:block;width:24px;height:2px;margin:5px 0;background:var(--text)}
+    @media(max-width:768px){
       .nav-toggle{display:block}
-      .nav{position:fixed;left:0;right:0;top:70px;background:var(--card);border-bottom:1px solid var(--border);box-shadow:0 8px 15px rgba(0,0,0,.2);transform:translateX(100%);transition:transform .3s ease-in-out;height:calc(100vh - 70px);overflow-y:auto}
-      .nav.open{transform:translateX(0%)}
-      .nav-links{display:flex;flex-direction:column;gap:0;padding:10px 0}
-      .nav-links li{border-top:1px solid #1f2937}
-      .nav-links li:first-child{border-top:none}
-      .nav-links a{display:block;padding:14px 16px}
-      .nav-links a:hover{background:#1a243a;color:var(--accent)}
+      .nav{position:fixed;left:0;right:0;top:70px;background:var(--card);transform:translateX(100%);transition:.3s;height:calc(100vh - 70px);overflow-y:auto}
+      .nav.open{transform:translateX(0)}
+      .nav-links{flex-direction:column}
+      .nav-links li{border-top:1px solid var(--border)}
+      .nav-links a{padding:14px 16px;display:block}
     }
 
     /* Hero */
-    .hero{display:grid;gap:14px;text-align:center}
-    .badge{display:inline-block;background:#13203b;color:#a7f3d0;border:1px solid #065f46;padding:4px 10px;border-radius:999px;font-size:12px;margin-bottom:10px}
-    h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:6px auto 8px;max-width:820px}
-    p.lead{color:var(--muted);max-width:840px;margin:0 auto 15px}
-    .kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;justify-content:center}
-    .kpis span{background:#13203b;border:1px solid #1f3b66;border-radius:999px;padding:4px 10px;font-size:12px;color:#a7f3d0}
+    .hero{text-align:center;padding:3rem 1rem}
+    .hero h1{font-size:clamp(28px,5vw,42px);margin:.5rem auto;max-width:800px}
+    .hero p{color:var(--muted);max-width:800px;margin:0 auto 1rem}
+    .btn{display:inline-block;padding:12px 16px;border-radius:12px;font-weight:700;text-decoration:none;margin:4px}
+    .btn-primary{background:var(--accent);color:#052e16}
+    .btn-outline{border:1px solid #374151;color:var(--text)}
 
-    /* Cards */
-    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow);transition:transform var(--t) ease-in-out,box-shadow var(--t) ease-in-out}
-    .card:hover{transform:translateY(-5px);box-shadow:var(--shadow2)}
+    /* Sections */
+    h2{margin:1.5rem 0 .5rem}
+    .services{display:grid;gap:12px}
+    @media(min-width:900px){.services{grid-template-columns:repeat(3,1fr)}}
+    .svc{background:var(--card);padding:16px;border:1px solid var(--border);border-radius:12px}
+    .svc h4{margin:0 0 .5rem}
+
+    /* Accordion “Qué hacemos por ti” */
+    .accordion{display:grid;gap:10px;margin-top:10px}
+    .acc-item{border:1px solid var(--border);border-radius:12px;background:var(--card);overflow:hidden}
+    .acc-btn{width:100%;text-align:left;background:transparent;border:0;color:var(--text);font-weight:700;padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+    .acc-icon{transition:.2s}
+    .acc-panel{max-height:0;overflow:hidden;transition:max-height .25s ease}
+    .acc-panel-inner{padding:0 16px 16px;color:var(--muted)}
+    .acc-item.open .acc-panel{max-height:500px} /* suficiente para texto medio; crece por JS si hace falta */
+    .acc-item.open .acc-icon{transform:rotate(180deg)}
+    @media(min-width:900px){
+      /* En escritorio, todo abierto por defecto (se activa también con JS por si recargas) */
+      .acc-item{border-radius:12px}
+    }
 
     /* Form */
-    label{display:block;margin:10px 0 6px;color:#cbd5e1}
-    input[type="text"],input[type="email"],textarea,input[type="file"],select{
-      width:100%;background:#091027;color:var(--text);border:1px solid #334155;border-radius:10px;padding:10px 12px;transition:border-color var(--t) ease-in-out
-    }
-    input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent)}
-    textarea{min-height:120px}
-    .row{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+    form{display:grid;gap:10px;margin-top:1rem}
+    input,textarea,select{padding:10px;border-radius:8px;border:1px solid #374151;background:#0b1024;color:var(--text)}
+    textarea{min-height:100px}
 
-    /* Buttons */
-    .btn{display:inline-flex;gap:8px;align-items:center;justify-content:center;border:0;border-radius:12px;padding:12px 14px;font-weight:700;cursor:pointer;transition:transform var(--t),box-shadow var(--t);text-decoration:none}
-    .btn:hover,.btn:focus{transform:translateY(-2px);box-shadow:0 4px 10px rgba(0,0,0,.3);outline:none}
-    .btn-primary{background:var(--accent);color:#052e16}
-    .btn-outline{background:transparent;color:var(--text);border:1px solid #374151}
-
-    /* Utils */
-    .muted{color:var(--muted);font-size:14px}
-    .ok{color:#22c55e}.err{color:#ef4444}
-    .flex{display:flex;gap:10px;flex-wrap:wrap}
-    .hide{display:none}
-    .pill{display:inline-block;border:1px solid #334155;border-radius:999px;padding:4px 10px;font-size:12px;color:#cbd5e1}
-    .plan{border:1px solid var(--border);border-radius:14px;padding:16px;transition:all var(--t)}
-    .plan.reco{outline:2px solid #2dd4bf;outline-offset:2px}
-    .plan:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.3)}
-    .price{font-size:28px;font-weight:900}
-
-    /* Services grid */
-    .services{display:grid;gap:12px;margin-top:40px}
-    @media(min-width:900px){.services{grid-template-columns:repeat(3,1fr)}}
-    .svc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
-    .svc h4{margin:0 0 6px}
-    .svc p{margin:0;color:var(--muted);font-size:14px}
+    /* Planes */
+    .plans{display:grid;gap:12px}
+    @media(min-width:900px){.plans{grid-template-columns:repeat(3,1fr)}}
+    .plan{background:var(--card);padding:16px;border:1px solid var(--border);border-radius:12px}
+    .price{font-size:1.4rem;font-weight:800}
 
     /* Footer */
     .footer{border-top:1px solid var(--border);margin-top:30px;padding-top:22px;color:#a1a1aa}
-    .footer a{color:var(--link);text-decoration:none}
-    .footer a:hover{text-decoration:underline}
-    .legal-small{font-size:11px;opacity:.9;line-height:1.4}
+    .footer a{color:var(--link)}
 
-    /* Modal legal */
-    #legal-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.7);z-index:9999;backdrop-filter:blur(5px)}
-    .modal-wrap{background:#111827;color:var(--text);width:min(800px,92vw);max-height:90vh;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.4);overflow:hidden;display:flex;flex-direction:column}
-    .modal-head{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid var(--border)}
-    .modal-title{font-size:1rem;color:var(--muted);font-weight:600}
-    .modal-close{border:0;background:transparent;font-size:24px;line-height:1;color:var(--text);cursor:pointer;padding:0 5px}
-    #modal-content-scroll{padding:18px;font-size:10px; color:#9aa3af;text-align:justify;line-height:1.45;flex-grow:1;overflow-y:auto;letter-spacing:-0.1px}
-    #modal-content-scroll h4{margin:1em 0 .4em;color:var(--accent);font-size:1em}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    /* Modal */
+    #legal-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.7);z-index:9999}
+    .modal-wrap{background:#111827;color:var(--text);width:min(900px,92vw);max-height:90vh;border-radius:10px;overflow-y:auto;padding:20px}
+    .modal-wrap h3{margin-bottom:8px}
+    .modal-wrap h4{margin:16px 0 6px}
+    .modal-toplinks{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 14px}
+    .chip{border:1px solid var(--border);padding:6px 10px;border-radius:999px;text-decoration:none;color:var(--text);font-size:.9rem}
+
+    /* WhatsApp floating */
+    .fab-wa{position:fixed;right:16px;bottom:16px;z-index:1000;background:#22c55e;color:#052e16;font-weight:800;border-radius:999px;padding:12px 18px;text-decoration:none}
   </style>
-
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "TuReclamoExpres",
-    "url": "https://www.tureclamoexpres.com/",
-    "logo": "https://www.tureclamoexpres.com/favicon.ico",
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "telephone": "+34-953-818-494",
-      "contactType": "customer service",
-      "areaServed": "ES",
-      "availableLanguage": ["es"]
-    }]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"ItemList",
-    "itemListElement":[
-      {"@type":"Product","name":"Paquete de Documentos (DIY)","description":"Reclamación PDF automática (DIY)","offers":{"@type":"Offer","priceCurrency":"EUR","price":"14.90","availability":"https://schema.org/InStock","url":"https://buy.stripe.com/dRm6oIduabj13JtgLT8og01"}},
-      {"@type":"Product","name":"Plan Completo","description":"PDF + guía + soporte","offers":{"@type":"Offer","priceCurrency":"EUR","price":"29.90","availability":"https://schema.org/InStock","url":"https://buy.stripe.com/cNi14o0Ho3Qz93N1QZ8og02"}},
-      {"@type":"Product","name":"Plan Premium","description":"Envío por nosotros + seguimiento","offers":{"@type":"Offer","priceCurrency":"EUR","price":"49.90","availability":"https://schema.org/InStock","url":"https://buy.stripe.com/7sYdRa89Qdr9dk3brz8og03"}}
-    ]
-  }
-  </script>
 </head>
 <body>
-  <a href="#main" class="sr-only">Saltar al contenido principal</a>
+<header class="site-header">
+  <a class="logo" href="#inicio">TuReclamoExpres</a>
+  <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
+    <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+  </button>
+  <nav id="primary-nav" class="nav" aria-label="Navegación principal">
+    <ul class="nav-links">
+      <li><a href="#como-funciona">Cómo funciona</a></li>
+      <li><a href="#que-hacemos">Qué hacemos por ti</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#formulario">Subir factura</a></li>
+      <li><a href="#precios">Precios</a></li>
+      <li><a href="#" id="openLegalModalLink">Legales</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <header class="site-header" role="banner">
-    <a class="logo" href="#inicio">TuReclamoExpres</a>
-    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-    </button>
-    <nav id="primary-nav" class="nav" role="navigation" aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="#como-funciona">Cómo funciona</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#formulario">Subir factura</a></li>
-        <li><a href="#precios">Precios</a></li>
-        <li><a href="#" id="openLegalModalLink">Legales</a></li>
-        <li class="nav-phone"><a href="tel:+34953818494" aria-label="Llamar a TuReclamoExpres">📞 953 818 494</a></li>
-      </ul>
-    </nav>
-  </header>
+<main id="inicio">
+  <!-- HERO -->
+  <section class="hero" id="como-funciona">
+    <h1>Envía tu factura GRATIS. Te confirmamos si hay cobros indebidos.</h1>
+    <p>Diagnóstico sin coste. <strong>Solo pagas</strong> si tu reclamación es viable.</p>
+    <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20enviar%20mi%20factura">Enviar por WhatsApp</a>
+    <a class="btn btn-outline" href="#formulario">Subir foto o PDF</a>
+  </section>
 
-  <main id="main" tabindex="-1">
-    <section class="hero" id="inicio" aria-labelledby="h1">
-      <span class="badge">Revisión inicial GRATIS • Cumplimiento básico RGPD • Abogados colaboradores</span>
-      <h1 id="h1">Envía tu factura GRATIS. Te confirmamos si hay cobros indebidos y cuánto puedes recuperar.</h1>
-      <p class="lead">Diagnóstico sin coste por WhatsApp o formulario. <strong>Solo pagas</strong> si confirmamos que tu reclamación es viable y quieres el documento listo o que lo enviemos por ti.</p>
-      <div class="kpis" aria-label="Características">
-        <span>RGPD ✓</span><span>Pago seguro Stripe ✓</span><span class="pill">Red de abogados colaboradores ✓</span>
-      </div>
-      <div class="flex" role="group" aria-label="Empezar">
-        <a class="btn btn-primary" id="heroWhats" href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisi%C3%B3n%20GRATIS%20y%20adjuntar%20mi%20factura" rel="noopener" aria-label="Abrir WhatsApp para enviar factura gratis">Enviar factura GRATIS</a>
-        <a class="btn btn-outline" href="#formulario" aria-label="Subir factura por formulario">Subir por formulario</a>
-      </div>
-      <div class="muted" style="margin-top:6px;font-size:13px">Sin coste por la revisión inicial • 24–48h laborables • Te diremos si merece la pena reclamar</div>
-    </section>
-
-    <section class="services" id="servicios" aria-labelledby="svcTitle">
-      <h2 id="svcTitle" style="margin:0 0 8px">Qué hacemos por ti</h2>
-      <p class="muted">Sabemos que tratar con cobros indebidos es frustrante. Por eso, nuestro objetivo es ayudarte de forma rápida y eficaz.</p>
-      <div class="services">
-        <div class="svc">
-          <h4>Revisión inicial de facturas (GRATIS)</h4>
-          <p>Analizamos luz, gas, telefonía e ingresos bancarios. Detectamos conceptos abusivos, duplicados o no solicitados.</p>
-        </div>
-        <div class="svc">
-          <h4>Reclamaciones por cobros indebidos</h4>
-          <p>Te generamos el documento personalizado (DIY) o te lo enviamos en tu nombre (Premium), con referencias legales.</p>
-        </div>
-        <div class="svc">
-          <h4>Comisiones y productos bancarios</h4>
-          <p>Comisiones improcedentes, seguros “vinculados” o servicios no solicitados cargados a cuenta.</p>
-        </div>
-        <div class="svc">
-          <h4>Telefonía e Internet</h4>
-          <p>Penalizaciones, subidas no informadas, permanencias abusivas, servicios de terceros (SMS premium, etc.).</p>
-        </div>
-        <div class="svc">
-          <h4>Energía (luz y gas)</h4>
-          <p>Ajustes de potencia, peajes, costos añadidos y revisiones de lecturas/estimaciones incorrectas.</p>
-        </div>
-        <div class="svc">
-          <h4>Bajas complicadas y altas no consentidas</h4>
-          <p>Si te ponen trabas para darte de baja o te han dado de alta sin consentimiento a tu nombre, preparamos y cursamos la reclamación y la <em>oposición</em> a la continuidad del servicio.</p>
+  <!-- QUÉ HACEMOS POR TI (ACORDEÓN) -->
+  <section id="que-hacemos">
+    <h2>Qué hacemos por ti</h2>
+    <div class="accordion" id="accordion">
+      <div class="acc-item">
+        <button class="acc-btn" type="button">
+          <span>Revisión inicial de facturas (GRATIS)</span>
+          <span class="acc-icon">⌄</span>
+        </button>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            Analizamos luz, gas, telefonía e ingresos bancarios. Detectamos conceptos abusivos, duplicados o no solicitados, y te indicamos si hay importe recuperable.
+          </div>
         </div>
       </div>
-    </section>
-
-    <section id="formulario" class="card" style="margin-top:40px" aria-labelledby="h2sube">
-      <h2 id="h2sube" style="margin-top:0">Sube tu factura</h2>
-      <p class="muted">Aceptamos PDF, JPG, PNG, HEIC/HEIF y WEBP. Máx. 5 archivos, 10&nbsp;MB cada uno.</p>
-
-      <form id="reclamoForm" action="https://formspree.io/f/mczmwall" method="POST" enctype="multipart/form-data" accept-charset="UTF-8" novalidate>
-        <label for="nombre">Nombre y apellidos</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name" inputmode="text" />
-
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="_replyto" placeholder="tu@correo.com" required autocomplete="email" />
-
-        <label for="servicio">Selecciona el servicio que te interesa</label>
-        <select name="servicio" id="servicio" required>
-          <option value="revision_gratis" selected>Revisión GRATIS (diagnóstico)</option>
-          <option value="basico">Paquete de Documentos (DIY) – 14,90 €</option>
-          <option value="completo">Plan Completo – 29,90 €</option>
-          <option value="premium">Plan Premium – 49,90 €</option>
-        </select>
-
-        <div id="autPremiumBox" class="hide" aria-live="polite">
-          <label style="margin-top:10px">Autorización para envío en tu nombre (solo Premium)</label>
-          <label style="display:flex;gap:8px;align-items:flex-start">
-            <input type="checkbox" id="authPremium" name="autorizacion_premium_checkbox">
-            <span>Autorizo a TuReclamoExpres a <strong>enviar la reclamación en mi nombre</strong> a la compañía seleccionada y a informarme por correo del estado. Entiendo que TuReclamoExpres no presta servicios de abogacía ni representación letrada.</span>
-          </label>
-          <label for="firmaPremium">Nombre completo y DNI (para la autorización)</label>
-          <input type="text" id="firmaPremium" name="firma_premium_text" placeholder="Ej.: Ana Pérez López – 12345678Z" autocomplete="name">
-        </div>
-
-        <label for="mensaje">Cuéntanos tu caso</label>
-        <textarea id="mensaje" name="mensaje" placeholder="Ej.: Me han cobrado un servicio que no he pedido…" required></textarea>
-
-        <label for="adjuntos">Adjunta tus facturas (PDF o imágenes)</label>
-        <input type="file" id="adjuntos" name="adjuntos" multiple accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.webp" aria-describedby="fileHelp">
-        <small id="fileHelp" class="muted">Consejo: añade la última y la anterior para comparar.</small>
-
-        <input type="hidden" name="_subject" value="Nuevo caso desde TuReclamoExpres.com">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_language" value="es">
-        <input type="hidden" name="_referrer" value="https://www.tureclamoexpres.com/">
-        <input type="hidden" name="_gotcha_token" id="_gotcha_token" value="">
-        <div class="hide" aria-hidden="true">
-          <label>Deja este campo vacío
-            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
-          </label>
-        </div>
-
-        <label style="display:flex;gap:8px;align-items:flex-start;margin-top:12px">
-          <input type="checkbox" id="rgpd" required>
-          <span>Acepto la <a href="#" id="rgpdLink" style="color:var(--link)">Política de Privacidad</a> y consiento el tratamiento de mis datos para analizar mi factura y generar documentación de reclamación.</span>
-        </label>
-
-        <div class="flex" style="margin-top:12px">
-          <button id="submitBtn" type="submit" class="btn btn-primary">Enviar</button>
-          <button type="button" class="btn btn-outline" id="clearBtn">Limpiar</button>
-        </div>
-
-        <p id="formOK" class="muted ok hide" style="margin-top:10px" role="status" aria-live="polite">✅ Enviado. Te hemos mandado un correo de confirmación.</p>
-        <p id="formERR" class="muted err hide" style="margin-top:10px" role="alert" aria-live="assertive">❌ Error al enviar. Revisa la conexión e inténtalo de nuevo.</p>
-        <p id="formWARN" class="muted hide" style="margin-top:10px" role="alert" aria-live="assertive">⚠️ Archivo demasiado grande. Límite 10&nbsp;MB por archivo.</p>
-      </form>
-
-      <details style="margin-top:14px" id="como-funciona">
-        <summary>¿Cómo funciona?</summary>
-        <ol class="muted">
-          <li><strong>1) Envío GRATIS:</strong> nos mandas la factura por WhatsApp o por formulario.</li>
-          <li><strong>2) Diagnóstico:</strong> te confirmamos si hay cobros indebidos y el posible importe a recuperar.</li>
-          <li><strong>3) Si es viable:</strong> eliges tu plan ideal y solucionamos tu problema.</li>
-        </ol>
-      </details>
-    </section>
-
-    <aside class="card" style="margin-top:40px" aria-labelledby="h3planes">
-      <h3 id="h3planes" style="margin-top:0">Planes (solo si confirmamos viabilidad)</h3>
-      <p class="muted" style="margin-top:-6px">Elige tu plan **después** de nuestro diagnóstico gratuito:</p>
-      <div style="display:grid;gap:12px" id="precios">
-        <div class="plan" aria-label="Paquete de Documentos DIY">
-          <div class="pill">Paquete de Documentos (DIY)</div>
-          <div class="price">14,90 €</div>
-          <ul class="muted">
-            <li>Reclamación PDF automática.</li>
-            <li>Listo para que <strong>tú lo envíes</strong>.</li>
-            <li>Ideal si solo necesitas el documento.</li>
-          </ul>
-          <a class="btn btn-outline" id="btnStripe1490" href="https://buy.stripe.com/dRm6oIduabj13JtgLT8og01" rel="noopener noreferrer" aria-label="Comprar el Paquete de Documentos por 14,90 euros">Comprar</a>
-        </div>
-        <div class="plan reco" aria-label="Plan Completo">
-          <div class="pill">Plan Completo • más elegido</div>
-          <div class="price">29,90 €</div>
-          <ul class="muted">
-            <li>PDF personalizado + referencias legales.</li>
-            <li>Guía detallada para el proceso.</li>
-            <li>Soporte por email para tus dudas.</li>
-          </ul>
-          <a class="btn btn-primary" id="btnStripe2990" href="https://buy.stripe.com/cNi14o0Ho3Qz93N1QZ8og02" rel="noopener noreferrer" aria-label="Comprar el Plan Completo por 29,90 euros">Comprar</a>
-        </div>
-        <div class="plan" aria-label="Plan Premium">
-          <div class="pill">Plan Premium</div>
-          <div class="price">49,90 €</div>
-          <ul class="muted">
-            <li>Nosotros <strong>enviamos por ti</strong> la reclamación.</li>
-            <li>Acuse de envío y seguimiento básico.</li>
-            <li>Máxima comodidad.</li>
-          </ul>
-          <a class="btn btn-outline" id="btnStripe4990" href="https://buy.stripe.com/7sYdRa89Qdr9dk3brz8og03" rel="noopener noreferrer" aria-label="Comprar el Plan Premium por 49,90 euros">Comprar</a>
+      <div class="acc-item">
+        <button class="acc-btn" type="button">
+          <span>Reclamaciones por cobros indebidos</span>
+          <span class="acc-icon">⌄</span>
+        </button>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            Te generamos el documento personalizado (DIY) con referencias legales o, si eliges Premium, lo enviamos por ti y hacemos el seguimiento.
+          </div>
         </div>
       </div>
-    </aside>
-  </main>
-
-  <footer class="footer" role="contentinfo">
-    <div class="flex" style="justify-content:space-between;align-items:flex-start">
-      <div>
-        <strong>TuReclamoExpres.com</strong><br>
-        <span class="muted">Servicio administrativo exprés de modelos de reclamación automatizados. No es asesoramiento jurídico.</span><br>
-        <span class="muted legal-small">No existe oficina abierta al público. Dirección únicamente a efectos administrativos y de notificaciones.</span>
-        <div class="kpis" style="margin-top:8px">
-          <span>Revisión inicial GRATIS ✓</span><span>Pago seguro Stripe ✓</span><span class="pill">Abogados colaboradores ✓</span>
+      <div class="acc-item">
+        <button class="acc-btn" type="button">
+          <span>Comisiones y productos bancarios</span>
+          <span class="acc-icon">⌄</span>
+        </button>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            Reclamamos comisiones improcedentes, seguros vinculados y servicios no solicitados cargados a cuenta, con argumentario legal actualizado.
+          </div>
         </div>
       </div>
-      <nav class="flex" style="gap:16px;align-items:center" aria-label="Enlaces legales y contacto">
-        <a href="#" id="privacidadLinkFooter">Privacidad</a>
-        <a href="#" id="cookiesLinkFooter">Cookies</a>
-        <a href="#" id="condicionesLinkFooter">Condiciones</a>
-        <a href="#" id="avisoLegalLinkFooter">Aviso legal</a>
-        <a class="btn btn-outline" href="mailto:info@tureclamoexpres.com" aria-label="Contactar por Email">Email</a>
-        <a class="btn btn-primary" id="whatsFooter" href="https://wa.me/34953818494?text=Hola,%20tengo%20una%20consulta%20y%20quiero%20enviar%20mi%20factura%20para%20revisi%C3%B3n%20GRATIS" aria-label="Contactar por WhatsApp" rel="noopener">WhatsApp</a>
-      </nav>
+      <div class="acc-item">
+        <button class="acc-btn" type="button">
+          <span>Telefonía e Internet</span>
+          <span class="acc-icon">⌄</span>
+        </button>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            Penalizaciones, subidas no informadas, permanencias abusivas, y cargos de terceros (SMS premium, etc.). Preparamos tu reclamación y la oposición a cobros futuros.
+          </div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" type="button">
+          <span>Energía (luz y gas)</span>
+          <span class="acc-icon">⌄</span>
+        </button>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            Revisamos potencia, peajes, ajustes y estimaciones incorrectas. Si hay errores o abusos, cuantificamos y reclamamos importes.
+          </div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" type="button">
+          <span>Bajas complicadas y altas no consentidas</span>
+          <span class="acc-icon">⌄</span>
+        </button>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            Si te ponen trabas para darte de baja o te han dado de alta sin consentimiento, preparamos y cursamos la reclamación y la oposición a la continuidad del servicio.
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="muted" style="margin-top:16px">© <span id="year"></span> TuReclamoExpres.com</p>
-  </footer>
+  </section>
 
-  <!-- Modal legal -->
-  <div id="legal-modal" aria-hidden="true" role="dialog" aria-label="Información legal de TuReclamoExpres">
-    <div class="modal-wrap">
-      <div class="modal-head">
-        <span class="modal-title">Información Legal y Condiciones</span>
-        <button id="cerrar-legal" class="modal-close" aria-label="Cerrar">×</button>
+  <!-- SERVICIOS (RESUMEN EN TARJETAS) -->
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <div class="services">
+      <div class="svc"><h4>Revisión inicial</h4><p>Analizamos facturas GRATIS y te decimos si hay cobros indebidos.</p></div>
+      <div class="svc"><h4>Reclamaciones</h4><p>Documento legal personalizado con referencias y envío opcional por nosotros.</p></div>
+      <div class="svc"><h4>Premium</h4><p>Nos encargamos de enviar y hacer seguimiento de tu caso.</p></div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section id="formulario">
+    <h2>Sube tu factura</h2>
+    <form id="reclamoForm" action="https://formspree.io/f/mczmwall" method="POST">
+      <input type="text" name="nombre" placeholder="Nombre completo" required>
+      <input type="email" name="email" placeholder="Correo electrónico" required>
+      <textarea name="mensaje" placeholder="Cuéntanos tu caso" required></textarea>
+      <input type="file" name="adjuntos" multiple accept=".pdf,.jpg,.png,.jpeg,.webp">
+      <label><input type="checkbox" required> Acepto la <a href="#" id="rgpdLink">Política de Privacidad</a></label>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+      <p id="formOK" style="color:lime;display:none">✅ Enviado correctamente</p>
+      <p id="formERR" style="color:red;display:none">❌ Error al enviar</p>
+    </form>
+  </section>
+
+  <!-- PLANES -->
+  <section id="precios">
+    <h2>Planes</h2>
+    <div class="plans">
+      <div class="plan">
+        <div class="price">14,90 €</div>
+        <p>PDF automático listo para enviar</p>
+        <a class="btn btn-outline" href="https://buy.stripe.com/dRm6oIduabj13JtgLT8og01">Comprar</a>
       </div>
-      <div id="modal-content-scroll">
-        <h4 id="modal-privacidad">Política de privacidad</h4>
-        <p>La presente política de protección de datos regula el tratamiento de los datos personales proporcionados por los usuarios a través del sitio web www.tureclamoexpres.com (en adelante, el "Sitio Web"). La recogida y tratamiento de sus datos personales se realiza conforme a lo dispuesto en la normativa de protección de datos, en particular, el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD).</p>
-        <p>Finalidad del tratamiento: gestionar la petición de revisión de factura y la generación/envío de la documentación de reclamación, así como la gestión del servicio contratado. Los datos adjuntos (facturas) serán eliminados una vez finalizado el servicio y enviada la documentación correspondiente.</p>
-        <p>Derechos del interesado: podrá ejercer acceso, rectificación, supresión, oposición, limitación y portabilidad, enviando un correo a <span id="eml" class="legal-small"></span> con copia de su DNI, indicando el derecho a ejercer.</p>
-
-        <h4 id="modal-cookies">Política de cookies</h4>
-        <p>Este sitio utiliza cookies técnicas necesarias y, en su caso, de terceros para analítica básica. Al navegar, acepta su uso. Puede configurar su navegador para bloquearlas, aunque algunas funciones podrían no operar correctamente.</p>
-
-        <h4 id="modal-condiciones">Condiciones de venta y servicio</h4>
-        <p>La compra de servicios en este sitio implica la aceptación de estas condiciones. El servicio se limita a la revisión de la factura y la generación/envío de documentación de reclamación; no incluye asesoramiento jurídico ni representación letrada. El éxito de la reclamación no está garantizado. El cliente debe facilitar información veraz y completa. Planes: 14,90 € / 29,90 € / 49,90 € (IVA incl.). Pago vía Stripe. Entrega: descarga/envío según plan. Devoluciones: al tratarse de contenido digital suministrado de forma inmediata, no procede derecho de desistimiento (art. 103.m TRLGDCU), salvo incidencias técnicas. En Premium, el cliente autoriza el envío en su nombre mediante consentimiento expreso recabado en el formulario. Soporte: <a href="mailto:info@tureclamoexpres.com" style="color:var(--link);">info@tureclamoexpres.com</a>.</p>
-
-        <h4 id="modal-avisolegal">Aviso legal</h4>
-        <p class="legal-small">
-          El presente Aviso Legal se emite en cumplimiento de la LSSI-CE, RGPD, LOPDGDD y TRLGDCU. Titular: Sergio Arnes Gómez (NIF 78687563D), domicilio a efectos administrativos en C/ Ibañez Marín, Andújar (Jaén, España), <u>sin oficina abierta al público</u>. Contacto: <span id="eml_dup"></span> y 953&nbsp;818&nbsp;494. El objeto del sitio es la información y comercialización de <i>modelos de reclamación automatizados</i>. En supuestos que requieran defensa jurídica, se deriva a <i>abogados colaboradores externos</i>, colegiados y responsables de sus propios servicios y honorarios, con consentimiento del interesado. Jurisdicción: Juzgados y Tribunales de Jaén, salvo norma imperativa en favor del consumidor.
-        </p>
+      <div class="plan">
+        <div class="price">29,90 €</div>
+        <p>PDF + guía + soporte</p>
+        <a class="btn btn-primary" href="https://buy.stripe.com/cNi14o0Ho3Qz93N1QZ8og02">Comprar</a>
       </div>
+      <div class="plan">
+        <div class="price">49,90 €</div>
+        <p>Envío por nosotros + seguimiento</p>
+        <a class="btn btn-outline" href="https://buy.stripe.com/7sYdRa89Qdr9dk3brz8og03">Comprar</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>
+    © <span id="year"></span> TuReclamoExpres.com ·
+    Titular de la web: <strong>Sergio Arnes Gómez (S.A.G.)</strong> ·
+    <a href="#" id="privacidadLinkFooter">Privacidad</a> · 
+    <a href="#" id="cookiesLinkFooter">Cookies</a> · 
+    <a href="#" id="condicionesLinkFooter">Condiciones</a> · 
+    <a href="#" id="avisoLegalLinkFooter">Aviso legal</a>
+  </p>
+</footer>
+
+<!-- Modal Legal -->
+<div id="legal-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-wrap">
+    <h3 id="modal-title">Políticas legales</h3>
+    <div class="modal-toplinks">
+      <a class="chip" href="#modal-privacidad">Privacidad</a>
+      <a class="chip" href="#modal-cookies">Cookies</a>
+      <a class="chip" href="#modal-condiciones">Condiciones</a>
+      <a class="chip" href="#modal-aviso">Aviso Legal</a>
+    </div>
+
+    <h4 id="modal-privacidad">Política de Privacidad</h4>
+    <p>
+      En virtud de lo dispuesto en el Reglamento (UE) 2016/679, de 27 de abril, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos, así como en la Ley Orgánica 3/2018, de 5 de diciembre, de protección de datos personales y garantía de los derechos digitales, se hace constar que los datos que los usuarios de este sitio puedan remitir a través de formularios electrónicos, correo electrónico o servicios vinculados al mismo serán tratados conforme a las finalidades específicas de revisión gratuita de facturas, elaboración de diagnósticos preliminares y, en caso de contratación de planes adicionales, generación y entrega de documentos de reclamación automatizados. Dicho tratamiento se efectúa bajo la responsabilidad del titular de la web, persona física identificada legalmente como Sergio Arnes Gómez, provisto de documento nacional de identidad número 78687563D, con domicilio fijado únicamente a efectos administrativos y de notificación en la calle Ibañez Marín, en la ciudad de Andújar, provincia de Jaén (España), disponiendo como medios de contacto la dirección electrónica info@tureclamoexpres.com y el teléfono 953 818 494. Se informa a los usuarios que los datos no serán cedidos a terceros salvo obligación legal o en supuestos estrictamente necesarios para la prestación del servicio en la modalidad Premium, en la que se requiere el envío de la reclamación en nombre del cliente, siempre con su autorización. El usuario puede ejercer sus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad mediante escrito dirigido a la dirección indicada, adjuntando copia de un documento oficial de identificación, siendo respondido en los plazos legalmente establecidos.
+    </p>
+
+    <h4 id="modal-cookies">Política de Cookies</h4>
+    <p>
+      De conformidad con lo establecido en el artículo 22.2 de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico, se informa de que este sitio web utiliza únicamente cookies técnicas imprescindibles para el correcto funcionamiento de la página, la seguridad de la navegación y la adaptación a las preferencias básicas del usuario. De forma puntual, podrían emplearse cookies de terceros destinadas al análisis estadístico básico del tráfico (por ejemplo, Google Analytics), siempre bajo la aceptación previa y voluntaria del usuario. Se recuerda que es posible configurar los navegadores habituales para bloquear, restringir o eliminar las cookies instaladas, si bien determinadas funcionalidades de la página podrían quedar limitadas en consecuencia.
+    </p>
+
+    <h4 id="modal-condiciones">Condiciones de Servicio</h4>
+    <p>
+      El acceso a este sitio web es gratuito y su uso implica la aceptación plena de las presentes condiciones. El servicio consiste en la revisión gratuita inicial de facturas de luz, gas, telefonía y productos bancarios, la identificación de cobros indebidos y, en caso de apreciarse viabilidad, la generación de un documento automatizado de reclamación que el usuario puede gestionar por sí mismo o, en la modalidad Premium, autorizar al titular del sitio a remitir en su nombre. La prestación corresponde a la persona física titular del sitio, identificada como Sergio Arnes Gómez, con documento nacional de identidad número 78687563D, y con domicilio señalado exclusivamente a efectos de notificaciones en calle Ibañez Marín, Andújar (Jaén), ofreciendo como medios de contacto la dirección de correo info@tureclamoexpres.com y el teléfono 953 818 494. El servicio no constituye asesoramiento jurídico individualizado ni implica representación letrada, tratándose de un servicio administrativo de carácter automatizado. Los precios y planes contratables son los publicados en la web, IVA incluido, siendo el pago procesado a través de la pasarela segura Stripe. El usuario declara facilitar información veraz y completa. Al tratarse de contenido digital suministrado de forma inmediata, no resulta aplicable el derecho de desistimiento (artículo 103.m del Texto Refundido de la Ley General para la Defensa de los Consumidores y Usuarios), sin perjuicio de las garantías legales en caso de incidencias técnicas que imposibiliten la entrega.
+    </p>
+
+    <h4 id="modal-aviso">Aviso Legal</h4>
+    <p>
+      En cumplimiento de lo dispuesto en el artículo 10 de la Ley 34/2002, de la sociedad de la información y de comercio electrónico, así como en el Reglamento (UE) 2016/679 y la Ley Orgánica 3/2018, se hace constar que el presente sitio web es propiedad y se encuentra bajo la responsabilidad de una persona física, concretamente Sergio Arnes Gómez, identificado con documento nacional de identidad número 78687563D, y con domicilio fijado a efectos meramente administrativos y de notificaciones en la calle Ibañez Marín de la localidad de Andújar, en la provincia de Jaén (España), estableciéndose como canales de contacto el correo electrónico info@tureclamoexpres.com y el número telefónico 953 818 494. El objeto del sitio consiste en la puesta a disposición de los usuarios de información general y de modelos de reclamación automatizados de carácter administrativo, no constituyendo en ningún caso asesoramiento jurídico ni representación letrada. En los supuestos que requieran la intervención de un abogado, el servicio podrá derivar al usuario, con su consentimiento expreso, a profesionales colaboradores externos, colegiados y plenamente responsables de sus honorarios y actuaciones. El acceso, navegación y uso del presente sitio implican la aceptación expresa de las condiciones aquí expuestas, sometiéndose cualquier cuestión litigiosa a la competencia de los Juzgados y Tribunales de Jaén, salvo lo previsto en favor del consumidor por la normativa de protección vigente.
+    </p>
+
+    <div style="margin-top:14px">
+      <button id="cerrar-legal" class="btn btn-outline" type="button">Cerrar</button>
     </div>
   </div>
+</div>
 
-  <noscript>
-    <div style="background:#fee2e2;color:#7f1d1d;padding:10px 16px;text-align:center">
-      Para usar el formulario y ver el contenido legal, habilita JavaScript.
-    </div>
-  </noscript>
+<!-- Botón flotante WhatsApp -->
+<a class="fab-wa" href="https://wa.me/34953818494?text=Hola,%20quiero%20enviar%20mi%20factura" aria-label="Abrir WhatsApp">WhatsApp</a>
 
-  <script defer>
-    const $=(s,r=document)=>r.querySelector(s);
-    const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+<script>
+  // Año
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    /* Año actual en el footer */
-    $('#year').textContent=new Date().getFullYear();
+  // Menú hamburguesa
+  const navToggle = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('primary-nav');
+  navToggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', nav.classList.contains('open'));
+  });
 
-    /* WhatsApp Footer y Hero secundario */
-    const WA_NUMBER='34953818494';
-    const WA_TEXT_HERO='Hola, quiero revisión GRATIS y adjuntar mi factura';
-    const WA_TEXT_FOOTER='Hola, tengo una consulta y quiero enviar mi factura para revisión GRATIS';
-    const heroWhats=$('#heroWhats');
-    heroWhats?.setAttribute('href',`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT_HERO)}`);
-    $('#whatsFooter')?.setAttribute('href',`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT_FOOTER)}`);
+  // Modal Legal
+  const legalModal = document.getElementById('legal-modal');
+  const abrirLegal = () => { legalModal.style.display='flex'; document.body.style.overflow='hidden'; };
+  const cerrarLegal = () => { legalModal.style.display='none'; document.body.style.overflow=''; };
 
-    /* Límite y validación de archivos */
-    const MAX_MB=10, MAX_FILES=5, ALLOWED=/\.(pdf|jpg|jpeg|png|heic|heif|webp)$/i;
-    const fileInput=$('#adjuntos'), warn=$('#formWARN'), errp=$('#formERR');
-    fileInput?.addEventListener('change',()=>{
-      warn.classList.add('hide');
-      if(fileInput.files.length>MAX_FILES){ errp.textContent=`❌ Máximo ${MAX_FILES} archivos.`; errp.classList.remove('hide'); fileInput.value=''; return; }
-      for(const f of fileInput.files){
-        if(f.size>MAX_MB*1024*1024){ warn.classList.remove('hide'); fileInput.value=''; return; }
-        if(!ALLOWED.test(f.name)){ errp.textContent='❌ Formato no permitido.'; errp.classList.remove('hide'); fileInput.value=''; return; }
+  document.getElementById('openLegalModalLink').addEventListener('click', (e)=>{e.preventDefault();abrirLegal();});
+  document.getElementById('privacidadLinkFooter').addEventListener('click', (e)=>{e.preventDefault();abrirLegal();});
+  document.getElementById('cookiesLinkFooter').addEventListener('click', (e)=>{e.preventDefault();abrirLegal();});
+  document.getElementById('condicionesLinkFooter').addEventListener('click', (e)=>{e.preventDefault();abrirLegal();});
+  document.getElementById('avisoLegalLinkFooter').addEventListener('click', (e)=>{e.preventDefault();abrirLegal();});
+  document.getElementById('rgpdLink').addEventListener('click', (e)=>{e.preventDefault();abrirLegal();});
+  document.getElementById('cerrar-legal').addEventListener('click', cerrarLegal);
+  legalModal.addEventListener('click', (e)=>{ if(e.target===legalModal) cerrarLegal(); });
+
+  // Form (Formspree)
+  const form = document.getElementById('reclamoForm');
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const fd = new FormData(form);
+    try{
+      const r = await fetch(form.action, { method:'POST', body:fd, headers:{'Accept':'application/json'} });
+      if(r.ok){
+        form.reset();
+        document.getElementById('formOK').style.display='block';
+        document.getElementById('formERR').style.display='none';
+      }else{
+        document.getElementById('formERR').style.display='block';
       }
-      errp.classList.add('hide');
-    });
-
-    /* Plan Premium toggle */
-    const servicio=$('#servicio'), autBox=$('#autPremiumBox'), authChk=$('#authPremium'), authSig=$('#firmaPremium');
-    const toggleAut=()=>{ if(servicio.value==='premium') autBox.classList.remove('hide'); else { autBox.classList.add('hide'); if(authChk) authChk.checked=false; if(authSig) authSig.value=''; } };
-    servicio?.addEventListener('change',toggleAut); toggleAut();
-
-    /* Email básico */
-    function emailLooksOk(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
-
-    /* Submit Formspree con validaciones extra */
-    const form=$('#reclamoForm'), ok=$('#formOK'), err=$('#formERR'), btn=$('#submitBtn'), clearBtn=$('#clearBtn');
-    clearBtn?.addEventListener('click',()=>{ form.reset(); ok.classList.add('hide'); err.classList.add('hide'); warn.classList.add('hide'); toggleAut(); });
-
-    form?.addEventListener('submit',async(e)=>{
-      e.preventDefault();
-      ok.classList.add('hide'); err.classList.add('hide'); warn.classList.add('hide');
-
-      if(!$('#nombre').value.trim()){ err.textContent='❌ Indica tu nombre.'; err.classList.remove('hide'); $('#nombre').focus(); return; }
-      if(!emailLooksOk($('#email').value.trim())){ err.textContent='❌ Email no válido.'; err.classList.remove('hide'); $('#email').focus(); return; }
-      if(!$('#mensaje').value.trim()){ err.textContent='❌ Cuéntanos brevemente tu caso.'; err.classList.remove('hide'); $('#mensaje').focus(); return; }
-      if(!$('#rgpd').checked){ err.textContent='❌ Debes aceptar la Política de Privacidad.'; err.classList.remove('hide'); $('#rgpd').focus(); return; }
-      if(servicio.value==='premium' && (!authChk.checked || !authSig.value.trim())){ err.textContent='❌ Para el plan Premium debes autorizar y firmar (nombre + DNI).'; err.classList.remove('hide'); (authChk.checked?authSig:authChk).focus(); return; }
-
-      btn.disabled=true; const prev=btn.textContent; btn.textContent='Enviando…';
-      try{
-        const fd=new FormData(form);
-        fd.append('_source', new URLSearchParams(location.search).get('utm_source')||'direct');
-        if(servicio.value==='premium'){ fd.append('autorizacion_premium','sí'); fd.append('firma_premium',authSig.value.trim()); }
-        const resp=await fetch(form.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}});
-        if(resp.ok){ form.reset(); toggleAut(); location.href='/gracias.html'; }
-        else{ err.classList.remove('hide'); window.scrollTo({top:form.offsetTop-80,behavior:'smooth'}); }
-      }catch(_){ err.classList.remove('hide'); window.scrollTo({top:form.offsetTop-80,behavior:'smooth'}); }
-      finally{ btn.disabled=false; btn.textContent=prev; }
-    });
-
-    /* Menú móvil + enfoque */
-    const navToggle=document.querySelector('.nav-toggle');
-    const nav=document.getElementById('primary-nav');
-    let lastFocused=null;
-    navToggle?.addEventListener('click',()=>{
-      const isOpen=nav.classList.toggle('open');
-      navToggle.classList.toggle('open',isOpen);
-      navToggle.setAttribute('aria-expanded', isOpen?'true':'false');
-      if(isOpen){ lastFocused=document.activeElement; nav.querySelector('a')?.focus(); } else { lastFocused?.focus(); }
-    });
-    $$('#primary-nav a').forEach(a=>a.addEventListener('click',()=>{ if(nav.classList.contains('open')){ nav.classList.remove('open'); navToggle.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); } }));
-
-    /* Modal legal accesible */
-    const openLegalModalLink=$('#openLegalModalLink');
-    const privacidadLinkFooter=$('#privacidadLinkFooter');
-    const cookiesLinkFooter=$('#cookiesLinkFooter');
-    const condicionesLinkFooter=$('#condicionesLinkFooter');
-    const avisoLegalLinkFooter=$('#avisoLegalLinkFooter');
-    const rgpdLink=$('#rgpdLink');
-
-    const legalModal=$('#legal-modal');
-    const cerrarLegalBtn=$('#cerrar-legal');
-    const modalContentScroll=$('#modal-content-scroll');
-    let lastFocusModal=null;
-
-    function abrirModal(targetId=null){
-      lastFocusModal=document.activeElement;
-      legalModal.style.display='flex';
-      legalModal.setAttribute('aria-hidden','false');
-      document.documentElement.style.overflow='hidden';
-      setTimeout(()=>cerrarLegalBtn?.focus(),50);
-      if(targetId && modalContentScroll){
-        const el=modalContentScroll.querySelector(targetId);
-        if(el) setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),100);
-        else modalContentScroll.scrollTop=0;
-      } else { modalContentScroll.scrollTop=0; }
+    }catch{
+      document.getElementById('formERR').style.display='block';
     }
-    function cerrarModal(){
-      legalModal.style.display='none';
-      legalModal.setAttribute('aria-hidden','true');
-      document.documentElement.style.overflow='';
-      lastFocusModal?.focus();
-    }
-    openLegalModalLink?.addEventListener('click',e=>{e.preventDefault();abrirModal();});
-    privacidadLinkFooter?.addEventListener('click',e=>{e.preventDefault();abrirModal('#modal-privacidad');});
-    cookiesLinkFooter?.addEventListener('click',e=>{e.preventDefault();abrirModal('#modal-cookies');});
-    condicionesLinkFooter?.addEventListener('click',e=>{e.preventDefault();abrirModal('#modal-condiciones');});
-    avisoLegalLinkFooter?.addEventListener('click',e=>{e.preventDefault();abrirModal('#modal-avisolegal');});
-    rgpdLink?.addEventListener('click',e=>{e.preventDefault();abrirModal('#modal-privacidad');});
-    cerrarLegalBtn?.addEventListener('click',cerrarModal);
-    legalModal?.addEventListener('click',e=>{ if(e.target===legalModal) cerrarModal(); });
-    document.addEventListener('keydown',e=>{ if(e.key==='Escape' && legalModal.style.display==='flex') cerrarModal(); });
+  });
 
-    /* Ofuscación básica del email */
-    const eml='info'+'@'+'tureclamoexpres'+'.com';
-    $('#eml')?.textContent=eml;
-    $('#eml_dup')?.textContent=eml;
-  </script>
+  // Acordeón “Qué hacemos por ti”
+  const accItems = Array.from(document.querySelectorAll('.acc-item'));
+  const mqDesktop = () => window.matchMedia('(min-width: 900px)').matches;
+
+  function setAccordionInitialState(){
+    if(mqDesktop()){
+      // Abrir todo en escritorio
+      accItems.forEach(openItem);
+    }else{
+      // Cerrar todo en móvil
+      accItems.forEach(closeItem);
+    }
+  }
+
+  function openItem(item){
+    const panel = item.querySelector('.acc-panel');
+    item.classList.add('open');
+    // Ajuste de altura automática
+    panel.style.maxHeight = panel.scrollHeight + 'px';
+  }
+  function closeItem(item){
+    const panel = item.querySelector('.acc-panel');
+    item.classList.remove('open');
+    panel.style.maxHeight = '0px';
+  }
+
+  accItems.forEach(item=>{
+    const btn = item.querySelector('.acc-btn');
+    const panel = item.querySelector('.acc-panel');
+    // Ajustar altura al abrir/cerrar
+    btn.addEventListener('click', ()=>{
+      if(item.classList.contains('open')){ closeItem(item); }
+      else{ openItem(item); }
+    });
+    // Asegurar altura correcta si cambia contenido/viewport
+    window.addEventListener('resize', ()=>{
+      if(item.classList.contains('open')){
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Estado inicial acordeón según viewport
+  setAccordionInitialState();
+  // Reaplicar si cambia de móvil<->escritorio
+  let lastIsDesktop = mqDesktop();
+  window.addEventListener('resize', ()=>{
+    const nowIsDesktop = mqDesktop();
+    if(nowIsDesktop !== lastIsDesktop){
+      setAccordionInitialState();
+      lastIsDesktop = nowIsDesktop;
+    }
+  });
+</script>
 </body>
 </html>
