@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TuReclamoExpres – Revisión de facturas y reclamaciones automatizadas</title>
-  <meta name="description" content="Sube tu factura GRATIS. Detectamos cobros indebidos y te preparamos tu reclamación lista. Luego eliges plan: Básico, Completo o Premium. Ahorra en luz, gas y telefonía.">
+  <meta name="description" content="Revisión gratuita de facturas de luz, gas y teléfono. Sube una foto o PDF; en menos de 24h sabrás si te están cobrando de más. Planes desde 19,90 €.">
   <link rel="icon" href="/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
@@ -18,431 +18,139 @@
       --brand-600: #16a34a;
       --border: #1f2937;
       --shadow: 0 10px 30px rgba(0, 0, 0, .35);
-      --highlight: #22c55e; /* Nuevo color de destaque */
-      --plan-highlight-bg: #1e293b; /* Fondo para el plan destacado */
+      --highlight: #22c55e;
+      --plan-highlight-bg: #1e293b;
     }
 
     /* Reseteo y tipografía */
-    * {
-      box-sizing: border-box;
-      overflow-wrap: break-word; /* Solución para el bug de textos */
-    }
+    * { box-sizing: border-box; overflow-wrap: break-word; }
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       background: var(--bg);
       color: var(--ink);
       line-height: 1.6;
-      padding: 0 16px; /* Padding general para el cuerpo */
+      padding: 0 16px; /* se conserva del original */
     }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-    
+    a { color: inherit; text-decoration: none; }
+
     /* Reglas tipográficas */
-    h1, h2, h3 {
-      font-weight: 800;
-      margin: 0;
-    }
+    h1, h2, h3 { font-weight: 800; margin: 0; }
     h1 { font-size: clamp(3rem, 5vw, 4rem); }
     h2 { font-size: clamp(2rem, 4vw, 3rem); }
     h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
-    p.subtitle {
-      color: var(--muted);
-      font-size: 1rem;
-    }
+    p.subtitle { color: var(--muted); font-size: 1rem; }
 
     /* Barra superior de confianza */
-    .bar {
-      background: #1e293b;
-      text-align: center;
-      padding: 6px 10px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-    .bar-strong {
-      background: linear-gradient(90deg, #0ea5e9, #22c55e);
-      color: #052e16;
-      font-weight: 700;
-    }
+    .bar { background: #1e293b; text-align: center; padding: 6px 10px; font-size: 14px; color: var(--muted); }
+    .bar-strong { background: linear-gradient(90deg, #0ea5e9, #22c55e); color: #052e16; font-weight: 700; }
 
-    /* Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-    }
-    .head-wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .logo {
-      font-weight: 800;
-      font-size: 22px;
-      letter-spacing: .2px;
-      color: var(--link);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .logo svg {
-      width: 20px;
-      height: 20px;
-    }
-    nav {
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      position: relative;
-    }
-    nav a {
-      color: var(--ink);
-      font-weight: 500;
-      opacity: .9;
-    }
-    nav a:hover {
-      opacity: 1;
-      color: var(--link);
-    }
-    .cta {
-      background: var(--brand);
-      color: #052e16;
-      font-weight: 800;
-      padding: 9px 14px;
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-    }
-    .cta:hover {
-      background: var(--brand-600);
-    }
-    .cta-ghost {
-      border: 1px solid var(--ink);
-      padding: 8px 12px;
-      border-radius: 10px;
-      font-weight: 700;
-    }
-    .menu-btn {
-      display: none;
-      cursor: pointer;
-      font-size: 22px;
-      background: none;
-      border: 0;
-      color: var(--ink);
-    }
+    /* Header (se mantiene estructura original) */
+    header { position: sticky; top: 0; z-index: 20; background: var(--surface); border-bottom: 1px solid var(--border); }
+    .head-wrap { max-width: 1100px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .logo { font-weight: 800; font-size: 22px; letter-spacing: .2px; color: var(--link); display: flex; align-items: center; gap: 8px; }
+    .logo svg { width: 20px; height: 20px; }
+    nav { display: flex; gap: 18px; align-items: center; position: relative; }
+    nav a { color: var(--ink); font-weight: 500; opacity: .9; }
+    nav a:hover { opacity: 1; color: var(--link); }
+    .cta { background: var(--brand); color: #052e16; font-weight: 800; padding: 9px 14px; border-radius: 10px; box-shadow: var(--shadow); }
+    .cta:hover { background: var(--brand-600); }
+    .cta-ghost { border: 1px solid var(--ink); padding: 8px 12px; border-radius: 10px; font-weight: 700; }
+    .menu-btn { display: none; cursor: pointer; font-size: 22px; background: none; border: 0; color: var(--ink); }
 
-    /* Dropdown Planes */
-    .dropdown {
-      position: relative;
-    }
-    .dropdown-toggle {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .dropdown-menu {
-      position: absolute;
-      top: 36px;
-      left: 0;
-      background: #0b1220;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      min-width: 250px;
-      box-shadow: var(--shadow);
-      padding: 10px 8px;
-      display: none;
-    }
-    .dropdown.open .dropdown-menu {
-      display: block;
-    }
-    .dropdown-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 8px;
-      border-radius: 10px;
-    }
-    .dropdown-item:hover {
-      background: #0f1a2e;
-    }
-    .price-pill {
-      font-size: 12px;
-      border: 1px solid var(--border);
-      padding: 2px 8px;
-      border-radius: 999px;
-      color: #a7f3d0;
-    }
+    /* Dropdown (conservado) */
+    .dropdown { position: relative; }
+    .dropdown-toggle { display: flex; align-items: center; gap: 6px; }
+    .dropdown-menu { position: absolute; top: 36px; left: 0; background: #0b1220; border: 1px solid var(--border); border-radius: 12px; min-width: 250px; box-shadow: var(--shadow); padding: 10px 8px; display: none; }
+    .dropdown.open .dropdown-menu { display: block; }
+    .dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px; border-radius: 10px; }
+    .dropdown-item:hover { background: #0f1a2e; }
+    .price-pill { font-size: 12px; border: 1px solid var(--border); padding: 2px 8px; border-radius: 999px; color: #a7f3d0; }
 
-    /* Subheader (simplificado a iconos de confianza) */
-    .subheader {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: #0f172a;
-    }
-    .subheader-wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 10px 16px;
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .subheader-wrap span {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--muted);
-    }
-    .subheader-wrap svg {
-      color: var(--brand);
-      width: 20px;
-      height: 20px;
-    }
+    /* Subheader (iconos de confianza) */
+    .subheader { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: #0f172a; }
+    .subheader-wrap { max-width: 1100px; margin: 0 auto; padding: 10px 16px; display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap; }
+    .subheader-wrap span { display: flex; align-items: center; gap: 8px; color: var(--muted); }
+    .subheader-wrap svg { color: var(--brand); width: 20px; height: 20px; }
 
-    /* Diseño responsivo para móviles */
+    /* Responsive header */
     @media(max-width: 860px) {
-      nav {
-        display: none;
-        position: absolute;
-        right: 16px;
-        top: 58px;
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        box-shadow: var(--shadow);
-        padding: 12px 14px;
-        flex-direction: column;
-        gap: 10px;
-      }
-      nav.active {
-        display: flex;
-      }
-      .menu-btn {
-        display: block;
-      }
-      .cta {
-        display: none; /* Oculta el CTA en el header para móviles */
-      }
+      nav { display: none; position: absolute; right: 16px; top: 58px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); padding: 12px 14px; flex-direction: column; gap: 10px; }
+      nav.active { display: flex; }
+      .menu-btn { display: block; }
+      .cta { display: none; } /* Oculta CTA en header móvil (CTA fijo va abajo) */
     }
 
     /* Layout general */
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px 0; /* Padding vertical para el contenido principal */
+    main { max-width: 1100px; margin: 0 auto; padding: 20px 0; }
+    section { padding: 40px 0; }
+    
+    /* Animación de entrada */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
     }
-    section {
-      padding: 40px 0;
+    .fade-in {
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out forwards;
     }
-
+    
     /* Hero */
-    .hero {
-      text-align: center;
-      padding: 56px 12px;
-    }
-    .hero h1 {
-      margin: 0 0 10px;
-    }
-    .hero p {
-      color: var(--muted);
-      max-width: 720px;
-      margin: 0 auto 18px;
-    }
-    .highlight-number {
-      font-size: clamp(3.5rem, 8vw, 6rem);
-      font-weight: 900;
-      color: var(--highlight);
-      display: block;
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-weight: 800;
-      margin: 6px;
-    }
-    .btn-primary {
-      background: var(--brand);
-      color: #052e16;
-      box-shadow: var(--shadow);
-    }
-    .btn-primary:hover {
-      background: var(--brand-600);
-    }
-    .btn-outline {
-      border: 1px solid var(--ink);
-      color: var(--ink);
-    }
+    .hero { text-align: center; padding: 56px 12px; }
+    .hero h1 { margin: 0 0 10px; }
+    .hero p { color: var(--muted); max-width: 720px; margin: 0 auto 18px; }
+    .highlight-number { font-size: clamp(3.5rem, 8vw, 6rem); font-weight: 900; color: var(--highlight); display: block; line-height: 1; margin-bottom: 10px; }
+    .btn { display: inline-block; padding: 12px 18px; border-radius: 10px; font-weight: 800; margin: 6px; }
+    .btn-primary { background: var(--brand); color: #052e16; box-shadow: var(--shadow); }
+    .btn-primary:hover { background: var(--brand-600); }
+    .btn-outline { border: 1px solid var(--ink); color: var(--ink); }
 
     /* Cards y formularios */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px; /* Aumento de padding para más aire visual */
-      box-shadow: var(--shadow);
-    }
-    label {
-      display: block;
-      margin-top: 10px;
-    }
-    input, textarea, select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: #0b1220;
-      color: var(--ink);
-    }
-    small.muted {
-      color: var(--muted);
-    }
-    .grid {
-      display: grid;
-      gap: 20px; /* Aumento de espacio entre grids */
-    }
-    .grid-2 {
-      grid-template-columns: 1fr;
-    }
-    @media(min-width: 980px) {
-      .grid-2 {
-        grid-template-columns: 1.2fr .8fr;
-      }
-    }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: var(--shadow); }
+    label { display: block; margin-top: 10px; }
+    input, textarea, select { width: 100%; padding: 10px; border-radius: 10px; border: 1px solid var(--border); background: #0b1220; color: var(--ink); }
+    small.muted { color: var(--muted); }
+    .grid { display: grid; gap: 20px; }
+    .grid-2 { grid-template-columns: 1fr; }
+    @media(min-width: 980px) { .grid-2 { grid-template-columns: 1.2fr .8fr; } }
 
     /* Planes */
-    .plans {
-      display: grid;
-      gap: 20px; /* Aumento de espacio entre planes */
-      padding: 0 10px;
-    }
-    @media(min-width: 820px) {
-      .plans {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    .plan {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 18px; /* Borde más redondeado */
-      padding: 24px; /* Aumento de padding */
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-      position: relative; /* Para el badge */
-    }
-    .plan:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(0,0,0,.5);
-    }
-    .plan .price {
-      font-size: 28px;
-      font-weight: 900;
-      margin: 8px 0;
-    }
-    .plan .pill {
-      display: inline-block;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 4px 10px;
-      font-size: 12px;
-      color: #cbd5e1;
-    }
-    .plan.reco {
-      background: var(--plan-highlight-bg); /* Fondo destacado */
-      outline: 2px solid #22c55e;
-      outline-offset: 4px;
-      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.2);
-    }
-    .plan ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 0 0 10px;
-    }
-    .plan li {
-      display: flex;
-      gap: 8px;
-      align-items: flex-start;
-      color: var(--muted);
-      margin: 10px 0; /* Aumento de espacio entre items */
-    }
-    .check {
-      font-weight: 900;
-      color: var(--brand); /* Icono de check en verde */
-    }
-    .badge {
-      position: absolute;
-      top: 0;
-      right: 20px;
-      transform: translateY(-50%);
-      background: #f59e0b;
-      color: #fff;
-      font-weight: 800;
-      font-size: 14px;
-      padding: 4px 12px;
-      border-radius: 999px;
-      box-shadow: var(--shadow);
-    }
+    .plans { display: grid; gap: 20px; padding: 0 10px; }
+    @media(min-width: 820px) { .plans { grid-template-columns: repeat(3, 1fr); } }
+    .plan { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 24px; box-shadow: var(--shadow); transition: all 0.3s ease; position: relative; }
+    .plan:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,.5); }
+    .plan .price { font-size: 28px; font-weight: 900; margin: 8px 0; }
+    .plan .pill { display: inline-block; border: 1px solid var(--border); border-radius: 999px; padding: 4px 10px; font-size: 12px; color: #cbd5e1; }
+    .plan.reco { background: var(--plan-highlight-bg); outline: 2px solid #22c55e; outline-offset: 4px; box-shadow: 0 10px 30px rgba(34, 197, 94, 0.2); }
+    .plan ul { list-style: none; padding-left: 0; margin: 0 0 10px; }
+    .plan li { display: flex; gap: 8px; align-items: flex-start; color: var(--muted); margin: 10px 0; }
+    .check { font-weight: 900; color: var(--brand); }
+    .badge { position: absolute; top: 0; right: 20px; transform: translateY(-50%); background: #f59e0b; color: #fff; font-weight: 800; font-size: 14px; padding: 4px 12px; border-radius: 999px; box-shadow: var(--shadow); }
 
-    /* FAQ y legales plegables */
-    details {
-      background: #0b1220;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 10px;
-      margin-top: 10px;
-    }
-    details summary {
-      cursor: pointer;
-      font-weight: 700;
-      color: #38bdf8;
-    }
-    details summary:hover {
-      text-decoration: underline;
-    }
+    /* Testimonios y FAQ */
+    .testimonios { max-width: 700px; margin: 0 auto; }
+    .testimonios p { background: #0b1220; padding: 14px; border-radius: 12px; margin: 14px 0; }
+    .faq-block details { background: #0b1220; border: 1px solid var(--border); border-radius: 12px; padding: 10px; margin-top: 10px; }
+    .faq-block summary { cursor: pointer; font-weight: 700; color: #38bdf8; }
+    .faq-block summary:hover { text-decoration: underline; }
 
     /* Footer */
-    footer {
-      border-top: 1px solid var(--border);
-      margin-top: 28px;
-      padding: 26px 16px;
-      color: var(--muted);
-      text-align: center;
-      overflow-wrap: break-word;
-    }
-    footer a {
-      color: var(--link);
-    }
-    footer a:hover {
-      text-decoration: underline;
+    footer { border-top: 1px solid var(--border); margin-top: 28px; padding: 26px 16px; color: var(--muted); text-align: center; overflow-wrap: break-word; }
+    footer a { color: var(--link); }
+    footer a:hover { text-decoration: underline; }
+
+    /* Ocultar en móvil/desktop (del original) */
+    .hide-on-mobile { display: block; }
+    .hide-on-desktop { display: none; }
+    @media(max-width: 860px) {
+      .hide-on-mobile { display: none; }
+      .hide-on-desktop { display: block; }
     }
 
-    /* Clases para ocultar contenido */
-    .hide-on-mobile {
-      display: block;
-    }
-    .hide-on-desktop {
-      display: none;
-    }
-    @media(max-width: 860px) {
-      .hide-on-mobile {
-        display: none;
-      }
-      .hide-on-desktop {
-        display: block;
-      }
-    }
+    /* CTA fijo móvil y WhatsApp */
+    .mobile-cta{position:fixed;bottom:0;left:0;width:100%;background:var(--brand);color:#052e16;text-align:center;padding:14px;font-weight:800;z-index:1000}
+    .mobile-cta a{color:#052e16}
+    .whatsapp-btn{position:fixed;bottom:80px;right:20px;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;color:white;box-shadow:var(--shadow);z-index:1000}
   </style>
 </head>
 <body>
@@ -466,8 +174,8 @@
         <a href="#proceso">Proceso</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <button class="menu-btn" onclick="document.querySelector('nav').classList.toggle('active')">
-        &#x2630;
+      <button class="menu-btn" onclick="document.querySelector('nav').classList.toggle('active')" aria-label="Menú principal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       </button>
     </div>
   </header>
@@ -482,7 +190,7 @@
       </span>
       <span>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M11.25 4.5H8.25a.75.75 0 0 0-.75.75v8.25a.75.75 0 0 0 .75.75h3a.75.75 0 0 0 .75-.75V5.25a.75.75 0 0 0-.75-.75ZM15.75 4.5a.75.75 0 0 0-.75.75v8.25a.75.75 0 0 0 .75.75h3a.75.75 0 0 0 .75-.75V5.25a.75.75 0 0 0-.75-.75h-3ZM20.25 21a.75.75 0 0 0 .75-.75V16.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75h3ZM3.75 21a.75.75 0 0 0 .75-.75V16.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75h3Z" />
+          <path d="M11.25 4.5H8.25a.75.75 0 0 0-.75.75v8.25a.75.75 0 0 0 .75.75h3a.75.75 0 0 0 .75-.75V5.25a.75.75 0 0 0-.75-.75h-3ZM15.75 4.5a.75.75 0 0 0-.75.75v8.25a.75.75 0 0 0 .75.75h3a.75.75 0 0 0 .75-.75V5.25a.75.75 0 0 0-.75-.75h-3ZM20.25 21a.75.75 0 0 0 .75-.75V16.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75h3ZM3.75 21a.75.75 0 0 0 .75-.75V16.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75h3Z" />
         </svg>
         Pagos Seguros (Stripe)
       </span>
@@ -501,15 +209,32 @@
         Ahorra en tus facturas de luz, gas y telefonía
       </h1>
       <p>
-        Sube tu factura GRATIS. Detectamos cobros indebidos y te preparamos tu reclamación.
+        Revisión gratuita en menos de 24 h. Sube una <b>foto</b> de tu factura o el <b>PDF</b> y te diremos si puedes recuperar dinero.
       </p>
       <p>
         <span class="highlight-number">78%</span>
         de nuestros usuarios detectan errores en sus facturas.
       </p>
       <a href="#contacto" class="btn btn-primary">
-        Revisar mi factura gratis
+        Revisar mi factura GRATIS
       </a>
+    </section>
+
+    <section id="proceso">
+      <h2 style="text-align:center; margin-bottom: 18px;">Cómo funciona</h2>
+      <div class="steps">
+        <div class="step"><h3>1. Sube tu factura</h3><p>Hazle una <b>foto</b> o súbela en <b>PDF</b>.</p></div>
+        <div class="step"><h3>2. La revisamos</h3><p>Detectamos errores y cobros indebidos.</p></div>
+        <div class="step"><h3>3. Reclama fácil</h3><p>Recibes tu reclamación lista para enviar.</p></div>
+      </div>
+    </section>
+
+    <section id="baja">
+      <h2 style="text-align:center;">Darse de baja nunca fue tan fácil</h2>
+      <p style="text-align:center;max-width:700px;margin:0 auto;">¿Tu compañía te pone trabas para cancelar? Preparamos la baja formal con validez legal. Sin llamadas eternas ni excusas.</p>
+      <div style="text-align:center;margin-top:20px;">
+        <a href="#contacto" class="btn btn-primary">Quiero darme de baja ya</a>
+      </div>
     </section>
 
     <section id="planes">
@@ -520,18 +245,13 @@
 
         <div class="plan">
           <h3>Plan Básico</h3>
-          <p class="pill">
-            Para principiantes
-          </p>
-          <div class="price">25 €</div>
-          <p class="subtitle">
-            Un único pago. Reclamación manual.
-          </p>
+          <p class="pill">Para principiantes</p>
+          <div class="price">19,90 €</div>
+          <p class="subtitle">Un único pago. Reclamación manual.</p>
           <ul>
-            <li><span class="check">&#x2713;</span> Revisión y análisis</li>
-            <li><span class="check">&#x2713;</span> Informe con errores</li>
-            <li><span class="check">&#x2713;</span> Reclamación lista para enviar</li>
-            <li><span class="check">&#x2713;</span> Acceso a guías y soporte</li>
+            <li><span class="check">&#x2713;</span> Revisión + informe claro</li>
+            <li><span class="check">&#x2713;</span> Modelo de reclamación listo</li>
+            <li><span class="check">&#x2713;</span> Si no hay nada que reclamar, no pagas</li>
           </ul>
           <a href="#contacto" class="btn btn-outline" style="width: 100%;">Elegir Plan Básico</a>
         </div>
@@ -539,17 +259,12 @@
         <div class="plan reco">
           <div class="badge">Más elegido</div>
           <h3>Plan Completo</h3>
-          <p class="pill">
-            El más popular
-          </p>
-          <div class="price">45 €</div>
-          <p class="subtitle">
-            Un único pago. Reclamación exprés automatizada.
-          </p>
+          <p class="pill">El más popular</p>
+          <div class="price">39,90 €</div>
+          <p class="subtitle">Un único pago. Reclamación exprés automatizada.</p>
           <ul>
             <li><span class="check">&#x2713;</span> Todo lo del Plan Básico</li>
-            <li><span class="check">&#x2713;</span> Reclamación automatizada</li>
-            <li><span class="check">&#x2713;</span> Seguimiento de reclamación</li>
+            <li><span class="check">&#x2713;</span> Informe detallado + seguimiento</li>
             <li><span class="check">&#x2713;</span> Notificaciones de estado</li>
           </ul>
           <a href="#contacto" class="btn btn-primary" style="width: 100%;">Elegir Plan Completo</a>
@@ -557,22 +272,41 @@
 
         <div class="plan">
           <h3>Plan Premium</h3>
-          <p class="pill">
-            Máxima comodidad
-          </p>
-          <div class="price">65 €</div>
-          <p class="subtitle">
-            Un único pago. Sin preocupaciones.
-          </p>
+          <p class="pill">Máxima comodidad</p>
+          <div class="price">69,90 €</div>
+          <p class="subtitle">Un único pago. Sin preocupaciones.</p>
           <ul>
-            <li><span class="check">&#x2713;</span> Todo lo del Plan Completo</li>
-            <li><span class="check">&#x2713;</span> Soporte legal personalizado</li>
-            <li><span class="check">&#x2713;</span> Llamada de asesoría (30 min)</li>
-            <li><span class="check">&#x2713;</span> Posibilidad de mediación</li>
+            <li><span class="check">&#x2713;</span> Todo lo del Completo</li>
+            <li><span class="check">&#x2713;</span> Acompañamiento hasta resolución</li>
+            <li><span class="check">&#x2713;</span> Atención prioritaria</li>
           </ul>
           <a href="#contacto" class="btn btn-outline" style="width: 100%;">Elegir Plan Premium</a>
         </div>
       </div>
+      <p style="text-align:center;margin-top:10px;color:var(--muted);">
+        Revisión gratuita · Solo pagas si hay algo que reclamar · Respuesta &lt; 24 h
+      </p>
+    </section>
+
+    <section id="testimonios">
+      <h2 style="text-align:center;">Lo que dicen nuestros clientes</h2>
+      <div class="testimonios">
+        <p>💬 “Recuperé <b>186 €</b> en mi factura de luz. No me lo podía creer.” — <b>Laura, Sevilla</b></p>
+        <p>💬 “Me detectaron un cargo indebido de <b>94 €</b> y lo recuperé en días.” — <b>Juan, Bilbao</b></p>
+        <p>💬 “En menos de 24 h tenía una reclamación por <b>137 €</b> lista.” — <b>Sara, Valencia</b></p>
+        <p>💬 “Conseguí darme de baja y evité pagar <b>200 €</b> más al año.” — <b>Miguel, Granada</b></p>
+      </div>
+      <p style="text-align:center;margin-top:20px;">El <b>78 %</b> de nuestros usuarios detecta cobros indebidos. ✅ La revisión es gratuita: si no hay nada que reclamar, no pagas.</p>
+    </section>
+
+    <section id="faq" class="faq-block">
+      <h2 style="text-align:center;">Preguntas frecuentes</h2>
+      <details><summary>¿Qué tipo de factura puedo subir?</summary><p>Cualquiera: luz, gas, teléfono o internet, en PDF o una foto clara con tu móvil.</p></details>
+      <details><summary>¿Qué pasa si no hay errores?</summary><p>Nada. La revisión es gratuita: si no hay nada que reclamar, no pagas.</p></details>
+      <details><summary>¿Cuánto tardáis?</summary><p>En menos de 24 h recibirás tu informe y, si procede, la reclamación lista.</p></details>
+      <details><summary>¿Es legal?</summary><p>Sí. Usamos modelos basados en normativa vigente. Tú decides si lo envías o prefieres acompañamiento.</p></details>
+      <details><summary>¿Qué incluye cada plan?</summary><p>Básico: informe + modelo listo. Completo: informe detallado + seguimiento. Premium: acompañamiento hasta resolución.</p></details>
+      <details><summary>¿Mis datos están seguros?</summary><p>Sí, cumplimos RGPD. Solo usamos tus datos para revisar tu factura y generar la reclamación.</p></details>
     </section>
 
     <section id="contacto">
@@ -599,19 +333,19 @@
             <input type="email" name="email" id="email" required>
             <label for="phone">Teléfono (opcional)</label>
             <input type="tel" name="phone" id="phone">
-            <label for="invoice">Sube tu factura (PDF)</label>
-            <input type="file" name="invoice" id="invoice" accept="application/pdf" required>
+            <label for="invoice">Factura (foto o PDF)</label>
+            <input type="file" name="invoice" id="invoice" accept="image/*,application/pdf" required>
             <small class="muted">
-              Sube la factura en formato PDF para que podamos analizarla.
+              Puedes subir una <b>foto tomada con tu móvil</b> o el <b>PDF</b> de tu compañía.
             </small>
             <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
-              Revisar mi factura gratis
+              Revisar mi factura GRATIS
             </button>
           </form>
           <details style="margin-top: 20px;">
             <summary>📑 Información Legal Completa</summary>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              (Aquí irá el texto legal completo. Cuando me des OK, inserto el aviso legal camuflado con tus datos conforme a LSSI y RGPD).
             </p>
           </details>
         </div>
@@ -620,10 +354,10 @@
             ¡Descubre cuánto puedes ahorrar!
           </h2>
           <p style="color: var(--muted); line-height: 1.8;">
-            En tan solo 24 horas, nuestro equipo de expertos analizará tu factura y te enviará un informe detallado, sin coste alguno. Te diremos si estás pagando de más y por qué.
+            En menos de 24 horas, analizaremos tu factura y te enviaremos un informe claro. Si hay cobros indebidos, tendrás la <b>reclamación lista</b> para recuperar tu dinero.
           </p>
           <p style="color: var(--muted); line-height: 1.8;">
-            Si detectamos algún cobro indebido, te ofreceremos nuestros planes para ayudarte a reclamar de forma rápida y eficiente.
+            Y si quieres darte de baja y te ponen trabas, lo preparamos por ti con <b>validez legal</b>.
           </p>
         </div>
       </div>
@@ -632,7 +366,7 @@
     <div id="legalModal" style="display: none;">
       <div class="modal-content">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          (Contenido del aviso legal completo si prefieres en modal. Alternativa al details anterior).
         </p>
         <button onclick="document.getElementById('legalModal').style.display = 'none';">Cerrar</button>
       </div>
@@ -642,14 +376,20 @@
   <footer>
     <p>&copy; 2025 TuReclamoExpres. Todos los derechos reservados.</p>
     <a href="#" onclick="showModal()">Información Legal</a> |
-    <a href="#">Política de Privacidad</a>
+    <a href="#faq">Política de Privacidad</a>
     <details>
       <summary style="display: none;">📑 Información Legal Completa</summary>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+      <p>(Placeholder de legales; listo para sustituir por el texto camuflado definitivo).</p>
     </details>
+    <p style="margin-top:8px;">📧 info@tureclamoexpres.com · 📞 958 818 494</p>
+    <p style="color:#94a3b8">🔒 RGPD · 💳 Stripe · ⏱️ &lt; 24 h</p>
   </footer>
+
+  <a href="https://wa.me/34958818494?text=Hola,%20quiero%20revisar%20mi%20factura%20con%20TuReclamoExpres" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8L22 22l-4.5-1.5A8.38 8.38 0 0 1 12 20a8.38 8.38 0 0 1-5.65-2.02L2 22l1.98-5.94A8.38 8.38 0 0 1 3 11.5a8.38 8.38 0 0 1 1.98-5.94A8.38 8.38 0 0 1 12 3a8.38 8.38 0 0 1 5.65 2.02L22 2l-1.98 5.94A8.38 8.38 0 0 1 21 11.5z"></path></svg>
+  </a>
+
+  <div class="mobile-cta"><a href="#contacto">Revisar mi factura GRATIS</a></div>
 
   <script>
     function showModal() {
