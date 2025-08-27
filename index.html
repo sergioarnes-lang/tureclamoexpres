@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="es" style="scroll-behavior:smooth">
 <head>
-  
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TuReclamoExpres – Revisión GRATIS de facturas y reclamaciones automatizadas</title>
-  <meta name="description" content="Envía tu factura GRATIS por WhatsApp o formulario. Te confirmamos si hay cobros indebidos y el importe recuperable. Solo pagas si hay reclamación viable (Básico, Completo o Premium)." />
+  <meta name="description" content="Envía tu factura GRATIS por WhatsApp o formulario. Te confirmamos si hay cobros indebidos y el importe recuperable. Solo pagas si hay reclamación viable." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://www.tureclamoexpres.com/">
   <meta name="referrer" content="no-referrer-when-downgrade">
@@ -17,13 +16,13 @@
   <meta property="og:image" content="/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <style>
+    <style>
     :root{
       --bg:#0f172a; --card:#0b1120; --text:#e5e7eb; --muted:#9ca3af;
       --accent:#22c55e; --danger:#ef4444; --link:#60a5fa; --border:#1f2937;
@@ -126,7 +125,7 @@
     .modal-head{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid var(--border)}
     .modal-title{font-size:1rem;color:var(--muted);font-weight:600}
     .modal-close{border:0;background:transparent;font-size:24px;line-height:1;color:var(--text);cursor:pointer;padding:0 5px}
-    #modal-content-scroll{padding:18px;font-size:10px; /* minimizado */ color:#9aa3af;text-align:justify;line-height:1.45;flex-grow:1;overflow-y:auto;letter-spacing:-0.1px}
+    #modal-content-scroll{padding:18px;font-size:10px; color:#9aa3af;text-align:justify;line-height:1.45;flex-grow:1;overflow-y:auto;letter-spacing:-0.1px}
     #modal-content-scroll h4{margin:1em 0 .4em;color:var(--accent);font-size:1em}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
@@ -190,14 +189,15 @@
         <span>RGPD ✓</span><span>Pago seguro Stripe ✓</span><span class="pill">Red de abogados colaboradores ✓</span>
       </div>
       <div class="flex" role="group" aria-label="Empezar">
-                <a class="btn btn-primary" id="heroWhats" href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisi%C3%B3n%20GRATIS%20y%20adjuntar%20mi%20factura" rel="noopener" aria-label="Abrir WhatsApp para enviar factura gratis">Enviar factura GRATIS</a>
-                <a class="btn btn-outline" href="#formulario" aria-label="Subir factura por formulario">Subir por formulario</a>
+        <a class="btn btn-primary" id="heroWhats" href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisi%C3%B3n%20GRATIS%20y%20adjuntar%20mi%20factura" rel="noopener" aria-label="Abrir WhatsApp para enviar factura gratis">Enviar factura GRATIS</a>
+        <a class="btn btn-outline" href="#formulario" aria-label="Subir factura por formulario">Subir por formulario</a>
       </div>
       <div class="muted" style="margin-top:6px;font-size:13px">Sin coste por la revisión inicial • 24–48h laborables • Te diremos si merece la pena reclamar</div>
     </section>
 
-        <section class="services" id="servicios" aria-labelledby="svcTitle">
-      <h2 id="svcTitle" style="margin:0 0 8px">Qué hacemos</h2>
+    <section class="services" id="servicios" aria-labelledby="svcTitle">
+      <h2 id="svcTitle" style="margin:0 0 8px">Qué hacemos por ti</h2>
+      <p class="muted">Sabemos que tratar con cobros indebidos es frustrante. Por eso, nuestro objetivo es ayudarte de forma rápida y eficaz.</p>
       <div class="services">
         <div class="svc">
           <h4>Revisión inicial de facturas (GRATIS)</h4>
@@ -240,9 +240,9 @@
         <label for="servicio">Selecciona el servicio que te interesa</label>
         <select name="servicio" id="servicio" required>
           <option value="revision_gratis" selected>Revisión GRATIS (diagnóstico)</option>
-          <option value="basico">Paquete de Documentos – 14,90 €</option>
-          <option value="completo">Completo – 29,90 €</option>
-          <option value="premium">Premium – 49,90 €</option>
+          <option value="basico">Paquete de Documentos (DIY) – 14,90 €</option>
+          <option value="completo">Plan Completo – 29,90 €</option>
+          <option value="premium">Plan Premium – 49,90 €</option>
         </select>
 
         <div id="autPremiumBox" class="hide" aria-live="polite">
@@ -293,43 +293,44 @@
         <ol class="muted">
           <li><strong>1) Envío GRATIS:</strong> nos mandas la factura por WhatsApp o por formulario.</li>
           <li><strong>2) Diagnóstico:</strong> te confirmamos si hay cobros indebidos y el posible importe a recuperar.</li>
-          <li><strong>3) Si es viable:</strong> eliges plan (Básico, Completo o Premium). Solo pagas si seguimos.</li>
+          <li><strong>3) Si es viable:</strong> eliges tu plan ideal y solucionamos tu problema.</li>
         </ol>
       </details>
     </section>
 
     <aside class="card" style="margin-top:40px" aria-labelledby="h3planes">
       <h3 id="h3planes" style="margin-top:0">Planes (solo si confirmamos viabilidad)</h3>
-      <p class="muted" style="margin-top:-6px">Elige tu plan <em>después</em> del diagnóstico gratis:</p>
+      <p class="muted" style="margin-top:-6px">Elige tu plan **después** de nuestro diagnóstico gratuito:</p>
       <div style="display:grid;gap:12px" id="precios">
         <div class="plan" aria-label="Paquete de Documentos DIY">
           <div class="pill">Paquete de Documentos (DIY)</div>
           <div class="price">14,90 €</div>
           <ul class="muted">
-            <li>Reclamación PDF automática</li>
-            <li>**Tú lo envías**. Sin soporte.</li>
+            <li>Reclamación PDF automática.</li>
+            <li>Listo para que **tú lo envíes**.</li>
+            <li>Ideal si solo necesitas el documento.</li>
           </ul>
-          <a class="btn btn-outline" id="btnStripe1490" href="https://buy.stripe.com/dRm6oIduabj13JtgLT8og01" rel="noopener" aria-label="Comprar Paquete de Documentos">Comprar</a>
+          <a class="btn btn-outline" id="btnStripe1490" href="https://buy.stripe.com/dRm6oIduabj13JtgLT8og01" rel="noopener" aria-label="Comprar el Paquete de Documentos por 14,90 euros">Comprar</a>
         </div>
         <div class="plan reco" aria-label="Plan Completo">
           <div class="pill">Plan Completo • más elegido</div>
           <div class="price">29,90 €</div>
           <ul class="muted">
-            <li>PDF personalizado + referencias legales</li>
-            <li>Guía paso a paso (emails, sedes, plazos)</li>
-            <li>Soporte por email</li>
+            <li>PDF personalizado + referencias legales.</li>
+            <li>Guía detallada para el proceso.</li>
+            <li>Soporte por email para tus dudas.</li>
           </ul>
-          <a class="btn btn-primary" id="btnStripe2990" href="https://buy.stripe.com/cNi14o0Ho3Qz93N1QZ8og02" rel="noopener" aria-label="Comprar Plan Completo">Comprar</a>
+          <a class="btn btn-primary" id="btnStripe2990" href="https://buy.stripe.com/cNi14o0Ho3Qz93N1QZ8og02" rel="noopener" aria-label="Comprar el Plan Completo por 29,90 euros">Comprar</a>
         </div>
         <div class="plan" aria-label="Plan Premium">
           <div class="pill">Plan Premium</div>
           <div class="price">49,90 €</div>
           <ul class="muted">
-            <li>Nosotros **enviamos por ti** (autorización)</li>
-            <li>Acuse de envío y seguimiento básico</li>
-            <li>Soporte por email</li>
+            <li>Nosotros **enviamos por ti** la reclamación.</li>
+            <li>Acuse de envío y seguimiento básico.</li>
+            <li>Máxima comodidad.</li>
           </ul>
-          <a class="btn btn-outline" id="btnStripe4990" href="https://buy.stripe.com/7sYdRa89Qdr9dk3brz8og03" rel="noopener" aria-label="Comprar Plan Premium">Comprar</a>
+          <a class="btn btn-outline" id="btnStripe4990" href="https://buy.stripe.com/7sYdRa89Qdr9dk3brz8og03" rel="noopener" aria-label="Comprar el Plan Premium por 49,90 euros">Comprar</a>
         </div>
       </div>
     </aside>
@@ -389,11 +390,11 @@
     </div>
   </noscript>
 
-  <script defer>
+    <script defer>
     const $=(s,r=document)=>r.querySelector(s);
     const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
 
-    /* Año */
+    /* Año actual en el footer */
     $('#year').textContent=new Date().getFullYear();
 
     /* WhatsApp Footer y Hero secundario */
@@ -511,3 +512,4 @@
   </script>
 </body>
 </html>
+
