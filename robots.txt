@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /gracias.html
 Allow: /
 
-Sitemap: https://www.tureclamoexpres.com/sitemap.xml
+Sitemap: https://tureclamoexpres.com/sitemap.xml
