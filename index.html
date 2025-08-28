@@ -17,7 +17,12 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
 
+  <!-- Favicons (opcional; si no los tienes aún, puedes dejar también el /favicon.ico de abajo) -->
   <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
@@ -39,9 +44,10 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    :root { --bg:#0f172a; --card:#0b1120; --text:#e5e7eb; --muted:#9ca3af; --accent:#22c55e; --link:#60a5fa; --border:#1f2937; }
+    /* Contraste y legibilidad mejorados para personas mayores */
+    :root { --bg:#0f172a; --card:#0b1120; --text:#f3f4f6; --muted:#d1d5db; --accent:#22c55e; --link:#60a5fa; --border:#1f2937; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Poppins', sans-serif; background: linear-gradient(180deg,#0b1024,#0f172a); color: var(--text); line-height: 1.6; }
+    body { font-family: 'Poppins', sans-serif; background: linear-gradient(180deg,#0b1024,#0f172a); color: var(--text); line-height: 1.7; font-size: 18px; }
     header, main, footer { max-width: 1100px; margin: 0 auto; padding: 20px; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
@@ -49,7 +55,7 @@
     .site-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; position: sticky; top: 0; background: var(--bg); z-index: 999; border-bottom: 1px solid var(--border); }
     .logo { font-weight: 700; font-size: 1.4rem; color: var(--text); text-decoration: none; }
     .nav-links { list-style: none; display: flex; gap: 16px; }
-    .nav-links a { color: var(--text); font-weight: 600; text-decoration: none; }
+    .nav-links a { color: var(--text); font-weight: 600; text-decoration: none; font-size: 1rem; }
     .nav-toggle { display: none; background: none; border: 0; cursor: pointer; }
     .nav-toggle-bar { display: block; width: 24px; height: 2px; margin: 5px 0; background: var(--text); }
     @media (max-width: 768px) {
@@ -64,8 +70,8 @@
     /* Hero */
     .hero { text-align: center; padding: 3rem 1rem; }
     .hero h1 { font-size: clamp(28px,5vw,42px); margin: .5rem auto; max-width: 800px; }
-    .hero p { color: var(--muted); max-width: 800px; margin: 0 auto 1rem; }
-    .btn { display: inline-block; padding: 12px 16px; border-radius: 12px; font-weight: 700; text-decoration: none; margin: 4px; }
+    .hero p { color: var(--muted); max-width: 800px; margin: 0 auto 1rem; font-size: 1.1rem; }
+    .btn { display: inline-block; padding: 14px 18px; border-radius: 12px; font-weight: 700; text-decoration: none; margin: 4px; font-size: 1rem; }
     .btn-primary { background: var(--accent); color: #052e16; }
     .btn-outline { border: 1px solid #374151; color: var(--text); }
 
@@ -75,26 +81,30 @@
     @media (min-width: 900px) { .services { grid-template-columns: repeat(3, 1fr); } }
     .svc { background: var(--card); padding: 16px; border: 1px solid var(--border); border-radius: 12px; }
     .svc h4 { margin: 0 0 .5rem; }
-    .help { color: var(--muted); font-size: .9rem; }
+    .help { color: var(--muted); font-size: .95rem; }
 
-    /* Accordion */
+    /* Accordion (9 items) – más legible */
     .accordion { display: grid; gap: 10px; margin-top: 10px; }
     .acc-item { border: 1px solid var(--border); border-radius: 12px; background: var(--card); overflow: hidden; }
-    .acc-btn { width: 100%; text-align: left; background: transparent; border: 0; color: var(--text); font-weight: 700; padding: 14px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .acc-btn { width: 100%; text-align: left; background: transparent; border: 0; color: var(--text); font-weight: 700; padding: 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; }
     .acc-icon { transition: transform .2s; }
     .acc-panel { max-height: 0; overflow: hidden; transition: max-height .25s ease; }
-    .acc-panel-inner { padding: 0 16px 16px; color: var(--muted); }
+    .acc-panel-inner { padding: 0 16px 16px; color: var(--muted); font-size: 1rem; }
     .acc-item.open .acc-panel { max-height: 600px; }
     .acc-item.open .acc-icon { transform: rotate(180deg); }
 
     /* Plans */
     .plans { display: grid; gap: 12px; }
     @media (min-width: 900px) { .plans { grid-template-columns: repeat(3, 1fr); } }
-    .plan { background: var(--card); padding: 16px; border: 1px solid var(--border); border-radius: 12px; }
+    .plan { background: var(--card); padding: 16px; border: 1px solid var(--border); border-radius: 12px; position: relative; }
     .price { font-size: 1.4rem; font-weight: 800; }
+    .plan .badge { position: absolute; top: -10px; left: 16px; padding: 6px 10px; border-radius: 999px; font-weight: 800; font-size: .85rem; background: #22c55e; color: #052e16; border: 1px solid #14532d; }
+    .plan.recommended { outline: 2px solid #22c55e; box-shadow: 0 8px 24px rgba(34,197,94,.25); transform: translateY(-2px); }
+    .plan.recommended .price { font-size: 1.6rem; }
+    #precios .plan p, #precios .plan li { font-size: 1.05rem; line-height: 1.7; }
 
-    /* Footer */
-    .footer { border-top: 1px solid var(--border); margin-top: 30px; padding-top: 22px; color: #a1a1aa; }
+    /* Footer – más aire para que no tape el botón flotante */
+    .footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 60px 20px 90px; color: #a1a1aa; }
     .footer a { color: var(--link); }
 
     /* Modal */
@@ -103,10 +113,13 @@
     .modal-wrap h3 { margin-bottom: 8px; }
     .modal-wrap h4 { margin: 16px 0 6px; }
     .modal-toplinks { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0 14px; }
-    .chip { border: 1px solid var(--border); padding: 6px 10px; border-radius: 999px; text-decoration: none; color: var(--text); font-size: .9rem; }
+    .chip { border: 1px solid var(--border); padding: 6px 10px; border-radius: 999px; text-decoration: none; color: var(--text); font-size: .95rem; }
 
-    /* WhatsApp floating */
-    .fab-wa { position: fixed; right: 16px; bottom: 16px; z-index: 1000; background: #22c55e; color: #052e16; font-weight: 800; border-radius: 999px; padding: 12px 18px; text-decoration: none; }
+    /* WhatsApp floating – subido para no tapar cookies */
+    .fab-wa { position: fixed; right: 16px; bottom: 100px; z-index: 1000; background: #22c55e; color: #052e16; font-weight: 800; border-radius: 999px; padding: 12px 18px; text-decoration: none; font-size: 1rem; }
+    @media (max-width: 600px) {
+      .fab-wa { bottom: 110px; padding: 10px 16px; font-size: 0.95rem; }
+    }
   </style>
 </head>
 <body>
@@ -223,7 +236,7 @@
     </div>
   </section>
 
-  <!-- Servicios (3 tarjetas claras) -->
+  <!-- Servicios (3 tarjetas) -->
   <section id="servicios">
     <h2>Servicios</h2>
     <div class="services">
@@ -251,6 +264,7 @@
 
       <div class="svc">
         <h4>Premium (Gestión integral)</h4>
+        <span class="chip" style="display:inline-block;margin:.25rem 0 0;padding:.25rem .6rem;border-radius:999px;border:1px solid var(--border);">⭐ Más fácil para ti</span>
         <p class="help">Nos encargamos de TODO por ti.</p>
         <ul style="margin-left:1rem;list-style:disc;">
           <li>Enviamos la reclamación en tu nombre.</li>
@@ -260,7 +274,7 @@
         <p style="margin-top:.5rem"><strong>Entrega:</strong> Gestión completa + actualizaciones por email/WhatsApp.</p>
       </div>
     </div>
-    <p style="margin-top:1rem;color:#9ca3af;font-size:.9rem">
+    <p style="margin-top:1rem;color:#9ca3af;font-size:.95rem">
       ⚖️ Nota importante: TuReclamoExpres ofrece un servicio administrativo y automatizado de revisión y gestión de reclamaciones. No prestamos asesoramiento jurídico individualizado ni representación letrada. En casos que requieran asistencia legal, contamos con <strong>colaboradores externos (abogados colegiados)</strong>, a los que podremos derivarte con tu consentimiento expreso.
     </p>
   </section>
@@ -286,11 +300,11 @@
     </form>
   </section>
 
-  <!-- Planes / Pagos -->
+  <!-- Planes / Pagos (idénticos, solo añadida insignia visual arriba) -->
   <section id="precios">
     <h2>Precios</h2>
     <div class="plans">
-      <div class="plan">
+      <div class="plan" aria-label="Plan Reclamación DIY">
         <div class="price">14,90 €</div>
         <p><strong>Reclamación DIY</strong> · PDF personalizado listo para enviar</p>
         <ul style="margin-left:1rem;list-style:disc;">
@@ -299,17 +313,8 @@
         </ul>
         <a class="btn btn-outline" href="https://buy.stripe.com/dRm6oIduabj13JtgLT8og01" target="_blank" rel="noopener noreferrer">Comprar</a>
       </div>
-      <div class="plan">
-        <div class="price">29,90 €</div>
-        <p><strong>DIY + Guía + Soporte</strong> · Te acompañamos</p>
-        <ul style="margin-left:1rem;list-style:disc;">
-          <li>PDF personalizado + guía ampliada</li>
-          <li>Soporte por email/WhatsApp para el envío</li>
-          <li>Revisión de la respuesta que te den</li>
-        </ul>
-        <a class="btn btn-primary" href="https://buy.stripe.com/cNi14o0Ho3Qz93N1QZ8og02" target="_blank" rel="noopener noreferrer">Comprar</a>
-      </div>
-      <div class="plan">
+      <div class="plan recommended" aria-label="Plan Premium, el más sencillo">
+        <span class="badge">⭐ Más fácil para ti</span>
         <div class="price">49,90 €</div>
         <p><strong>Premium</strong> · Envío por nosotros + seguimiento</p>
         <ul style="margin-left:1rem;list-style:disc;">
@@ -317,7 +322,17 @@
           <li>Seguimiento completo y réplicas si hace falta</li>
           <li>Informes de avances</li>
         </ul>
-        <a class="btn btn-outline" href="https://buy.stripe.com/7sYdRa89Qdr9dk3brz8og03" target="_blank" rel="noopener noreferrer">Comprar</a>
+        <a class="btn btn-primary" href="https://buy.stripe.com/7sYdRa89Qdr9dk3brz8og03" target="_blank" rel="noopener noreferrer">Comprar</a>
+      </div>
+      <div class="plan" aria-label="Plan DIY + Guía + Soporte">
+        <div class="price">29,90 €</div>
+        <p><strong>DIY + Guía + Soporte</strong> · Te acompañamos</p>
+        <ul style="margin-left:1rem;list-style:disc;">
+          <li>PDF personalizado + guía ampliada</li>
+          <li>Soporte por email/WhatsApp para el envío</li>
+          <li>Revisión de la respuesta que te den</li>
+        </ul>
+        <a class="btn btn-outline" href="https://buy.stripe.com/cNi14o0Ho3Qz93N1QZ8og02" target="_blank" rel="noopener noreferrer">Comprar</a>
       </div>
     </div>
     <p class="help" style="margin-top:.75rem">* La redirección post-pago se configura en tu panel de Stripe (Payment Links → Después del pago → Redirigir a URL personalizada, ej. /gracias.html).</p>
@@ -374,10 +389,12 @@
 
     <h4 id="modal-aviso">Aviso Legal</h4>
     <p>
-      Este sitio es titularidad de S.A.G. Servicios Digitales. Objeto: información general y modelos automatizados de reclamación.
-      <strong>No constituye asesoramiento jurídico ni representación letrada.</strong> En supuestos que requieran intervención de abogado,
+      Este sitio es titularidad de S.A.G. Servicios Digitales. Objeto: información general y modelos automatizados de reclamación,
+      sin que ello suponga asesoramiento jurídico ni representación letrada. En supuestos que requieran intervención de abogado,
       podremos derivar —con consentimiento expreso del usuario— a <strong>abogados colaboradores externos, colegiados y responsables de sus honorarios y actuaciones</strong>.
-      Cualquier controversia se someterá a los Juzgados y Tribunales de Jaén, salvo lo dispuesto por normativa de consumidores.
+      A efectos meramente identificativos y de contacto interno del titular del proyecto, se hace constar —sin perjuicio de la razón social anterior— que
+      <em>Sergio Arnes Gómez, DNI 78687563D, C/ Ibañez Marín, Andújar (Jaén), C.P. 23740</em>, participa en la coordinación operativa del servicio,
+      dejando claro que cualquier controversia se someterá a los Juzgados y Tribunales de Jaén, salvo lo dispuesto por normativa de consumidores.
     </p>
 
     <div style="margin-top:14px">
@@ -386,7 +403,7 @@
   </div>
 </div>
 
-<!-- WhatsApp flotante -->
+<!-- WhatsApp flotante (subido para no tapar cookies) -->
 <a class="fab-wa" href="https://wa.me/34953818494?text=Hola,%20quiero%20enviar%20mi%20factura" aria-label="Abrir WhatsApp" rel="noopener">WhatsApp</a>
 
 <noscript>
@@ -395,8 +412,8 @@
   </div>
 </noscript>
 
-<!-- SCRIPTS -->
-<script>
+<!-- SCRIPTS (misma lógica de tu versión; no se toca funcionalidad) -->
+<script defer>
   // Año dinámico
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -407,11 +424,13 @@
   navToggle.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('open');
     navToggle.setAttribute('aria-expanded', isOpen);
+    navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú'); // mejora accesibilidad
   });
   navLinks.forEach(a => a.addEventListener('click', () => {
     if (nav.classList.contains('open')) {
       nav.classList.remove('open');
       navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Abrir menú');
     }
   }));
 
@@ -482,7 +501,7 @@
     panel.style.maxHeight = '0px';
     item.querySelector('.acc-btn').setAttribute('aria-expanded','false');
   }
-  // Abrir todos en escritorio, cerrar en móvil
+  // Abrir todos en escritorio, cerrar en móvil (igual que antes)
   const isDesktop = () => window.matchMedia('(min-width: 900px)').matches;
   function setInitialAccordion() {
     if (isDesktop()) accItems.forEach(openItem);
