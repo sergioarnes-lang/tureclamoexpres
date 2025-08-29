@@ -8,6 +8,7 @@
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0f172a" />
   <link rel="canonical" href="https://tureclamoexpres.com/" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="TuReclamoExpres – Revisión GRATIS de facturas" />
@@ -27,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
 
-  <!-- Schema.org: Servicio (ampliado para incluir seguros) -->
+  <!-- JSON-LD: Service -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,21 +43,21 @@
   }
   </script>
 
-  <!-- JSON-LD ItemList (todas las guías/servicios enlazables) -->
+  <!-- JSON-LD: ItemList (Guías en el orden solicitado) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Servicios de TuReclamoExpres",
+    "name": "Servicios y Guías de TuReclamoExpres",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "url": "https://tureclamoexpres.com/factura-luz.html", "name": "Factura de luz" },
-      { "@type": "ListItem", "position": 2, "url": "https://tureclamoexpres.com/factura-gas.html", "name": "Factura de gas" },
-      { "@type": "ListItem", "position": 3, "url": "https://tureclamoexpres.com/reclamar-telefono.html", "name": "Telefonía e Internet" },
-      { "@type": "ListItem", "position": 4, "url": "https://tureclamoexpres.com/reclamar-banca.html", "name": "Banca" },
-      { "@type": "ListItem", "position": 5, "url": "https://tureclamoexpres.com/dar-de-baja-servicios.html", "name": "Dar de baja servicios" },
-      { "@type": "ListItem", "position": 6, "url": "https://tureclamoexpres.com/altas-no-consentidas.html", "name": "Altas no consentidas" },
-      { "@type": "ListItem", "position": 7, "url": "https://tureclamoexpres.com/reclamar-seguro.html", "name": "Reclamar a tu seguro" },
-      { "@type": "ListItem", "position": 8, "url": "https://tureclamoexpres.com/modelo-reclamacion.html", "name": "Modelo de reclamación" }
+      { "@type": "ListItem", "position": 1, "url": "https://tureclamoexpres.com/modelo-reclamacion.html", "name": "Modelo de reclamación" },
+      { "@type": "ListItem", "position": 2, "url": "https://tureclamoexpres.com/factura-luz.html", "name": "Factura de luz" },
+      { "@type": "ListItem", "position": 3, "url": "https://tureclamoexpres.com/factura-gas.html", "name": "Factura de gas" },
+      { "@type": "ListItem", "position": 4, "url": "https://tureclamoexpres.com/reclamar-telefono.html", "name": "Telefonía e Internet" },
+      { "@type": "ListItem", "position": 5, "url": "https://tureclamoexpres.com/reclamar-banca.html", "name": "Banca" },
+      { "@type": "ListItem", "position": 6, "url": "https://tureclamoexpres.com/dar-de-baja-servicios.html", "name": "Dar de baja servicios" },
+      { "@type": "ListItem", "position": 7, "url": "https://tureclamoexpres.com/altas-no-consentidas.html", "name": "Altas no consentidas" },
+      { "@type": "ListItem", "position": 8, "url": "https://tureclamoexpres.com/reclamar-seguro.html", "name": "Reclamar a tu seguro" }
     ]
   }
   </script>
@@ -128,6 +129,14 @@
     @media (max-width: 600px) {
       .fab-wa { bottom: 110px; padding: 10px 16px; font-size: 0.95rem; }
     }
+
+    /* Form */
+    #reclamoForm input, #reclamoForm textarea {
+      width: 100%; margin: 8px 0; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--border);
+      background: #0f172a; color: var(--text); font-size: 1rem;
+    }
+    #reclamoForm textarea { min-height: 140px; resize: vertical; }
+    #reclamoForm label { display: block; margin: 6px 0; }
   </style>
 </head>
 <body>
@@ -141,6 +150,7 @@
       <li><a href="#como-funciona">Cómo funciona</a></li>
       <li><a href="#que-hacemos">Qué hacemos por ti</a></li>
       <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#guias">Guías</a></li>
       <li><a href="#formulario">Subir datos</a></li>
       <li><a href="#precios">Precios</a></li>
       <li><a href="#" id="openLegalModalLink">Legales</a></li>
@@ -153,8 +163,8 @@
   <section class="hero" id="como-funciona">
     <h1>Envía tu factura GRATIS. Te confirmamos si hay cobros indebidos.</h1>
     <p>Diagnóstico sin coste. <strong>Solo pagas</strong> si tu reclamación es viable.</p>
-    <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20enviar%20mi%20factura" rel="noopener">Enviar por WhatsApp</a>
-    <a class="btn btn-outline" href="#formulario">Subir datos</a>
+    <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" rel="noopener" aria-label="Abrir WhatsApp para subir tu factura">Sube tu factura GRATIS</a>
+    <a class="btn btn-outline" href="#formulario">Subir datos (formulario)</a>
   </section>
 
   <!-- Qué hacemos por ti (ACORDEÓN 9 items) -->
@@ -244,7 +254,7 @@
     </div>
   </section>
 
-  <!-- Servicios (tus 3 paquetes informativos, intactos) -->
+  <!-- Servicios -->
   <section id="servicios">
     <h2>Servicios</h2>
     <div class="services">
@@ -287,54 +297,70 @@
     </p>
   </section>
 
-  <!-- Guías prácticas (PUERTAS a todas las guías, incluye Seguros) -->
+  <!-- Guías prácticas (PUERTAS) en el orden solicitado + botón WhatsApp en todas -->
   <section id="guias" style="margin-top:24px">
     <h2>Guías prácticas</h2>
     <div class="services">
-      <div class="svc">
-        <h4>Cómo reclamar tu factura de luz</h4>
-        <p class="help">Detecta cobros indebidos y presenta tu reclamación paso a paso.</p>
-        <a class="btn btn-outline" href="/factura-luz.html" aria-label="Abrir guía reclamar factura de luz">Abrir guía</a>
-      </div>
-      <div class="svc">
-        <h4>Cómo reclamar tu factura de gas</h4>
-        <p class="help">Lecturas estimadas, peajes mal aplicados y servicios no solicitados.</p>
-        <a class="btn btn-outline" href="/factura-gas.html" aria-label="Abrir guía reclamar factura de gas">Abrir guía</a>
-      </div>
-      <div class="svc">
-        <h4>Reclamar a tu compañía de teléfono/Internet</h4>
-        <p class="help">Permanencias abusivas, subidas sin aviso, SMS premium y altas no consentidas.</p>
-        <a class="btn btn-outline" href="/reclamar-telefono.html" aria-label="Abrir guía reclamar a compañía de teléfono e Internet">Abrir guía</a>
-      </div>
-      <div class="svc">
-        <h4>Comisiones y productos bancarios</h4>
-        <p class="help">Cómo pedir devolución de comisiones y anular productos no solicitados.</p>
-        <a class="btn btn-outline" href="/reclamar-banca.html" aria-label="Abrir guía reclamar comisiones bancarias">Abrir guía</a>
-      </div>
+      <!-- 1) Modelo -->
       <div class="svc">
         <h4>Modelo de reclamación (plantilla)</h4>
         <p class="help">Texto listo para copiar y adaptar a tu caso.</p>
         <a class="btn btn-outline" href="/modelo-reclamacion.html" aria-label="Abrir plantilla general de reclamación">Abrir guía</a>
+        <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" aria-label="Subir factura por WhatsApp">Sube tu factura GRATIS</a>
       </div>
+      <!-- 2) Luz -->
+      <div class="svc">
+        <h4>Cómo reclamar tu factura de luz</h4>
+        <p class="help">Detecta cobros indebidos y presenta tu reclamación paso a paso.</p>
+        <a class="btn btn-outline" href="/factura-luz.html" aria-label="Abrir guía reclamar factura de luz">Abrir guía</a>
+        <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20de%20luz%20para%20revisi%C3%B3n%20gratuita">Sube tu factura GRATIS</a>
+      </div>
+      <!-- 3) Gas -->
+      <div class="svc">
+        <h4>Cómo reclamar tu factura de gas</h4>
+        <p class="help">Lecturas estimadas, peajes mal aplicados y servicios no solicitados.</p>
+        <a class="btn btn-outline" href="/factura-gas.html" aria-label="Abrir guía reclamar factura de gas">Abrir guía</a>
+        <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20de%20gas%20para%20revisi%C3%B3n%20gratuita">Sube tu factura GRATIS</a>
+      </div>
+      <!-- 4) Telefonía -->
+      <div class="svc">
+        <h4>Reclamar a tu compañía de teléfono/Internet</h4>
+        <p class="help">Permanencias abusivas, subidas sin aviso, SMS premium y altas no consentidas.</p>
+        <a class="btn btn-outline" href="/reclamar-telefono.html" aria-label="Abrir guía reclamar a compañía de teléfono e Internet">Abrir guía</a>
+        <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20reclamar%20a%20mi%20compa%C3%B1%C3%ADa%20de%20tel%C3%A9fono%2FInternet.%20Adjunto%20datos.">Sube tu factura GRATIS</a>
+      </div>
+      <!-- 5) Banca -->
+      <div class="svc">
+        <h4>Comisiones y productos bancarios</h4>
+        <p class="help">Cómo pedir devolución de comisiones y anular productos no solicitados.</p>
+        <a class="btn btn-outline" href="/reclamar-banca.html" aria-label="Abrir guía reclamar comisiones bancarias">Abrir guía</a>
+        <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20revisar%20comisiones%20bancarias%20y%20productos%20no%20solicitados.">Sube tu factura GRATIS</a>
+      </div>
+      <!-- 6) Bajas -->
       <div class="svc">
         <h4>Dar de baja servicios (con trabas)</h4>
         <p class="help">Qué hacer si no tramitan tu baja o te siguen cobrando.</p>
         <a class="btn btn-outline" href="/dar-de-baja-servicios.html" aria-label="Abrir guía dar de baja servicios">Abrir guía</a>
+        <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20tramitar%20la%20baja%20de%20un%20servicio%20y%20me%20ponen%20trabas.">Sube tu factura GRATIS</a>
       </div>
+      <!-- 7) Altas no consentidas -->
       <div class="svc">
         <h4>Altas no consentidas</h4>
         <p class="help">Cómo anular el alta, evitar penalizaciones y recuperar importes.</p>
         <a class="btn btn-outline" href="/altas-no-consentidas.html" aria-label="Abrir guía altas no consentidas">Abrir guía</a>
+        <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20han%20dado%20de%20alta%20un%20servicio%20sin%20mi%20consentimiento.%20Necesito%20ayuda.">Sube tu factura GRATIS</a>
       </div>
+      <!-- 8) Seguros -->
       <div class="svc">
         <h4>Reclamar a tu seguro</h4>
         <p class="help">Daños estéticos o siniestros cubiertos que no quieren pagar.</p>
         <a class="btn btn-outline" href="/reclamar-seguro.html" aria-label="Abrir guía reclamar a tu seguro">Abrir guía</a>
+        <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20reclamar%20a%20mi%20seguro.%20Te%20env%C3%ADo%20datos.">Sube tu factura GRATIS</a>
       </div>
     </div>
   </section>
 
-  <!-- Formulario (intacto) -->
+  <!-- Formulario -->
   <section id="formulario">
     <h2>Envíanos tus datos</h2>
     <form id="reclamoForm" action="https://formspree.io/f/mzzvnwll" method="POST" novalidate>
@@ -345,7 +371,7 @@
       <input id="email" type="email" name="email" placeholder="Correo electrónico" required autocomplete="email" />
       <label for="mensaje" class="sr-only">Cuéntanos tu caso</label>
       <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos tu caso" required></textarea>
-      <p class="help">📩 Si necesitas enviarnos documentación, mándala directamente a <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a> o por <a href="https://wa.me/34953818494?text=Hola,%20te%20mando%20mi%20documentación" rel="noopener">WhatsApp</a>.</p>
+      <p class="help">📩 Si necesitas enviarnos documentación, mándala a <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a> o por <a href="https://wa.me/34953818494?text=Hola,%20te%20mando%20mi%20documentaci%C3%B3n%20para%20revisi%C3%B3n">WhatsApp</a>.</p>
       <label><input id="rgpdCheck" type="checkbox" required /> Acepto la <a href="#" id="rgpdLink">Política de Privacidad</a></label>
       <input type="hidden" name="_subject" value="Nuevo envío – TuReclamoExpres" />
       <input type="hidden" name="_redirect" value="https://tureclamoexpres.com/gracias.html" />
@@ -355,7 +381,7 @@
     </form>
   </section>
 
-  <!-- Precios (mismo orden; mensajes por nivel de implicación) -->
+  <!-- Precios -->
   <section id="precios">
     <h2>Precios</h2>
     <p class="help" style="margin:.25rem 0 .75rem">
@@ -363,8 +389,7 @@
     </p>
 
     <div class="plans">
-
-      <!-- 1) DIY – Tú lo gestionas -->
+      <!-- 1) 14,90 -->
       <div class="plan" aria-label="Plan Reclamación DIY">
         <div class="price">14,90 €</div>
         <p><strong>DIY – Tú lo gestionas</strong></p>
@@ -379,9 +404,9 @@
         <a class="btn btn-outline" href="https://buy.stripe.com/dRm6oIduabj13JtgLT8og01" target="_blank" rel="noopener noreferrer">Comprar</a>
       </div>
 
-      <!-- 2) DIY + Guía + Soporte – Acompañado (soporte limitado) -->
+      <!-- 2) 29,90 -->
       <div class="plan" aria-label="Plan DIY + Guía + Soporte – Acompañado">
-        <span class="badge" style="background:#0b2536;color:#cfe9ff;border:1px solid #1e3a8a">Soporte limitado</span>
+        <span class="badge" style="background:#0b2536;color:#cfe9ff;border:1px solid #1e3a8a">💡 Equilibrio ideal</span>
         <div class="price">29,90 €</div>
         <p><strong>DIY + Guía + Soporte – Acompañado</strong></p>
         <ul style="margin-left:1rem;list-style:disc;">
@@ -395,9 +420,9 @@
         <a class="btn btn-outline" href="https://buy.stripe.com/cNi14o0Ho3Qz93N1QZ8og02" target="_blank" rel="noopener noreferrer">Comprar</a>
       </div>
 
-      <!-- 3) Premium – Sin complicaciones (recomendado) -->
+      <!-- 3) 49,90 (Recomendado) -->
       <div class="plan recommended" aria-label="Plan Premium – Sin complicaciones">
-        <span class="badge">⭐ Recomendado · Más fácil para ti</span>
+        <span class="badge">⭐ Más fácil para ti</span>
         <div class="price">49,90 €</div>
         <p><strong>Premium – Sin complicaciones</strong></p>
         <ul style="margin-left:1rem;list-style:disc;">
@@ -410,14 +435,10 @@
         </p>
         <a class="btn btn-primary" href="https://buy.stripe.com/7sYdRa89Qdr9dk3brz8og03" target="_blank" rel="noopener noreferrer">Comprar</a>
       </div>
-
     </div>
 
     <p class="help" style="margin-top:.75rem">
       * El plan Acompañado incluye <strong>1 revisión</strong> y <strong>1 consulta breve</strong>. Dudas adicionales o acompañamiento extendido ⇒ elige <strong>Premium</strong>.
-    </p>
-    <p class="help" style="margin-top:.25rem">
-      * La redirección post-pago se configura en Stripe (Payment Links → Después del pago → Redirigir a URL personalizada, p. ej. /gracias.html).
     </p>
   </section>
 </main>
@@ -487,7 +508,7 @@
 </div>
 
 <!-- WhatsApp flotante -->
-<a class="fab-wa" href="https://wa.me/34953818494?text=Hola,%20quiero%20enviar%20mi%20factura" aria-label="Abrir WhatsApp" rel="noopener">WhatsApp</a>
+<a class="fab-wa" href="https://wa.me/34953818494?text=Hola,%20quiero%20enviar%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" aria-label="Abrir WhatsApp" rel="noopener">WhatsApp</a>
 
 <noscript>
   <div style="background:#fee2e2;color:#7f1d1d;padding:12px;text-align:center;">
@@ -495,7 +516,7 @@
   </div>
 </noscript>
 
-<!-- SCRIPTS (idénticos a los tuyos) -->
+<!-- SCRIPTS -->
 <script defer>
   // Año dinámico
   document.getElementById('year').textContent = new Date().getFullYear();
