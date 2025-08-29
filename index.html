@@ -159,8 +159,8 @@
   <section class="hero" id="como-funciona">
     <h1>Envía tu factura GRATIS. Te confirmamos si hay cobros indebidos.</h1>
     <p>Diagnóstico sin coste. <strong>Solo pagas</strong> si tu reclamación es viable.</p>
-    <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" rel="noopener" aria-label="Abrir WhatsApp para subir tu factura">Sube tu factura GRATIS</a>
-    <a class="btn btn-outline" href="#formulario">Subir datos (formulario)</a>
+    <!-- CTA unificado a WhatsApp -->
+    <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" rel="noopener" aria-label="Subir factura por WhatsApp">Sube tu factura ahora</a>
   </section>
 
   <!-- Qué hacemos por ti (DESPLEGABLE ÚNICO) -->
@@ -316,6 +316,23 @@
       </div>
     </div>
 
+    <!-- Botón WhatsApp debajo de .plans -->
+    <div style="text-align:center; margin-top:1rem;">
+      <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20iniciar%20mi%20reclamaci%C3%B3n" aria-label="Subir factura vía WhatsApp">Sube tu factura por WhatsApp</a>
+    </div>
+
+    <!-- Nuevo plan Premium Plus justo debajo -->
+    <div class="plan" aria-label="Plan Premium Plus – Casos complejos" style="margin-top:1rem;">
+      <div class="price">99,90 €</div>
+      <p><strong>Premium Plus – Casos complejos</strong></p>
+      <ul>
+        <li>Gestión de múltiples reclamaciones</li>
+        <li>Atención personalizada extendida</li>
+        <li>Seguimiento completo hasta cierre</li>
+      </ul>
+      <a class="btn btn-primary" href="https://buy.stripe.com/00w28s61IgDlcfZ3Z78og04" target="_blank" rel="noopener noreferrer" aria-label="Pagar Premium Plus 99,90 €">Pagar 99,90 €</a>
+    </div>
+
     <p class="help" style="margin-top:.75rem">
       * El plan Acompañado incluye <strong>1 revisión</strong> y <strong>1 consulta breve</strong>. Para acompañamiento extendido o máxima comodidad ⇒ <strong>Premium</strong>.
     </p>
@@ -325,6 +342,16 @@
       ⚖️ Este servicio es <strong>administrativo y automatizado</strong>; no constituye asesoramiento jurídico individualizado ni representación letrada.
       Si tu caso requiere intervención de abogado, podremos derivarte —con tu consentimiento— a
       <strong>colaboradores externos, colegiados y responsables de sus honorarios</strong>.
+    </p>
+  </section>
+
+  <!-- Bloque de confianza (después del aviso legal y antes del formulario) -->
+  <section id="confianza" style="margin-top:2rem; padding:1rem; border:1px solid var(--border); border-radius:12px; background:var(--card);">
+    <h3>Por qué confiar en TuReclamoExprés</h3>
+    <p>
+      TuReclamoExprés nace de la experiencia directa, viendo cada día cómo las personas pierden dinero por abusos en sus facturas y contratos. 
+      Conocemos de primera mano cómo actúan las compañías y qué errores se cometen al reclamar. 
+      Por eso creamos un servicio transparente y claro: para que puedas defenderte sin complicaciones, con respuesta rápida y trato cercano.
     </p>
   </section>
 
@@ -359,6 +386,14 @@
     <a href="#" id="condicionesLinkFooter">Condiciones</a> ·
     <a href="#" id="avisoLegalLinkFooter">Aviso legal</a>
   </p>
+
+  <!-- CTA final en el footer -->
+  <div style="margin-top:1.5rem; text-align:center;">
+    <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" aria-label="Subir factura por WhatsApp">Sube tu factura ahora</a>
+    <p style="margin-top:.5rem;">
+      <a class="btn btn-outline" href="mailto:info@tureclamoexpres.com" aria-label="Enviar factura por email">Prefiero enviarla por email</a>
+    </p>
+  </div>
 </footer>
 
 <!-- Modal Legal -->
