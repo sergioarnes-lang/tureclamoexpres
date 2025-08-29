@@ -94,7 +94,7 @@
 
     h2 { margin: 1.5rem 0 .5rem; font-size: clamp(22px,3.6vw,30px); }
 
-    /* Bloques colapsables tipo “puerta cerrada” */
+    /* Puertas (desplegables simples) */
     .toggle { display:flex; align-items:center; justify-content:space-between; width:100%; background:transparent; border:1px solid var(--border); border-radius:12px; padding:14px 16px; color:var(--text); font-weight:700; cursor:pointer; font-size:1.1rem; }
     .toggle + .toggle-wrap { overflow:hidden; max-height:0; transition:max-height .25s ease; }
     .toggle-wrap .inner { padding: 12px 2px; }
@@ -163,7 +163,7 @@
     <a class="btn btn-outline" href="#formulario">Subir datos (formulario)</a>
   </section>
 
-  <!-- Qué hacemos por ti (MENÚ DESPLEGABLE ÚNICO) -->
+  <!-- Qué hacemos por ti (DESPLEGABLE ÚNICO) -->
   <section id="que-hacemos" style="margin-top:8px">
     <h2>Qué hacemos por ti</h2>
     <button class="toggle" id="toggleServicios" aria-expanded="false" aria-controls="serviciosWrap">
@@ -319,9 +319,16 @@
     <p class="help" style="margin-top:.75rem">
       * El plan Acompañado incluye <strong>1 revisión</strong> y <strong>1 consulta breve</strong>. Para acompañamiento extendido o máxima comodidad ⇒ <strong>Premium</strong>.
     </p>
+
+    <!-- AVISO LEGAL VISIBLE BAJO PRECIOS -->
+    <p class="help" style="margin-top:1rem;font-size:0.9rem;color:#9ca3af;">
+      ⚖️ Este servicio es <strong>administrativo y automatizado</strong>; no constituye asesoramiento jurídico individualizado ni representación letrada.
+      Si tu caso requiere intervención de abogado, podremos derivarte —con tu consentimiento— a
+      <strong>colaboradores externos, colegiados y responsables de sus honorarios</strong>.
+    </p>
   </section>
 
-  <!-- FORMULARIO (MOVIDO DEBAJO DE PRECIOS) -->
+  <!-- FORMULARIO (debajo de Precios) -->
   <section id="formulario" style="margin-top:18px">
     <h2>Envíanos tus datos</h2>
     <form id="reclamoForm" action="https://formspree.io/f/mzzvnwll" method="POST" novalidate>
@@ -451,7 +458,7 @@
   document.getElementById('cerrar-legal').addEventListener('click', cerrarLegal);
   legalModal.addEventListener('click', e => { if (e.target === legalModal) cerrarLegal(); });
 
-  // “Puertas” (servicios y guías)
+  // Puertas (servicios y guías)
   function makeToggle(btnId, wrapId){
     const btn = document.getElementById(btnId);
     const wrap = document.getElementById(wrapId);
@@ -464,7 +471,6 @@
       const open = btn.getAttribute('aria-expanded') !== 'true';
       setState(open);
     });
-    // reajuste al redimensionar
     window.addEventListener('resize', () => {
       if (btn.getAttribute('aria-expanded') === 'true') {
         wrap.style.maxHeight = wrap.scrollHeight + 'px';
