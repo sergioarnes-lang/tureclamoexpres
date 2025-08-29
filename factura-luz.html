@@ -1,3 +1,4 @@
+<
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,12 +21,12 @@
 
   <style>
     :root{
-      --bg:#0f172a;        /* fondo oscuro elegante */
-      --surface:#111827;   /* tarjetas */
-      --ink:#e5e7eb;       /* texto principal */
-      --muted:#94a3b8;     /* texto suave */
-      --brand:#22d3ee;     /* acentos/calls-to-action */
-      --ok:#34d399;        /* botones secundarios */
+      --bg:#0f172a;
+      --surface:#111827;
+      --ink:#e5e7eb;
+      --muted:#94a3b8;
+      --brand:#22d3ee;
+      --ok:#34d399;
       --warn:#f59e0b;
       --danger:#f87171;
       --link:#7dd3fc;
@@ -51,10 +52,7 @@
     .grid{display:grid;gap:16px}
     @media(min-width:840px){.grid-2{grid-template-columns:1fr 1fr}}
     .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
-    .btn{
-      display:inline-block;padding:12px 16px;border-radius:12px;
-      background:var(--brand);color:#001018;font-weight:700;border:0
-    }
+    .btn{display:inline-block;padding:12px 16px;border-radius:12px;background:var(--brand);color:#001018;font-weight:700;border:0}
     .btn:hover{filter:brightness(1.05)}
     .btn-secondary{background:var(--ok);color:#01210f}
     .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#0b1220;color:#cbd5e1;border:1px solid rgba(148,163,184,.3);border-radius:8px;padding:10px;overflow:auto}
@@ -119,10 +117,7 @@
       <span class="badge">Guía 2025</span>
       <h1>Cómo reclamar tu factura de la luz (paso a paso)</h1>
       <p class="muted">Si sospechas que tu recibo incluye <em>cobros indebidos</em>, precios por encima de lo contratado o servicios que no has pedido, aquí tienes la guía clara para revisar, documentar y presentar tu reclamación sin perder tiempo.</p>
-      <div class="btns">
-        <a class="btn" href="/">Sube tu factura GRATIS</a>
-        <a class="btn btn-secondary" href="mailto:info@tureclamoexpres.com?subject=Revisión%20de%20factura%20de%20luz">Enviar por email</a>
-      </div>
+      <!-- CTA del hero eliminado -->
     </section>
 
     <aside class="toc">
@@ -140,106 +135,91 @@
     <main class="grid grid-2">
       <article class="card" style="min-width:0">
         <h2 id="senales">Señales claras de cobros indebidos</h2>
-        <p>Antes de reclamar, confirma que hay base objetiva. Estas señales suelen delatar un error o cargo improcedente:</p>
         <ul>
-          <li><strong>Precio/kWh distinto</strong> al pactado en tu contrato o a la tarifa publicitada cuando contrataste.</li>
-          <li><strong>Potencia contratada</strong> superior a la que pediste, o cargos por cambios no solicitados.</li>
-          <li><strong>Servicios añadidos</strong> (mantenimientos, protecciones, “packs”) que <em>no</em> pediste por escrito.</li>
-          <li><strong>Lecturas estimadas</strong> muy por encima de tu consumo real, sin regularización posterior clara.</li>
-          <li><strong>Duplicidad de conceptos</strong> (p. ej., un mismo servicio cobrado dos veces con distinto nombre).</li>
+          <li><strong>Precio/kWh distinto</strong> al pactado en tu contrato.</li>
+          <li><strong>Potencia contratada</strong> superior a la pedida.</li>
+          <li><strong>Servicios añadidos</strong> que no solicitaste.</li>
+          <li><strong>Lecturas estimadas</strong> muy por encima del consumo real.</li>
+          <li><strong>Duplicidad de conceptos</strong>.</li>
         </ul>
-        <div class="note">Consejo rápido: compara los importes y precios unitarios con una factura anterior donde todo estuviera correcto. Si el salto no tiene explicación en consumo real o en el mercado, probablemente hay base para reclamar.</div>
 
         <h2 id="docs">Documentos que vas a necesitar</h2>
         <ul>
-          <li>Tu <strong>última factura</strong> y, si puedes, <strong>2–3 anteriores</strong> para comparar.</li>
-          <li>Una copia de tu <strong>contrato o condiciones</strong> (o pantalla de la oferta que aceptaste).</li>
-          <li><strong>DNI/NIE</strong> del titular y referencia del contrato/código de punto de suministro.</li>
-          <li><strong>Lectura real</strong> del contador (foto) si el problema es por consumo estimado.</li>
-          <li>Cualquier <strong>comunicación previa</strong> con la compañía (emails, tickets, nº de incidencia).</li>
+          <li>Última factura + 2–3 anteriores.</li>
+          <li>Contrato o condiciones aceptadas.</li>
+          <li>DNI/NIE del titular.</li>
+          <li>Lectura real (foto).</li>
+          <li>Comunicaciones previas con la compañía.</li>
         </ul>
+
+        <!-- PÁRRAFO PUENTE -->
+        <p class="note">
+          Aquí es donde la mayoría pierde tiempo y comete errores.
+          Evita complicaciones: 
+          <a href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" 
+             class="btn" aria-label="Subir factura por WhatsApp">
+            sube tu factura y lo hacemos por ti desde 14,90 €
+          </a>.
+        </p>
 
         <h2 id="pasos">Reclamación paso a paso</h2>
         <ol>
-          <li><strong>Revisa y marca</strong> en la factura los conceptos dudosos (precio, potencia, servicios, etc.).</li>
-          <li><strong>Compara</strong> con tu contrato y facturas previas. Anota diferencias concretas (p. ej., “precio kWh: 0,18 → 0,24”).</li>
-          <li><strong>Reúne pruebas</strong>: documentos, lecturas y capturas de pantalla de la oferta o condiciones.</li>
-          <li><strong>Presenta la reclamación</strong> por el canal oficial de tu compañía (web/app/email), guardando el justificante.</li>
-          <li><strong>Haz seguimiento</strong>: si la respuesta no te convence o no llega en un plazo razonable, <em>escala</em> a consumo de tu CCAA o al organismo competente.</li>
+          <li>Marca los conceptos dudosos.</li>
+          <li>Compara con contrato y facturas previas.</li>
+          <li>Reúne pruebas.</li>
+          <li>Presenta reclamación por canal oficial.</li>
+          <li>Si no responden, escala a consumo/organismo competente.</li>
         </ol>
-        <div class="note">Si no quieres perder tiempo: <a href="/">envíanos la factura</a>. La revisamos GRATIS y te decimos en claro si hay cobro indebido y cuánto puedes recuperar.</div>
 
         <h2 id="plantilla">Plantilla breve de reclamación</h2>
-        <p>Copia y adapta este texto (incluye tus datos y los importes exactos):</p>
         <pre class="kbd">Asunto: Reclamación por cobros indebidos en factura de electricidad
-
 Titular: [Nombre y DNI/NIE]
-Nº contrato / CUPS: [XXXX]
+Contrato / CUPS: [XXXX]
 Factura: [nº y periodo]
 
-Expongo que en la factura indicada se facturan los siguientes conceptos improcedentes:
-- [Ej.: Precio kWh aplicado 0,24 €/kWh cuando el contrato vigente establece 0,18 €/kWh]
-- [Ej.: Servicio de mantenimiento no solicitado: 9,90 €/mes]
-
+Expongo que la factura indicada contiene cargos indebidos.
 Solicito:
-1) La corrección de la factura y devolución/compensación de los importes cobrados indebidamente.
-2) La eliminación de servicios no solicitados y la confirmación por escrito.
+1) Corrección y devolución de importes.
+2) Eliminación de servicios no solicitados.
 
-Adjunto: copia de factura(s), contrato/condiciones, y pruebas (capturas, lecturas).
+Adjunto: facturas, contrato y pruebas.
 Atentamente,
-[Firma y contacto]</pre>
+[Firma]</pre>
 
         <h2 id="errores">Errores comunes que debes evitar</h2>
         <ul>
-          <li><strong>Reclamar “en general”.</strong> Debe ser concreto: qué concepto, cuánto, en qué factura y por qué es indebido.</li>
-          <li><strong>No guardar justificantes.</strong> Siempre descarga el PDF o ticket con el nº de incidencia y fecha.</li>
-          <li><strong>Enviar sin pruebas.</strong> Un pantallazo de tu oferta o una factura previa correcta te ahorra idas y vueltas.</li>
-          <li><strong>Olvidar revisar las siguientes facturas.</strong> Comprueba que la corrección se aplica de verdad.</li>
+          <li>Reclamar de forma genérica.</li>
+          <li>No guardar justificantes.</li>
+          <li>No aportar pruebas.</li>
+          <li>No revisar siguientes facturas.</li>
         </ul>
-
-        <h2 id="faq">Preguntas frecuentes</h2>
-        <h3>¿Me pueden cobrar servicios que no pedí?</h3>
-        <p>No deberían. Si aparecen “packs” o mantenimientos sin tu consentimiento, pídelos por escrito y reclama su retirada y abono de lo cobrado.</p>
-
-        <h3>¿Y si mi consumo real es menor que el estimado?</h3>
-        <p>Aporta lectura real (foto) y solicita regularización. Si no se ajusta, reclama la refacturación del periodo afectado.</p>
-
-        <h3>¿Compensa cambiar de compañía?</h3>
-        <p>Suele ser una buena medida cuando el servicio y la atención no cumplen. Primero deja tu reclamación por escrito y guarda el justificante.</p>
-
-        <div class="btns">
-          <a class="btn" href="/">Sube tu factura GRATIS</a>
-          <a class="btn btn-secondary" href="/#servicios">Ver servicios</a>
-        </div>
-
-        <p class="muted" style="margin-top:16px">¿Te ha servido esta guía? Mira también:
-          <a href="/reclamar-gas.html">Reclamar gas</a> ·
-          <a href="/reclamar-telefono.html">Reclamar teléfono</a> ·
-          <a href="/modelo-reclamacion-electricidad.html">Modelo de reclamación</a>
-        </p>
       </article>
 
       <aside class="card">
         <h3>Revisamos tu factura GRATIS</h3>
-        <p>Sube tu factura y te diremos si hay cobros indebidos y cuánto puedes recuperar. Sin compromiso.</p>
-        <div class="btns">
-          <a class="btn" href="/">Iniciar revisión</a>
-          <a class="btn btn-secondary" href="mailto:info@tureclamoexpres.com">Escribir por email</a>
-        </div>
+        <p>Envíanos tu factura y te diremos si hay cobros indebidos y cuánto puedes recuperar.</p>
+        <!-- Sidebar sin botones duplicados -->
         <hr style="border-color:rgba(255,255,255,.08);margin:20px 0">
-        <h3>Checklist de detección rápida</h3>
+        <h3>Checklist rápido</h3>
         <ul>
-          <li>Precio/kWh vs. contrato</li>
-          <li>Potencia facturada correcta</li>
-          <li>Servicios añadidos no solicitados</li>
-          <li>Lecturas estimadas vs. reales</li>
+          <li>Precio/kWh vs contrato</li>
+          <li>Potencia facturada</li>
+          <li>Servicios añadidos</li>
+          <li>Lecturas estimadas</li>
           <li>Duplicidad de conceptos</li>
         </ul>
         <hr style="border-color:rgba(255,255,255,.08);margin:20px 0">
         <h3>Aviso importante</h3>
-        <p class="muted">Esta guía es informativa. En supuestos que requieran defensa jurídica, TuReclamoExpres puede derivar—siempre con tu consentimiento— a <strong>abogados colaboradores externos</strong>, colegiados y responsables de sus propios honorarios.</p>
+        <p class="muted">Guía informativa. Si el caso requiere defensa jurídica, podemos derivar —con tu consentimiento— a <strong>abogados colaboradores externos</strong>.</p>
       </aside>
     </main>
+
+    <!-- CTA SECUNDARIO (email) -->
+    <div style="text-align:center; margin-top:16px;">
+      <a class="btn btn-secondary" href="mailto:info@tureclamoexpres.com?subject=Enviar%20factura%20de%20luz%20para%20revisi%C3%B3n" aria-label="Enviar factura por email">
+        Prefiero enviarla por email
+      </a>
+    </div>
 
     <footer>
       © 2025 TuReclamoExpres · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/politica-privacidad.html">Privacidad</a> · <a href="/#contacto">Contacto</a>
