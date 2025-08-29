@@ -92,27 +92,20 @@
     .btn-primary { background: var(--accent); color: #052e16; }
     .btn-outline { border: 1px solid #374151; color: var(--text); }
 
-    h2 { margin: 1.5rem 0 .5rem; }
+    h2 { margin: 1.5rem 0 .5rem; font-size: clamp(22px,3.6vw,30px); }
 
-    .accordion { display: grid; gap: 10px; margin-top: 10px; }
-    .acc-item { border: 1px solid var(--border); border-radius: 12px; background: var(--card); overflow: hidden; }
-    .acc-btn { width: 100%; text-align: left; background: transparent; border: 0; color: var(--text); font-weight: 700; padding: 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; }
-    .acc-icon { transition: transform .2s; }
-    .acc-panel { max-height: 0; overflow: hidden; transition: max-height .25s ease; }
-    .acc-panel-inner { padding: 0 16px 16px; color: var(--muted); font-size: 1rem; }
-    .acc-item.open .acc-panel { max-height: 600px; }
-    .acc-item.open .acc-icon { transform: rotate(180deg); }
+    /* Bloques colapsables tipo “puerta cerrada” */
+    .toggle { display:flex; align-items:center; justify-content:space-between; width:100%; background:transparent; border:1px solid var(--border); border-radius:12px; padding:14px 16px; color:var(--text); font-weight:700; cursor:pointer; font-size:1.1rem; }
+    .toggle + .toggle-wrap { overflow:hidden; max-height:0; transition:max-height .25s ease; }
+    .toggle-wrap .inner { padding: 12px 2px; }
 
-    /* Guías colapsables */
-    .guides-toggle { display:flex; align-items:center; justify-content:space-between; width:100%; background:transparent; border:1px solid var(--border); border-radius:12px; padding:14px 16px; color:var(--text); font-weight:700; cursor:pointer; }
-    .guides-wrap { overflow:hidden; max-height:0; transition:max-height .25s ease; }
     .services { display: grid; gap: 12px; }
     @media (min-width: 900px) { .services { grid-template-columns: repeat(3, 1fr); } }
     .svc { background: var(--card); padding: 16px; border: 1px solid var(--border); border-radius: 12px; }
     .svc h4 { margin: 0 0 .5rem; }
     .help { color: var(--muted); font-size: .95rem; }
 
-    /* Planes (Servicios + Precios unificados) */
+    /* Planes */
     .plans { display: grid; gap: 12px; }
     @media (min-width: 900px) { .plans { grid-template-columns: repeat(3, 1fr); } }
     .plan { background: var(--card); padding: 16px; border: 1px solid var(--border); border-radius: 12px; position: relative; }
@@ -132,9 +125,7 @@
 
     /* WhatsApp FAB */
     .fab-wa { position: fixed; right: 16px; bottom: 100px; z-index: 1000; background: #22c55e; color: #052e16; font-weight: 800; border-radius: 999px; padding: 12px 18px; text-decoration: none; font-size: 1rem; }
-    @media (max-width: 600px) {
-      .fab-wa { bottom: 110px; padding: 10px 16px; font-size: 0.95rem; }
-    }
+    @media (max-width: 600px) { .fab-wa { bottom: 110px; padding: 10px 16px; font-size: 0.95rem; } }
 
     /* Form */
     #reclamoForm input, #reclamoForm textarea {
@@ -156,8 +147,8 @@
       <li><a href="#como-funciona">Cómo funciona</a></li>
       <li><a href="#que-hacemos">Qué hacemos por ti</a></li>
       <li><a href="#guias">Guías</a></li>
-      <li><a href="#formulario">Subir datos</a></li>
       <li><a href="#precios">Precios</a></li>
+      <li><a href="#formulario">Subir datos</a></li>
       <li><a href="#" id="openLegalModalLink">Legales</a></li>
     </ul>
   </nav>
@@ -170,170 +161,113 @@
     <p>Diagnóstico sin coste. <strong>Solo pagas</strong> si tu reclamación es viable.</p>
     <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" rel="noopener" aria-label="Abrir WhatsApp para subir tu factura">Sube tu factura GRATIS</a>
     <a class="btn btn-outline" href="#formulario">Subir datos (formulario)</a>
-    <a class="btn btn-primary" href="#precios" aria-label="Ir a elegir plan y pagar">Iniciar reclamación</a>
   </section>
 
-  <!-- Qué hacemos por ti (ACORDEÓN 9 items) -->
-  <section id="que-hacemos">
+  <!-- Qué hacemos por ti (MENÚ DESPLEGABLE ÚNICO) -->
+  <section id="que-hacemos" style="margin-top:8px">
     <h2>Qué hacemos por ti</h2>
-    <div class="accordion" id="accordion">
-      <div class="acc-item">
-        <button class="acc-btn" type="button" aria-expanded="false" aria-controls="acc-panel-1">
-          <span>1) Revisión inicial de facturas (GRATIS)</span><span class="acc-icon">⌄</span>
-        </button>
-        <div class="acc-panel" id="acc-panel-1" role="region" aria-label="Revisión inicial">
-          <div class="acc-panel-inner">Analizamos luz, gas, telefonía y banca. Detectamos abusos, duplicados o cargos no solicitados e indicamos si hay importe recuperable.</div>
-        </div>
-      </div>
-
-      <div class="acc-item">
-        <button class="acc-btn" type="button" aria-expanded="false" aria-controls="acc-panel-2">
-          <span>2) Reclamaciones por cobros indebidos</span><span class="acc-icon">⌄</span>
-        </button>
-        <div class="acc-panel" id="acc-panel-2" role="region" aria-label="Reclamaciones">
-          <div class="acc-panel-inner">Preparamos tu reclamación personalizada con base legal. Si eliges Premium, la enviamos por ti y hacemos todo el seguimiento.</div>
-        </div>
-      </div>
-
-      <div class="acc-item">
-        <button class="acc-btn" type="button" aria-expanded="false" aria-controls="acc-panel-3">
-          <span>3) Comisiones y productos bancarios</span><span class="acc-icon">⌄</span>
-        </button>
-        <div class="acc-panel" id="acc-panel-3" role="region" aria-label="Banca">
-          <div class="acc-panel-inner">Reclamación de comisiones improcedentes, seguros vinculados y servicios no solicitados cargados a tu cuenta.</div>
-        </div>
-      </div>
-
-      <div class="acc-item">
-        <button class="acc-btn" type="button" aria-expanded="false" aria-controls="acc-panel-4">
-          <span>4) Telefonía e Internet</span><span class="acc-icon">⌄</span>
-        </button>
-        <div class="acc-panel" id="acc-panel-4" role="region" aria-label="Telefonía e Internet">
-          <div class="acc-panel-inner">Penalizaciones, subidas no informadas, permanencias abusivas y cargos de terceros (SMS premium, etc.).</div>
-        </div>
-      </div>
-
-      <div class="acc-item">
-        <button class="acc-btn" type="button" aria-expanded="false" aria-controls="acc-panel-5">
-          <span>5) Energía (luz y gas)</span><span class="acc-icon">⌄</span>
-        </button>
-        <div class="acc-panel" id="acc-panel-5" role="region" aria-label="Energía">
-          <div class="acc-panel-inner">Revisión de potencia, peajes, ajustes y estimaciones incorrectas. Cuantificamos errores y reclamamos importes.</div>
-        </div>
-      </div>
-
-      <div class="acc-item">
-        <button class="acc-btn" type="button" aria-expanded="false" aria-controls="acc-panel-6">
-          <span>6) Bajas complicadas y altas no consentidas</span><span class="acc-icon">⌄</span>
-        </button>
-        <div class="acc-panel" id="acc-panel-6" role="region" aria-label="Altas y bajas">
-          <div class="acc-panel-inner">Si te ponen trabas para darte de baja o te han dado de alta sin consentimiento, reclamamos y nos oponemos a la continuidad del servicio.</div>
-        </div>
-      </div>
-
-      <div class="acc-item">
-        <button class="acc-btn" type="button" aria-expanded="false" aria-controls="acc-panel-7">
-          <span>7) Seguimiento Premium</span><span class="acc-icon">⌄</span>
-        </button>
-        <div class="acc-panel" id="acc-panel-7" role="region" aria-label="Seguimiento Premium">
-          <div class="acc-panel-inner">Delegas todo: envío, respuestas, réplicas y recordatorios a la entidad hasta cierre del caso.</div>
-        </div>
-      </div>
-
-      <div class="acc-item">
-        <button class="acc-btn" type="button" aria-expanded="false" aria-controls="acc-panel-8">
-          <span>8) Atención a PYMES y autónomos</span><span class="acc-icon">⌄</span>
-        </button>
-        <div class="acc-panel" id="acc-panel-8" role="region" aria-label="PYMES y autónomos">
-          <div class="acc-panel-inner">Gestión de múltiples facturas, cuentas y líneas; priorización de impacto y plantillas adaptadas a negocio.</div>
-        </div>
-      </div>
-
-      <div class="acc-item">
-        <button class="acc-btn" type="button" aria-expanded="false" aria-controls="acc-panel-9">
-          <span>9) Soporte legal externo (si procede)</span><span class="acc-icon">⌄</span>
-        </button>
-        <div class="acc-panel" id="acc-panel-9" role="region" aria-label="Soporte legal externo">
-          <div class="acc-panel-inner">Si el caso requiere abogado, te derivamos —con tu consentimiento— a colaboradores externos, abogados colegiados, responsables de sus honorarios y actuaciones.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Guías prácticas (PUERTA CERRADA por defecto) -->
-  <section id="guias" style="margin-top:24px">
-    <button class="guides-toggle" id="toggleGuides" aria-expanded="false" aria-controls="guidesWrap">
-      <span>Guías prácticas</span>
-      <span aria-hidden="true">⌄</span>
+    <button class="toggle" id="toggleServicios" aria-expanded="false" aria-controls="serviciosWrap">
+      <span>Ver servicios</span><span aria-hidden="true">⌄</span>
     </button>
-    <div id="guidesWrap" class="guides-wrap" role="region" aria-label="Listado de guías">
-      <div class="services" style="margin-top:12px">
-        <div class="svc">
-          <h4>Modelo de reclamación (plantilla)</h4>
-          <p class="help">Texto listo para copiar y adaptar a tu caso.</p>
-          <a class="btn btn-outline" href="/modelo-reclamacion.html" aria-label="Abrir plantilla general de reclamación">Abrir guía</a>
-        </div>
-        <div class="svc">
-          <h4>Cómo reclamar tu factura de luz</h4>
-          <p class="help">Detecta cobros indebidos y presenta tu reclamación paso a paso.</p>
-          <a class="btn btn-outline" href="/factura-luz.html" aria-label="Abrir guía reclamar factura de luz">Abrir guía</a>
-        </div>
-        <div class="svc">
-          <h4>Cómo reclamar tu factura de gas</h4>
-          <p class="help">Lecturas estimadas, peajes mal aplicados y servicios no solicitados.</p>
-          <a class="btn btn-outline" href="/factura-gas.html" aria-label="Abrir guía reclamar factura de gas">Abrir guía</a>
-        </div>
-        <div class="svc">
-          <h4>Reclamar a tu compañía de teléfono/Internet</h4>
-          <p class="help">Permanencias abusivas, subidas sin aviso, SMS premium y altas no consentidas.</p>
-          <a class="btn btn-outline" href="/reclamar-telefono.html" aria-label="Abrir guía reclamar a compañía de teléfono e Internet">Abrir guía</a>
-        </div>
-        <div class="svc">
-          <h4>Comisiones y productos bancarios</h4>
-          <p class="help">Cómo pedir devolución de comisiones y anular productos no solicitados.</p>
-          <a class="btn btn-outline" href="/reclamar-banca.html" aria-label="Abrir guía reclamar comisiones bancarias">Abrir guía</a>
-        </div>
-        <div class="svc">
-          <h4>Dar de baja servicios (con trabas)</h4>
-          <p class="help">Qué hacer si no tramitan tu baja o te siguen cobrando.</p>
-          <a class="btn btn-outline" href="/dar-de-baja-servicios.html" aria-label="Abrir guía dar de baja servicios">Abrir guía</a>
-        </div>
-        <div class="svc">
-          <h4>Altas no consentidas</h4>
-          <p class="help">Cómo anular el alta, evitar penalizaciones y recuperar importes.</p>
-          <a class="btn btn-outline" href="/altas-no-consentidas.html" aria-label="Abrir guía altas no consentidas">Abrir guía</a>
-        </div>
-        <div class="svc">
-          <h4>Reclamar a tu seguro</h4>
-          <p class="help">Daños estéticos o siniestros cubiertos que no quieren pagar.</p>
-          <a class="btn btn-outline" href="/reclamar-seguro.html" aria-label="Abrir guía reclamar a tu seguro">Abrir guía</a>
+    <div id="serviciosWrap" class="toggle-wrap" role="region" aria-label="Listado de servicios">
+      <div class="inner">
+        <div class="services">
+          <div class="svc">
+            <h4>Revisión inicial de facturas (GRATIS)</h4>
+            <p class="help">Analizamos luz, gas, telefonía y banca. Detectamos abusos, duplicados o cargos no solicitados e indicamos si hay importe recuperable.</p>
+          </div>
+          <div class="svc">
+            <h4>Reclamaciones por cobros indebidos</h4>
+            <p class="help">Preparamos tu reclamación personalizada con base legal. En Premium, la enviamos por ti y hacemos todo el seguimiento.</p>
+          </div>
+          <div class="svc">
+            <h4>Comisiones y productos bancarios</h4>
+            <p class="help">Reclamación de comisiones improcedentes, seguros vinculados y servicios no solicitados.</p>
+          </div>
+          <div class="svc">
+            <h4>Telefonía e Internet</h4>
+            <p class="help">Penalizaciones, subidas no informadas, permanencias abusivas y cargos de terceros (SMS premium, etc.).</p>
+          </div>
+          <div class="svc">
+            <h4>Energía (luz y gas)</h4>
+            <p class="help">Revisión de potencia, peajes, ajustes y estimaciones incorrectas. Cuantificamos errores y reclamamos importes.</p>
+          </div>
+          <div class="svc">
+            <h4>Bajas complicadas y altas no consentidas</h4>
+            <p class="help">Si te ponen trabas para la baja o te han dado de alta sin consentimiento, reclamamos y cortamos continuidad.</p>
+          </div>
+          <div class="svc">
+            <h4>Seguimiento Premium</h4>
+            <p class="help">Delegas todo: envío, respuestas, réplicas y recordatorios a la entidad hasta cierre del caso.</p>
+          </div>
+          <div class="svc">
+            <h4>Atención a PYMES y autónomos</h4>
+            <p class="help">Gestión de múltiples facturas, cuentas y líneas; priorización de impacto y plantillas adaptadas a negocio.</p>
+          </div>
+          <div class="svc">
+            <h4>Soporte legal externo (si procede)</h4>
+            <p class="help">Si el caso requiere abogado, derivamos —con tu consentimiento— a colaboradores colegiados, responsables de sus honorarios.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Formulario -->
-  <section id="formulario">
-    <h2>Envíanos tus datos</h2>
-    <form id="reclamoForm" action="https://formspree.io/f/mzzvnwll" method="POST" novalidate>
-      <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true" />
-      <label for="nombre" class="sr-only">Nombre completo</label>
-      <input id="nombre" type="text" name="nombre" placeholder="Nombre completo" required autocomplete="name" />
-      <label for="email" class="sr-only">Correo electrónico</label>
-      <input id="email" type="email" name="email" placeholder="Correo electrónico" required autocomplete="email" />
-      <label for="mensaje" class="sr-only">Cuéntanos tu caso</label>
-      <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos tu caso" required></textarea>
-      <p class="help">📩 Si necesitas enviarnos documentación, mándala a <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a> o por <a href="https://wa.me/34953818494?text=Hola,%20te%20mando%20mi%20documentaci%C3%B3n%20para%20revisi%C3%B3n">WhatsApp</a>.</p>
-      <label><input id="rgpdCheck" type="checkbox" required /> Acepto la <a href="#" id="rgpdLink">Política de Privacidad</a></label>
-      <input type="hidden" name="_subject" value="Nuevo envío – TuReclamoExpres" />
-      <input type="hidden" name="_redirect" value="https://tureclamoexpres.com/gracias.html" />
-      <button type="submit" class="btn btn-primary">Enviar</button>
-      <p id="formOK" style="color:lime;display:none" aria-live="polite">✅ Enviado correctamente</p>
-      <p id="formERR" style="color:red;display:none" aria-live="assertive">❌ Error al enviar</p>
-    </form>
+  <!-- Guías prácticas (PUERTA CERRADA, tamaño igualado) -->
+  <section id="guias" style="margin-top:24px">
+    <h2>Guías prácticas</h2>
+    <button class="toggle" id="toggleGuides" aria-expanded="false" aria-controls="guidesWrap">
+      <span>Ver guías</span><span aria-hidden="true">⌄</span>
+    </button>
+    <div id="guidesWrap" class="toggle-wrap" role="region" aria-label="Listado de guías">
+      <div class="inner">
+        <div class="services" style="margin-top:12px">
+          <div class="svc">
+            <h4>Modelo de reclamación (plantilla)</h4>
+            <p class="help">Texto listo para copiar y adaptar a tu caso.</p>
+            <a class="btn btn-outline" href="/modelo-reclamacion.html" aria-label="Abrir plantilla general de reclamación">Abrir guía</a>
+          </div>
+          <div class="svc">
+            <h4>Cómo reclamar tu factura de luz</h4>
+            <p class="help">Detecta cobros indebidos y presenta tu reclamación paso a paso.</p>
+            <a class="btn btn-outline" href="/factura-luz.html" aria-label="Abrir guía reclamar factura de luz">Abrir guía</a>
+          </div>
+          <div class="svc">
+            <h4>Cómo reclamar tu factura de gas</h4>
+            <p class="help">Lecturas estimadas, peajes mal aplicados y servicios no solicitados.</p>
+            <a class="btn btn-outline" href="/factura-gas.html" aria-label="Abrir guía reclamar factura de gas">Abrir guía</a>
+          </div>
+          <div class="svc">
+            <h4>Reclamar a tu compañía de teléfono/Internet</h4>
+            <p class="help">Permanencias abusivas, subidas sin aviso, SMS premium y altas no consentidas.</p>
+            <a class="btn btn-outline" href="/reclamar-telefono.html" aria-label="Abrir guía reclamar a compañía de teléfono e Internet">Abrir guía</a>
+          </div>
+          <div class="svc">
+            <h4>Comisiones y productos bancarios</h4>
+            <p class="help">Cómo pedir devolución de comisiones y anular productos no solicitados.</p>
+            <a class="btn btn-outline" href="/reclamar-banca.html" aria-label="Abrir guía reclamar comisiones bancarias">Abrir guía</a>
+          </div>
+          <div class="svc">
+            <h4>Dar de baja servicios (con trabas)</h4>
+            <p class="help">Qué hacer si no tramitan tu baja o te siguen cobrando.</p>
+            <a class="btn btn-outline" href="/dar-de-baja-servicios.html" aria-label="Abrir guía dar de baja servicios">Abrir guía</a>
+          </div>
+          <div class="svc">
+            <h4>Altas no consentidas</h4>
+            <p class="help">Cómo anular el alta, evitar penalizaciones y recuperar importes.</p>
+            <a class="btn btn-outline" href="/altas-no-consentidas.html" aria-label="Abrir guía altas no consentidas">Abrir guía</a>
+          </div>
+          <div class="svc">
+            <h4>Reclamar a tu seguro</h4>
+            <p class="help">Daños estéticos o siniestros cubiertos que no quieren pagar.</p>
+            <a class="btn btn-outline" href="/reclamar-seguro.html" aria-label="Abrir guía reclamar a tu seguro">Abrir guía</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- PRECIOS (Servicios + Precios unificados) -->
+  <!-- PRECIOS -->
   <section id="precios">
     <h2>Precios</h2>
     <p class="help" style="margin:.25rem 0 .75rem">
@@ -385,6 +319,27 @@
     <p class="help" style="margin-top:.75rem">
       * El plan Acompañado incluye <strong>1 revisión</strong> y <strong>1 consulta breve</strong>. Para acompañamiento extendido o máxima comodidad ⇒ <strong>Premium</strong>.
     </p>
+  </section>
+
+  <!-- FORMULARIO (MOVIDO DEBAJO DE PRECIOS) -->
+  <section id="formulario" style="margin-top:18px">
+    <h2>Envíanos tus datos</h2>
+    <form id="reclamoForm" action="https://formspree.io/f/mzzvnwll" method="POST" novalidate>
+      <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <label for="nombre" class="sr-only">Nombre completo</label>
+      <input id="nombre" type="text" name="nombre" placeholder="Nombre completo" required autocomplete="name" />
+      <label for="email" class="sr-only">Correo electrónico</label>
+      <input id="email" type="email" name="email" placeholder="Correo electrónico" required autocomplete="email" />
+      <label for="mensaje" class="sr-only">Cuéntanos tu caso</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos tu caso" required></textarea>
+      <p class="help">📩 Si necesitas enviarnos documentación, mándala a <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a> o por <a href="https://wa.me/34953818494?text=Hola,%20te%20mando%20mi%20documentaci%C3%B3n%20para%20revisi%C3%B3n">WhatsApp</a>.</p>
+      <label><input id="rgpdCheck" type="checkbox" required /> Acepto la <a href="#" id="rgpdLink">Política de Privacidad</a></label>
+      <input type="hidden" name="_subject" value="Nuevo envío – TuReclamoExpres" />
+      <input type="hidden" name="_redirect" value="https://tureclamoexpres.com/gracias.html" />
+      <button type="submit" class="btn btn-primary">Enviar</button>
+      <p id="formOK" style="color:lime;display:none" aria-live="polite">✅ Enviado correctamente</p>
+      <p id="formERR" style="color:red;display:none" aria-live="assertive">❌ Error al enviar</p>
+    </form>
   </section>
 </main>
 
@@ -496,7 +451,30 @@
   document.getElementById('cerrar-legal').addEventListener('click', cerrarLegal);
   legalModal.addEventListener('click', e => { if (e.target === legalModal) cerrarLegal(); });
 
-  // Formulario (Formspree) SIN archivos
+  // “Puertas” (servicios y guías)
+  function makeToggle(btnId, wrapId){
+    const btn = document.getElementById(btnId);
+    const wrap = document.getElementById(wrapId);
+    const setState = (open) => {
+      btn.setAttribute('aria-expanded', open);
+      wrap.style.maxHeight = open ? wrap.scrollHeight + 'px' : '0px';
+    };
+    setState(false);
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') !== 'true';
+      setState(open);
+    });
+    // reajuste al redimensionar
+    window.addEventListener('resize', () => {
+      if (btn.getAttribute('aria-expanded') === 'true') {
+        wrap.style.maxHeight = wrap.scrollHeight + 'px';
+      }
+    });
+  }
+  makeToggle('toggleServicios','serviciosWrap');
+  makeToggle('toggleGuides','guidesWrap');
+
+  // Formulario (Formspree)
   const form = document.getElementById('reclamoForm');
   const okMsg = document.getElementById('formOK');
   const errMsg = document.getElementById('formERR');
@@ -535,58 +513,6 @@
       errMsg.style.display = 'block';
     }
   });
-
-  // Acordeón (Qué hacemos)
-  const accItems = Array.from(document.querySelectorAll('.acc-item'));
-  function openItem(item) {
-    const panel = item.querySelector('.acc-panel');
-    item.classList.add('open');
-    panel.style.maxHeight = panel.scrollHeight + 'px';
-    item.querySelector('.acc-btn').setAttribute('aria-expanded','true');
-  }
-  function closeItem(item) {
-    const panel = item.querySelector('.acc-panel');
-    item.classList.remove('open');
-    panel.style.maxHeight = '0px';
-    item.querySelector('.acc-btn').setAttribute('aria-expanded','false');
-  }
-  const isDesktop = () => window.matchMedia('(min-width: 900px)').matches;
-  function setInitialAccordion() {
-    if (isDesktop()) accItems.forEach(openItem);
-    else accItems.forEach(closeItem);
-  }
-  accItems.forEach(item => {
-    const btn = item.querySelector('.acc-btn');
-    const panel = item.querySelector('.acc-panel');
-    btn.addEventListener('click', () => {
-      item.classList.contains('open') ? closeItem(item) : openItem(item);
-    });
-    window.addEventListener('resize', () => {
-      if (item.classList.contains('open')) panel.style.maxHeight = panel.scrollHeight + 'px';
-    });
-  });
-  setInitialAccordion();
-  let lastDesktop = isDesktop();
-  window.addEventListener('resize', () => {
-    const now = isDesktop();
-    if (now !== lastDesktop) { setInitialAccordion(); lastDesktop = now; }
-  });
-
-  // Guías: puerta cerrada por defecto
-  const guidesBtn = document.getElementById('toggleGuides');
-  const guidesWrap = document.getElementById('guidesWrap');
-  const setGuidesState = (open) => {
-    guidesBtn.setAttribute('aria-expanded', open);
-    guidesWrap.style.maxHeight = open ? guidesWrap.scrollHeight + 'px' : '0px';
-  };
-  setGuidesState(false);
-  guidesBtn.addEventListener('click', () => {
-    const open = guidesBtn.getAttribute('aria-expanded') !== 'true';
-    setGuidesState(open);
-  });
-
-  // Asegurar que #precios ancla funciona como destino “Iniciar reclamación”
-  // (Nada más: el botón del héroe ya apunta a #precios)
 </script>
 
 <!-- Build: 2025-08-29 -->
