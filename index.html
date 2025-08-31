@@ -118,6 +118,14 @@
     @media (min-width:900px){ .testimonials { grid-template-columns: repeat(3,1fr);} }
     .quote { background: var(--card); border:1px solid var(--border); border-radius:12px; padding:14px; font-size: .98rem; }
 
+    /* NUEVO: badges de confianza y tarjetas de casos */
+    .trust-badges{display:flex;align-items:center;gap:10px;margin-top:8px;opacity:.9;flex-wrap:wrap}
+    .trust-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;font-size:.9rem;color:var(--text);background:#0b1120}
+    .case-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px}
+    .case-card h4{font-size:1.05rem;margin-bottom:6px}
+    .case-meta{font-size:.92rem;color:var(--muted);margin:.25rem 0 .5rem}
+    .legal-note{font-size:.85rem;color:#9ca3af;margin-top:6px}
+
     .footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 60px 20px 90px; color: #a1a1aa; }
     .footer a { color: var(--link); }
     #legal-modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,.7); z-index: 9999; }
@@ -157,6 +165,7 @@
   <section class="hero" id="como-funciona">
     <h1>Sube tu factura GRATIS. En 24–48 h te decimos si hay cobros de más y cuánto puedes recuperar.</h1>
     <p><strong>Reclamación lista</strong> para enviar. Elige: <strong>29,90 €</strong> (tú la envías) o <strong>49,90 €</strong> (la enviamos por ti).</p>
+    <p class="help"><strong>Expertos en consumo.</strong> Precios claros, resultados rápidos, <strong>sin letra pequeña</strong>.</p>
     <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" aria-label="Subir factura por WhatsApp">Sube tu factura GRATIS</a>
     <a class="btn btn-outline" href="#formulario">Prefiero enviarla por email</a>
     <div class="steps" aria-label="Proceso en 3 pasos">
@@ -270,6 +279,11 @@
         </ul>
         <p class="help" style="margin:.4rem 0 0">La opción más económica: te lo damos todo hecho y tú lo envías.</p>
         <a class="btn btn-outline" href="https://buy.stripe.com/cNi14o0Ho3Qz93N1QZ8og02" target="_blank" rel="noopener noreferrer" aria-label="Pagar Plan Estándar 29,90 €">Pagar 29,90 €</a>
+        <div class="trust-badges" aria-label="Pago seguro">
+          <span class="trust-badge">🔒 Stripe</span>
+          <span class="trust-badge">💳 Visa</span>
+          <span class="trust-badge">💳 Mastercard</span>
+        </div>
       </div>
       <div class="plan recommended" aria-label="Plan Premium – Lo enviamos por ti">
         <span class="badge">⭐ Más cómodo · Recomendado</span>
@@ -282,6 +296,11 @@
         </ul>
         <p class="help" style="margin:.4rem 0 0">Olvídate de trámites: nosotros lo gestionamos y te confirmamos recepción.</p>
         <a class="btn btn-primary" href="https://buy.stripe.com/7sYdRa89Qdr9dk3brz8og03" target="_blank" rel="noopener noreferrer" aria-label="Pagar Plan Premium 49,90 €">Pagar 49,90 €</a>
+        <div class="trust-badges" aria-label="Pago seguro">
+          <span class="trust-badge">🔒 Stripe</span>
+          <span class="trust-badge">💳 Visa</span>
+          <span class="trust-badge">💳 Mastercard</span>
+        </div>
       </div>
     </div>
     <div style="text-align:center; margin-top:1rem;">
@@ -296,17 +315,35 @@
   <section id="casos" style="margin-top:1.25rem;">
     <h2>Casos reales (resumen)</h2>
     <div class="testimonials">
-      <div class="quote">🔌 Juan (Jaén): <strong>132 €</strong> recuperados por potencia mal facturada. Resolución en <strong>10 días</strong>.</div>
-      <div class="quote">📶 María (Sevilla): devolución de <strong>2 meses</strong> por subida no informada en internet. Respuesta en <strong>14 días</strong>.</div>
-      <div class="quote">🔥 Pedro (Córdoba): <strong>89 €</strong> por estimaciones de gas incorrectas. Ajuste aplicado en la siguiente factura.</div>
+      <div class="case-card">
+        <h4>🔌 Iberdrola – 132 € recuperados</h4>
+        <div class="case-meta">Juan G. · Jaén · Potencia mal facturada · Resolución en 10 días · <em>Plan Premium</em></div>
+        <p>Detectamos exceso en término de potencia. Reclamación presentada y aceptada; devolución aplicada en la siguiente factura.</p>
+        <div class="legal-note">*Datos anonimizados. Comprobantes disponibles bajo solicitud (acuse difuminado).</div>
+      </div>
+      <div class="case-card">
+        <h4>📶 Naturgy – 2 meses devueltos</h4>
+        <div class="case-meta">María P. · Sevilla · Subida no informada en internet · Respuesta en 14 días · <em>Plan Premium</em></div>
+        <p>Subida unilateral sin notificación válida. Se exigió retroacción de tarifas y devolución de las mensualidades afectadas.</p>
+        <div class="legal-note">*Datos anonimizados. Comprobantes disponibles bajo solicitud.</div>
+      </div>
+      <div class="case-card">
+        <h4>🔥 Gas – 89 € de ajuste</h4>
+        <div class="case-meta">Pedro R. · Córdoba · Estimaciones incorrectas · Ajuste en la siguiente factura · <em>Plan Estándar</em></div>
+        <p>Estimaciones por encima del consumo real. La compañía corrigió lecturas y abonó el exceso en el ciclo siguiente.</p>
+        <div class="legal-note">*Datos anonimizados.</div>
+      </div>
     </div>
   </section>
   <section id="confianza" style="margin-top:1.5rem; padding:1rem; border:1px solid var(--border); border-radius:12px; background:var(--card);">
     <h3>Por qué confiar en TuReclamoExprés</h3>
-    <p>
-      Vemos cada día cómo se pierden euros por errores y abusos en facturas y contratos. Sabemos qué funciona al reclamar y en qué
-      se atasca la gente. Por eso nuestro servicio es <strong>rápido, claro y con precios cerrados</strong>: tú decides si lo envías o lo enviamos por ti.
-    </p>
+    <ul style="margin-left:1rem;list-style:disc;">
+      <li><strong>Especialistas</strong> en luz, gas y telecomunicaciones.</li>
+      <li><strong>Precios cerrados</strong>: sabes lo que pagas desde el inicio.</li>
+      <li><strong>Revisión GRATIS</strong> en 24–48 h y diagnóstico claro.</li>
+      <li><strong>Atención humana</strong> por WhatsApp o email (sin bots).</li>
+      <li><strong>Pago seguro</strong> con Stripe, Visa y Mastercard.</li>
+    </ul>
   </section>
   <section id="formulario" style="margin-top:18px">
     <h2>Envíanos tu factura por email</h2>
@@ -369,7 +406,9 @@
       o autorizar su envío en modalidad Premium. La prestación es administrativa y automatizada; no constituye asesoramiento jurídico
       individualizado ni representación letrada. Precios IVA incluido, pago a través de Stripe. Al ser contenido digital de entrega
       inmediata, no aplica derecho de desistimiento (art. 103.m TRLGDCU), sin perjuicio de reembolso por incidencias técnicas.</p>
-    <h4 id="modal-aviso">Aviso Legal</h4><p>
+    <h4 id="modal-aviso">Aviso Legal</h4>
+    <p class="help" style="margin:.25rem 0 .5rem"><em>TuReclamoExprés se ofrece a título particular. Los datos identificativos se muestran en cumplimiento de la Ley 34/2002 (LSSI).</em></p>
+    <p>
       Este sitio es titularidad de S.A.G. Servicios Digitales. Objeto: información general y modelos automatizados de reclamación,
       sin que ello suponga asesoramiento jurídico ni representación letrada. En supuestos que requieran intervención de abogado,
       podremos derivar —con consentimiento expreso del usuario— a <strong>abogados colaboradores externos, colegiados y responsables de sus honorarios y actuaciones</strong>.
