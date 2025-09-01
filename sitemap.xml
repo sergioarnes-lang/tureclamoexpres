@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <!-- Home -->
   <url>
-    <loc>https://www.tureclamoexpres.com/</loc>
+    <loc>https://tureclamoexpres.com/</loc>
     <lastmod>2025-08-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -11,7 +9,7 @@
 
   <!-- Página de gracias -->
   <url>
-    <loc>https://www.tureclamoexpres.com/gracias.html</loc>
+    <loc>https://tureclamoexpres.com/gracias.html</loc>
     <lastmod>2025-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
@@ -19,59 +17,51 @@
 
   <!-- Guías -->
   <url>
-    <loc>https://www.tureclamoexpres.com/factura-luz.html</loc>
+    <loc>https://tureclamoexpres.com/factura-luz.html</loc>
     <lastmod>2025-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://www.tureclamoexpres.com/factura-gas.html</loc>
+    <loc>https://tureclamoexpres.com/factura-gas.html</loc>
     <lastmod>2025-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://www.tureclamoexpres.com/reclamar-telefono.html</loc>
+    <loc>https://tureclamoexpres.com/reclamar-telefono.html</loc>
     <lastmod>2025-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://www.tureclamoexpres.com/reclamar-banca.html</loc>
+    <loc>https://tureclamoexpres.com/reclamar-banca.html</loc>
     <lastmod>2025-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://www.tureclamoexpres.com/reclamar-seguro.html</loc>
+    <loc>https://tureclamoexpres.com/reclamar-seguro.html</loc>
     <lastmod>2025-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://www.tureclamoexpres.com/modelo-reclamacion.html</loc>
+    <loc>https://tureclamoexpres.com/modelo-reclamacion.html</loc>
     <lastmod>2025-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
-    <loc>https://www.tureclamoexpres.com/dar-de-baja-servicios.html</loc>
+    <loc>https://tureclamoexpres.com/dar-de-baja-servicios.html</loc>
     <lastmod>2025-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
-    <loc>https://www.tureclamoexpres.com/altas-no-consentidas.html</loc>
+    <loc>https://tureclamoexpres.com/altas-no-consentidas.html</loc>
     <lastmod>2025-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
 </urlset>
