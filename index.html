@@ -59,21 +59,22 @@
   <style>
     html { scroll-behavior: smooth; }
     :root {
-      /* Tema claro de confianza */
-      --bg:#ffffff;
-      --card:#f8fafc;
-      --text:#0f172a;
-      --muted:#475569;
-      --accent:#22c55e;
-      --link:#2563eb;
-      --border:#e5e7eb;
+      /* Tema claro de confianza (colores exactos requeridos) */
+      --bg:#ffffff;        /* Fondo base */
+      --card:#f8fafc;      /* Tarjetas y bloques */
+      --text:#1e293b;      /* Texto principal */
+      --muted:#64748b;     /* Texto secundario */
+      --accent:#22c55e;    /* Acento principal */
+      --link:#2563eb;      /* Links y botones secundarios */
+      --border:#e2e8f0;    /* Bordes */
       --shadow:0 6px 18px rgba(2,6,23,.06);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: linear-gradient(180deg,#ffffff,#f8fafc);
-      color: var(--text); line-height: 1.7; font-size: 18px;
+      background: var(--bg);      /* Requisito: usar var(--bg) */
+      color: var(--text);         /* Requisito: usar var(--text) */
+      line-height: 1.7; font-size: 18px;
     }
     h1,h2,h3,h4 { font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
     header, main, footer { max-width: 1100px; margin: 0 auto; padding: 20px; }
@@ -207,7 +208,7 @@
   <section class="hero" id="como-funciona">
     <h1>¿Te cobran de más en tu factura de luz, gas o teléfono?</h1>
     <p>Revisamos tu factura <strong>GRATIS</strong> en 24–48 h y te confirmamos si pagas de más. Si procede, te damos la reclamación lista o la gestionamos por ti.</p>
-    <p class="trustline">🔒 El dinero nunca pasa por nosotros: tu compañía ingresa la devolución directamente en tu cuenta o lo descuenta en tu próxima factura.</p>
+    <p class="trustline">Lo reclamado se ingresa directamente en tu cuenta. Nosotros solo gestionamos la reclamación.</p>
     <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" aria-label="Subir factura por WhatsApp">Sube tu factura GRATIS</a>
     <a class="btn btn-outline" href="#precios">Ver precios</a>
 
