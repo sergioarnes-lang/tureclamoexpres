@@ -62,19 +62,18 @@
       /* Paleta estilo BBVA */
       --bg:#ffffff;          /* Fondo base */
       --card:#f8fafc;        /* Tarjetas y bloques suaves */
-      --text:#072146;        /* Texto principal (azul oscuro BBVA) */
-      --muted:#5f6368;       /* Texto secundario gris medio */
-      --accent:#004481;      /* Azul BBVA para CTAs */
-      --link:#1464a5;        /* Azul claro enlaces */
-      --border:#e2e8f0;      /* Borde gris claro */
-      --shadow:0 6px 18px rgba(7,33,70,.08); /* Sombra azulada, sin verdes */
+      --text:#072146;        /* Texto principal (azul oscuro) */
+      --muted:#5f6368;       /* Texto secundario */
+      --accent:#004481;      /* Azul CTA */
+      --link:#1464a5;        /* Azul enlaces */
+      --border:#e2e8f0;      /* Gris claro bordes */
+      --shadow:0 6px 18px rgba(7,33,70,.08); /* Sombra azulada (sin verdes) */
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background: var(--bg);
-      color: var(--text);
-      line-height: 1.7; font-size: 18px;
+      color: var(--text); line-height: 1.7; font-size: 18px;
     }
     h1,h2,h3,h4 { font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
     header, main, footer { max-width: 1100px; margin: 0 auto; padding: 20px; }
@@ -108,7 +107,7 @@
     .hero p { color: var(--muted); max-width: 860px; margin: 0 auto 1rem; font-size: 1.08rem; }
     .trustline { margin-top:.25rem; color: var(--text); font-weight:700; }
 
-    /* Botones (más pequeños) */
+    /* Botones (más pequeños y azules) */
     .btn { display: inline-block; padding: 10px 14px; border-radius: 10px; font-weight: 800; text-decoration: none; margin: 4px; font-size: 0.95rem; letter-spacing: .2px; box-shadow: var(--shadow); }
     .btn-primary { background: var(--accent); color: #ffffff; border: 1px solid #003060; }
     .btn-outline { border: 1px solid var(--border); color: var(--accent); background:#fff; }
