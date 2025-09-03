@@ -4,394 +4,693 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Reclama tus facturas indebidas y recupera tu dinero | TuReclamoExprés</title>
-  <meta name="description" content="Sube tu factura GRATIS y en 24–48 h te decimos cuánto puedes recuperar. Si hay cobros indebidos, preparamos la reclamación y recuperas tu dinero directo de tu compañía. Precios claros: 29,90 € o 49,90 €.">
+  <title>TuReclamoExprés – Revisión GRATIS de facturas en 24–48 h</title>
+  <meta name="description" content="Revisamos GRATIS tus facturas de luz, gas o teléfono en 24–48 h. Si hay cobros indebidos, te damos la reclamación lista o la gestionamos por ti. Precios cerrados: 29,90 € (tú la envías) · 49,90 € (nosotros la gestionamos por ti). El dinero siempre lo devuelve tu compañía, directo a tu cuenta o factura." />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0a2e5c" />
+  <meta name="theme-color" content="#f4f7fb" />
+  <link rel="canonical" href="https://tureclamoexpres.com/" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="TuReclamoExprés – Revisión GRATIS de facturas" />
+  <meta property="og:description" content="Sube tu factura. En 24–48 h te decimos si hay cobros de más y te damos la reclamación lista o la gestionamos por ti. 29,90 € · 49,90 €. La devolución la hace tu compañía directamente en tu cuenta o factura." />
+  <meta property="og:image" content="https://tureclamoexpres.com/og-image.jpg" />
+  <meta property="og:url" content="https://tureclamoexpres.com" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "TuReclamoExprés - Revisión y Gestión de Reclamaciones",
+    "description": "Servicio de revisión gratuita de facturas para detectar cobros indebidos y generación/gestión de reclamaciones para recuperar importes en energía, telefonía, banca y seguros.",
+    "provider": { "@type": "Organization", "name": "S.A.G. Servicios Digitales" },
+    "serviceType": "Reclamación de cobros indebidos",
+    "areaServed": { "@type": "Country", "name": "ES" },
+    "url": "https://tureclamoexpres.com",
+    "potentialAction": { "@type": "OrderAction", "target": "https://tureclamoexpres.com/#precios" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Guías de TuReclamoExprés",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "url": "https://tureclamoexpres.com/modelo-reclamacion.html", "name": "Modelo de reclamación" },
+      { "@type": "ListItem", "position": 2, "url": "https://tureclamoexpres.com/factura-luz.html", "name": "Factura de luz" },
+      { "@type": "ListItem", "position": 3, "url": "https://tureclamoexpres.com/factura-gas.html", "name": "Factura de gas" },
+      { "@type": "ListItem", "position": 4, "url": "https://tureclamoexpres.com/reclamar-telefono.html", "name": "Telefonía e Internet" },
+      { "@type": "ListItem", "position": 5, "url": "https://tureclamoexpres.com/reclamar-banca.html", "name": "Banca" },
+      { "@type": "ListItem", "position": 6, "url": "https://tureclamoexpres.com/dar-de-baja-servicios.html", "name": "Dar de baja servicios" },
+      { "@type": "ListItem", "position": 7, "url": "https://tureclamoexpres.com/altas-no-consentidas.html", "name": "Altas no consentidas" },
+      { "@type": "ListItem", "position": 8, "url": "https://tureclamoexpres.com/reclamar-seguro.html", "name": "Reclamar a tu seguro" }
+    ]
+  }
+  </script>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/app.js"></script>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container">
-      <img src="logo-principal.jpg" alt="TuReclamoExprés" class="logo">
-      <nav>
-        <ul>
-          <li><a href="factura-luz.html">Luz</a></li>
-          <li><a href="factura-gas.html">Gas</a></li>
-          <li><a href="factura-telefono.html">Teléfono</a></li>
-        </ul>
-      </nav>
-      <a href="https://wa.me/34649435633?text=Hola%20Quiero%20revisar%20mi%20factura" class="btn-wa">WhatsApp</a>
-    </div>
-  </header>
+<header class="site-header">
+  <a class="logo" href="#inicio" aria-label="Inicio TuReclamoExprés">
+    <img src="logo-principal.jpg" alt="TuReclamoExprés" class="logo-img" />
+  </a>
 
+  <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
+    <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+  </button>
+
+  <nav id="primary-nav" class="nav" aria-label="Navegación principal">
+    <ul class="nav-links">
+      <li><a href="#como-funciona">Cómo funciona</a></li>
+      <li><a href="#que-hacemos">Qué hacemos</a></li>
+      <li><a href="#guias">Guías</a></li>
+      <li><a href="#precios">Precios</a></li>
+      <li><a href="#casos">Casos reales</a></li>
+      <li><a href="#confianza">Confianza</a></li>
+      <li><a href="#formulario">Enviar factura</a></li>
+      <li><a href="#" id="openLegalModalLink">Legales</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-right">
+    <div class="header-contact">📞 Consulta: <a href="tel:+34953818494">953 818 494</a></div>
+  </div>
+</header>
+
+<main id="inicio">
   <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-flex">
-      <div class="hero-text">
-        <h1>Reclama y recupera tu dinero</h1>
-        <p>Si tu compañía te ha cobrado de más en luz, gas o teléfono, lo recuperamos por ti. Rápido, claro y sin sorpresas.</p>
-        <a href="https://wa.me/34649435633?text=Hola%20Quiero%20subir%20mi%20factura" class="btn-primary">📤 Sube tu factura GRATIS</a>
+  <section class="hero" id="como-funciona">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1>¿Te cobran de más en tu factura de luz, gas o teléfono?</h1>
+        <p>Revisamos tu factura <strong>GRATIS</strong> en 24–48 h y te confirmamos si pagas de más. Si procede, te damos la reclamación lista o la gestionamos por ti.</p>
+        <p class="trustline">💡 <strong>Lo reclamado se ingresa directamente en tu cuenta. Nosotros solo gestionamos la reclamación.</strong></p>
+
+        <div class="hero-ctas">
+          <a class="btn btn-whatsapp" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" aria-label="Subir factura por WhatsApp">Sube tu factura GRATIS</a>
+          <a class="btn btn-outline" href="#precios">Ver precios</a>
+        </div>
+
+        <div class="steps" aria-label="Proceso en 3 pasos">
+          <div class="step">
+            <b>1) Súbenos tu factura</b>
+            Por WhatsApp o email. Revisión inicial sin coste.
+          </div>
+          <div class="step">
+            <b>2) Te confirmamos si hay cobros indebidos</b>
+            En 24–48 h te decimos si hay importes a recuperar y te preparamos la reclamación.
+          </div>
+          <div class="step">
+            <b>3) Reclamas</b>
+            29,90 € → tú la envías · 49,90 € → la gestionamos por ti con confirmación de acuse.
+          </div>
+        </div>
       </div>
-      <div class="hero-img">
-        <img src="hero-mujer-factura.jpg" alt="Persona revisando factura">
+
+      <div class="hero-media">
+        <img src="hero-mujer-factura.jpg" alt="Cliente revisando su factura con ayuda de TuReclamoExprés" />
       </div>
     </div>
   </section>
 
-  <!-- BENEFICIOS -->
-  <section class="beneficios container">
-    <h2>¿Por qué elegirnos?</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="logo-seguridad.jpg" alt="Seguridad">
-        <h3>Seguridad</h3>
-        <p>Servicio dirigido por un policía nacional. Transparencia total y protección de tus datos.</p>
-      </div>
-      <div class="card">
-        <img src="persona-familia.jpg" alt="Rapidez">
-        <h3>Rapidez</h3>
-        <p>En solo 24–48 h sabrás si tu compañía te ha cobrado de más.</p>
-      </div>
-      <div class="card">
-        <img src="logo-cobro-indebido.jpg" alt="Dinero de vuelta">
-        <h3>Dinero de vuelta</h3>
-        <p>El dinero siempre lo devuelve tu compañía, directo en tu factura o a tu cuenta.</p>
+  <!-- QUÉ HACEMOS -->
+  <section id="que-hacemos" class="section">
+    <h2>Qué hacemos por ti</h2>
+    <button class="toggle" id="toggleServicios" aria-expanded="false" aria-controls="serviciosWrap">
+      <span>Ver servicios</span><span aria-hidden="true">⌄</span>
+    </button>
+    <div id="serviciosWrap" class="toggle-wrap" role="region" aria-label="Listado de servicios">
+      <div class="inner">
+        <div class="services">
+          <div class="svc">
+            <h4>Revisión inicial de facturas (GRATIS)</h4>
+            <p class="help">Analizamos luz, gas y telefonía. Detectamos abusos, duplicados o cargos no solicitados e indicamos si hay importe recuperable.</p>
+          </div>
+          <div class="svc">
+            <h4>Reclamaciones por cobros indebidos</h4>
+            <p class="help">Preparamos tu reclamación personalizada con base legal. En Premium, la enviamos por ti, hacemos seguimiento y te confirmamos el acuse.</p>
+          </div>
+          <div class="svc">
+            <h4>Telefonía e Internet</h4>
+            <p class="help">Penalizaciones, subidas no informadas, permanencias abusivas y cargos de terceros (SMS premium, etc.).</p>
+          </div>
+          <div class="svc">
+            <h4>Energía (luz y gas)</h4>
+            <p class="help">Revisión de potencia, peajes, ajustes y estimaciones incorrectas. Cuantificamos errores y reclamamos importes.</p>
+          </div>
+          <div class="svc">
+            <h4>Bajas complicadas y altas no consentidas</h4>
+            <p class="help">Si te ponen trabas para la baja o te han dado de alta sin consentimiento, reclamamos y cortamos continuidad.</p>
+          </div>
+          <div class="svc">
+            <h4>Seguimiento Premium</h4>
+            <p class="help">Delegas todo: envío, respuestas, réplicas y recordatorios a la entidad hasta cierre del caso.</p>
+          </div>
+          <div class="svc">
+            <h4>Soporte legal externo (si procede)</h4>
+            <p class="help">Si el caso requiere abogado, derivamos —con tu consentimiento— a colaboradores colegiados (ellos gestionan sus honorarios).</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PLANES -->
-  <section class="planes container">
-    <h2>Planes claros, sin letra pequeña</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>29,90 €</h3>
-        <p>Te damos la reclamación lista. Tú la envías.</p>
-        <a href="#" class="btn-secondary">Comprar</a>
-      </div>
-      <div class="card">
-        <h3>49,90 €</h3>
-        <p>Nosotros lo gestionamos todo por ti.</p>
-        <a href="#" class="btn-secondary">Comprar</a>
+  <!-- GUÍAS -->
+  <section id="guias" class="section section-alt">
+    <h2 class="center">Guías prácticas</h2>
+    <button class="toggle" id="toggleGuides" aria-expanded="false" aria-controls="guidesWrap">
+      <span>Ver guías</span><span aria-hidden="true">›</span>
+    </button>
+    <div id="guidesWrap" class="toggle-wrap" role="region" aria-label="Listado de guías">
+      <div class="inner">
+        <div class="grid-cards">
+          <article class="card">
+            <img src="factura-detalle-1.jpg" alt="Ejemplo de factura de luz con detalle" class="card-img">
+            <h3>Factura de luz</h3>
+            <p>Detecta cobros indebidos y aprende a reclamar tu recibo de electricidad.</p>
+            <a class="btn btn-outline" href="/factura-luz.html">Ver guía</a>
+          </article>
+          <article class="card">
+            <img src="factura-detalle-2.jpg" alt="Ejemplo de factura de gas con detalle" class="card-img">
+            <h3>Factura de gas</h3>
+            <p>Revisa si tu compañía aplica el precio del contrato y reclama ajustes indebidos.</p>
+            <a class="btn btn-outline" href="/factura-gas.html">Ver guía</a>
+          </article>
+          <article class="card">
+            <img src="persona-hombre-pc.jpg" alt="Cliente gestionando su reclamación desde el ordenador" class="card-img">
+            <h3>Teléfono e Internet</h3>
+            <p>Reclama permanencias abusivas, subidas no informadas o SMS premium.</p>
+            <a class="btn btn-outline" href="/reclamar-telefono.html">Ver guía</a>
+          </article>
+          <article class="card">
+            <img src="persona-familia.jpg" alt="Familia ahorrando con su seguro" class="card-img">
+            <h3>Seguros</h3>
+            <p>Anula renovaciones automáticas o cobros indebidos en pólizas.</p>
+            <a class="btn btn-outline" href="/reclamar-seguro.html">Ver guía</a>
+          </article>
+          <article class="card">
+            <img src="logo-cobro-indebido.jpg" alt="Icono cobro indebido" class="card-img">
+            <h3>Modelo de reclamación</h3>
+            <p>Plantilla general lista para adaptar a tu caso: luz, gas o telefonía.</p>
+            <a class="btn btn-outline" href="/modelo-reclamacion.html">Ver modelo</a>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 TuReclamoExprés</p>
-      <nav class="footer-links">
-        <a href="#aviso-legal">Aviso legal</a>
-        <a href="#privacidad">Política de privacidad</a>
-        <a href="#cookies">Política de cookies</a>
-      </nav>
-    </div>
-  </footer>
+  <!-- PRECIOS -->
+  <section id="precios" class="section">
+    <h2>Precios claros</h2>
+    <p class="help mt-4">Pagas solo si tu reclamación es viable. Precio único, IVA incluido. Elige comodidad: cuanto más delegas, menos te complicas.</p>
 
-  <!-- BANNER COOKIES -->
-  <div id="cookie-banner">
-    <p>Usamos cookies para mejorar tu experiencia. 
-      <a href="#cookies">Más info</a>
+    <div class="plans">
+      <div class="plan" aria-label="Plan Estándar – Tú lo envías">
+        <div class="price">29,90 €</div>
+        <p><strong>Estándar – Tú lo envías</strong></p>
+        <ul class="bullets">
+          <li>Revisión GRATIS y cálculo del importe recuperable</li>
+          <li>Reclamación personalizada <strong>lista para que la envíes tú mismo</strong></li>
+          <li>Instrucciones paso a paso (email, web o postal)</li>
+        </ul>
+        <p class="help">La opción más económica: te lo damos todo hecho y tú la presentas.</p>
+        <a class="btn btn-outline" href="https://buy.stripe.com/cNi14o0Ho3Qz93N1QZ8og02" target="_blank" rel="noopener noreferrer" aria-label="Pagar Plan Estándar 29,90 €">Pagar 29,90 €</a>
+        <div class="trust-badges" aria-label="Pago seguro">
+          <span class="trust-badge">🔒 Stripe</span>
+          <span class="trust-badge">💳 Visa</span>
+          <span class="trust-badge">💳 Mastercard</span>
+        </div>
+      </div>
+
+      <div class="plan recommended" aria-label="Plan Premium – Gestión completa por nosotros">
+        <span class="badge">⭐ Más cómodo · Recomendado</span>
+        <div class="price">49,90 €</div>
+        <p><strong>Premium – Lo gestionamos por ti</strong></p>
+        <ul class="bullets">
+          <li>Todo lo del Estándar</li>
+          <li><strong>Te hacemos la reclamación completa en tu nombre</strong></li>
+          <li><strong>Seguimiento telemático</strong> (respuestas, réplicas, plazos)</li>
+          <li><strong>Información en cada paso</strong> y <strong>confirmación de acuse</strong></li>
+        </ul>
+        <p class="help">Olvídate de trámites: nosotros gestionamos todo hasta el final.</p>
+        <a class="btn btn-primary" href="https://buy.stripe.com/7sYdRa89Qdr9dk3brz8og03" target="_blank" rel="noopener noreferrer" aria-label="Pagar Plan Premium 49,90 €">Pagar 49,90 €</a>
+        <div class="trust-badges" aria-label="Pago seguro">
+          <span class="trust-badge">🔒 Stripe</span>
+          <span class="trust-badge">💳 Visa</span>
+          <span class="trust-badge">💳 Mastercard</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="security-note">
+      <img src="logo-seguridad-pago.jpg" alt="Pago seguro" />
+      <p>🔒 Tu dinero <strong>nunca</strong> pasa por nosotros: la devolución la realiza siempre tu compañía directamente en tu cuenta o en tu próxima factura.</p>
+    </div>
+
+    <p class="help">
+      ⚖️ Servicio administrativo y automatizado; no constituye asesoramiento jurídico individualizado ni representación letrada.
+      Si tu caso requiere abogado, podremos derivarte —con tu consentimiento— a <strong>colaboradores externos, colegiados y responsables de sus honorarios</strong>.
     </p>
-    <button id="accept-cookies">Aceptar</button>
-    <button id="reject-cookies">Rechazar</button>
+  </section>
+
+  <!-- CASOS REALES -->
+  <section id="casos" class="section">
+    <h2>Casos reales (resumen)</h2>
+    <div class="testimonials">
+      <div class="case-card">
+        <h4>🔌 Iberdrola – 132 € recuperados</h4>
+        <div class="case-meta">Juan G. · Jaén · Potencia mal facturada · Resolución en 10 días · <em>Plan Premium</em></div>
+        <p>Detectamos exceso en término de potencia. Reclamación presentada y aceptada; devolución aplicada en la siguiente factura.</p>
+        <div class="legal-note">*Datos anonimizados. Comprobantes disponibles bajo solicitud (acuse difuminado).</div>
+      </div>
+      <div class="case-card">
+        <h4>📶 Naturgy – 2 meses devueltos</h4>
+        <div class="case-meta">María P. · Sevilla · Subida no informada en internet · Respuesta en 14 días · <em>Plan Premium</em></div>
+        <p>Subida unilateral sin notificación válida. Se exigió retroacción de tarifas y devolución de las mensualidades afectadas.</p>
+        <div class="legal-note">*Datos anonimizados. Comprobantes disponibles bajo solicitud.</div>
+      </div>
+      <div class="case-card">
+        <h4>🔥 Gas – 89 € de ajuste</h4>
+        <div class="case-meta">Pedro R. · Córdoba · Estimaciones incorrectas · Ajuste en la siguiente factura · <em>Plan Estándar</em></div>
+        <p>Estimaciones por encima del consumo real. La compañía corrigió lecturas y abonó el exceso en el ciclo siguiente.</p>
+        <div class="legal-note">*Datos anonimizados.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIANZA -->
+  <section id="confianza" class="section section-alt">
+    <h3>Por qué confiar en TuReclamoExprés</h3>
+    <ul class="bullets">
+      <li><strong>Especialistas</strong> en luz, gas y telecomunicaciones.</li>
+      <li><strong>Precios cerrados</strong>: sabes lo que pagas desde el inicio.</li>
+      <li><strong>Revisión GRATIS</strong> en 24–48 h y diagnóstico claro.</li>
+      <li><strong>Datos protegidos (RGPD)</strong> y <strong>pago seguro</strong> con Stripe, Visa y Mastercard.</li>
+      <li><strong>Atención al cliente</strong>: 📞 <a href="tel:+34953818494">953 818 494</a> · ✉️ <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a></li>
+      <li><strong>Tu dinero siempre va directo a ti</strong>: la devolución la hace tu compañía en tu cuenta o factura.</li>
+    </ul>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section id="formulario" class="section">
+    <h2>Envíanos tu factura por email</h2>
+    <form id="reclamoForm" action="https://formspree.io/f/mzzvnwll" method="POST" novalidate>
+      <input type="text" name="nombre" placeholder="Nombre completo" required autocomplete="name" />
+      <input type="email" name="email" placeholder="Correo electrónico" required autocomplete="email" />
+      <textarea name="mensaje" placeholder="Cuéntanos tu caso (compañía, mes de la factura, problema detectado…)" required></textarea>
+      <p class="help">📩 Puedes adjuntar la factura enviándola a
+        <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a>.
+      </p>
+      <label class="rgpd"><input id="rgpdCheck" type="checkbox" required /> Acepto la <a href="#" id="rgpdLink">Política de Privacidad</a></label>
+      <input type="hidden" name="_subject" value="Nuevo envío – TuReclamoExprés" />
+      <input type="hidden" name="_redirect" value="https://tureclamoexpres.com/gracias.html" />
+      <button type="submit" class="btn btn-primary">Enviar</button>
+      <p id="formOK" aria-live="polite" class="state-ok">✅ Enviado correctamente</p>
+      <p id="formERR" aria-live="assertive" class="state-err">❌ Error al enviar</p>
+    </form>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>
+    © <span id="year"></span> TuReclamoExprés.com ·
+    Titular de la web: <strong>S.A.G. Servicios Digitales</strong> ·
+    <a href="#" id="privacidadLinkFooter">Privacidad</a> ·
+    <a href="#" id="cookiesLinkFooter">Cookies</a> ·
+    <a href="#" id="condicionesLinkFooter">Condiciones</a> ·
+    <a href="#" id="avisoLegalLinkFooter">Aviso legal</a> ·
+    📞 <a href="tel:+34953818494">953 818 494</a> ·
+    ✉️ <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a>
+  </p>
+  <div class="footer-cta">
+    <a class="btn btn-whatsapp" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" aria-label="Subir factura por WhatsApp">Sube tu factura ahora</a>
+    <p class="help small">🔒 Pago seguro con Stripe · Sin permanencias · Sin letra pequeña</p>
   </div>
+</footer>
 
-  <!-- BOTÓN WA FLOTANTE -->
-  <a href="https://wa.me/34649435633?text=Hola%20Quiero%20revisar%20mi%20factura" class="wa-float" target="_blank" aria-label="WhatsApp"></a>
+<!-- MODAL LEGALES -->
+<div id="legal-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-wrap" role="document">
+    <h3 id="modal-title">Políticas legales</h3>
+    <div class="modal-toplinks">
+      <a class="chip" href="#modal-privacidad">Privacidad</a>
+      <a class="chip" href="#modal-cookies">Cookies</a>
+      <a class="chip" href="#modal-condiciones">Condiciones</a>
+      <a class="chip" href="#modal-aviso">Aviso Legal</a>
+    </div>
 
-  <!-- MODALES LEGALES -->
-  <div id="aviso-legal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Aviso Legal</h2>
-      <p>TuReclamoExprés es un proyecto gestionado por Sergio Arnes Gómez (pendiente de alta como trabajador autónomo).  
-         Correo de contacto: <a href="mailto:sergioarnes@icloud.com">sergioarnes@icloud.com</a>.  
-         Este sitio web tiene como finalidad ofrecer servicios de revisión y gestión de reclamaciones de consumo.  
-         El uso de este portal implica la aceptación de las condiciones aquí descritas.  
-         Una vez obtenida la condición fiscal de autónomo y número de identificación correspondiente, se actualizarán estos datos en el presente Aviso Legal.</p>
+    <h4 id="modal-privacidad">Política de Privacidad</h4>
+    <p>
+      En virtud del RGPD y la LOPDGDD, los datos que los usuarios remitan vía formularios, correo o servicios vinculados
+      se tratarán con la finalidad de revisión gratuita de facturas, elaboración de diagnósticos preliminares y, en su caso,
+      generación y entrega de documentos automatizados. Responsable: S.A.G. Servicios Digitales, email
+      <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a>. No se cederán datos a terceros salvo obligación legal
+      o necesidad técnica en modalidad Premium. Derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad
+      mediante solicitud al correo indicado.
+    </p>
+
+    <h4 id="modal-cookies">Política de Cookies</h4>
+    <p>
+      Este sitio utiliza únicamente cookies técnicas imprescindibles. Puntualmente podrían usarse cookies analíticas de terceros
+      (p. ej., Google Analytics) previo consentimiento del usuario. Puedes bloquear o eliminar cookies en tu navegador; algunas funciones
+      podrían verse limitadas.
+    </p>
+
+    <h4 id="modal-condiciones">Condiciones de Servicio</h4>
+    <p>
+      El acceso al sitio implica la aceptación de estas condiciones. El servicio consiste en la revisión inicial gratuita,
+      identificación de cobros indebidos y, en su caso, generación de documentos automatizados que el usuario puede enviar por sí mismo
+      o autorizar su envío en modalidad Premium. La prestación es administrativa y automatizada; no constituye asesoramiento jurídico
+      individualizado ni representación letrada. Precios IVA incluido, pago a través de Stripe. Al ser contenido digital de entrega
+      inmediata, no aplica derecho de desistimiento (art. 103.m TRLGDCU), sin perjuicio de reembolso por incidencias técnicas.
+    </p>
+
+    <h4 id="modal-aviso">Aviso Legal</h4>
+    <p class="help"><em>TuReclamoExprés se ofrece a título particular. Los datos identificativos se muestran en cumplimiento de la Ley 34/2002 (LSSI).</em></p>
+    <p>
+      Este sitio es titularidad de S.A.G. Servicios Digitales. Objeto: información general y modelos automatizados de reclamación,
+      sin que ello suponga asesoramiento jurídico ni representación letrada. En supuestos que requieran intervención de abogado,
+      podremos derivar —con consentimiento expreso del usuario— a <strong>abogados colaboradores externos, colegiados y responsables de sus honorarios y actuaciones</strong>.
+      A efectos meramente identificativos y de contacto interno del titular del proyecto, se hace constar —sin perjuicio de la razón social anterior— que
+      <em>Sergio Arnes Gómez, DNI 78687563D, C/ Ibañez Marín, Andújar (Jaén), C.P. 23740</em>, participa en la coordinación operativa del servicio,
+      dejando claro que cualquier controversia se someterá a los Juzgados y Tribunales de Jaén, salvo lo dispuesto por normativa de consumidores.
+    </p>
+
+    <div class="modal-actions">
+      <button id="cerrar-legal" class="btn btn-outline" type="button">Cerrar</button>
     </div>
   </div>
+</div>
 
-  <div id="privacidad" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Política de Privacidad</h2>
-      <p>De acuerdo con el RGPD (UE) 2016/679 y la LOPDGDD 3/2018, tus datos serán tratados únicamente para gestionar la revisión y reclamación de tus facturas.  
-         No se cederán a terceros salvo obligación legal.  
-         Puedes ejercer tus derechos de acceso, rectificación, supresión y oposición escribiendo a 
-         <a href="mailto:sergioarnes@icloud.com">sergioarnes@icloud.com</a>.</p>
-    </div>
-  </div>
+<!-- BOTÓN WHATSAPP flotante -->
+<a class="fab-wa" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" aria-label="Abrir WhatsApp" rel="noopener">WhatsApp</a>
 
-  <div id="cookies" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Política de Cookies</h2>
-      <p>Este sitio utiliza cookies propias y de terceros con fines técnicos y estadísticos.  
-         Puedes aceptarlas o rechazarlas desde el banner inicial o configurando tu navegador.  
-         Al navegar por este sitio, aceptas nuestra política de cookies.</p>
-    </div>
+<noscript>
+  <div class="noscript-msg">
+    Este sitio usa funcionalidades JavaScript (formulario, menú, acordeón y guías). Actívalo para una experiencia completa.
   </div>
+</noscript>
+
+<!-- Scripts -->
+<script src="js/app.js" defer></script>
 </body>
 </html>
 --- css/style.css ---
+
 css
 Copiar código
-/* Reset */
-* {margin:0;padding:0;box-sizing:border-box;}
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  line-height: 1.6;
-  background: #f4f7fb;
-  color: #0a2e5c;
+/* ===========================
+   Base de diseño TuReclamoExprés
+   Look & feel estilo BBVA (azules, claridad, confianza)
+   =========================== */
+
+:root{
+  --bg:#f4f7fb;
+  --bg-alt:#eef3f9;
+  --card:#c2dbf0;
+  --card-strong:#b7d2ea;
+  --text:#072146;
+  --muted:#5f6368;
+  --accent:#004481;
+  --link:#1464a5;
+  --brand:#004481;
+  --border:#dbe5ef;
+  --shadow:0 6px 18px rgba(7,33,70,.08);
+  --wa:#22c55e;
 }
 
-/* Layout */
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  font-size:18px;
+}
+h1,h2,h3,h4{font-family:'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif}
+
+main, header, footer{max-width:1100px;margin:0 auto;padding:20px}
+.center{text-align:center}
+.mt-4{margin-top:.75rem}
+
+/* Links */
+a{color:var(--link)}
+a:hover{opacity:.9}
+
+/* ========== Header ========== */
+.site-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;position:sticky;top:0;background:var(--brand);
+  z-index:999;border-bottom:1px solid #003a6a;
+}
+.logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.logo-img{height:36px;width:auto;display:block}
+.nav{display:flex;align-items:center}
+.nav-links{list-style:none;display:flex;gap:16px}
+.nav-links a{color:#fff;font-weight:700;text-decoration:none;font-size:1rem}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer}
+.nav-toggle-bar{display:block;width:24px;height:2px;margin:5px 0;background:#ffffff}
+.header-right{display:flex;align-items:center;gap:16px}
+.header-contact{font-size:.95rem;color:#e5edf6}
+.header-contact a{color:#fff;text-decoration:none;font-weight:700}
+
+@media(max-width:768px){
+  .nav-toggle{display:block}
+  .nav{
+    position:fixed;left:0;right:0;top:70px;background:var(--brand);
+    transform:translateY(-120%);transition:transform .25s ease;
+    height:calc(100vh - 70px);overflow-y:auto;border-top:1px solid #003a6a;
+  }
+  .nav.open{transform:translateY(0)}
+  .nav-links{flex-direction:column}
+  .nav-links li{border-top:1px solid #0c3e69}
+  .nav-links a{padding:14px 16px;display:block}
+  .header-contact{display:none}
 }
 
-/* Header */
-.site-header {
-  background: #0a2e5c;
-  color: #fff;
-  padding: 1rem 0;
+/* ========== Botones ========== */
+.btn{
+  display:inline-block;padding:10px 14px;border-radius:10px;font-weight:800;
+  text-decoration:none;margin:4px;font-size:.95rem;letter-spacing:.2px;box-shadow:var(--shadow)
 }
-.site-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.site-header nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-.site-header nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-}
-.logo {
-  height: 45px;
-}
-.btn-wa {
-  background: #25d366;
-  color: #fff;
-  padding: .6rem 1rem;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background .3s;
-}
-.btn-wa:hover {
-  background: #1ebe5d;
-}
+.btn-primary{background:var(--accent);color:#fff;border:1px solid #003060}
+.btn-outline{border:1px solid var(--accent);color:var(--accent);background:#fff}
+.btn-whatsapp{background:var(--wa);color:#052e16;border:1px solid #16a34a;padding:8px 12px;border-radius:8px;font-size:.92rem}
 
-/* Hero */
-.hero {
-  padding: 3rem 0;
-  background: #eaf1f9;
+/* ========== Hero ========== */
+.hero{
+  background:linear-gradient(180deg, var(--bg), var(--bg-alt));
+  border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);
+  padding:2rem 1rem 1.25rem
 }
-.hero-flex {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-.hero-text h1 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-.hero-text p {
-  margin-bottom: 1.5rem;
-}
-.hero-img img {
-  max-width: 400px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.1);
-}
+.hero-grid{display:grid;gap:18px;align-items:center}
+@media(min-width:920px){ .hero-grid{grid-template-columns:1.1fr .9fr} }
+.hero h1{font-size:clamp(28px,5vw,42px);margin:.5rem auto;color:var(--brand)}
+.hero p{color:var(--muted);max-width:860px;margin:0 auto 1rem;font-size:1.08rem}
+.trustline{margin-top:.25rem;color:var(--text);font-weight:700}
+.hero-ctas{margin:.25rem 0 .5rem}
+.hero-media img{width:100%;height:auto;border-radius:12px;box-shadow:var(--shadow)}
 
-/* Buttons */
-.btn-primary {
-  display: inline-block;
-  background: #0a2e5c;
-  color: #fff;
-  padding: .8rem 1.5rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-}
-.btn-primary:hover {
-  background: #083058;
-}
-.btn-secondary {
-  display: inline-block;
-  background: #fff;
-  border: 2px solid #0a2e5c;
-  color: #0a2e5c;
-  padding: .6rem 1.2rem;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all .3s;
-}
-.btn-secondary:hover {
-  background: #0a2e5c;
-  color: #fff;
-}
+/* ========== Steps / Servicios / Guías ========== */
+.steps{display:grid;gap:12px;margin:18px auto 0;max-width:920px}
+@media(min-width:900px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;text-align:left;box-shadow:var(--shadow)}
+.step b{display:block;font-size:1.05rem;margin-bottom:4px;color:var(--brand)}
 
-/* Cards */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-.card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,.08);
-}
-.card img {
-  max-width: 80px;
-  margin-bottom: 1rem;
-}
+.section{margin-top:28px}
+.section-alt{background:var(--bg-alt);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:20px}
 
-/* Footer */
-.site-footer {
-  background: #0a2e5c;
-  color: #fff;
-  padding: 1rem 0;
-  margin-top: 3rem;
+.toggle{
+  display:flex;align-items:center;justify-content:space-between;width:100%;
+  background:var(--card-strong);border:1px solid var(--border);border-radius:12px;
+  padding:14px 16px;color:var(--text);font-weight:700;cursor:pointer;font-size:1.05rem;margin-top:10px
 }
-.footer-links {
-  margin-top: .5rem;
-}
-.footer-links a {
-  color: #fff;
-  margin-right: 1rem;
-  text-decoration: none;
-}
+.toggle + .toggle-wrap{overflow:hidden;max-height:0;transition:max-height .25s ease}
+.toggle-wrap .inner{padding:12px 2px}
 
-/* Cookies */
-#cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #0a2e5c;
-  color: #fff;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-}
-#cookie-banner button {
-  margin-left: .5rem;
-  border: none;
-  padding: .5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-#accept-cookies {background:#25d366;color:#fff;}
-#reject-cookies {background:#aaa;color:#fff;}
+.services{display:grid;gap:12px}
+@media(min-width:900px){.services{grid-template-columns:repeat(3,1fr)}}
+.svc{background:var(--card);padding:16px;border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow)}
+.svc h4{margin:0 0 .5rem;color:var(--brand)}
+.help{color:var(--muted);font-size:.95rem}
 
-/* WhatsApp flotante */
-.wa-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 55px;
-  height: 55px;
-  background: #25d366 url('logo-seguridad.jpg') no-repeat center/60%;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0,0,0,.3);
-}
+.grid-cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px}
+.card-img{width:100%;height:auto;border-radius:10px}
 
-/* Modales legales */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
+/* ========== Planes ========== */
+.plans{display:grid;gap:12px;margin-top:8px}
+@media(min-width:900px){.plans{grid-template-columns:repeat(2,1fr)}}
+.plan{background:var(--card);padding:16px;border:1px solid var(--border);border-radius:12px;position:relative;box-shadow:var(--shadow)}
+.price{font-size:1.6rem;font-weight:800;color:var(--text)}
+.plan .badge{position:absolute;top:-10px;left:16px;padding:6px 10px;border-radius:999px;font-weight:800;font-size:.85rem;background:var(--accent);color:#fff;border:1px solid #003060}
+.plan.recommended{outline:2px solid var(--accent);transform:translateY(-2px)}
+.bullets{margin-left:1rem;list-style:disc}
+.security-note{display:flex;gap:12px;align-items:center;margin-top:12px}
+.security-note img{width:52px;height:52px;border-radius:10px;border:1px solid var(--border);object-fit:cover}
+
+/* ========== Casos ========== */
+.testimonials{display:grid;gap:12px;margin-top:14px}
+@media(min-width:900px){.testimonials{grid-template-columns:repeat(3,1fr)}}
+.case-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;box-shadow:var(--shadow)}
+.case-card h4{font-size:1.05rem;margin-bottom:6px;color:var(--brand)}
+.case-meta{font-size:.92rem;color:var(--muted);margin:.25rem 0 .5rem}
+.legal-note{font-size:.85rem;color:#6b7280;margin-top:6px}
+
+/* ========== Confianza ========== */
+#confianza{padding:1rem;border:1px solid var(--border);border-radius:12px;background:var(--card-strong);box-shadow:var(--shadow)}
+#confianza ul{margin-left:1rem;list-style:disc}
+
+/* ========== Formulario ========== */
+#reclamoForm input,#reclamoForm textarea{
+  width:100%;margin:8px 0;padding:12px 14px;border-radius:10px;border:1px solid var(--border);
+  background:#ffffff;color:var(--text);font-size:1rem
 }
-.modal-content {
-  background: #fff;
-  margin: 10% auto;
-  padding: 2rem;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 600px;
-  color: #0a2e5c;
-  line-height: 1.6;
+#reclamoForm textarea{min-height:140px;resize:vertical}
+#reclamoForm label{display:block;margin:6px 0}
+.rgpd a{font-weight:600}
+.state-ok{color:#16a34a;display:none}
+.state-err{color:#b91c1c;display:none}
+
+/* ========== Footer & Modal ========== */
+.footer{border-top:1px solid var(--border);margin-top:30px;padding:60px 20px 90px;color:var(--muted)}
+.footer a{color:var(--link)}
+.footer-cta{text-align:center;margin-top:1.5rem}
+.footer .small{font-size:.9rem}
+
+#legal-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.55);z-index:9999}
+.modal-wrap{background:#fff;color:var(--text);width:min(900px,92vw);max-height:90vh;border-radius:10px;overflow-y:auto;padding:20px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.modal-toplinks{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 14px}
+.chip{border:1px solid var(--border);padding:6px 10px;border-radius:999px;text-decoration:none;color:var(--brand);font-size:.95rem;background:#fff}
+.modal-actions{margin-top:14px}
+
+/* ========== WhatsApp FAB & Noscript ========== */
+.fab-wa{
+  position:fixed;right:16px;bottom:100px;z-index:1000;background:var(--wa);color:#052e16;
+  font-weight:800;border-radius:999px;padding:10px 14px;text-decoration:none;font-size:.95rem;border:1px solid #16a34a;box-shadow:var(--shadow)
 }
-.modal .close {
-  float: right;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
+@media(max-width:600px){.fab-wa{bottom:110px;padding:8px 12px;font-size:.9rem}}
+.noscript-msg{background:#fee2e2;color:#7f1d1d;padding:12px;text-align:center;border:1px solid #fecaca;border-radius:10px}
+
+/* ========== Imágenes globales ========== */
+img{max-width:100%;height:auto;border-radius:10px}
 --- js/app.js ---
+
 javascript
 Copiar código
-// Banner cookies
-const cookieBanner = document.getElementById("cookie-banner");
-const acceptBtn = document.getElementById("accept-cookies");
-const rejectBtn = document.getElementById("reject-cookies");
+// ========= Año dinámico =========
+document.getElementById('year').textContent = new Date().getFullYear();
 
-if (acceptBtn) {
-  acceptBtn.addEventListener("click", () => {
-    cookieBanner.style.display = "none";
-    localStorage.setItem("cookies", "accepted");
-  });
-}
-if (rejectBtn) {
-  rejectBtn.addEventListener("click", () => {
-    cookieBanner.style.display = "none";
-    localStorage.setItem("cookies", "rejected");
-  });
-}
+// ========= Menú móvil =========
+const navToggle = document.querySelector('.nav-toggle');
+const nav = document.getElementById('primary-nav');
+const navLinks = nav.querySelectorAll('a');
 
-// Mantener elección
-window.addEventListener("load", () => {
-  const choice = localStorage.getItem("cookies");
-  if (choice) {
-    cookieBanner.style.display = "none";
+navToggle.addEventListener('click', () => {
+  const isOpen = nav.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', isOpen);
+  navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+});
+
+navLinks.forEach(a => a.addEventListener('click', () => {
+  if (nav.classList.contains('open')) {
+    nav.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Abrir menú');
   }
-});
+}));
 
-// Abrir modales legales
-document.querySelectorAll(".footer-links a").forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
-    const target = document.querySelector(link.getAttribute("href"));
-    if (target) target.style.display = "block";
-  });
-});
+// ========= Modal legales =========
+const legalModal = document.getElementById('legal-modal');
+const abrirLegal = () => { legalModal.style.display = 'flex'; document.body.style.overflow = 'hidden'; };
+const cerrarLegal = () => { legalModal.style.display = 'none'; document.body.style.overflow = ''; };
 
-// Cerrar modales
-document.querySelectorAll(".modal .close").forEach(btn => {
-  btn.addEventListener("click", () => {
-    btn.closest(".modal").style.display = "none";
-  });
-});
+document.getElementById('openLegalModalLink').addEventListener('click', e => { e.preventDefault(); abrirLegal(); });
+document.getElementById('privacidadLinkFooter').addEventListener('click', e => { e.preventDefault(); abrirLegal(); });
+document.getElementById('cookiesLinkFooter').addEventListener('click', e => { e.preventDefault(); abrirLegal(); });
+document.getElementById('condicionesLinkFooter').addEventListener('click', e => { e.preventDefault(); abrirLegal(); });
+document.getElementById('avisoLegalLinkFooter').addEventListener('click', e => { e.preventDefault(); abrirLegal(); });
+document.getElementById('rgpdLink').addEventListener('click', e => { e.preventDefault(); abrirLegal(); });
+document.getElementById('cerrar-legal').addEventListener('click', cerrarLegal);
+legalModal.addEventListener('click', e => { if (e.target === legalModal) cerrarLegal(); });
 
-// Cerrar al clicar fuera
-window.addEventListener("click", e => {
-  if (e.target.classList.contains("modal")) {
-    e.target.style.display = "none";
+// ========= Acordeones (servicios y guías) =========
+function makeToggle(btnId, wrapId){
+  const btn = document.getElementById(btnId);
+  const wrap = document.getElementById(wrapId);
+  const setState = (open) => {
+    btn.setAttribute('aria-expanded', open);
+    wrap.style.maxHeight = open ? wrap.scrollHeight + 'px' : '0px';
+  };
+  if (btn && wrap) {
+    setState(false);
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') !== 'true';
+      setState(open);
+    });
+    window.addEventListener('resize', () => {
+      if (btn.getAttribute('aria-expanded') === 'true') {
+        wrap.style.maxHeight = wrap.scrollHeight + 'px';
+      }
+    });
+  }
+}
+makeToggle('toggleServicios','serviciosWrap');
+makeToggle('toggleGuides','guidesWrap');
+
+// ========= Formulario (Formspree) =========
+const form = document.getElementById('reclamoForm');
+const okMsg = document.getElementById('formOK');
+const errMsg = document.getElementById('formERR');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  okMsg.style.display='none';
+  errMsg.style.display='none';
+
+  if (!document.getElementById('rgpdCheck').checked) {
+    errMsg.textContent = 'Debes aceptar la Política de Privacidad para continuar.';
+    errMsg.style.display = 'block';
+    return;
+  }
+
+  const fd = new FormData(form);
+  try {
+    const r = await fetch(form.action, { method:'POST', body: fd, headers:{'Accept':'application/json'} });
+    const isJson = r.headers.get('content-type')?.includes('application/json');
+    const payload = isJson ? await r.json() : null;
+
+    if (r.ok) {
+      form.reset();
+      okMsg.textContent = '✅ Enviado correctamente';
+      okMsg.style.display = 'block';
+      const redirect = form.querySelector('input[name="_redirect"]').value;
+      if (redirect) window.location.href = redirect;
+    } else {
+      errMsg.textContent = (payload && payload.errors && payload.errors[0]?.message)
+        ? '❌ ' + payload.errors[0].message
+        : '❌ Error al enviar. Inténtalo de nuevo o usa WhatsApp.';
+      errMsg.style.display = 'block';
+    }
+  } catch (err) {
+    errMsg.textContent = '❌ Error de conexión. Inténtalo más tarde o envíanoslo por WhatsApp.';
+    errMsg.style.display = 'block';
   }
 });
