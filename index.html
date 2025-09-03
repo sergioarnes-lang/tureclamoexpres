@@ -9,14 +9,12 @@
   <meta name="theme-color" content="#ffffff" />
   <link rel="canonical" href="https://tureclamoexpres.com/" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-
   <meta property="og:title" content="TuReclamoExprés – Revisión GRATIS de facturas" />
   <meta property="og:description" content="Sube tu factura. En 24–48 h te decimos si hay cobros de más y te damos la reclamación lista o la gestionamos por ti. 29,90 € · 49,90 €. La devolución la hace tu compañía directamente en tu cuenta o factura." />
-  <meta property="og:image" content="og-image.jpg" />
+  <meta property="og:image" content="https://tureclamoexpres.com/og-image.jpg" />
   <meta property="og:url" content="https://tureclamoexpres.com" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-
   <link rel="icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
@@ -61,23 +59,30 @@
   <style>
     html { scroll-behavior: smooth; }
     :root {
+      /* Tema claro de confianza (colores exactos requeridos) */
+      --bg:#ffffff;        /* Fondo base */
+      --card:#f8fafc;      /* Tarjetas y bloques */
+      --text:#1e293b;      /* Texto principal */
+      --muted:#64748b;     /* Texto secundario */
+      --accent:#22c55e;    /* Acento principal */
+      --link:#2563eb;      /* Links y botones secundarios */
+      --border:#e2e8f0;    /* Bordes */
+      --shadow:0 6px 18px rgba(2,6,23,.06);
       /* Paleta estilo BBVA */
-      --bg:#ffffff;
-      --card:#f8fafc;
-      --text:#072146;
-      --muted:#5f6368;
-      --accent:#003a8c; /* azul más fuerte para CTAs */
-      --link:#1464a5;
-      --border:#e2e8f0;
-      --shadow:0 6px 18px rgba(7,33,70,.08);
-      --ok:#22c55e;
-
-      --pill-bg:#eef6ff;
-      --pill-border:#cfe3ff;
+      --bg:#ffffff;          /* Fondo base */
+      --card:#f8fafc;        /* Tarjetas y bloques suaves */
+      --text:#072146;        /* Texto principal (azul oscuro BBVA) */
+      --muted:#5f6368;       /* Texto secundario gris medio */
+      --accent:#004481;      /* Azul BBVA para CTAs */
+      --link:#1464a5;        /* Azul claro enlaces */
+      --border:#e2e8f0;      /* Borde gris claro */
+      --shadow:0 6px 18px rgba(7,33,70,.08); /* Sombra azulada, sin verdes */
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);      /* Requisito: usar var(--bg) */
+      color: var(--text);         /* Requisito: usar var(--text) */
       background: var(--bg);
       color: var(--text);
       line-height: 1.7; font-size: 18px;
@@ -87,12 +92,11 @@
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
     /* Header */
-    .site-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; position: sticky; top: 0; background: var(--bg); z-index: 999; border-bottom: 1px solid var(--border); }
+    .site-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; position: sticky; top: 0; background: var(--bg); z-index: 999; border-bottom: 1px solid var(--border); }
     .logo { font-weight: 800; font-size: 1.35rem; color: var(--text); text-decoration: none; letter-spacing: .2px; }
     .nav { display: flex; align-items: center; }
-    .nav-links { list-style: none; display: flex; gap: 20px; }
-    .nav-links a { color: var(--text); font-weight: 600; text-decoration: none; font-size: 1rem; padding: 6px 8px; border-radius: 10px; }
-    .nav-links a:hover { background: var(--pill-bg); border: 1px solid var(--pill-border); }
+    .nav-links { list-style: none; display: flex; gap: 16px; }
+    .nav-links a { color: var(--text); font-weight: 600; text-decoration: none; font-size: 1rem; }
     .nav-toggle { display: none; background: none; border: 0; cursor: pointer; }
     .nav-toggle-bar { display: block; width: 24px; height: 2px; margin: 5px 0; background: var(--text); }
     .header-right { display:flex; align-items:center; gap:16px; }
@@ -103,77 +107,81 @@
       .nav-toggle { display: block; }
       .nav { position: fixed; left: 0; right: 0; top: 70px; background: var(--bg); transform: translateY(-120%); transition: transform .25s ease; height: calc(100vh - 70px); overflow-y: auto; border-top: 1px solid var(--border); }
       .nav.open { transform: translateY(0); }
-      .nav-links { flex-direction: column; padding: 10px; gap: 6px; }
+      .nav-links { flex-direction: column; }
       .nav-links li { border-top: 1px solid var(--border); }
-      .nav-links a { padding: 12px 14px; display: block; }
+      .nav-links a { padding: 14px 16px; display: block; }
       .header-contact { display:none; }
     }
 
     /* Hero */
-    .hero { text-align: center; padding: 3.25rem 1rem 1.5rem; }
-    .hero h1 { font-size: clamp(28px,5vw,42px); margin: .65rem auto 1rem; max-width: 860px; }
-    .hero p { color: var(--muted); max-width: 860px; margin: 0 auto 12px; font-size: 1.08rem; }
-    .trustline { margin-top:.25rem; color:var(--text); font-weight:700; }
-    .hero .trustline,
-    .hero p:first-of-type {
-      background: var(--pill-bg);
-      border: 1px solid var(--pill-border);
-      border-radius: 14px;
-      padding: 12px 14px;
-    }
-    .btn { display: inline-block; padding: 10px 14px; border-radius: 10px; font-weight: 800; text-decoration: none; margin: 6px; font-size: 0.95rem; letter-spacing: .2px; box-shadow: var(--shadow); }
-    .btn-primary { background: var(--accent); color: #ffffff; border: 1px solid #002a66; }
-    .btn-outline { border: 1px solid var(--accent); color: var(--accent); background:#fff; }
-    .btn-whatsapp { background: var(--ok); color: #052e16; border: 1px solid #16a34a; }
+    .hero { text-align: center; padding: 3rem 1rem 1.25rem; }
+    .hero h1 { font-size: clamp(28px,5vw,42px); margin: .5rem auto; max-width: 860px; }
+    .hero p { color: var(--muted); max-width: 860px; margin: 0 auto 1rem; font-size: 1.08rem; }
+    .trustline { margin-top:.25rem; color:#166534; font-weight:600; }
+    .btn { display: inline-block; padding: 14px 18px; border-radius: 12px; font-weight: 800; text-decoration: none; margin: 4px; font-size: 1rem; letter-spacing: .2px; box-shadow: var(--shadow); }
+    .btn-primary { background: var(--accent); color: #052e16; border: 1px solid #14532d; }
+    .btn-outline { border: 1px solid var(--border); color: var(--text); background:#fff; }
+    .trustline { margin-top:.25rem; color: var(--text); font-weight:700; }
 
-    /* Aligerar el hero en móvil */
-    @media (max-width: 600px){
-      .hero p { background: var(--card); border:1px solid var(--border); border-radius:12px; padding:12px; }
-      .hero .btn { width: 100%; max-width: 520px; }
-    }
+    /* Botones (más pequeños) */
+    .btn { display: inline-block; padding: 10px 14px; border-radius: 10px; font-weight: 800; text-decoration: none; margin: 4px; font-size: 0.95rem; letter-spacing: .2px; box-shadow: var(--shadow); }
+    .btn-primary { background: var(--accent); color: #ffffff; border: 1px solid #003060; }
+    .btn-outline { border: 1px solid var(--border); color: var(--accent); background:#fff; }
+    .btn-whatsapp { background: #22c55e; color: #052e16; border: 1px solid #16a34a; } /* Verde SOLO para WhatsApp */
 
-    h2 { margin: 1.7rem 0 .65rem; font-size: clamp(22px,3.6vw,30px); }
+    h2 { margin: 1.5rem 0 .5rem; font-size: clamp(22px,3.6vw,30px); }
 
     /* Steps / Services / Guides */
     .steps { display:grid; gap:12px; margin: 18px auto 0; max-width: 920px; }
     @media (min-width: 900px){ .steps { grid-template-columns: repeat(3,1fr);} }
-    .step { background: var(--card); border:1px solid var(--border); border-radius:12px; padding:16px; text-align:left; box-shadow: var(--shadow); }
-    .step b { display:block; font-family:'Montserrat'; font-size:1.05rem; margin-bottom:6px; }
+    .step { background: #fff; border:1px solid var(--border); border-radius:12px; padding:14px; text-align:left; box-shadow: var(--shadow); }
+    .step { background: var(--card); border:1px solid var(--border); border-radius:12px; padding:14px; text-align:left; box-shadow: var(--shadow); }
+    .step b { display:block; font-family:'Montserrat'; font-size:1.05rem; margin-bottom:4px; }
 
+    .toggle { display:flex; align-items:center; justify-content:space-between; width:100%; background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px 16px; color:var(--text); font-weight:700; cursor:pointer; font-size:1.05rem; }
     .toggle { display:flex; align-items:center; justify-content:space-between; width:100%; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px 16px; color:var(--text); font-weight:700; cursor:pointer; font-size:1.05rem; }
     .toggle + .toggle-wrap { overflow:hidden; max-height:0; transition:max-height .25s ease; }
     .toggle-wrap .inner { padding: 12px 2px; }
 
     .services { display: grid; gap: 12px; }
     @media (min-width: 900px) { .services { grid-template-columns: repeat(3, 1fr); } }
+    .svc { background: #fff; padding: 16px; border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); }
     .svc { background: var(--card); padding: 16px; border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); }
     .svc h4 { margin: 0 0 .5rem; font-family:'Montserrat'; }
     .help { color: var(--muted); font-size: .95rem; }
 
-    .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px; box-shadow:var(--shadow); }
+    .card { background:#fff; border:1px solid var(--border); border-radius:12px; padding:16px; box-shadow: var(--shadow); }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px; box-shadow: var(--shadow); }
 
     /* Plans */
     .plans { display: grid; gap: 12px; margin-top:8px; }
     @media (min-width: 900px) { .plans { grid-template-columns: repeat(2, 1fr); } }
+    .plan { background: #fff; padding: 16px; border: 1px solid var(--border); border-radius: 12px; position: relative; box-shadow: var(--shadow); }
+    .price { font-size: 1.6rem; font-weight: 800; font-family:'Montserrat'; }
+    .plan .badge { position: absolute; top: -10px; left: 16px; padding: 6px 10px; border-radius: 999px; font-weight: 800; font-size: .85rem; background: #22c55e; color: #052e16; border: 1px solid #14532d; }
+    .plan.recommended { outline: 2px solid #22c55e; transform: translateY(-2px); }
     .plan { background: var(--card); padding: 16px; border: 1px solid var(--border); border-radius: 12px; position: relative; box-shadow: var(--shadow); }
     .price { font-size: 1.6rem; font-weight: 800; font-family:'Montserrat'; color: var(--text); }
-    .plan .badge { position: absolute; top: -10px; left: 16px; padding: 6px 10px; border-radius: 999px; font-weight: 800; font-size: .85rem; background: var(--accent); color: #ffffff; border: 1px solid #002a66; }
+    .plan .badge { position: absolute; top: -10px; left: 16px; padding: 6px 10px; border-radius: 999px; font-weight: 800; font-size: .85rem; background: var(--accent); color: #ffffff; border: 1px solid #003060; }
     .plan.recommended { outline: 2px solid var(--accent); transform: translateY(-2px); }
     #precios .plan p, #precios .plan li { font-size: 1.05rem; line-height: 1.7; }
 
     .trust-badges{display:flex;align-items:center;gap:10px;margin-top:8px;opacity:.9;flex-wrap:wrap}
+    .trust-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;font-size:.9rem;color:var(--text);background:#fff}
     .trust-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;font-size:.9rem;color:var(--text);background:var(--card)}
 
     /* Testimonials / Cases */
     .testimonials { display:grid; gap:12px; margin-top:14px; }
     @media (min-width:900px){ .testimonials { grid-template-columns: repeat(3,1fr);} }
+    .case-card { background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px; box-shadow:var(--shadow); }
     .case-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px; box-shadow:var(--shadow); }
     .case-card h4 { font-size:1.05rem; margin-bottom:6px; }
     .case-meta { font-size:.92rem; color:var(--muted); margin:.25rem 0 .5rem; }
     .legal-note { font-size:.85rem; color:#6b7280; margin-top:6px; }
 
     /* Confianza */
-    #confianza { margin-top:1.6rem; padding:1rem; border:1px solid var(--border); border-radius:12px; background:var(--card); box-shadow:var(--shadow); }
+    #confianza { margin-top:1.5rem; padding:1rem; border:1px solid var(--border); border-radius:12px; background:#fff; box-shadow:var(--shadow); }
+    #confianza { margin-top:1.5rem; padding:1rem; border:1px solid var(--border); border-radius:12px; background:var(--card); box-shadow:var(--shadow); }
     #confianza ul { margin-left:1rem; list-style:disc; }
 
     /* Form */
@@ -187,6 +195,7 @@
     #formERR { color:#b91c1c; display:none; }
 
     /* Footer & Modal */
+    .footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 60px 20px 90px; color: #475569; }
     .footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 60px 20px 90px; color: var(--muted); }
     .footer a { color: var(--link); }
     #legal-modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,.55); z-index: 9999; }
@@ -195,48 +204,10 @@
     .chip { border: 1px solid var(--border); padding: 6px 10px; border-radius: 999px; text-decoration: none; color: var(--text); font-size: .95rem; background:#fff; }
 
     /* WhatsApp FAB */
+    .fab-wa { position: fixed; right: 16px; bottom: 100px; z-index: 1000; background: var(--accent); color: #052e16; font-weight: 800; border-radius: 999px; padding: 12px 18px; text-decoration: none; font-size: 1rem; border:1px solid #14532d; box-shadow:var(--shadow); }
+    /* WhatsApp FAB (verde se mantiene) */
     .fab-wa { position: fixed; right: 16px; bottom: 100px; z-index: 1000; background: #22c55e; color: #052e16; font-weight: 800; border-radius: 999px; padding: 12px 18px; text-decoration: none; font-size: 1rem; border:1px solid #16a34a; box-shadow:var(--shadow); }
     @media (max-width: 600px) { .fab-wa { bottom: 110px; padding: 10px 16px; font-size: 0.95rem; } }
-
-    /* =====================  BLOQUES DE IMAGEN AJUSTADOS  ===================== */
-    /* Reglas globales de imágenes para ver la foto entera (contain) y más pequeñas */
-    .media-hero img,
-    .media-banner img,
-    .media-grid img,
-    .casos-media img {
-      width: 100%;
-      height: auto;
-      max-height: 240px;          /* más pequeñas por defecto */
-      object-fit: contain;         /* ver foto completa, sin cortar */
-      object-position: center;     /* zoom más lejano, centrado */
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      background: #fff;            /* mejora lectura si hay transparencia/bordes */
-      padding: 6px;                /* marco blanco sutil para “aire” visual */
-    }
-
-    /* Hero: imagen aún más controlada en móvil */
-    @media (max-width: 600px){
-      .media-hero img { max-height: 200px; }
-    }
-
-    /* Grids SIEMPRE en 2 columnas, incluso en móvil (como pediste) */
-    .media-grid,
-    .casos-media {
-      display: grid;
-      grid-template-columns: 1fr 1fr;  /* fuerza 2 columnas */
-      gap: 10px;
-      align-items: start;
-    }
-
-    /* Sello pequeño bajo “Ver precios” */
-    .sello-peq {
-      max-width: 220px;
-      margin: 8px auto 0;
-    }
-
-    /* Imagen de “seguridad pago” más proporcionada */
-    .payment-lock { display:block; margin: 14px auto 0; width: 120px; height: auto; object-fit: contain; opacity:.95; }
   </style>
 </head>
 <body>
@@ -271,20 +242,10 @@
     <h1>¿Te cobran de más en tu factura de luz, gas o teléfono?</h1>
     <p>Revisamos tu factura <strong>GRATIS</strong> en 24–48 h y te confirmamos si pagas de más. Si procede, te damos la reclamación lista o la gestionamos por ti.</p>
     <p class="trustline">Lo reclamado se ingresa directamente en tu cuenta. Nosotros solo gestionamos la reclamación.</p>
-
-    <!-- Imagen hero directamente debajo de la trustline (como pediste) -->
-    <figure class="media-hero" aria-label="Ilustración revisión de factura">
-      <img src="hero-mujer-factura.jpg" alt="Mujer revisando su factura en casa (imagen completa)">
-    </figure>
-
-    <!-- CTA: dejar solo UNO y en azul más fuerte (sigue abriendo WhatsApp) -->
     <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" aria-label="Subir factura por WhatsApp">Sube tu factura GRATIS</a>
+    <p class="trustline">💡 <strong>Lo reclamado se ingresa directamente en tu cuenta. Nosotros solo gestionamos la reclamación.</strong></p>
+    <a class="btn btn-whatsapp" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" aria-label="Subir factura por WhatsApp">Sube tu factura GRATIS</a>
     <a class="btn btn-outline" href="#precios">Ver precios</a>
-
-    <!-- Sello pequeño justo debajo de “Ver precios” -->
-    <figure class="sello-peq">
-      <img src="marketing-revision-gratis.jpg" alt="Revisión GRATIS: rápido, transparente y sin sorpresas (versión pequeña)">
-    </figure>
 
     <div class="steps" aria-label="Proceso en 3 pasos">
       <div class="step">
@@ -302,18 +263,9 @@
     </div>
   </section>
 
-  <!-- (Se elimina el banner grande de marketing para no “romper” la estética: lo hemos colocado pequeño bajo “Ver precios”) -->
-
   <!-- QUÉ HACEMOS -->
   <section id="que-hacemos" style="margin-top:8px">
     <h2>Qué hacemos por ti</h2>
-
-    <!-- Mini galería (fotos más pequeñas, zoom lejos, 2 columnas SIEMPRE) -->
-    <div class="media-grid" aria-label="Equipo revisando casos">
-      <img src="persona-hombre-oficina.jpg" alt="Profesional revisando un caso en oficina (imagen completa)">
-      <img src="persona-hombre-pc.jpg" alt="Asesor digital preparando una reclamación (imagen completa)">
-    </div>
-
     <button class="toggle" id="toggleServicios" aria-expanded="false" aria-controls="serviciosWrap">
       <span>Ver servicios</span><span aria-hidden="true">⌄</span>
     </button>
@@ -354,6 +306,7 @@
   </section>
 
   <!-- GUÍAS -->
+  <section id="guias" style="margin:60px 20px; background:#fff;">
   <section id="guias" style="margin:60px 20px; background:var(--card);">
     <div class="wrap">
       <h2 style="text-align:center; margin-bottom:32px;">Guías prácticas</h2>
@@ -438,34 +391,21 @@
       </div>
     </div>
 
+    <p class="help" style="margin-top:.75rem;font-size:0.98rem;color:#166534;">
     <p class="help" style="margin-top:.75rem;font-size:0.98rem;color:var(--text);">
       🔒 Tu dinero <strong>nunca</strong> pasa por nosotros: la devolución la realiza siempre tu compañía directamente en tu cuenta o en tu próxima factura.
     </p>
 
+    <p class="help" style="margin-top:.75rem;font-size:0.9rem;color:#475569;">
     <p class="help" style="margin-top:.75rem;font-size:0.9rem;color:var(--muted);">
       ⚖️ Servicio administrativo y automatizado; no constituye asesoramiento jurídico individualizado ni representación letrada.
       Si tu caso requiere abogado, podremos derivarte —con tu consentimiento— a <strong>colaboradores externos, colegiados y responsables de sus honorarios</strong>.
     </p>
-
-    <!-- Icono de seguridad (proporcional) -->
-    <img class="payment-lock" src="logo-seguridad-pago.jpg" alt="Pago seguro con Stripe, Visa y Mastercard">
-  </section>
-
-  <!-- Sello “cobro indebido” (se mantiene) -->
-  <section class="media-banner" aria-label="Cobro indebido detectado">
-    <img src="logo-cobro-indebido.jpg" alt="Sello: cobro indebido detectado">
   </section>
 
   <!-- CASOS REALES -->
   <section id="casos" style="margin-top:1.25rem;">
     <h2>Casos reales (resumen)</h2>
-
-    <!-- Galería ilustrativa (fotos más pequeñas, 2 columnas SIEMPRE) -->
-    <div class="casos-media" aria-label="Clientes satisfechos">
-      <img src="persona-familia.jpg" alt="Familia satisfecha tras la devolución (imagen completa)">
-      <img src="persona-hombre-sonriente.jpg" alt="Cliente satisfecho tras reclamar (imagen completa)">
-    </div>
-
     <div class="testimonials">
       <div class="case-card">
         <h4>🔌 Iberdrola – 132 € recuperados</h4>
@@ -489,6 +429,7 @@
   </section>
 
   <!-- CONFIANZA -->
+  <section id="confianza" style="margin-top:1.5rem; padding:1rem; border:1px solid var(--border); border-radius:12px; background:#fff;">
   <section id="confianza" style="margin-top:1.5rem; padding:1rem; border:1px solid var(--border); border-radius:12px; background:var(--card);">
     <h3>Por qué confiar en TuReclamoExprés</h3>
     <ul style="margin-left:1rem;list-style:disc;">
@@ -590,7 +531,7 @@
   </div>
 </noscript>
 
-<script>
+<script defer>
   // Año dinámico
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -689,4 +630,5 @@
   });
 </script>
 </body>
+</html>
 </html>
