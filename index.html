@@ -9,12 +9,14 @@
   <meta name="theme-color" content="#ffffff" />
   <link rel="canonical" href="https://tureclamoexpres.com/" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
   <meta property="og:title" content="TuReclamoExprés – Revisión GRATIS de facturas" />
   <meta property="og:description" content="Sube tu factura. En 24–48 h te decimos si hay cobros de más y te damos la reclamación lista o la gestionamos por ti. 29,90 € · 49,90 €. La devolución la hace tu compañía directamente en tu cuenta o factura." />
   <meta property="og:image" content="og-image.jpg" />
   <meta property="og:url" content="https://tureclamoexpres.com" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
@@ -64,13 +66,12 @@
       --card:#f8fafc;
       --text:#072146;
       --muted:#5f6368;
-      --accent:#004481;
+      --accent:#003a8c; /* azul más fuerte para CTAs */
       --link:#1464a5;
       --border:#e2e8f0;
       --shadow:0 6px 18px rgba(7,33,70,.08);
       --ok:#22c55e;
 
-      /* NUEVO: tonos auxiliares para “bocadillos” */
       --pill-bg:#eef6ff;
       --pill-border:#cfe3ff;
     }
@@ -85,13 +86,13 @@
     header, main, footer { max-width: 1100px; margin: 0 auto; padding: 20px; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
-    /* Header (más aire y legibilidad) */
+    /* Header */
     .site-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; position: sticky; top: 0; background: var(--bg); z-index: 999; border-bottom: 1px solid var(--border); }
     .logo { font-weight: 800; font-size: 1.35rem; color: var(--text); text-decoration: none; letter-spacing: .2px; }
     .nav { display: flex; align-items: center; }
-    .nav-links { list-style: none; display: flex; gap: 20px; } /* + espacio */
+    .nav-links { list-style: none; display: flex; gap: 20px; }
     .nav-links a { color: var(--text); font-weight: 600; text-decoration: none; font-size: 1rem; padding: 6px 8px; border-radius: 10px; }
-    .nav-links a:hover { background: var(--pill-bg); border: 1px solid var(--pill-border); } /* efecto “bocadillo” */
+    .nav-links a:hover { background: var(--pill-bg); border: 1px solid var(--pill-border); }
     .nav-toggle { display: none; background: none; border: 0; cursor: pointer; }
     .nav-toggle-bar { display: block; width: 24px; height: 2px; margin: 5px 0; background: var(--text); }
     .header-right { display:flex; align-items:center; gap:16px; }
@@ -113,8 +114,6 @@
     .hero h1 { font-size: clamp(28px,5vw,42px); margin: .65rem auto 1rem; max-width: 860px; }
     .hero p { color: var(--muted); max-width: 860px; margin: 0 auto 12px; font-size: 1.08rem; }
     .trustline { margin-top:.25rem; color:var(--text); font-weight:700; }
-
-    /* NUEVO: “bocadillos” azules para que no se vea apelmazado */
     .hero .trustline,
     .hero p:first-of-type {
       background: var(--pill-bg);
@@ -123,7 +122,7 @@
       padding: 12px 14px;
     }
     .btn { display: inline-block; padding: 10px 14px; border-radius: 10px; font-weight: 800; text-decoration: none; margin: 6px; font-size: 0.95rem; letter-spacing: .2px; box-shadow: var(--shadow); }
-    .btn-primary { background: var(--accent); color: #ffffff; border: 1px solid #003060; }
+    .btn-primary { background: var(--accent); color: #ffffff; border: 1px solid #002a66; }
     .btn-outline { border: 1px solid var(--accent); color: var(--accent); background:#fff; }
     .btn-whatsapp { background: var(--ok); color: #052e16; border: 1px solid #16a34a; }
 
@@ -138,8 +137,8 @@
     /* Steps / Services / Guides */
     .steps { display:grid; gap:12px; margin: 18px auto 0; max-width: 920px; }
     @media (min-width: 900px){ .steps { grid-template-columns: repeat(3,1fr);} }
-    .step { background: var(--card); border:1px solid var(--border); border-radius:12px; padding:16px; text-align:left; box-shadow: var(--shadow); } /* +2px padding */
-    .step b { display:block; font-family:'Montserrat'; font-size:1.05rem; margin-bottom:6px; } /* +2px margin */
+    .step { background: var(--card); border:1px solid var(--border); border-radius:12px; padding:16px; text-align:left; box-shadow: var(--shadow); }
+    .step b { display:block; font-family:'Montserrat'; font-size:1.05rem; margin-bottom:6px; }
 
     .toggle { display:flex; align-items:center; justify-content:space-between; width:100%; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px 16px; color:var(--text); font-weight:700; cursor:pointer; font-size:1.05rem; }
     .toggle + .toggle-wrap { overflow:hidden; max-height:0; transition:max-height .25s ease; }
@@ -158,7 +157,7 @@
     @media (min-width: 900px) { .plans { grid-template-columns: repeat(2, 1fr); } }
     .plan { background: var(--card); padding: 16px; border: 1px solid var(--border); border-radius: 12px; position: relative; box-shadow: var(--shadow); }
     .price { font-size: 1.6rem; font-weight: 800; font-family:'Montserrat'; color: var(--text); }
-    .plan .badge { position: absolute; top: -10px; left: 16px; padding: 6px 10px; border-radius: 999px; font-weight: 800; font-size: .85rem; background: var(--accent); color: #ffffff; border: 1px solid #003060; }
+    .plan .badge { position: absolute; top: -10px; left: 16px; padding: 6px 10px; border-radius: 999px; font-weight: 800; font-size: .85rem; background: var(--accent); color: #ffffff; border: 1px solid #002a66; }
     .plan.recommended { outline: 2px solid var(--accent); transform: translateY(-2px); }
     #precios .plan p, #precios .plan li { font-size: 1.05rem; line-height: 1.7; }
 
@@ -199,56 +198,44 @@
     .fab-wa { position: fixed; right: 16px; bottom: 100px; z-index: 1000; background: #22c55e; color: #052e16; font-weight: 800; border-radius: 999px; padding: 12px 18px; text-decoration: none; font-size: 1rem; border:1px solid #16a34a; box-shadow:var(--shadow); }
     @media (max-width: 600px) { .fab-wa { bottom: 110px; padding: 10px 16px; font-size: 0.95rem; } }
 
-    /* =====================  BLOQUES DE IMAGEN AÑADIDOS  ===================== */
-    .media-hero,
-    .media-banner,
-    .media-grid,
-    .casos-media { margin: 18px 0; }
-
-    /* FOTOS MÁS PEQUEÑAS Y SIN CORTAR CARAS */
+    /* =====================  BLOQUES DE IMAGEN AJUSTADOS  ===================== */
+    /* Reglas globales de imágenes para ver la foto entera (contain) y más pequeñas */
     .media-hero img,
-    .media-banner img {
+    .media-banner img,
+    .media-grid img,
+    .casos-media img {
       width: 100%;
       height: auto;
-      max-height: 380px;              /* controla altura desktop */
-      object-fit: cover;
-      object-position: 50% 20%;       /* prioriza rostros (más arriba) */
+      max-height: 240px;          /* más pequeñas por defecto */
+      object-fit: contain;         /* ver foto completa, sin cortar */
+      object-position: center;     /* zoom más lejano, centrado */
       border-radius: 14px;
       box-shadow: var(--shadow);
+      background: #fff;            /* mejora lectura si hay transparencia/bordes */
+      padding: 6px;                /* marco blanco sutil para “aire” visual */
     }
 
-    .media-grid { display:grid; gap:12px; }
-    .media-grid img {
-      width:100%;
-      height:auto;
-      max-height: 260px;              /* más pequeñas en grid */
-      object-fit: cover;
-      object-position: 50% 20%;
-      border-radius:12px;
-      box-shadow:var(--shadow);
-    }
-    @media(min-width: 900px){ .media-grid { grid-template-columns: 1fr 1fr; } }
-
-    .casos-media { display:grid; gap:12px; }
-    .casos-media img {
-      width:100%;
-      height:auto;
-      max-height: 260px;              /* más pequeñas en sección casos */
-      object-fit: cover;
-      object-position: 50% 20%;
-      border-radius:12px;
-      box-shadow:var(--shadow);
-    }
-    @media(min-width: 900px){ .casos-media { grid-template-columns: 1fr 1fr; } }
-
-    /* Móvil: aún más pequeñas y seguras */
+    /* Hero: imagen aún más controlada en móvil */
     @media (max-width: 600px){
-      .media-hero img,
-      .media-banner img { max-height: 220px; object-position: 50% 18%; }
-      .media-grid img,
-      .casos-media img { max-height: 180px; object-position: 50% 18%; }
+      .media-hero img { max-height: 200px; }
     }
 
+    /* Grids SIEMPRE en 2 columnas, incluso en móvil (como pediste) */
+    .media-grid,
+    .casos-media {
+      display: grid;
+      grid-template-columns: 1fr 1fr;  /* fuerza 2 columnas */
+      gap: 10px;
+      align-items: start;
+    }
+
+    /* Sello pequeño bajo “Ver precios” */
+    .sello-peq {
+      max-width: 220px;
+      margin: 8px auto 0;
+    }
+
+    /* Imagen de “seguridad pago” más proporcionada */
     .payment-lock { display:block; margin: 14px auto 0; width: 120px; height: auto; object-fit: contain; opacity:.95; }
   </style>
 </head>
@@ -284,10 +271,20 @@
     <h1>¿Te cobran de más en tu factura de luz, gas o teléfono?</h1>
     <p>Revisamos tu factura <strong>GRATIS</strong> en 24–48 h y te confirmamos si pagas de más. Si procede, te damos la reclamación lista o la gestionamos por ti.</p>
     <p class="trustline">Lo reclamado se ingresa directamente en tu cuenta. Nosotros solo gestionamos la reclamación.</p>
-    <a class="btn btn-whatsapp" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" aria-label="Subir factura por WhatsApp">Sube tu factura GRATIS</a>
-    <p class="trustline">💡 <strong>Lo reclamado se ingresa directamente en tu cuenta. Nosotros solo gestionamos la reclamación.</strong></p>
-    <a class="btn btn-whatsapp" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" aria-label="Subir factura por WhatsApp">Sube tu factura GRATIS</a>
+
+    <!-- Imagen hero directamente debajo de la trustline (como pediste) -->
+    <figure class="media-hero" aria-label="Ilustración revisión de factura">
+      <img src="hero-mujer-factura.jpg" alt="Mujer revisando su factura en casa (imagen completa)">
+    </figure>
+
+    <!-- CTA: dejar solo UNO y en azul más fuerte (sigue abriendo WhatsApp) -->
+    <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" aria-label="Subir factura por WhatsApp">Sube tu factura GRATIS</a>
     <a class="btn btn-outline" href="#precios">Ver precios</a>
+
+    <!-- Sello pequeño justo debajo de “Ver precios” -->
+    <figure class="sello-peq">
+      <img src="marketing-revision-gratis.jpg" alt="Revisión GRATIS: rápido, transparente y sin sorpresas (versión pequeña)">
+    </figure>
 
     <div class="steps" aria-label="Proceso en 3 pasos">
       <div class="step">
@@ -303,26 +300,18 @@
         29,90 € → tú la envías · 49,90 € → la gestionamos por ti con confirmación de acuse.
       </div>
     </div>
-
-    <!-- Imagen hero añadida (proporcional, no interfiere con textos) -->
-    <figure class="media-hero" aria-label="Ilustración revisión de factura">
-      <img src="hero-mujer-factura.jpg" alt="Mujer revisando su factura en casa">
-    </figure>
   </section>
 
-  <!-- Banner Marketing (opcional) -->
-  <section class="media-banner" aria-label="Revisión gratis de tu factura">
-    <img src="marketing-revision-gratis.jpg" alt="Revisión GRATIS de tu factura. Rápido, transparente, sin sorpresas.">
-  </section>
+  <!-- (Se elimina el banner grande de marketing para no “romper” la estética: lo hemos colocado pequeño bajo “Ver precios”) -->
 
   <!-- QUÉ HACEMOS -->
   <section id="que-hacemos" style="margin-top:8px">
     <h2>Qué hacemos por ti</h2>
 
-    <!-- Mini galería ilustrativa -->
+    <!-- Mini galería (fotos más pequeñas, zoom lejos, 2 columnas SIEMPRE) -->
     <div class="media-grid" aria-label="Equipo revisando casos">
-      <img src="persona-hombre-oficina.jpg" alt="Profesional revisando un caso en oficina">
-      <img src="persona-hombre-pc.jpg" alt="Asesor digital preparando una reclamación">
+      <img src="persona-hombre-oficina.jpg" alt="Profesional revisando un caso en oficina (imagen completa)">
+      <img src="persona-hombre-pc.jpg" alt="Asesor digital preparando una reclamación (imagen completa)">
     </div>
 
     <button class="toggle" id="toggleServicios" aria-expanded="false" aria-controls="serviciosWrap">
@@ -462,7 +451,7 @@
     <img class="payment-lock" src="logo-seguridad-pago.jpg" alt="Pago seguro con Stripe, Visa y Mastercard">
   </section>
 
-  <!-- Banner Cobro indebido -->
+  <!-- Sello “cobro indebido” (se mantiene) -->
   <section class="media-banner" aria-label="Cobro indebido detectado">
     <img src="logo-cobro-indebido.jpg" alt="Sello: cobro indebido detectado">
   </section>
@@ -471,10 +460,10 @@
   <section id="casos" style="margin-top:1.25rem;">
     <h2>Casos reales (resumen)</h2>
 
-    <!-- Galería ilustrativa de clientes -->
+    <!-- Galería ilustrativa (fotos más pequeñas, 2 columnas SIEMPRE) -->
     <div class="casos-media" aria-label="Clientes satisfechos">
-      <img src="persona-familia.jpg" alt="Familia satisfecha tras la devolución">
-      <img src="persona-hombre-sonriente.jpg" alt="Cliente satisfecho tras reclamar">
+      <img src="persona-familia.jpg" alt="Familia satisfecha tras la devolución (imagen completa)">
+      <img src="persona-hombre-sonriente.jpg" alt="Cliente satisfecho tras reclamar (imagen completa)">
     </div>
 
     <div class="testimonials">
