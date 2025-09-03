@@ -208,7 +208,7 @@
       height: auto;
       max-height: 240px;          /* más pequeñas por defecto */
       object-fit: contain;         /* ver foto completa, sin cortar */
-      object-position: center;     /* zoom más lejano, centrado */
+      object-position: center;     /* centrado para evitar cortes de cabeza */
       border-radius: 14px;
       box-shadow: var(--shadow);
       background: #fff;            /* mejora lectura si hay transparencia/bordes */
@@ -229,11 +229,8 @@
       align-items: start;
     }
 
-    /* Sello pequeño bajo “Ver precios” */
-    .sello-peq {
-      max-width: 220px;
-      margin: 8px auto 0;
-    }
+    /* Sello pequeño bajo “Ver precios” — eliminado a petición */
+    .sello-peq { display:none; }
 
     /* Imagen de “seguridad pago” más proporcionada */
     .payment-lock { display:block; margin: 14px auto 0; width: 120px; height: auto; object-fit: contain; opacity:.95; }
@@ -272,19 +269,17 @@
     <p>Revisamos tu factura <strong>GRATIS</strong> en 24–48 h y te confirmamos si pagas de más. Si procede, te damos la reclamación lista o la gestionamos por ti.</p>
     <p class="trustline">Lo reclamado se ingresa directamente en tu cuenta. Nosotros solo gestionamos la reclamación.</p>
 
-    <!-- Imagen hero directamente debajo de la trustline (como pediste) -->
+    <!-- Imagen hero justo encima del botón (como pediste) -->
     <figure class="media-hero" aria-label="Ilustración revisión de factura">
       <img src="hero-mujer-factura.jpg" alt="Mujer revisando su factura en casa (imagen completa)">
     </figure>
 
-    <!-- CTA: dejar solo UNO y en azul más fuerte (sigue abriendo WhatsApp) -->
+    <!-- CTA: dejar solo UNO y en azul más fuerte -->
     <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" aria-label="Subir factura por WhatsApp">Sube tu factura GRATIS</a>
     <a class="btn btn-outline" href="#precios">Ver precios</a>
 
-    <!-- Sello pequeño justo debajo de “Ver precios” -->
-    <figure class="sello-peq">
-      <img src="marketing-revision-gratis.jpg" alt="Revisión GRATIS: rápido, transparente y sin sorpresas (versión pequeña)">
-    </figure>
+    <!-- Sello pequeño eliminado -->
+    <!-- <figure class="sello-peq"> ... </figure> -->
 
     <div class="steps" aria-label="Proceso en 3 pasos">
       <div class="step">
@@ -302,16 +297,14 @@
     </div>
   </section>
 
-  <!-- (Se elimina el banner grande de marketing para no “romper” la estética: lo hemos colocado pequeño bajo “Ver precios”) -->
-
   <!-- QUÉ HACEMOS -->
   <section id="que-hacemos" style="margin-top:8px">
     <h2>Qué hacemos por ti</h2>
 
-    <!-- Mini galería (fotos más pequeñas, zoom lejos, 2 columnas SIEMPRE) -->
+    <!-- Mini galería: quitado el del traje; dejamos el del PC con zoom lejano (sin cortes) -->
     <div class="media-grid" aria-label="Equipo revisando casos">
-      <img src="persona-hombre-oficina.jpg" alt="Profesional revisando un caso en oficina (imagen completa)">
-      <img src="persona-hombre-pc.jpg" alt="Asesor digital preparando una reclamación (imagen completa)">
+      <!-- Eliminado: <img src="persona-hombre-oficina.jpg" alt="Profesional en oficina (eliminado a petición)"> -->
+      <img src="persona-hombre-pc.jpg" alt="Asesor digital preparando una reclamación (imagen completa, sin cortes)">
     </div>
 
     <button class="toggle" id="toggleServicios" aria-expanded="false" aria-controls="serviciosWrap">
@@ -460,10 +453,10 @@
   <section id="casos" style="margin-top:1.25rem;">
     <h2>Casos reales (resumen)</h2>
 
-    <!-- Galería ilustrativa (fotos más pequeñas, 2 columnas SIEMPRE) -->
+    <!-- Galería: quitada la del hombre riéndose; dejamos solo familia centrada -->
     <div class="casos-media" aria-label="Clientes satisfechos">
-      <img src="persona-familia.jpg" alt="Familia satisfecha tras la devolución (imagen completa)">
-      <img src="persona-hombre-sonriente.jpg" alt="Cliente satisfecho tras reclamar (imagen completa)">
+      <img src="persona-familia.jpg" alt="Familia satisfecha tras la devolución (imagen completa, centrada y sin cortes)">
+      <!-- Eliminado: <img src="persona-hombre-sonriente.jpg" alt="Cliente satisfecho (eliminado a petición)"> -->
     </div>
 
     <div class="testimonials">
@@ -530,11 +523,10 @@
     <a href="#" id="condicionesLinkFooter">Condiciones</a> ·
     <a href="#" id="avisoLegalLinkFooter">Aviso legal</a> ·
     📞 <a href="tel:+34953818494">953 818 494</a> ·
-    ✉️ <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a>
+    ✉️ <a href="mailto:info@tureclamoexpres.com">tureclamoexpres.com</a>
   </p>
   <div style="margin-top:1.5rem; text-align:center;">
-    <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" aria-label="Subir factura por WhatsApp">Sube tu factura ahora</a>
-    <a class="btn btn-whatsapp" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" aria-label="Subir factura por WhatsApp">Sube tu factura ahora</a>
+    <!-- Eliminados los dos botones “Sube tu factura” en el footer -->
     <p class="help" style="margin-top:.5rem">🔒 Pago seguro con Stripe · Sin permanencias · Sin letra pequeña</p>
   </div>
 </footer>
