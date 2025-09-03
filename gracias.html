@@ -4,8 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>¡Gracias! | TuReclamoExpres</title>
+
+  <!-- SEO / Indexación -->
   <meta name="robots" content="noindex,nofollow">
+  <link rel="canonical" href="https://tureclamoexpres.com/gracias">
   <link rel="icon" href="/favicon.ico">
+
+  <!-- Estilos (tus estilos, intactos) -->
   <style>
     :root{--bg:#0f172a;--card:#0b1120;--text:#e5e7eb;--muted:#9ca3af;--accent:#22c55e;--link:#60a5fa}
     *{box-sizing:border-box}
@@ -20,18 +25,49 @@
     .btn-outline{border:1px solid #374151;color:var(--text)}
     .muted{color:var(--muted);font-size:14px}
   </style>
+
+  <!-- Auto-redirect (mantengo el tuyo a 12s) -->
   <meta http-equiv="refresh" content="12; url=/" />
+
+  <!-- GA4 (sustituye G-XXXXXXXXXX por tu Measurement ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config','G-XXXXXXXXXX'); // <-- TU GA4
+  </script>
+
+  <!-- Google Ads Conversion (sustituye AW-XXXX y etiqueta /YYYY...) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config','AW-XXXXXXXXX'); // <-- TU ID de Ads
+
+    // Disparo de conversión al llegar a /gracias
+    gtag('event','conversion', {'send_to':'AW-XXXXXXXXX/YYYYYYYYYYYYYYYYY'}); // <-- TU etiqueta
+  </script>
 </head>
 <body>
   <div class="wrap">
     <div class="card">
       <h1>¡Gracias! ✅</h1>
       <p>Hemos recibido tu solicitud. Te contactaremos por email si necesitamos algo más.</p>
+
       <div class="cta">
-        <a class="btn btn-primary" href="https://buy.stripe.com/cNi14o0Ho3Qz93N1QZ8og02" rel="noopener">Comprar Plan Completo</a>
-        <a class="btn btn-outline" href="https://wa.me/34953818494?text=Hola%2C%20acabo%20de%20enviar%20mi%20factura%20y%20tengo%20una%20duda" rel="noopener">Abrir WhatsApp</a>
+        <a class="btn btn-primary"
+           href="https://buy.stripe.com/cNi14o0Ho3Qz93N1QZ8og02"
+           target="_blank" rel="noopener nofollow">Comprar Plan Completo</a>
+
+        <a class="btn btn-outline"
+           href="https://wa.me/34953818494?text=Hola%2C%20acabo%20de%20enviar%20mi%20factura%20y%20tengo%20una%20duda"
+           target="_blank" rel="noopener nofollow">Abrir WhatsApp</a>
+
         <a class="btn btn-outline" href="/" rel="noopener">Volver al inicio</a>
       </div>
+
       <p class="muted" style="margin-top:10px">Serás redirigido al inicio en unos segundos…</p>
     </div>
   </div>
