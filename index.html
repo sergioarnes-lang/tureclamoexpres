@@ -3,15 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TuReclamoExprés – Revisión GRATIS de facturas en 24–48 h</title>
-  <meta name="description" content="Revisamos GRATIS tus facturas de luz, gas o teléfono en 24–48 h. Si hay cobros indebidos, te damos la reclamación lista o la gestionamos por ti. Precios cerrados: 29,90 € (tú la envías) · 49,90 € (nosotros la gestionamos por ti). El dinero siempre lo devuelve tu compañía, directo a tu cuenta o factura." />
+
+  <!-- SEO mejorado -->
+  <title>Reclamar factura de luz, gas y teléfono | TuReclamoExprés</title>
+  <meta name="description" content="Revisamos GRATIS tu factura en 24–48 h. Si hay cobros indebidos, te preparamos la reclamación lista o la gestionamos por ti. Reclamar a Endesa, Iberdrola, Naturgy, Movistar. Precios cerrados: 29,90 € · 49,90 €." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#ffffff" />
   <link rel="canonical" href="https://tureclamoexpres.com/" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
-  <meta property="og:title" content="TuReclamoExprés – Revisión GRATIS de facturas" />
-  <meta property="og:description" content="Sube tu factura. En 24–48 h te decimos si hay cobros de más y te damos la reclamación lista o la gestionamos por ti. 29,90 € · 49,90 €. La devolución la hace tu compañía directamente en tu cuenta o factura." />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Reclamar factura de luz, gas y teléfono | TuReclamoExprés" />
+  <meta property="og:description" content="Sube tu factura: revisión GRATIS en 24–48 h. Si procede, reclamación lista o gestión completa por 29,90 € · 49,90 €. La devolución la hace tu compañía directamente en tu cuenta o factura." />
   <meta property="og:image" content="og-image.jpg" />
   <meta property="og:url" content="https://tureclamoexpres.com" />
   <meta property="og:type" content="website" />
@@ -22,6 +25,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
@@ -37,6 +41,7 @@
     "serviceType": "Reclamación de cobros indebidos",
     "areaServed": { "@type": "Country", "name": "ES" },
     "url": "https://tureclamoexpres.com",
+    "sameAs": ["https://tureclamoexpres.com/"],
     "potentialAction": { "@type": "OrderAction", "target": "https://tureclamoexpres.com/#precios" }
   }
   </script>
@@ -61,35 +66,23 @@
   <style>
     html { scroll-behavior: smooth; }
     :root{
-      /* Paleta refinada: fondo más suave (menos blanco) */
-      --bg:#f6f9ff;         /* tono muy suave azul/gris */
-      --bg2:#ffffff;        /* tarjetas blancas */
-      --card:#ffffff;
-      --text:#072146;
-      --muted:#5f6368;
-      --accent:#003a8c;
-      --link:#1464a5;
-      --border:#e6ecf5;
-      --shadow:0 8px 24px rgba(7,33,70,.08);
-      --ok:#22c55e;
-      --pill-bg:#eef6ff;
-      --pill-border:#cfe3ff;
+      --bg:#f6f9ff; --bg2:#ffffff; --card:#ffffff;
+      --text:#072146; --muted:#5f6368;
+      --accent:#003a8c; --link:#1464a5;
+      --border:#e6ecf5; --shadow:0 8px 24px rgba(7,33,70,.08);
+      --ok:#22c55e; --pill-bg:#eef6ff; --pill-border:#cfe3ff;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     body{
       font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--text);
-      line-height:1.7;
-      font-size:18px;
-      /* Degradado sutil para “quitar blanco plano” */
-      background:
-        linear-gradient(180deg, var(--bg) 0px, #fdfefe 600px, var(--bg2) 100%);
+      color:var(--text); line-height:1.7; font-size:18px;
+      background: linear-gradient(180deg, var(--bg) 0px, #fdfefe 600px, var(--bg2) 100%);
     }
     h1,h2,h3,h4{font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     header, main, footer{max-width:1100px;margin:0 auto;padding:20px}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-    /* Header: más limpio en desktop */
+    /* Header */
     .site-header{
       display:flex;align-items:center;justify-content:space-between;
       padding:12px 18px;position:sticky;top:0;background:#fff;z-index:999;
@@ -120,34 +113,25 @@
 
     /* Hero */
     .hero{text-align:center;padding:3rem 1rem 1.5rem}
-    .hero h1{font-size:clamp(28px,5vw,42px);margin:.65rem auto 1rem;max-width:860px}
-    .hero p{color:var(--muted);max-width:860px;margin:0 auto 12px;font-size:1.08rem}
+    .hero h1{font-size:clamp(28px,5vw,42px);margin:.65rem auto 1rem;max-width:960px}
+    .hero p{color:var(--muted);max-width:920px;margin:0 auto 12px;font-size:1.08rem}
     .trustline{margin-top:.25rem;color:var(--text);font-weight:700}
     .hero .trustline,.hero p:first-of-type{
-      background:var(--pill-bg);
-      border:1px solid var(--pill-border);
-      border-radius:14px;
-      padding:12px 14px;
+      background:var(--pill-bg); border:1px solid var(--pill-border);
+      border-radius:14px; padding:12px 14px;
     }
     .btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:800;text-decoration:none;margin:6px;font-size:.95rem;letter-spacing:.2px;box-shadow:var(--shadow)}
     .btn-primary{background:var(--accent);color:#fff;border:1px solid #002a66}
     .btn-outline{border:1px solid var(--accent);color:var(--accent);background:#fff}
     .btn-whatsapp{background:var(--ok);color:#052e16;border:1px solid #16a34a}
 
-    /* Imagenes globales */
-    .media-hero img,
-    .media-banner img,
-    .media-grid img,
-    .casos-media img{
+    /* Imágenes */
+    .media-hero img,.media-banner img,.media-grid img,.casos-media img{
       width:100%;height:auto;max-height:240px;object-fit:contain;object-position:center;
       border-radius:14px;box-shadow:var(--shadow);background:#fff;padding:6px
     }
-    /* Hero más grande en desktop */
-    @media (min-width: 900px){
-      .media-hero img{max-height:420px}
-    }
+    @media (min-width: 900px){ .media-hero img{max-height:420px} }
 
-    /* Hero móvil: botones full width para limpieza visual */
     @media (max-width:600px){
       .hero p{background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px}
       .hero .btn{width:100%;max-width:520px}
@@ -219,20 +203,11 @@
     .fab-wa{position:fixed;right:16px;bottom:100px;z-index:1000;background:#22c55e;color:#052e16;font-weight:800;border-radius:999px;padding:12px 18px;text-decoration:none;font-size:1rem;border:1px solid #16a34a;box-shadow:var(--shadow)}
     @media (max-width:600px){.fab-wa{bottom:110px;padding:10px 16px;font-size:.95rem}}
 
-    /* === Ajustes de imágenes y grids para simetría en móvil === */
-    /* Centradas y con tope de ancho agradable en desktop */
-    .media-grid,.casos-media{
-      display:grid;gap:10px;align-items:start;justify-items:center
-    }
+    /* Grids imágenes */
+    .media-grid,.casos-media{display:grid;gap:10px;align-items:start;justify-items:center}
     .media-grid img,.casos-media img{max-width:640px}
-
-    /* Móvil: 1 columna centrada; pantallas medianas+: 2 columnas */
-    @media (max-width:700px){
-      .media-grid,.casos-media{grid-template-columns:1fr}
-    }
-    @media (min-width:700px){
-      .media-grid,.casos-media{grid-template-columns:1fr 1fr}
-    }
+    @media (max-width:700px){.media-grid,.casos-media{grid-template-columns:1fr}}
+    @media (min-width:700px){.media-grid,.casos-media{grid-template-columns:1fr 1fr}}
 
     /* Banner/candado */
     .payment-lock{display:block;margin:14px auto 0;width:120px;height:auto;object-fit:contain;opacity:.95}
@@ -268,11 +243,10 @@
 <main id="inicio">
   <!-- HERO -->
   <section class="hero" id="como-funciona">
-    <h1>¿Te cobran de más en tu factura de luz, gas o teléfono?</h1>
-    <p>Revisamos tu factura <strong>GRATIS</strong> en 24–48 h y te confirmamos si pagas de más. Si procede, te damos la reclamación lista o la gestionamos por ti.</p>
-    <p class="trustline">Lo reclamado se ingresa directamente en tu cuenta. Nosotros solo gestionamos la reclamación.</p>
+    <h1>Reclamar factura de luz, gas y teléfono: revisión GRATIS en 24–48 h y reclamación lista</h1>
+    <p>Sube tu factura y te confirmamos si pagas de más. Si procede, te damos la reclamación lista o la gestionamos por ti (sin abogados caros ni papeleos).</p>
+    <p class="trustline">La devolución va directamente a tu cuenta o a tu próxima factura. Nosotros <strong>solo gestionamos la reclamación</strong>.</p>
 
-    <!-- Imagen hero más grande en desktop -->
     <figure class="media-hero" aria-label="Ilustración revisión de factura">
       <img src="hero-mujer-factura.jpg" alt="Mujer revisando su factura en casa (imagen completa)">
     </figure>
@@ -280,6 +254,7 @@
     <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" aria-label="Subir factura por WhatsApp">Sube tu factura GRATIS</a>
     <a class="btn btn-outline" href="#precios">Ver precios</a>
 
+    <!-- Proceso en 3 pasos -->
     <div class="steps" aria-label="Proceso en 3 pasos">
       <div class="step">
         <b>1) Súbenos tu factura</b>
@@ -294,13 +269,17 @@
         29,90 € → tú la envías · 49,90 € → la gestionamos por ti con confirmación de acuse.
       </div>
     </div>
+
+    <!-- Mini banda de urgencia/confianza sutil -->
+    <p class="help" style="margin-top:10px;color:#0f5132;background:#d1fae5;border:1px solid #86efac;border-radius:10px;display:inline-block;padding:8px 10px;">
+      ✅ Diagnóstico claro y rápido · 🔒 Datos protegidos (RGPD) · 💳 Pago seguro con Stripe
+    </p>
   </section>
 
   <!-- QUÉ HACEMOS -->
   <section id="que-hacemos" style="margin-top:8px;text-align:center">
     <h2>Qué hacemos por ti</h2>
 
-    <!-- Simetría: centrado en móvil y dos columnas en pantallas grandes -->
     <div class="media-grid" aria-label="Equipo revisando casos">
       <img src="persona-hombre-pc.jpg" alt="Asesor digital preparando una reclamación (imagen completa, sin cortes)">
     </div>
@@ -339,6 +318,11 @@
             <h4>Soporte legal externo (si procede)</h4>
             <p class="help">Si el caso requiere abogado, derivamos —con tu consentimiento— a colaboradores colegiados (ellos gestionan sus honorarios).</p>
           </div>
+        </div>
+        <!-- CTA contextual tras servicios -->
+        <div style="text-align:center;margin-top:10px;">
+          <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita">Empezar ahora</a>
+          <a class="btn btn-outline" href="#formulario">Enviar por email</a>
         </div>
       </div>
     </div>
@@ -379,6 +363,11 @@
               <p>Plantilla general lista para adaptar a tu caso: luz, gas o telefonía.</p>
               <a class="btn btn-outline" href="/modelo-reclamacion.html">Ver modelo</a>
             </div>
+          </div>
+          <!-- CTA contextual tras guías -->
+          <div style="text-align:center;margin-top:10px;">
+            <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita">Revisar mi factura</a>
+            <a class="btn btn-outline" href="#formulario">Enviar por email</a>
           </div>
         </div>
       </div>
@@ -436,11 +425,16 @@
     <p class="help" style="margin-top:.75rem;font-size:.9rem;color:var(--muted);">
       ⚖️ Servicio administrativo y automatizado; no constituye asesoramiento jurídico individualizado ni representación letrada.
       Si tu caso requiere abogado, podremos derivarte —con tu consentimiento— a <strong>colaboradores externos, colegiados y responsables de sus honorarios</strong>.
-    </
-    
+    </p>
+
+    <!-- CTA contextual tras precios -->
+    <div style="text-align:center;margin-top:10px;">
+      <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita">Quiero revisar mi factura</a>
+      <a class="btn btn-outline" href="#formulario">Prefiero enviar email</a>
+    </div>
   </section>
 
-  <!-- BANNER: solo candado (sin círculo dorado) -->
+  <!-- BANNER: solo candado -->
   <section class="media-banner banner-lock" aria-label="Seguridad">
     <img class="payment-lock" src="logo-seguridad-pago.jpg" alt="Pago seguro">
   </section>
@@ -473,6 +467,12 @@
         <div class="legal-note">*Datos anonimizados.</div>
       </div>
     </div>
+
+    <!-- CTA tras casos -->
+    <div style="text-align:center;margin-top:10px;">
+      <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita">Revisar mi factura ahora</a>
+      <a class="btn btn-outline" href="#precios">Ver planes</a>
+    </div>
   </section>
 
   <!-- CONFIANZA -->
@@ -486,6 +486,11 @@
       <li><strong>Atención al cliente</strong>: 📞 <a href="tel:+34953818494">953 818 494</a> · ✉️ <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a></li>
       <li><strong>Tu dinero siempre va directo a ti</strong>: la devolución la hace tu compañía en tu cuenta o factura.</li>
     </ul>
+    <!-- CTA dentro de confianza -->
+    <div style="text-align:center;margin-top:10px;">
+      <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita">Empezar gratis</a>
+      <a class="btn btn-outline" href="#formulario">Enviar por email</a>
+    </div>
   </section>
 
   <!-- FORMULARIO -->
