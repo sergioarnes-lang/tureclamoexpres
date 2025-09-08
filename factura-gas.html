@@ -116,6 +116,39 @@
           <li><strong>Lecturas estimadas</strong> muy por encima del consumo real.</li>
           <li><strong>Duplicidad de conceptos</strong>.</li>
         </ul>
+
+        <h2 id="docs">Documentos que vas a necesitar</h2>
+        <ul>
+          <li>Última factura de gas y dos anteriores.</li>
+          <li>Contrato de suministro o condiciones generales.</li>
+          <li>DNI/NIE del titular.</li>
+          <li>Lectura real del contador si la tienes.</li>
+          <li>Cualquier reclamación previa enviada a la compañía.</li>
+        </ul>
+
+        <h2 id="pasos">Reclamación paso a paso</h2>
+        <ol>
+          <li>Revisa la factura y detecta conceptos dudosos.</li>
+          <li>Contacta con tu compañía y solicita aclaración.</li>
+          <li>Si no responden o no corrigen, prepara tu reclamación.</li>
+          <li>Envía la reclamación por email, web de la compañía o correo postal.</li>
+          <li>Guarda siempre justificantes de envío.</li>
+        </ol>
+
+        <h2 id="plantilla">Plantilla breve de reclamación</h2>
+        <p class="note">“D./Dª [Nombre], con DNI [número], titular del contrato [referencia], expone que en la factura de fecha [dd/mm/aaaa] se han facturado conceptos indebidos por importe de [importe]. Solicito la rectificación de la factura y la devolución de los importes cobrados en exceso.”</p>
+
+        <h2 id="errores">Errores comunes que debes evitar</h2>
+        <ul>
+          <li>Reclamar sin aportar pruebas claras.</li>
+          <li>No conservar los justificantes de envío.</li>
+          <li>No comprobar la corrección en facturas siguientes.</li>
+        </ul>
+
+        <h2 id="faq">Preguntas frecuentes</h2>
+        <p><strong>¿Necesito abogado para reclamar mi factura de gas?</strong><br>No, normalmente no. En la mayoría de casos basta con una reclamación administrativa. Si tu caso requiere defensa jurídica, podemos derivarte —con tu consentimiento— a abogados colaboradores.</p>
+        <p><strong>¿Cuánto tarda en resolverse una reclamación?</strong><br>Depende de la compañía. Algunas contestan en 15-30 días, otras se alargan más. Lo importante es tener justificante de presentación.</p>
+        <p><strong>¿Puedo reclamar varios meses a la vez?</strong><br>Sí, siempre que presentes todas las facturas afectadas y detalles claramente los importes indebidos.</p>
       </article>
 
       <aside class="card">
@@ -129,12 +162,12 @@
           <p id="formOK">✅ Enviado correctamente</p>
           <p id="formERR">❌ Error al enviar</p>
         </form>
+
+        <div style="text-align:center; margin-top:12px;">
+          <a class="btn btn-secondary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20de%20gas%20para%20revisi%C3%B3n" target="_blank">Enviar por WhatsApp</a>
+        </div>
       </aside>
     </main>
-
-    <div style="text-align:center; margin-top:16px;">
-      <a class="btn btn-secondary" href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20de%20gas%20para%20revisi%C3%B3n" target="_blank" aria-label="Enviar factura de gas por WhatsApp">Enviar por WhatsApp</a>
-    </div>
 
     <footer>
       © 2025 TuReclamoExpres · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/politica-privacidad.html">Privacidad</a> · <a href="/#contacto">Contacto</a>
@@ -163,8 +196,7 @@
         if (r.ok) {
           form.reset();
           okMsg.style.display = 'block';
-          // Redirige a /gracias.html
-          window.location.href = '/gracias.html';
+          window.location.href = '/gracias.html'; // redirección
         } else {
           errMsg.textContent = '❌ Error al enviar. Inténtalo de nuevo.';
           errMsg.style.display = 'block';
