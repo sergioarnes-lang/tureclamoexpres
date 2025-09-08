@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>¡Gracias! | TuReclamoExpres</title>
+  <title>¡Gracias! | TuReclamoExprés</title>
 
   <!-- SEO / Indexación -->
   <meta name="robots" content="noindex,nofollow">
-  <link rel="canonical" href="https://tureclamoexpres.com/gracias">
+  <link rel="canonical" href="https://tureclamoexpres.com/gracias.html">
   <link rel="icon" href="/favicon.ico">
 
   <!-- Estilos -->
@@ -29,31 +29,25 @@
   <!-- Auto-redirect (12s) -->
   <meta http-equiv="refresh" content="12; url=/" />
 
-  <!-- GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <!-- GA4 (esta página también lo incluye para asegurar medición de la visita de conversión) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPPJ4520K7"></script>
-...
-gtag('config','G-DPPJ4520K7');
-
-  </script>
-
-  <!-- Google Ads Conversion -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config','AW-XXXXXXXXX'); 
-    // ⚠️ Sustituye AW-XXXXXXXXX por tu ID de Ads
-
-    // Disparo de conversión al llegar a /gracias
-    gtag('event','conversion', {'send_to':'AW-XXXXXXXXX/YYYYYYYYYYYYYYYYY'}); 
-    // ⚠️ Sustituye este send_to por tu ID de Ads + ID de conversión
+    gtag('config', 'G-DPPJ4520K7');
   </script>
+
+  <!--
+    NOTA IMPORTANTE:
+    No añadimos etiqueta de conversión de Google Ads aquí porque tu acción de conversión en Ads
+    está configurada por URL (carga de /gracias.html). Añadir el evento de Ads duplicaría conteos.
+
+    Si prefieres medir por evento en lugar de por URL, dímelo y te paso el bloque con:
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+      gtag('config','AW-XXXXXXXXX');
+      gtag('event','conversion', {'send_to':'AW-XXXXXXXXX/AAAAAAAAAAAAAAA', 'value': 29.90, 'currency':'EUR'});
+  -->
 </head>
 <body>
   <div class="wrap">
@@ -64,7 +58,7 @@ gtag('config','G-DPPJ4520K7');
       <div class="cta">
         <a class="btn btn-primary"
            href="https://buy.stripe.com/cNi14o0Ho3Qz93N1QZ8og02"
-           target="_blank" rel="noopener nofollow">Comprar Plan Completo</a>
+           target="_blank" rel="noopener nofollow">Pagar Plan Estándar (29,90 €)</a>
 
         <a class="btn btn-outline"
            href="https://wa.me/34953818494?text=Hola%2C%20acabo%20de%20enviar%20mi%20factura%20y%20tengo%20una%20duda"
