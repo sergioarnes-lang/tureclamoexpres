@@ -1,185 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Factura de Gas – Enviar | TuReclamoExprés</title>
 
-  <title>Cómo reclamar tu factura de gas (Guía práctica 2025) | TuReclamoExpres</title>
-  <meta name="description" content="Guía paso a paso para reclamar tu factura de gas: detectar errores en consumos estimados, peajes mal aplicados o servicios no solicitados. Incluye plantilla lista para usar.">
-  <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#FFFFFF" />
-  <link rel="canonical" href="https://tureclamoexpres.com/factura-gas.html" />
+  <meta name="description" content="Envíanos tu factura de gas para revisar cobros indebidos. Respuesta en 24–48 h.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://tureclamoexpres.com/factura-gas.html">
+  <link rel="icon" href="/favicon.ico">
 
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="Cómo reclamar tu factura de gas (Guía práctica 2025)" />
-  <meta property="og:description" content="Aprende a detectar errores en tu factura de gas, qué documentos necesitas y cómo reclamar. Revisión GRATIS de tu factura." />
-  <meta property="og:url" content="https://tureclamoexpres.com/factura-gas.html" />
-  <meta property="og:image" content="https://tureclamoexpres.com/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPPJ4520K7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DPPJ4520K7');
+  </script>
 
   <style>
     :root{
-      --bg:#FFFFFF;
-      --surface:#FFFFFF;
-      --ink:#0A2C42;
-      --muted:#5A7184;
-      --brand:#004481;
-      --ok:#028484;
-      --link:#004481;
+      --bg:#f6f9ff; --card:#ffffff; --text:#072146; --muted:#5f6368;
+      --accent:#003a8c; --ok:#22c55e; --border:#e6ecf5; --shadow:0 8px 24px rgba(7,33,70,.08);
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;line-height:1.6}
-    a{color:var(--link);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:960px;margin:0 auto;padding:24px}
-    header{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:16px 0}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:36px;height:36px;border-radius:10px;background:var(--brand)}
-    nav a{margin-left:16px;color:var(--ink);opacity:.85}
-    nav a:hover{opacity:1}
-    .hero{background:rgba(0,68,129,.05);padding:16px;border-radius:16px;border:1px solid rgba(0,0,0,.08)}
-    h1{font-size:clamp(28px,3.6vw,40px);line-height:1.15;margin:8px 0 12px}
-    h2{font-size:clamp(22px,2.8vw,28px);margin:32px 0 8px}
-    h3{font-size:20px;margin:24px 0 8px}
-    .muted{color:var(--muted)}
-    .card{background:var(--surface);border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:20px}
-    .toc{background:rgba(0,68,129,.05);border:1px dashed rgba(0,68,129,.2);border-radius:12px;padding:16px;margin:16px 0}
-    .toc ul{margin:0;padding-left:18px}
-    .grid{display:grid;gap:16px}
-    @media(min-width:840px){.grid-2{grid-template-columns:1fr 1fr}}
-    .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
-    .btn{display:inline-block;padding:12px 16px;border-radius:12px;background:var(--brand);color:#FFFFFF;font-weight:700;border:0}
-    .btn:hover{filter:brightness(1.1)}
-    .btn-secondary{background:var(--ok);color:#FFFFFF}
-    .note{font-size:.95rem;border-left:4px solid var(--brand);padding:12px 14px;background:rgba(0,68,129,.06);border-radius:8px;margin:12px 0}
-    footer{margin:48px 0 24px;color:var(--muted);font-size:.95rem}
-    .breadcrumbs{font-size:.95rem;margin-bottom:8px}
-    .badge{display:inline-block;font-size:.8rem;padding:4px 8px;border-radius:999px;background:rgba(0,68,129,.1);border:1px solid rgba(0,68,129,.25);color:var(--brand);font-weight:600}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f6f9ff;color:var(--text)}
+    header,main,footer{max-width:960px;margin:0 auto;padding:20px}
+    a{color:var(--accent);text-decoration:none}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:18px}
+    h1{margin:.25rem 0 0.5rem}
+    p.help{color:var(--muted)}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:800;text-decoration:none}
+    .btn-primary{background:var(--accent);color:#fff;border:1px solid #002a66}
+    .btn-outline{border:1px solid var(--accent);color:var(--accent);background:#fff}
+    form input, form textarea, form select{
+      width:100%;margin:8px 0;padding:12px 14px;border-radius:10px;border:1px solid var(--border);font-size:1rem;background:#fff;color:var(--text)
+    }
+    form textarea{min-height:140px;resize:vertical}
+    #ok{color:#16a34a;display:none}
+    #err{color:#b91c1c;display:none}
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Article",
-    "headline":"Cómo reclamar tu factura de gas (Guía práctica 2025)",
-    "author":{"@type":"Organization","name":"TuReclamoExpres"},
-    "publisher":{"@type":"Organization","name":"TuReclamoExpres"},
-    "datePublished":"2025-08-28",
-    "dateModified":"2025-08-28",
-    "mainEntityOfPage":{"@type":"WebPage","@id":"https://tureclamoexpres.com/factura-gas.html"},
-    "image":"https://tureclamoexpres.com/og-image.jpg",
-    "description":"Guía paso a paso para reclamar tu factura de gas: detectar cobros indebidos, documentos y pasos de reclamación."
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"¿Cuáles son los errores más comunes en las facturas de gas?",
-       "acceptedAnswer":{"@type":"Answer","text":"Lecturas estimadas muy altas, peajes aplicados incorrectamente, duplicidad de periodos o servicios de mantenimiento no solicitados."}},
-      {"@type":"Question","name":"¿Qué documentos necesito para reclamar?",
-       "acceptedAnswer":{"@type":"Answer","text":"Últimas facturas, copia del contrato, DNI del titular, lectura real del contador y cualquier comunicación con la compañía."}},
-      {"@type":"Question","name":"¿Cuánto tiempo tiene la compañía para responder?",
-       "acceptedAnswer":{"@type":"Answer","text":"Generalmente un mes. Si no hay respuesta, se puede escalar la reclamación a consumo o al regulador competente."}}
-    ]
-  }
-  </script>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <strong>TuReclamoExpres</strong><br>
-          <span class="muted">Revisión GRATIS de facturas</span>
-        </div>
-      </div>
-      <nav>
-        <a href="/">Inicio</a>
-        <a href="/#servicios">Servicios</a>
-        <a href="/#contacto">Contacto</a>
-      </nav>
-    </header>
+  <header>
+    <a href="/" class="btn btn-outline">← Volver</a>
+  </header>
 
-    <div class="breadcrumbs"><a href="/">Inicio</a> › <span>Guías</span> › <span>Factura de gas</span></div>
+  <main>
+    <div class="card">
+      <h1>Enviar factura de <strong>Gas</strong></h1>
+      <p class="help">Revisión GRATIS en 24–48 h. Si procede, te preparamos la reclamación o la gestionamos por ti.</p>
 
-    <section class="hero card">
-      <span class="badge">Guía 2025</span>
-      <h1>Cómo reclamar tu factura de gas</h1>
-      <p class="muted">Detecta <em>cobros indebidos</em>, consumos estimados exagerados o servicios no solicitados en tu factura de gas. Aquí tienes la guía clara para reclamar sin perder tiempo.</p>
-      </section>
+      <!-- FORMULARIO GAS (Formspree) -->
+      <form id="gasForm" action="https://formspree.io/f/mzzvnwll" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Nuevo envío – GAS – TuReclamoExprés">
+        <input type="hidden" name="tipo" value="Gas">
 
-    <aside class="toc">
-      <strong>Índice de la guía</strong>
-      <ul>
-        <li><a href="#senales">Errores comunes en facturas de gas</a></li>
-        <li><a href="#docs">Documentos necesarios</a></li>
-        <li><a href="#pasos">Reclamación paso a paso</a></li>
-        <li><a href="#plantilla">Plantilla breve</a></li>
-        <li><a href="#errores">Errores a evitar</a></li>
-        <li><a href="#faq">Preguntas frecuentes</a></li>
-      </ul>
-    </aside>
+        <label>Nombre completo</label>
+        <input type="text" name="nombre" placeholder="Nombre y apellidos" required autocomplete="name">
 
-    <main class="grid grid-2">
-      <article class="card" style="min-width:0">
-        <h2 id="senales">Errores comunes en facturas de gas</h2>
-        <ul>
-          <li><strong>Lecturas estimadas</strong> muy superiores a tu consumo real.</li>
-          <li><strong>Peajes o cargos</strong> aplicados de forma incorrecta.</li>
-          <li><strong>Servicios añadidos</strong> de mantenimiento no solicitados.</li>
-          <li><strong>Doble facturación</strong> en cambios de comercializadora.</li>
-        </ul>
+        <label>Correo electrónico</label>
+        <input type="email" name="email" placeholder="tu@email.com" required autocomplete="email">
 
-        <h2 id="errores">Errores a evitar</h2>
-        <ul>
-          <li>No reclamar de forma concreta.</li>
-          <li>No guardar justificantes o nº de incidencia.</li>
-          <li>No adjuntar lectura real cuando el problema es estimación.</li>
-        </ul>
+        <label>Compañía y mes de la factura</label>
+        <input type="text" name="compania_mes" placeholder="Ej: Naturgy, julio 2025" required>
 
-        <h2 id="faq">Preguntas frecuentes</h2>
-        <h3>¿Me pueden facturar dos veces en un cambio de compañía?</h3>
-        <p>No deberían. Reclama aportando contratos de ambas compañías y solicita anulación de la duplicidad.</p>
+        <label>Mensaje</label>
+        <textarea name="mensaje" placeholder="Cuéntanos el problema detectado (subidas, ajustes, estimaciones…)" required></textarea>
 
-        <h3>¿Qué pasa si la lectura estimada es mucho mayor?</h3>
-        <p>Aporta la lectura real y pide refacturación. Si no corrigen, reclama a Consumo.</p>
+        <p class="help">📩 Si prefieres adjuntar la factura, envíala a <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a>.</p>
 
-        <h3>¿Necesito abogado?</h3>
-        <p>No suele ser necesario. Si el caso lo requiere, podemos derivarte —con tu consentimiento— a <strong>abogados colaboradores externos</strong>.</p>
-      </article>
+        <label><input id="rgpd" type="checkbox" required> Acepto la <a href="/#confianza">Política de Privacidad</a></label>
 
-      <aside class="card">
-        <h3>Revisamos tu factura GRATIS</h3>
-        <p>Sube tu factura y te diremos si hay cobros indebidos y cuánto puedes recuperar. Sin compromiso.</p>
-        <div class="btns">
-            <a href="https://wa.me/34953818494?text=Hola,%20quiero%20subir%20mi%20factura%20para%20revisi%C3%B3n%20gratuita" class="btn" aria-label="Subir factura por WhatsApp">Revisar por WhatsApp</a>
-        </div>
-        <hr style="border-color:rgba(0,0,0,.08);margin:20px 0">
-        <h3>Checklist rápido</h3>
-        <ul>
-          <li>Lecturas estimadas vs reales</li>
-          <li>Peajes aplicados</li>
-          <li>Servicios añadidos</li>
-          <li>Doble facturación</li>
-        </ul>
-        <hr style="border-color:rgba(0,0,0,.08);margin:20px 0">
-        <h3>Aviso importante</h3>
-        <p class="muted">Esta guía es informativa. En casos que requieran defensa jurídica, TuReclamoExpres puede derivar —con tu consentimiento— a <strong>abogados colaboradores externos</strong>, colegiados y responsables de sus honorarios.</p>
-      </aside>
-    </main>
-
-    <div style="text-align:center; margin-top:16px;">
-      <a class="btn btn-secondary" href="mailto:info@tureclamoexpres.com?subject=Enviar%20factura%20para%20revisi%C3%B3n" aria-label="Enviar factura por email">
-        Prefiero enviarla por email
-      </a>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        <p id="ok">✅ Enviado correctamente</p>
+        <p id="err">❌ No se pudo enviar. Inténtalo más tarde o usa WhatsApp.</p>
+      </form>
     </div>
 
-    <footer>
-      © 2025 TuReclamoExpres · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/politica-privacidad.html">Privacidad</a> · <a href="/#contacto">Contacto</a>
-    </footer>
-  </div>
+    <div style="text-align:center;margin-top:12px;">
+      <a class="btn btn-outline" href="https://wa.me/34953818494?text=Hola,%20quiero%20enviar%20mi%20factura%20de%20gas" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+    </div>
+  </main>
+
+  <footer style="text-align:center;color:#5f6368;padding:24px;">
+    © <span id="year"></span> TuReclamoExprés
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('gasForm');
+    const ok = document.getElementById('ok');
+    const err = document.getElementById('err');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      ok.style.display='none';
+      err.style.display='none';
+
+      if (!document.getElementById('rgpd').checked) {
+        err.textContent = '❌ Debes aceptar la Política de Privacidad para continuar.';
+        err.style.display = 'block';
+        return;
+      }
+
+      const fd = new FormData(form);
+
+      try {
+        const r = await fetch(form.action, {
+          method: 'POST',
+          body: fd,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        // Si Formspree responde OK → mostramos OK y REDIRIGIMOS a /gracias.html
+        if (r.ok) {
+          ok.style.display = 'block';
+          form.reset();
+          // Forzamos la conversión por URL gracias.html aunque Formspree free no haga _redirect
+          window.location.href = '/gracias.html';
+        } else {
+          // Intentamos leer el error de Formspree
+          const isJson = r.headers.get('content-type')?.includes('application/json');
+          const payload = isJson ? await r.json() : null;
+          err.textContent = (payload && payload.errors && payload.errors[0]?.message)
+            ? '❌ ' + payload.errors[0].message
+            : '❌ Error al enviar. Prueba de nuevo o usa WhatsApp.';
+          err.style.display = 'block';
+        }
+      } catch (e2) {
+        err.textContent = '❌ Error de conexión. Inténtalo de nuevo o usa WhatsApp.';
+        err.style.display = 'block';
+      }
+    });
+  </script>
 </body>
 </html>
