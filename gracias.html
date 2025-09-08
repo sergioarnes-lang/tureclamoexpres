@@ -29,7 +29,7 @@
   <!-- Auto-redirect (12s) -->
   <meta http-equiv="refresh" content="12; url=/" />
 
-  <!-- GA4 (esta página también lo incluye para asegurar medición de la visita de conversión) -->
+  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPPJ4520K7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -37,17 +37,6 @@
     gtag('js', new Date());
     gtag('config', 'G-DPPJ4520K7');
   </script>
-
-  <!--
-    NOTA IMPORTANTE:
-    No añadimos etiqueta de conversión de Google Ads aquí porque tu acción de conversión en Ads
-    está configurada por URL (carga de /gracias.html). Añadir el evento de Ads duplicaría conteos.
-
-    Si prefieres medir por evento en lugar de por URL, dímelo y te paso el bloque con:
-      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
-      gtag('config','AW-XXXXXXXXX');
-      gtag('event','conversion', {'send_to':'AW-XXXXXXXXX/AAAAAAAAAAAAAAA', 'value': 29.90, 'currency':'EUR'});
-  -->
 </head>
 <body>
   <div class="wrap">
@@ -56,14 +45,28 @@
       <p>Hemos recibido tu solicitud. Te contactaremos por email si necesitamos algo más.</p>
 
       <div class="cta">
-        <a class="btn btn-primary"
+        <!-- Plan Estándar -->
+        <a class="btn btn-outline"
            href="https://buy.stripe.com/cNi14o0Ho3Qz93N1QZ8og02"
-           target="_blank" rel="noopener nofollow">Pagar Plan Estándar (29,90 €)</a>
+           target="_blank" rel="noopener nofollow">
+           Pagar Plan Estándar (29,90 €)
+        </a>
 
+        <!-- Plan Premium destacado -->
+        <a class="btn btn-primary"
+           href="https://buy.stripe.com/7sYdRa89Qdr9dk3brz8og03"
+           target="_blank" rel="noopener nofollow">
+           Pagar Plan Premium (49,90 €)
+        </a>
+
+        <!-- Botón de WhatsApp -->
         <a class="btn btn-outline"
            href="https://wa.me/34953818494?text=Hola%2C%20acabo%20de%20enviar%20mi%20factura%20y%20tengo%20una%20duda"
-           target="_blank" rel="noopener nofollow">Abrir WhatsApp</a>
+           target="_blank" rel="noopener nofollow">
+           Abrir WhatsApp
+        </a>
 
+        <!-- Volver al inicio -->
         <a class="btn btn-outline" href="/" rel="noopener">Volver al inicio</a>
       </div>
 
