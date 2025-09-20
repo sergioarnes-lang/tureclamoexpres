@@ -38,6 +38,22 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" as="style" onload="this.rel='stylesheet'" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+  /* Ajuste de botones de reseñas */
+  #reseñas .btn {
+    margin: 6px;
+  }
+
+  /* En móvil se apilan */
+  @media (max-width: 768px) {
+    #reseñas .btn {
+      display: block;
+      width: 100%;
+      margin: 8px 0;
+    }
+  }
+</style>
+
 
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -442,18 +458,24 @@ html{scroll-behavior:smooth}:root{--bg:#f6f9ff;--bg2:#ffffff;--card:#ffffff;--te
       </div>
     </section>
 
-    <!-- RESEÑAS GOOGLE -->
-    <section id="reseñas" style="margin-top:1.5rem;text-align:center;">
-      <h2>⭐ Opiniones de clientes reales</h2>
-      <div class="reviews-grid" aria-label="Reseñas de Google y mapa" style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:10px;">
-        <iframe src="https://search.google.com/local/reviews?placeid=ChIJX0jfou4O_XEAE" width="340" height="250" style="border:0;border-radius:12px;" loading="lazy" decoding="async" title="Reseñas de Google para TuReclamoExprés"></iframe>
-        <iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJX0jfou4O_XEAE&key=TU_API_KEY" width="340" height="250" style="border:0;border-radius:12px;" loading="lazy" decoding="async" title="Ubicación de TuReclamoExprés en Google Maps"></iframe>
-      </div>
-      <div style="margin-top:12px;">
-        <a class="btn btn-primary" href="https://g.page/r/CYf0jfou4O_XEAE/review" target="_blank" rel="noopener" aria-label="Ver todas las reseñas en Google" aria-describedby="cta-desc">Ver todas las reseñas en Google</a>
-      </div>
-    </section>
+<!-- RESEÑAS GOOGLE -->
+<section id="reseñas" style="margin-top:1.5rem; text-align:center;">
+  <h2>⭐ Opiniones de clientes reales</h2>
 
+  <!-- Widget Elfsight -->
+  <script src="https://elfsightcdn.com/platform.js" async></script>
+  <div class="elfsight-app-d07b286e-c832-4cfa-b497-e9533c642b82" data-elfsight-app-lazy></div>
+
+  <!-- Botones -->
+  <div style="margin-top:12px; text-align:center;">
+    <a class="btn btn-primary" href="https://g.page/r/CYf0jfou4O_XEAE/review" target="_blank" rel="noopener" aria-label="Dejar reseña en Google">
+      ⭐ Escribe tu reseña en Google
+    </a>
+    <a class="btn btn-outline" href="https://g.page/r/CYf0jfou4O_XEAE/review" target="_blank" rel="noopener" aria-label="Ver todas las reseñas en Google">
+      📋 Ver todas las reseñas
+    </a>
+  </div>
+</section>
     <!-- CONFIANZA -->
     <section id="confianza" style="margin-top:1.5rem;padding:1rem;border:1px solid var(--border);border-radius:12px;background:#fff;box-shadow:var(--shadow);">
       <h2>Por qué confiar en TuReclamoExprés</h2>
