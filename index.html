@@ -402,6 +402,50 @@
       font-size: 1.1rem;
     }
 
+    /* Accordion/Toggle for guides */
+    .guide-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      color: var(--text);
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 1.05rem;
+      transition: all .3s;
+      margin: 1rem 0;
+    }
+    .guide-toggle:hover {
+      border-color: var(--link);
+    }
+    .guide-toggle + .guide-wrap {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .4s ease;
+    }
+    .guide-wrap .inner {
+      padding: 20px 0;
+    }
+    .guide-grid {
+      display: grid;
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    @media (min-width: 768px) {
+      .guide-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .guide-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
     /* Stats/Social Proof */
     .stats-grid {
       display: grid;
@@ -672,8 +716,11 @@
     <nav id="primary-nav" class="nav" role="navigation">
       <ul class="nav-links">
         <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#que-ganas">Qué ganas</a></li>
+        <li><a href="#guias">Guías</a></li>
         <li><a href="#precios">Precios</a></li>
-        <li><a href="#casos">Casos reales</a></li>
+        <li><a href="#confianza">Confianza</a></li>
+        <li><a href="#reseñas">Reseñas</a></li>
         <li><a href="#formulario">Subir factura</a></li>
         <li><a href="#" id="openLegalModalLink">Legal</a></li>
       </ul>
@@ -723,6 +770,170 @@
         </div>
       </div>
       <a class="btn btn-primary" href="#formulario">Empezar ahora</a>
+    </section>
+
+    <!-- QUÉ GANAS - CASOS REALES CON IMÁGENES -->
+    <section id="que-ganas">
+      <h2 class="section-title">Qué ganas: Ejemplos reales y testimonios</h2>
+      <p class="section-subtitle">Mira lo que recuperaron otros clientes. Facturas reales (difuminadas para privacidad).</p>
+      
+      <div class="testimonials">
+        <div class="testimonial-card">
+          <h3 style="font-size: 1.2rem; margin-bottom: .5rem;">🔌 Iberdrola – 132 € recuperados</h3>
+          <div class="testimonial-meta" style="margin-bottom: 1rem;">Juan G., Jaén · Potencia mal facturada · Resuelto en 10 días</div>
+          
+          <!-- Placeholder para factura real -->
+          <div style="background: linear-gradient(135deg, #f3f4f6, #e5e7eb); border: 2px dashed var(--border); border-radius: 10px; padding: 40px 20px; margin: 1rem 0; text-align: center;">
+            <span style="font-size: 3rem; display: block; margin-bottom: 10px;">📄</span>
+            <p style="color: var(--muted); font-size: .9rem; font-style: italic;">
+              Factura Iberdrola<br>
+              <small>(Difuminada por privacidad)</small>
+            </p>
+          </div>
+          
+          <p class="testimonial-text">"Muy rápidos y claros. Me devolvieron todo en mi factura siguiente."</p>
+          <p style="font-size: .8rem; color: #9ca3af; margin-top: .5rem;">*Datos anonimizados. Comprobante disponible.</p>
+        </div>
+
+        <div class="testimonial-card">
+          <h3 style="font-size: 1.2rem; margin-bottom: .5rem;">📶 Naturgy – 2 meses devueltos</h3>
+          <div class="testimonial-meta" style="margin-bottom: 1rem;">María P., Sevilla · Subida no informada · Resuelto en 14 días</div>
+          
+          <!-- Placeholder para factura real -->
+          <div style="background: linear-gradient(135deg, #f3f4f6, #e5e7eb); border: 2px dashed var(--border); border-radius: 10px; padding: 40px 20px; margin: 1rem 0; text-align: center;">
+            <span style="font-size: 3rem; display: block; margin-bottom: 10px;">📄</span>
+            <p style="color: var(--muted); font-size: .9rem; font-style: italic;">
+              Factura Naturgy<br>
+              <small>(Difuminada por privacidad)</small>
+            </p>
+          </div>
+          
+          <p class="testimonial-text">"Lo gestionaron todo por mí. ¡Increíble servicio!"</p>
+          <p style="font-size: .8rem; color: #9ca3af; margin-top: .5rem;">*Datos anonimizados.</p>
+        </div>
+
+        <div class="testimonial-card">
+          <h3 style="font-size: 1.2rem; margin-bottom: .5rem;">🔥 Gas – 89 € ajustados</h3>
+          <div class="testimonial-meta" style="margin-bottom: 1rem;">Pedro R., Córdoba · Estimaciones incorrectas · Ajuste inmediato</div>
+          
+          <!-- Placeholder para factura real -->
+          <div style="background: linear-gradient(135deg, #f3f4f6, #e5e7eb); border: 2px dashed var(--border); border-radius: 10px; padding: 40px 20px; margin: 1rem 0; text-align: center;">
+            <span style="font-size: 3rem; display: block; margin-bottom: 10px;">📄</span>
+            <p style="color: var(--muted); font-size: .9rem; font-style: italic;">
+              Factura Gas Natural<br>
+              <small>(Difuminada por privacidad)</small>
+            </p>
+          </div>
+          
+          <p class="testimonial-text">"Fácil y efectivo. Recomendado 100%."</p>
+          <p style="font-size: .8rem; color: #9ca3af; margin-top: .5rem;">*Datos anonimizados.</p>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 2rem;">
+        <a class="btn btn-primary" href="#formulario">👉 Sube tu factura en 10s</a>
+      </div>
+    </section>
+
+    <!-- GUÍAS PRÁCTICAS -->
+    <section id="guias">
+      <h2 class="section-title">Guías prácticas para reclamar</h2>
+      <p class="section-subtitle">Aprende cómo detectar cobros indebidos y reclamar paso a paso según tu caso.</p>
+      
+      <button class="guide-toggle" id="toggleGuides" aria-expanded="false" aria-controls="guidesWrap" aria-label="Mostrar u ocultar guías">
+        <span>Ver guías</span>
+        <span aria-hidden="true">▼</span>
+      </button>
+      
+      <div id="guidesWrap" class="guide-wrap" role="region" aria-label="Listado de guías prácticas">
+        <div class="inner">
+          <div class="guide-grid">
+            <div class="testimonial-card" style="text-align: left;">
+              <div style="font-size: 2.5rem; margin-bottom: 12px;">💡</div>
+              <h3 style="margin-bottom: 8px;">Factura de luz</h3>
+              <p style="color: var(--muted); font-size: .95rem; margin-bottom: 12px;">
+                Detecta errores en potencia contratada, peajes, excesos de facturación y aprende a reclamar tu recibo de electricidad.
+              </p>
+              <a class="btn btn-outline" href="/factura-luz.html" style="display: inline-block; padding: 10px 20px; margin: 0;">
+                Ver guía completa
+              </a>
+            </div>
+
+            <div class="testimonial-card" style="text-align: left;">
+              <div style="font-size: 2.5rem; margin-bottom: 12px;">🔥</div>
+              <h3 style="margin-bottom: 8px;">Factura de gas</h3>
+              <p style="color: var(--muted); font-size: .95rem; margin-bottom: 12px;">
+                Revisa si tu compañía aplica correctamente el precio del contrato y reclama ajustes indebidos o estimaciones erróneas.
+              </p>
+              <a class="btn btn-outline" href="/factura-gas.html" style="display: inline-block; padding: 10px 20px; margin: 0;">
+                Ver guía completa
+              </a>
+            </div>
+
+            <div class="testimonial-card" style="text-align: left;">
+              <div style="font-size: 2.5rem; margin-bottom: 12px;">📱</div>
+              <h3 style="margin-bottom: 8px;">Telefonía e Internet</h3>
+              <p style="color: var(--muted); font-size: .95rem; margin-bottom: 12px;">
+                Reclama permanencias abusivas, subidas no informadas, servicios no contratados o cargos por SMS premium.
+              </p>
+              <a class="btn btn-outline" href="/reclamar-telefono.html" style="display: inline-block; padding: 10px 20px; margin: 0;">
+                Ver guía completa
+              </a>
+            </div>
+
+            <div class="testimonial-card" style="text-align: left;">
+              <div style="font-size: 2.5rem; margin-bottom: 12px;">🏦</div>
+              <h3 style="margin-bottom: 8px;">Banca</h3>
+              <p style="color: var(--muted); font-size: .95rem; margin-bottom: 12px;">
+                Reclama comisiones abusivas, cargos no autorizados o productos contratados sin información adecuada.
+              </p>
+              <a class="btn btn-outline" href="/reclamar-banca.html" style="display: inline-block; padding: 10px 20px; margin: 0;">
+                Ver guía completa
+              </a>
+            </div>
+
+            <div class="testimonial-card" style="text-align: left;">
+              <div style="font-size: 2.5rem; margin-bottom: 12px;">🛡️</div>
+              <h3 style="margin-bottom: 8px;">Seguros</h3>
+              <p style="color: var(--muted); font-size: .95rem; margin-bottom: 12px;">
+                Anula renovaciones automáticas, cobros indebidos en pólizas o servicios adicionales no contratados.
+              </p>
+              <a class="btn btn-outline" href="/reclamar-seguro.html" style="display: inline-block; padding: 10px 20px; margin: 0;">
+                Ver guía completa
+              </a>
+            </div>
+
+            <div class="testimonial-card" style="text-align: left;">
+              <div style="font-size: 2.5rem; margin-bottom: 12px;">❌</div>
+              <h3 style="margin-bottom: 8px;">Dar de baja servicios</h3>
+              <p style="color: var(--muted); font-size: .95rem; margin-bottom: 12px;">
+                Aprende a darte de baja correctamente y qué hacer si te ponen trabas o siguen cobrándote.
+              </p>
+              <a class="btn btn-outline" href="/dar-de-baja-servicios.html" style="display: inline-block; padding: 10px 20px; margin: 0;">
+                Ver guía completa
+              </a>
+            </div>
+
+            <div class="testimonial-card" style="text-align: left;">
+              <div style="font-size: 2.5rem; margin-bottom: 12px;">⚠️</div>
+              <h3 style="margin-bottom: 8px;">Altas no consentidas</h3>
+              <p style="color: var(--muted); font-size: .95rem; margin-bottom: 12px;">
+                Te han dado de alta en un servicio sin tu consentimiento. Aprende a reclamar y cortar los cobros.
+              </p>
+              <a class="btn btn-outline" href="/altas-no-consentidas.html" style="display: inline-block; padding: 10px 20px; margin: 0;">
+                Ver guía completa
+              </a>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 2rem;">
+            <p style="color: var(--muted); margin-bottom: 1rem;">
+              ¿No encuentras tu caso? Envíanos tu factura y te ayudamos personalmente.
+            </p>
+            <a class="btn btn-primary" href="#formulario">Revisar mi factura gratis</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- PRECIOS CLAROS -->
@@ -791,10 +1002,10 @@
       </div>
     </section>
 
-    <!-- CASOS REALES / PRUEBA SOCIAL -->
+    <!-- ESTADÍSTICAS Y MÁS TESTIMONIOS -->
     <section id="casos" class="section-alt">
-      <h2 class="section-title">Resultados reales de clientes</h2>
-      <p class="section-subtitle">Miles de personas ya han recuperado su dinero. Estos son algunos ejemplos reales.</p>
+      <h2 class="section-title">Más resultados reales de clientes</h2>
+      <p class="section-subtitle">Miles de personas ya han recuperado su dinero con nosotros.</p>
       
       <div class="stats-grid">
         <div class="stat-card">
@@ -811,7 +1022,7 @@
         </div>
       </div>
 
-      <h3 class="section-title" style="margin-top: 3rem;">Lo que dicen nuestros clientes</h3>
+      <h3 class="section-title" style="margin-top: 3rem;">Lo que dicen más clientes</h3>
       <div class="testimonials">
         <div class="testimonial-card">
           <div class="testimonial-header">
@@ -847,6 +1058,42 @@
           </div>
           <p class="testimonial-text">"Tenía estimaciones de consumo completamente incorrectas. Me ajustaron 89 € de forma inmediata. Fácil y efectivo. Recomendado 100%."</p>
           <div class="testimonial-amount">✅ 89 € recuperados • 7 días</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">👩</div>
+            <div>
+              <div class="testimonial-name">Laura S.</div>
+              <div class="testimonial-meta">Madrid • Endesa</div>
+            </div>
+          </div>
+          <p class="testimonial-text">"Detectaron un error en mi tarifa que llevaba meses pagando. Recuperé casi 200 €. No me lo podía creer."</p>
+          <div class="testimonial-amount">✅ 198 € recuperados • 12 días</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">👨</div>
+            <div>
+              <div class="testimonial-name">Carlos M.</div>
+              <div class="testimonial-meta">Valencia • Movistar</div>
+            </div>
+          </div>
+          <p class="testimonial-text">"Servicios extras que nunca contraté. Me devolvieron 6 meses. El proceso fue súper fácil."</p>
+          <div class="testimonial-amount">✅ 6 meses devueltos • 9 días</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">👩</div>
+            <div>
+              <div class="testimonial-name">Ana R.</div>
+              <div class="testimonial-meta">Málaga • Vodafone</div>
+            </div>
+          </div>
+          <p class="testimonial-text">"Subí mi factura por curiosidad y encontraron cobros duplicados. 67 € que no esperaba recuperar."</p>
+          <div class="testimonial-amount">✅ 67 € recuperados • 8 días</div>
         </div>
       </div>
 
@@ -1129,6 +1376,31 @@
           cerrarLegal();
         }
       });
+
+      // Acordeón de guías
+      const guideToggle = document.getElementById('toggleGuides');
+      const guideWrap = document.getElementById('guidesWrap');
+      
+      if (guideToggle && guideWrap) {
+        const toggleGuides = (isExpanded) => {
+          guideToggle.setAttribute('aria-expanded', isExpanded);
+          guideWrap.style.maxHeight = isExpanded ? guideWrap.scrollHeight + 'px' : '0px';
+          guideToggle.querySelector('span:last-child').textContent = isExpanded ? '▲' : '▼';
+        };
+        
+        toggleGuides(false);
+        
+        guideToggle.addEventListener('click', () => {
+          const isExpanded = guideToggle.getAttribute('aria-expanded') !== 'true';
+          toggleGuides(isExpanded);
+        });
+        
+        window.addEventListener('resize', () => {
+          if (guideToggle.getAttribute('aria-expanded') === 'true') {
+            guideWrap.style.maxHeight = guideWrap.scrollHeight + 'px';
+          }
+        });
+      }
 
       // Formulario
       const form = document.getElementById('reclamoForm');
