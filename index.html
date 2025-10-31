@@ -1,144 +1,281 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K94XRMDK');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Revisión de Facturas | TuReclamoExprés</title>
-  <meta name="description" content="Analizamos tu factura en 24 h. Solo pagas si hay cobros indebidos o abusivos. Reclamaciones seguras y rápidas desde 34,90 € IVA incl.">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Revisión de Facturas | Recupera Dinero en 24h | TuReclamoExprés</title>
+  <meta name="description" content="Sube tu factura y revisamos en 24h si pagas de más. Si hay cobros indebidos, reclama desde 34,90 €. Endesa, Iberdrola, Movistar, Naturgy. ¡Recupera tu dinero hoy!">
+  <meta name="keywords" content="reclamar factura luz,reclamar factura gas,reclamar factura teléfono,cobros indebidos,Endesa,Iberdrola,Movistar,Naturgy,devolución facturas">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="canonical" href="https://tureclamoexpres.com/">
+  <meta property="og:title" content="Revisión de Facturas | TuReclamoExprés">
+  <meta property="og:description" content="Sube tu factura y revisamos en 24h. Si hay cobros indebidos, reclama desde 34,90 €. ¡Recupera tu dinero!">
+  <meta property="og:url" content="https://tureclamoexpres.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"TuReclamoExprés - Revisión y Gestión de Reclamaciones","description":"Revisión de facturas de luz, gas, telefonía y más para detectar cobros indebidos. Generamos o gestionamos tu reclamación para recuperar tu dinero rápido.","provider":{"@type":"Organization","name":"S.A.G. Servicios Digitales","contactPoint":{"@type":"ContactPoint","telephone":"+34953818494","contactType":"customer service","email":"info@tureclamoexpres.com"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"500","bestRating":"5"}}</script>
   <style>
-    html{scroll-behavior:smooth}body{margin:0;font-family:'Inter',sans-serif;color:#072146;background:#f6f9ff}
-    h1,h2,h3{font-family:'Montserrat',sans-serif}
-    header,main,footer{max-width:1100px;margin:0 auto;padding:20px}
-    .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(7,33,70,.08);transition:transform .2s ease}
-    .btn:hover{transform:scale(1.05)}
-    .btn-primary{background:#22c55e;color:#fff;border:1px solid #16a34a}
-    .btn-outline{border:1px solid #003a8c;color:#003a8c;background:#fff}
-    .site-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;position:sticky;top:0;background:#fff;z-index:999;border-bottom:1px solid #e6ecf5;border-radius:0 0 12px 12px}
-    .logo{font-weight:800;font-size:1.4rem;text-decoration:none;color:#072146}
-    .nav-links{list-style:none;display:flex;gap:16px}
-    .nav-links a{text-decoration:none;color:#072146;font-weight:600}
-    .hero{text-align:center;padding:4rem 1rem 2rem}
-    .hero h1{font-size:clamp(28px,5vw,44px)}
-    .hero p{font-size:1.1rem;color:#5f6368;max-width:800px;margin:10px auto}
-    .trust-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:1rem}
-    .trust-badge{border:1px solid #e6ecf5;border-radius:999px;padding:6px 10px;background:#fff;font-size:.9rem}
-    .steps{display:grid;gap:12px;max-width:920px;margin:2rem auto}
-    @media(min-width:900px){.steps{grid-template-columns:repeat(3,1fr)}}
-    .step{background:#fff;border:1px solid #e6ecf5;border-radius:12px;padding:16px;box-shadow:0 8px 24px rgba(7,33,70,.05)}
-    .price{font-size:1.6rem;font-weight:800;font-family:'Montserrat'}
-    footer{border-top:1px solid #e6ecf5;margin-top:30px;color:#5f6368;font-size:.9rem;text-align:center;padding:40px 20px}
-    .fab-wa{position:fixed;right:16px;bottom:80px;background:#22c55e;color:#052e16;font-weight:800;border-radius:999px;padding:12px 18px;text-decoration:none;font-size:1rem;border:1px solid #16a34a;box-shadow:0 8px 24px rgba(7,33,70,.08)}
-    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)}}
-    .fab-wa{animation:pulse 2s infinite}
-    form input,form textarea{width:100%;margin:8px 0;padding:12px 14px;border:1px solid #e6ecf5;border-radius:10px;font-size:1rem}
+    html{scroll-behavior:smooth}:root{--bg:#f6f9ff;--bg2:#ffffff;--text:#072146;--muted:#5f6368;--accent:#003a8c;--link:#1464a5;--border:#e6ecf5;--shadow:0 8px 24px rgba(7,33,70,.08);--ok:#22c55e;--pill-bg:#eef6ff;--pill-border:#cfe3ff}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--text);line-height:1.7;font-size:18px;background:linear-gradient(180deg,var(--bg) 0px,#fdfefe 600px,var(--bg2) 100%)}h1,h2,h3,h4{font-family:'Montserrat',system-ui,sans-serif;font-weight:800;line-height:1.2;margin-bottom:1rem}h1{font-size:clamp(28px,5vw,44px)}h2{font-size:clamp(22px,3.6vw,32px)}h3{font-size:clamp(18px,3vw,24px)}header,main,footer{max-width:1100px;margin:0 auto;padding:20px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.site-header{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;position:sticky;top:0;background:#fff;z-index:999;border-bottom:1px solid var(--border);box-shadow:0 2px 10px rgba(7,33,70,.04)}.logo{font-weight:800;font-size:1.45rem;color:var(--text);text-decoration:none}.nav-links{list-style:none;display:flex;gap:16px}.nav-links a{color:var(--text);font-weight:600;text-decoration:none;font-size:.95rem;padding:8px 10px;border-radius:10px;transition:all .2s}.nav-links a:hover{background:var(--pill-bg);border:1px solid var(--pill-border)}.nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px}.nav-toggle-bar{display:block;width:24px;height:2px;margin:5px 0;background:var(--text);transition:.3s}.header-contact{font-size:.95rem;color:var(--muted)}.header-contact a{color:var(--text);text-decoration:none;font-weight:700}@media(max-width:768px){.nav-toggle{display:block}.nav{position:fixed;left:0;right:0;top:60px;background:#fff;transform:translateY(-120%);transition:transform .3s ease;border-top:1px solid var(--border);box-shadow:0 4px 12px rgba(0,0,0,.1)}.nav.open{transform:translateY(0)}.nav-links{flex-direction:column;padding:10px;gap:0}.nav-links li{border-bottom:1px solid var(--border)}.nav-links a{padding:14px;display:block}.header-contact{display:none}}.hero{text-align:center;padding:2rem 1rem 1.5rem}.hero h1{margin-bottom:.5rem}.hero-subtitle{color:var(--muted);max-width:720px;margin:0 auto 1rem;font-size:1.1rem}.guarantee-box{background:var(--pill-bg);border:2px solid var(--pill-border);border-radius:14px;padding:16px 20px;max-width:620px;margin:1rem auto;font-weight:600}.guarantee-box strong{color:var(--ok)}.btn{display:inline-block;padding:14px 28px;border-radius:10px;font-weight:700;text-decoration:none;margin:8px;font-size:1.05rem;box-shadow:var(--shadow);transition:all .2s ease;border:2px solid transparent}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(7,33,70,.12)}.btn-primary{background:var(--ok);color:#fff;border-color:#16a34a}.btn-primary:hover{background:#16a34a}.btn-outline{border:2px solid var(--link);color:var(--link);background:#fff}.btn-outline:hover{background:var(--link);color:#fff}.trust-badges{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:1rem;flex-wrap:wrap}.trust-badge{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid var(--border);border-radius:999px;font-size:.9rem;color:var(--text);background:#fff;font-weight:500}.steps{display:grid;gap:16px;margin:2rem auto;max-width:920px}@media(min-width:900px){.steps{grid-template-columns:repeat(3,1fr)}}.step{background:#fff;border:2px solid var(--border);border-radius:14px;padding:20px;text-align:center;box-shadow:var(--shadow);transition:all .3s}.step:hover{transform:translateY(-4px);border-color:var(--link)}.step-icon{font-size:3rem;margin-bottom:12px;display:block}.step h3{font-size:1.2rem;margin-bottom:8px}.step p{color:var(--muted);font-size:.95rem}.price-flow{display:grid;gap:12px;max-width:720px;margin:1.5rem auto}.price-flow-step{background:#fff;border:2px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow)}.price-flow-step strong{color:var(--link)}.price-flow-step.free{background:linear-gradient(135deg,#eef6ff,#fff);border-color:var(--ok)}.plans{display:grid;gap:16px;margin-top:2rem;max-width:900px;margin-left:auto;margin-right:auto}@media(min-width:900px){.plans{grid-template-columns:1fr}}.plan{background:#fff;padding:24px;border:2px solid var(--border);border-radius:14px;position:relative;box-shadow:var(--shadow);transition:all .3s}.plan:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(7,33,70,.12)}.plan.recommended{background:linear-gradient(180deg,#f0f7ff,#ffffff);border-color:var(--link);border-width:3px}.plan .badge{position:absolute;top:-12px;left:20px;padding:6px 14px;border-radius:999px;font-weight:800;font-size:.85rem;background:var(--link);color:#fff;box-shadow:var(--shadow)}.plan.recommended .badge{background:var(--ok)}.price{font-size:2.5rem;font-weight:800;font-family:'Montserrat';color:var(--text);margin:1rem 0}.plan h3{font-size:1.3rem;margin-bottom:.5rem}.plan ul{list-style:none;margin:1rem 0}.plan ul li{padding:8px 0 8px 1.8rem;position:relative;font-size:1rem}.plan ul li:before{content:'•';position:absolute;left:0;font-size:1.1rem;color:var(--ok)}.guide-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:#fff;border:2px solid var(--border);border-radius:12px;padding:16px 20px;color:var(--text);font-weight:700;cursor:pointer;font-size:1.05rem;transition:all .3s;margin:1rem 0}.guide-toggle:hover{border-color:var(--link)}.guide-toggle+.guide-wrap{overflow:hidden;max-height:0;transition:max-height .4s ease}.guide-wrap .inner{padding:20px 0}.guide-grid{display:grid;gap:16px;margin-top:1rem}@media(min-width:768px){.guide-grid{grid-template-columns:repeat(2,1fr)}}@media(min-width:1024px){.guide-grid{grid-template-columns:repeat(3,1fr)}}.stats-grid{display:grid;gap:16px;margin:2rem auto;max-width:920px}@media(min-width:768px){.stats-grid{grid-template-columns:repeat(3,1fr)}}.stat-card{background:#fff;border:2px solid var(--border);border-radius:14px;padding:24px;text-align:center;box-shadow:var(--shadow)}.big-number{font-size:3rem;font-weight:800;font-family:'Montserrat';color:var(--ok);line-height:1;margin-bottom:8px}.stat-desc{color:var(--muted);font-size:.95rem}.testimonials{display:grid;gap:16px;margin-top:2rem}@media(min-width:768px){.testimonials{grid-template-columns:1fr}}@media(min-width:1024px){.testimonials{grid-template-columns:repeat(3,1fr)}}.testimonial-card{background:#fff;border:2px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow)}.testimonial-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}.testimonial-avatar{width:48px;height:48px;border-radius:50%;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:1.5rem}.testimonial-name{font-weight:700;font-size:1rem}.testimonial-meta{font-size:.85rem;color:var(--muted)}.testimonial-text{font-style:italic;color:var(--muted);margin:12px 0}.testimonial-amount{font-weight:700;color:var(--ok);font-size:1.1rem}.form-section{background:#fff;border:2px solid var(--border);border-radius:14px;padding:28px;max-width:620px;margin:2rem auto;box-shadow:var(--shadow)}#reclamoForm input[type="email"],#reclamoForm input[type="file"]{width:100%;margin:10px 0;padding:14px 16px;border-radius:10px;border:2px solid var(--border);background:#fff;color:var(--text);font-size:1rem;transition:all .2s}#reclamoForm input[type="email"]:focus,#reclamoForm input[type="file"]:focus{outline:none;border-color:var(--link);box-shadow:0 0 0 3px rgba(20,100,165,.1)}#reclamoForm input[type="file"]{padding:12px;border-style:dashed;cursor:pointer}#reclamoForm label{display:block;margin:12px 0 6px;font-weight:600;font-size:.95rem}.legal-small{font-size:.85rem;color:var(--muted);margin-top:10px}.legal-small a{color:var(--link);text-decoration:underline}#formOK,#formERR{padding:12px;border-radius:8px;margin-top:12px;display:none;font-weight:600}#formOK{background:#dcfce7;color:#166534;border:1px solid #22c55e}#formERR{background:#fee2e2;color:#991b1b;border:1px solid #ef4444}section{padding:3rem 1rem}.section-alt{background:linear-gradient(135deg,#f9fafb,#fff)}.section-title{text-align:center;margin-bottom:1.5rem}.section-subtitle{text-align:center;color:var(--muted);max-width:720px;margin:0 auto 2rem;font-size:1.05rem}.footer{border-top:2px solid var(--border);margin-top:3rem;padding:3rem 2rem 5rem;color:var(--muted);text-align:center}.footer a{color:var(--link);text-decoration:none}.footer a:hover{text-decoration:underline}#legal-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.6);z-index:9999;padding:20px}.modal-wrap{background:#fff;color:var(--text);width:min(900px,100%);max-height:90vh;border-radius:14px;overflow-y:auto;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.3)}.modal-wrap h3{margin-top:2rem;margin-bottom:1rem}.modal-wrap h3:first-of-type{margin-top:1rem}.fab-wa{position:fixed;right:20px;bottom:20px;z-index:1000;background:#25D366;color:#fff;font-weight:800;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:2rem;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .3s}.fab-wa:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(37,211,102,.6)}@media(max-width:600px){section{padding:2rem 1rem}.btn{display:block;margin:10px auto;max-width:400px;width:100%}.fab-wa{width:56px;height:56px;bottom:16px;right:16px}.steps,.plans,.testimonials,.guide-grid,.stats-grid{grid-template-columns:1fr!important}.plan ul li{font-size:.95rem}.big-number{font-size:2.5rem}.testimonial-card{padding:16px}.form-section{padding:20px}.modal-wrap{padding:20px}}
   </style>
 </head>
 <body>
-<header class="site-header">
-  <a href="#" class="logo">TuReclamoExprés</a>
-  <nav>
-    <ul class="nav-links">
-      <li><a href="#como-funciona">Cómo funciona</a></li>
-      <li><a href="#precios">Precios</a></li>
-      <li><a href="#casos">Casos</a></li>
-      <li><a href="#confianza">Confianza</a></li>
-      <li><a href="#formulario">Solicitar revisión</a></li>
-    </ul>
-  </nav>
-</header>
-<main>
-<section class="hero" id="como-funciona">
-  <h1>Analizamos tu factura en 24 h. Solo pagas si hay cobros indebidos o abusivos.</h1>
-  <p>Revisamos tus facturas de luz, gas o telefonía. Si no hay nada que reclamar, no pagas nada. Si hay errores, preparamos tu reclamación completa.</p>
-  <a href="#formulario" class="btn btn-primary">Revisar mi factura</a>
-  <div class="trust-badges">
-    <span class="trust-badge">+5.000 facturas analizadas</span>
-    <span class="trust-badge">+250.000 € recuperados</span>
-    <span class="trust-badge">4.8/5 en satisfacción</span>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K94XRMDK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <header class="site-header" role="banner">
+    <a class="logo" href="#inicio" aria-label="TuReclamoExprés - Inicio">TuReclamoExprés</a>
+    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
+      <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+    </button>
+    <nav id="primary-nav" class="nav" role="navigation">
+      <ul class="nav-links">
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#que-ganas">Qué ganas</a></li>
+        <li><a href="#guias">Guías</a></li>
+        <li><a href="#precios">Precios</a></li>
+        <li><a href="#confianza">Confianza</a></li>
+        <li><a href="#reseñas">Reseñas</a></li>
+        <li><a href="#formulario">Subir factura</a></li>
+        <li><a href="#" id="openLegalModalLink">Legal</a></li>
+      </ul>
+    </nav>
+    <div class="header-contact">Teléfono <a href="tel:+34953818494">953 818 494</a></div>
+  </header>
+  <main id="main-content" role="main">
+    <section class="hero" id="inicio">
+      <h1>Analizamos tu factura en 24 h.</h1>
+      <p class="hero-subtitle">Solo pagas si hay cobros indebidos o abusivos.</p>
+      <div class="guarantee-box"><strong>Sin riesgo:</strong> Solo pagas si decides reclamar. La devolución va directo de tu compañía a tu cuenta.</div>
+      <a class="btn btn-primary" href="#formulario">Subir mi factura</a>
+      <div class="trust-badges">
+        <span class="trust-badge">4.8/5 en Google</span>
+        <span class="trust-badge">+250.000 € recuperados</span>
+        <span class="trust-badge">+5.000 clientes</span>
+      </div>
+    </section>
+    <section id="como-funciona" class="section-alt">
+      <h2 class="section-title">Cómo funciona en 3 pasos</h2>
+      <div class="steps">
+        <div class="step"><span class="step-icon">Subir</span><h3>1. Sube tu factura</h3><p>Por email o WhatsApp. Tarda 10 segundos.</p></div>
+        <div class="step"><span class="step-icon">Revisar</span><h3>2. Análisis en 24h</h3><p>Te decimos si pagas de más y cuánto puedes recuperar.</p></div>
+        <div class="step"><span class="step-icon">Recuperar</span><h3>3. Recupera tu dinero</h3><p>Si decides reclamar, lo gestionamos por 34,90 €. La devolución llega directo a tu cuenta.</p></div>
+      </div>
+      <a class="btn btn-primary" href="#formulario">Empezar ahora</a>
+    </section>
+    <section id="que-ganas">
+      <h2 class="section-title">Qué ganas: Ejemplos reales y testimonios</h2>
+      <p class="section-subtitle">Mira lo que recuperaron otros clientes. Facturas reales (difuminadas para privacidad).</p>
+      <div class="testimonials">
+        <div class="testimonial-card">
+          <h3 style="font-size:1.2rem;margin-bottom:.5rem;">Iberdrola – 132 € recuperados</h3>
+          <div class="testimonial-meta" style="margin-bottom:1rem;">Juan G., Jaén · Potencia mal facturada · Resuelto en 10 días</div>
+          <div style="background:linear-gradient(135deg,#f3f4f6,#e5e7eb);border:2px dashed var(--border);border-radius:10px;padding:40px 20px;margin:1rem 0;text-align:center">
+            <span style="font-size:3rem;display:block;margin-bottom:10px">Factura</span>
+            <p style="color:var(--muted);font-size:.9rem;font-style:italic">Factura Iberdrola<br><small>(Difuminada por privacidad)</small></p>
+          </div>
+          <p class="testimonial-text">"Muy rápidos y claros. Me devolvieron todo en mi factura siguiente."</p>
+          <p style="font-size:.8rem;color:#9ca3af;margin-top:.5rem">*Datos anonimizados. Comprobante disponible.</p>
+        </div>
+        <div class="testimonial-card">
+          <h3 style="font-size:1.2rem;margin-bottom:.5rem;">Naturgy – 2 meses devueltos</h3>
+          <div class="testimonial-meta" style="margin-bottom:1rem;">María P., Sevilla · Subida no informada · Resuelto en 14 días</div>
+          <div style="background:linear-gradient(135deg,#f3f4f6,#e5e7eb);border:2px dashed var(--border);border-radius:10px;padding:40px 20px;margin:1rem 0;text-align:center">
+            <span style="font-size:3rem;display:block;margin-bottom:10px">Factura</span>
+            <p style="color:var(--muted);font-size:.9rem;font-style:italic">Factura Naturgy<br><small>(Difuminada por privacidad)</small></p>
+          </div>
+          <p class="testimonial-text">"Lo gestionaron todo por mí. ¡Increíble servicio!"</p>
+          <p style="font-size:.8rem;color:#9ca3af;margin-top:.5rem">*Datos anonimizados.</p>
+        </div>
+        <div class="testimonial-card">
+          <h3 style="font-size:1.2rem;margin-bottom:.5rem;">Gas – 89 € ajustados</h3>
+          <div class="testimonial-meta" style="margin-bottom:1rem;">Pedro R., Córdoba · Estimaciones incorrectas · Ajuste inmediato</div>
+          <div style="background:linear-gradient(135deg,#f3f4f6,#e5e7eb);border:2px dashed var(--border);border-radius:10px;padding:40px 20px;margin:1rem 0;text-align:center">
+            <span style="font-size:3rem;display:block;margin-bottom:10px">Factura</span>
+            <p style="color:var(--muted);font-size:.9rem;font-style:italic">Factura Gas Natural<br><small>(Difuminada por privacidad)</small></p>
+          </div>
+          <p class="testimonial-text">"Fácil y efectivo. Recomendado 100%."</p>
+          <p style="font-size:.8rem;color:#9ca3af;margin-top:.5rem">*Datos anonimizados.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2rem"><a class="btn btn-primary" href="#formulario">Sube tu factura en 10s</a></div>
+    </section>
+    <section id="guias">
+      <h2 class="section-title">Guías prácticas para reclamar</h2>
+      <p class="section-subtitle">Aprende cómo detectar cobros indebidos y reclamar paso a paso según tu caso.</p>
+      <button class="guide-toggle" id="toggleGuides" aria-expanded="false" aria-controls="guidesWrap" aria-label="Mostrar u ocultar guías"><span>Ver guías</span><span aria-hidden="true">Down</span></button>
+      <div id="guidesWrap" class="guide-wrap" role="region" aria-label="Listado de guías prácticas">
+        <div class="inner">
+          <div class="guide-grid">
+            <div class="testimonial-card" style="text-align:left">
+              <div style="font-size:2.5rem;margin-bottom:12px">Luz</div>
+              <h3 style="margin-bottom:8px">Factura de luz</h3>
+              <p style="color:var(--muted);font-size:.95rem;margin-bottom:12px">Detecta errores en potencia contratada, peajes, excesos de facturación y aprende a reclamar tu recibo de electricidad.</p>
+              <a class="btn btn-outline" href="/factura-luz.html" style="display:inline-block;padding:10px 20px;margin:0">Ver guía completa</a>
+            </div>
+            <div class="testimonial-card" style="text-align:left">
+              <div style="font-size:2.5rem;margin-bottom:12px">Gas</div>
+              <h3 style="margin-bottom:8px">Factura de gas</h3>
+              <p style="color:var(--muted);font-size:.95rem;margin-bottom:12px">Revisa si tu compañía aplica correctamente el precio del contrato y reclama ajustes indebidos o estimaciones erróneas.</p>
+              <a class="btn btn-outline" href="/factura-gas.html" style="display:inline-block;padding:10px 20px;margin:0">Ver guía completa</a>
+            </div>
+            <div class="testimonial-card" style="text-align:left">
+              <div style="font-size:2.5rem;margin-bottom:12px">Teléfono</div>
+              <h3 style="margin-bottom:8px">Telefonía e Internet</h3>
+              <p style="color:var(--muted);font-size:.95rem;margin-bottom:12px">Reclama permanencias abusivas, subidas no informadas, servicios no contratados o cargos por SMS premium.</p>
+              <a class="btn btn-outline" href="/reclamar-telefono.html" style="display:inline-block;padding:10px 20px;margin:0">Ver guía completa</a>
+            </div>
+            <div class="testimonial-card" style="text-align:left">
+              <div style="font-size:2.5rem;margin-bottom:12px">Banco</div>
+              <h3 style="margin-bottom:8px">Banca</h3>
+              <p style="color:var(--muted);font-size:.95rem;margin-bottom:12px">Reclama comisiones abusivas, cargos no autorizados o productos contratados sin información adecuada.</p>
+              <a class="btn btn-outline" href="/reclamar-banca.html" style="display:inline-block;padding:10px 20px;margin:0">Ver guía completa</a>
+            </div>
+            <div class="testimonial-card" style="text-align:left">
+              <div style="font-size:2.5rem;margin-bottom:12px">Seguro</div>
+              <h3 style="margin-bottom:8px">Seguros</h3>
+              <p style="color:var(--muted);font-size:.95rem;margin-bottom:12px">Anula renovaciones automáticas, cobros indebidos en pólizas o servicios adicionales no contratados.</p>
+              <a class="btn btn-outline" href="/reclamar-seguro.html" style="display:inline-block;padding:10px 20px;margin:0">Ver guía completa</a>
+            </div>
+            <div class="testimonial-card" style="text-align:left">
+              <div style="font-size:2.5rem;margin-bottom:12px">Baja</div>
+              <h3 style="margin-bottom:8px">Dar de baja servicios</h3>
+              <p style="color:var(--muted);font-size:.95rem;margin-bottom:12px">Aprende a darte de baja correctamente y qué hacer si te ponen trabas o siguen cobrándote.</p>
+              <a class="btn btn-outline" href="/dar-de-baja-servicios.html" style="display:inline-block;padding:10px 20px;margin:0">Ver guía completa</a>
+            </div>
+            <div class="testimonial-card" style="text-align:left">
+              <div style="font-size:2.5rem;margin-bottom:12px">Alta no consentida</div>
+              <h3 style="margin-bottom:8px">Altas no consentidas</h3>
+              <p style="color:var(--muted);font-size:.95rem;margin-bottom:12px">Te han dado de alta en un servicio sin tu consentimiento. Aprende a reclamar y cortar los cobros.</p>
+              <a class="btn btn-outline" href="/altas-no-consentidas.html" style="display:inline-block;padding:10px 20px;margin:0">Ver guía completa</a>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:2rem">
+            <p style="color:var(--muted);margin-bottom:1rem">¿No encuentras tu caso? Envíanos tu factura y te ayudamos personalmente.</p>
+            <a class="btn btn-primary" href="#formulario">Revisar mi factura</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="precios">
+      <h2 class="section-title">Precio único y transparente</h2>
+      <p class="section-subtitle">Solo pagas si tu factura presenta cobros indebidos o abusivos. Si no hay errores, el estudio es gratuito.</p>
+      <div class="plans">
+        <div class="plan recommended">
+          <span class="badge">Servicio completo</span>
+          <h3>Reclamación gestionada</h3>
+          <div class="price">34,90 €<small style="font-size:.6em;vertical-align:super">IVA incl.</small></div>
+          <ul>
+            <li>Análisis exhaustivo de tu factura</li>
+            <li>Detección de cobros indebidos o abusivos</li>
+            <li>Reclamación automatizada con soporte RGPD</li>
+            <li>Seguimiento y gestión completa del proceso</li>
+            <li>Confirmación de acuse de recibo</li>
+          </ul>
+          <a class="btn btn-primary" href="https://buy.stripe.com/14A8wQgGmfzh93N2V38og05" target="_blank" rel="noopener">Pagar 34,90 €</a>
+        </div>
+      </div>
+      <div class="trust-badges" style="margin-top:2rem">
+        <span class="trust-badge">Pago seguro con Stripe</span>
+        <span class="trust-badge">Visa & Mastercard</span>
+        <span class="trust-badge">Sin suscripciones</span>
+      </div>
+    </section>
+    <section id="casos" class="section-alt">
+      <h2 class="section-title">Más resultados reales de clientes</h2>
+      <p class="section-subtitle">Miles de personas ya han recuperado su dinero con nosotros.</p>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="big-number">132 €</div><div class="stat-desc">Promedio recuperado por cliente</div></div>
+        <div class="stat-card"><div class="big-number">94%</div><div class="stat-desc">Tasa de éxito en reclamaciones</div></div>
+        <div class="stat-card"><div class="big-number">24 h</div><div class="stat-desc">Respuesta media inicial</div></div>
+      </div>
+      <h3 class="section-title" style="margin-top:3rem">Lo que dicen más clientes</h3>
+      <div class="testimonials">
+        <div class="testimonial-card">
+          <div class="testimonial-header"><div class="testimonial-avatar">Hombre</div><div><div class="testimonial-name">Juan G.</div><div class="testimonial-meta">Jaén • Iberdrola</div></div></div>
+          <p class="testimonial-text">"Me ayudaron a recuperar 132 € que Iberdrola me cobraba de más en potencia. Muy rápidos y claros."</p>
+          <div class="testimonial-amount">132 € recuperados • 10 días</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header"><div class="testimonial-avatar">Mujer</div><div><div class="testimonial-name">María P.</div><div class="testimonial-meta">Sevilla • Naturgy</div></div></div>
+          <p class="testimonial-text">"Reclamé a Naturgy por una subida de tarifa que no me informaron. Me devolvieron 2 meses completos."</p>
+          <div class="testimonial-amount">2 meses devueltos • 14 días</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header"><div class="testimonial-avatar">Hombre</div><div><div class="testimonial-name">Pedro R.</div><div class="testimonial-meta">Córdoba • Gas Natural</div></div></div>
+          <p class="testimonial-text">"Tenía estimaciones de consumo incorrectas. Me ajustaron 89 € de forma inmediata."</p>
+          <div class="testimonial-amount">89 € recuperados • 7 días</div>
+        </div>
+      </div>
+      <a class="btn btn-primary" href="#formulario">Quiero revisar mi factura</a>
+    </section>
+    <section id="reseñas">
+      <h2 class="section-title">Valoraciones reales de Google</h2>
+      <p class="section-subtitle">Más de 500 clientes satisfechos nos han valorado.</p>
+      <div style="margin:2rem 0"><script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script><div class="elfsight-app-d07b286e-c832-4cfa-b497-e9533c642b82" data-elfsight-app-lazy></div></div>
+      <div style="text-align:center"><a class="btn btn-outline" href="https://g.page/r/CYf0jfou4O_XEAE/review" target="_blank" rel="noopener">Ver todas las reseñas en Google</a></div>
+    </section>
+    <section id="confianza" class="section-alt">
+      <h2 class="section-title">Tu tranquilidad es nuestra prioridad</h2>
+      <div style="max-width:720px;margin:0 auto">
+        <div class="price-flow">
+          <div class="price-flow-step"><span style="font-size:2rem">Cerradura</span><div><strong>Datos protegidos (RGPD)</strong><br>Tus facturas se tratan con confidencialidad absoluta.</div></div>
+          <div class="price-flow-step"><span style="font-size:2rem">Tarjeta</span><div><strong>Pagos 100% seguros</strong><br>Procesamos todos los pagos a través de Stripe.</div></div>
+          <div class="price-flow-step"><span style="font-size:2rem">Dinero</span><div><strong>Tu dinero directo a tu cuenta</strong><br>La devolución la hace directamente tu compañía.</div></div>
+          <div class="price-flow-step"><span style="font-size:2rem">Teléfono</span><div><strong>Atención real y cercana</strong><br>Teléfono <a href="tel:+34953818494">953 818 494</a> • Email <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a></div></div>
+        </div>
+      </div>
+    </section>
+    <section id="formulario">
+      <h2 class="section-title">Sube tu factura en 10 segundos</h2>
+      <p class="section-subtitle">Análisis en 24h y sin compromiso. Te respondemos en menos de 24h.</p>
+      <div class="form-section">
+        <form id="reclamoForm" action="https://formspree.io/f/mzzvnwll" method="POST" enctype="multipart/form-data" novalidate>
+          <label for="email">Tu correo electrónico *</ *</label>
+          <input type="email" id="email" name="email" placeholder="ejemplo@email.com" required autocomplete="email">
+          <label for="factura">Sube tu factura (PDF, JPG o PNG) *</label>
+          <input type="file" id="factura" name="factura" accept=".pdf,.jpg,.jpeg,.png" required>
+          <input type="hidden" name="_subject" value="Nueva factura para revisión - TuReclamoExprés">
+          <input type="hidden" name="_next" value="https://tureclamoexpres.com/gracias.html">
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-top:1rem">Revisar mi factura</button>
+          <p class="legal-small">Al enviar, aceptas nuestra <a href="#" id="rgpdLink">Política de Privacidad</a>. Revisión sin compromiso.</p>
+          <div id="formOK" role="alert" aria-live="polite">¡Recibido! Te contactamos en menos de 24h para darte los resultados.</div>
+          <div id="formERR" role="alert" aria-live="assertive">Error al enviar. Por favor, inténtalo por WhatsApp.</div>
+        </form>
+        <div style="text-align:center;margin-top:1.5rem;padding-top:1.5rem;border-top:2px solid var(--border)">
+          <p style="color:var(--muted);margin-bottom:1rem;font-size:.95rem">¿Prefieres WhatsApp? También puedes enviarnos tu factura por ahí:</p>
+          <a class="btn btn-outline" href="https://wa.me/34953818494?text=Hola,%20quiero%20que%20revisen%20mi%20factura" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" role="contentinfo">
+    <p style="font-size:1.1rem;margin-bottom:1.5rem"><strong>TuReclamoExprés</strong> • Recupera dinero de tus facturas en 24h</p>
+    <p style="margin-bottom:1rem">Teléfono <a href="tel:+34953818494"><strong>953 818 494</strong></a> • Email <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a></p>
+    <p style="font-size:.9rem;margin:1.5rem 0"><a href="#" id="privacidadLinkFooter">Privacidad</a> • <a href="#" id="cookiesLinkFooter">Cookies</a> • <a href="#" id="condicionesLinkFooter">Condiciones</a> • <a href="#" id="avisoLegalLinkFooter">Aviso Legal</a></p>
+    <p style="font-size:.85rem;color:#9ca3af;max-width:720px;margin:1.5rem auto">© <span id="year"></span> TuReclamoExprés.com • Titular: <strong>S.A.G. Servicios Digitales</strong> • C/ Ibañez Marín, Andújar (Jaén), 23740</p>
+    <p style="font-size:.8rem;color:#9ca3af;max-width:720px;margin:1.5rem auto 2rem">Este servicio no constituye asesoramiento jurídico individualizado. Es un servicio administrativo automatizado. En casos complejos, derivamos a colaboradores externos responsables de sus propios honorarios.</p>
+    <a class="btn btn-primary" href="#formulario">Revisar mi factura</a>
+  </footer>
+  <div id="legal-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-wrap" role="document">
+      <h2 id="modal-title">Información Legal</h2>
+      <section id="modal-privacidad"><h3>Política de Privacidad</h3><p><strong>Responsable:</strong> S.A.G. Servicios Digitales</p><p><strong>Finalidad:</strong> Revisión de facturas, generación de documentos de reclamación y gestión del servicio contratado.</p><p><strong>Legitimación:</strong> Consentimiento del interesado y ejecución del contrato.</p><p><strong>Destinatarios:</strong> No se ceden datos a terceros salvo obligación legal.</p><p><strong>Derechos:</strong> Acceso, rectificación, supresión, oposición, limitación y portabilidad. Escribe a info@tureclamoexpres.com</p><p><strong>Conservación:</strong> Datos conservados durante el tiempo necesario para el servicio y obligaciones legales.</p></section>
+      <section id="modal-cookies"><h3>Política de Cookies</h3><p>Usamos cookies técnicas imprescindibles y analíticas (Google Analytics) para mejorar el servicio, previa aceptación.</p><p>Puedes configurar o bloquear cookies en tu navegador.</p></section>
+      <section id="modal-condiciones"><h3>Condiciones de Servicio</h3><p><strong>Precio:</strong> 34,90 € IVA incluido. Pago antes de la entrega mediante Stripe.</p><p><strong>Desistimiento:</strong> No aplica por contenido digital de entrega inmediata con consentimiento expreso.</p><p><strong>Garantías:</strong> Corrección gratuita de errores técnicos en documentos generados.</p></section>
+      <section id="modal-aviso"><h3>Aviso Legal</h3><p><strong>Titular:</strong> S.A.G. Servicios Digitales • Domicilio: C/ Ibañez Marín, Andújar (Jaén), 23740</p><p><strong>Email:</strong> info@tureclamoexpres.com • <strong>Teléfono:</strong> 953 818 494</p><p><strong>Actividad:</strong> Servicios digitales de revisión de facturas y generación de documentos.</p><p><strong>Importante:</strong> Servicio administrativo, no asesoramiento jurídico. En casos complejos, derivamos a colaboradores externos.</p></section>
+      <div style="margin-top:2rem;text-align:center"><button id="cerrar-legal" class="btn btn-primary" type="button">Cerrar</button></div>
+    </div>
   </div>
-  <div class="steps">
-    <div class="step"><b>1)</b> Sube tu factura o envíala por WhatsApp.</div>
-    <div class="step"><b>2)</b> Analizamos cobros, tarifas y errores.</div>
-    <div class="step"><b>3)</b> Si es reclamable, gestionamos todo por solo 34,90 € IVA incl.</div>
-  </div>
-</section>
-<section id="precios">
-  <h2>Precio único y sin letra pequeña</h2>
-  <p>Solo pagas si tu factura presenta cobros indebidos o abusivos. Si no hay errores, el estudio es 100 % gratuito.</p>
-  <div class="plan" style="background:#fff;border:1px solid #e6ecf5;border-radius:12px;padding:16px;max-width:600px;margin:1rem auto;box-shadow:0 8px 24px rgba(7,33,70,.05)">
-    <span class="badge" style="background:#003a8c;color:#fff;padding:6px 10px;border-radius:999px;font-weight:700;font-size:.85rem;">Servicio completo</span>
-    <div class="price">34,90 € IVA incl.</div>
-    <ul style="list-style:none;margin:1rem 0;padding-left:1rem;">
-      <li>Revisión y análisis completo de tu factura</li>
-      <li>Detección de cobros indebidos o abusivos</li>
-      <li>Reclamación automatizada con soporte RGPD</li>
-      <li>Asistencia personalizada durante todo el proceso</li>
-    </ul>
-    <a class="btn btn-primary" href="https://buy.stripe.com/14A8wQgGmfzh93N2V38og05" target="_blank" rel="noopener">Pagar 34,90 €</a>
-  </div>
-  <p style="text-align:center;font-size:.9rem;color:#5f6368;margin-top:10px;">Tu dinero nunca pasa por nosotros. La devolución la realiza directamente tu compañía.</p>
-</section>
-
-<section id="casos">
-  <h2>Casos reales</h2>
-  <div class="steps">
-    <div class="step"><b>Iberdrola – 132 €</b><br>Exceso en término de potencia. Reclamación aceptada en 10 días.</div>
-    <div class="step"><b>Naturgy – 2 meses devueltos</b><br>Subida no informada. Retroacción y devolución aplicadas.</div>
-    <div class="step"><b>Gas – 89 €</b><br>Lecturas estimadas mal calculadas. Ajuste inmediato y abono en factura.</div>
-  </div>
-</section>
-
-<section id="confianza">
-  <h2>Por qué confiar en TuReclamoExprés</h2>
-  <ul style="list-style:none;padding-left:1rem;">
-    <li>✔ Especialistas en luz, gas y telecomunicaciones</li>
-    <li>✔ Sin costes iniciales: pagas solo si hay reclamación</li>
-    <li>✔ Pago seguro con Stripe, Visa y Mastercard</li>
-    <li>✔ Cumplimos RGPD y LSSI al 100 %</li>
-    <li>✔ Atención directa: <a href="tel:+34953818494">953 818 494</a> · <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a></li>
-  </ul>
-</section>
-<section id="formulario">
-  <h2>Solicita tu revisión</h2>
-  <p>Cuéntanos tu caso. Te responderemos en menos de 24 horas.</p>
-  <form id="reclamoForm" action="https://formspree.io/f/mzzvnwll" method="POST">
-    <label for="nombre">Nombre completo</label>
-    <input type="text" id="nombre" name="nombre" required>
-    <label for="email">Correo electrónico</label>
-    <input type="email" id="email" name="email" required>
-    <label for="mensaje">Cuéntanos tu caso</label>
-    <textarea id="mensaje" name="mensaje" required placeholder="Indica tu compañía, mes de la factura y qué ocurrió..."></textarea>
-    <label><input type="checkbox" required> Acepto la <a href="#" id="rgpdLink">Política de Privacidad</a></label>
-    <input type="hidden" name="_subject" value="Nuevo envío – TuReclamoExprés">
-    <input type="hidden" name="_redirect" value="https://tureclamoexpres.com/gracias.html">
-    <button type="submit" class="btn btn-primary">Enviar revisión</button>
-  </form>
-  <div style="text-align:center;margin-top:20px;">
-    <a class="btn btn-outline" href="https://buy.stripe.com/14A8wQgGmfzh93N2V38og05" target="_blank" rel="noopener">Pagar 34,90 € ahora</a>
-  </div>
-</section>
-
-<footer>
-  <p>© <span id="year"></span> TuReclamoExprés.com · S.A.G. Servicios Digitales · <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a></p>
-  <p>Pago seguro con Stripe · Sin permanencias · Sin letra pequeña</p>
-</footer>
-
-<a class="fab-wa" href="https://wa.me/+34953818494?text=Hola,%20quiero%20revisar%20mi%20factura." rel="noopener">WhatsApp</a>
-<script>
-document.addEventListener('DOMContentLoaded',()=>{
-  document.getElementById('year').textContent=new Date().getFullYear();
-  const form=document.getElementById('reclamoForm');
-  form.addEventListener('submit',async e=>{
-    e.preventDefault();
-    const fd=new FormData(form);
-    const r=await fetch(form.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}});
-    if(r.ok){form.reset();alert('Formulario enviado correctamente. Te contactaremos en menos de 24h.');window.location.href=form.querySelector('input[name="_redirect"]').value;}
-    else alert('Error al enviar. Intenta de nuevo o usa WhatsApp.');
-  });
-});
-</script>
-<!-- Actualizado por ChatGPT · versión 2025-10-31 -->
+  <a class="fab-wa" href="https://wa.me/34953818494?text=Hola,%20quiero%20que%20revisen%20mi%20factura" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">WhatsApp</a>
+  <noscript><div style="background:#fee2e2;color:#991b1b;padding:16px;text-align:center;border-bottom:2px solid #ef4444">Activa JavaScript para usar el formulario y todas las funcionalidades.</div></noscript>
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{document.getElementById('year').textContent=new Date().getFullYear();const navToggle=document.querySelector('.nav-toggle'),nav=document.getElementById('primary-nav'),navLinks=nav.querySelectorAll('a');navToggle.addEventListener('click',()=>{const e=nav.classList.toggle('open');navToggle.setAttribute('aria-expanded',e),navToggle.setAttribute('aria-label',e?'Cerrar menú':'Abrir menú')});navLinks.forEach(e=>{e.addEventListener('click',()=>{nav.classList.contains('open')&&(nav.classList.remove('open'),navToggle.setAttribute('aria-expanded','false'),navToggle.setAttribute('aria-label','Abrir menú'))})});document.addEventListener('keydown',e=>{'Escape'===e.key&&nav.classList.contains('open')&&(nav.classList.remove('open'),navToggle.setAttribute('aria-expanded','false'),navToggle.setAttribute('aria-label','Abrir menú'))});const legalModal=document.getElementById('legal-modal'),abrirLegal=()=>{legalModal.style.display='flex',document.body.style.overflow='hidden'},cerrarLegal=()=>{legalModal.style.display='none',document.body.style.overflow=''};['openLegalModalLink','privacidadLinkFooter','cookiesLinkFooter','condicionesLinkFooter','avisoLegalLinkFooter','rgpdLink'].forEach(e=>{const t=document.getElementById(e);t&&t.addEventListener('click',e=>{e.preventDefault(),abrirLegal()})});document.getElementById('cerrar-legal').addEventListener('click',cerrarLegal);legalModal.addEventListener('click',e=>{e.target===legalModal&&cerrarLegal()});document.addEventListener('keydown',e=>{'Escape'===e.key&&'flex'===legalModal.style.display&&cerrarLegal()});const guideToggle=document.getElementById('toggleGuides'),guideWrap=document.getElementById('guidesWrap');if(guideToggle&&guideWrap){const e=e=>{(guideToggle.setAttribute('aria-expanded',e),guideWrap.style.maxHeight=e?guideWrap.scrollHeight+'px':'0px',guideToggle.querySelector('span:last-child').textContent=e?'Up':'Down')};e(!1),guideToggle.addEventListener('click',()=>{const t='true'!==guideToggle.getAttribute('aria-expanded');e(t)}),window.addEventListener('resize',()=>{if('true'===guideToggle.getAttribute('aria-expanded'))guideWrap.style.maxHeight=guideWrap.scrollHeight+'px'})}const form=document.getElementById('reclamoForm'),okMsg=document.getElementById('formOK'),errMsg=document.getElementById('formERR');form.addEventListener('submit',async e=>{e.preventDefault(),okMsg.style.display='none',errMsg.style.display='none';const t=document.getElementById('email').value,a=document.getElementById('factura').files[0];if(!t||!a)return void(errMsg.textContent='Por favor, completa todos los campos.',errMsg.style.display='block');const i=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;if(!i.test(t))return void(errMsg.textContent='Por favor, introduce un email válido.',errMsg.style.display='block');if(a.size>10485760)return void(errMsg.textContent='El archivo es demasiado grande. Máximo 10MB.',errMsg.style.display='block');const s=form.querySelector('button[type="submit"]'),o=s.textContent;s.disabled=!0,s.textContent='Enviando...';const n=new FormData(form);try{const e=await fetch(form.action,{method:'POST',body:n,headers:{'Accept':'application/json'}});if(e.ok){form.reset(),okMsg.style.display='block',typeof dataLayer!='undefined'&&dataLayer.push({event:'generate_lead',form_location:'formulario_principal',value:1}),setTimeout(()=>{const e=form.querySelector('input[name="_next"]').value;e&&window.location.replace(e)},2000)}else{const t=await e.json().catch(()=>null);errMsg.textContent=t?.errors?.[0]?.message?' '+t.errors[0].message:' Error al enviar. Intenta por WhatsApp.',errMsg.style.display='block'}}catch(t){console.error('Error:',t),errMsg.textContent=' Error de conexión. Intenta por WhatsApp.',errMsg.style.display='block'}finally{s.disabled=!1,s.textContent=o}});document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(e=>{e.addEventListener('click',()=>{if(typeof dataLayer!='undefined'){const t=e.closest('.plan')?.querySelector('h3')?.textContent||'unknown',a=e.closest('.plan')?.querySelector('.price')?.textContent||'0';dataLayer.push({event:'purchase_intent',plan:t,price:a})}})});document.querySelectorAll('a[href*="wa.me"]').forEach(e=>{e.addEventListener('click',()=>{typeof dataLayer!='undefined'&&dataLayer.push({event:'whatsapp_click'})})});document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener('click',t=>{const a=e.getAttribute('href');if('#'!==a&&'#!'!==a){t.preventDefault();const i=document.querySelector(a);i&&window.scrollTo({top:i.offsetTop-80,behavior:'smooth'})}})})});
+  </script>
 </body>
 </html>
