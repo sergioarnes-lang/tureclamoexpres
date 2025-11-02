@@ -9,19 +9,35 @@
   })(window,document,'script','dataLayer','GTM-K94XRMDK');</script>
   <!-- End Google Tag Manager -->
 
+  <!-- Facebook Pixel (RETARGETING) -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'TU_PIXEL_ID_AQUI'); // ← CAMBIA ESTO POR TU PIXEL ID
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=TU_PIXEL_ID_AQUI&ev=PageView&noscript=1"/></noscript>
+  <!-- End Facebook Pixel -->
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Estudio Gratuito de tu Factura en 24h | TuReclamoExprés</title>
-  <meta name="description" content="Te hacemos un estudio completo GRATIS de tu factura de luz, gas o teléfono en 24h. Descubre si pagas de más y recupera tu dinero desde 34,90€." />
-  <meta name="keywords" content="estudio factura gratis, analizar factura luz, analizar factura gas, reclamar factura, cobros indebidos, Endesa, Iberdrola, Movistar, Naturgy" />
+  <title>¿Te cobran de más? Recupera tu dinero GRATIS en 24h | TuReclamoExprés</title>
+  <meta name="description" content="Estudio GRATIS de tu factura de luz, gas o móvil. Solo pagas 39,90€ si recuperas dinero. +250.000€ devueltos." />
+  <meta name="keywords" content="reclamar factura luz, Endesa, Iberdrola, Naturgy, cobros indebidos, estudio gratis" />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#ffffff" />
   <link rel="canonical" href="https://tureclamoexpres.com/" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Estudio Gratuito de tu Factura | TuReclamoExprés" />
-  <meta property="og:description" content="Estudio completo GRATIS en 24h. Descubre si pagas de más y reclama desde 29,90€." />
+  <meta property="og:title" content="Recupera tu dinero GRATIS en 24h | TuReclamoExprés" />
+  <meta property="og:description" content="Estudio GRATIS. Solo pagas si ganas. +250.000€ recuperados." />
   <meta property="og:url" content="https://tureclamoexpres.com" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -42,7 +58,7 @@
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "TuReclamoExprés - Estudio y Gestión de Reclamaciones",
-    "description": "Estudio gratuito de facturas de luz, gas, telefonía para detectar cobros indebidos. Reclamación desde 29,90€.",
+    "description": "Estudio gratuito de facturas de luz, gas, telefonía para detectar cobros indebidos. Reclamación desde 39,90€.",
     "provider": {
       "@type": "Organization",
       "name": "S.A.G. Servicios Digitales",
@@ -66,7 +82,7 @@
   {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Guías de TuReclamoExprés",
+    "name": "Casos reales de TuReclamoExprés",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "url": "https://tureclamoexpres.com/factura-luz.html", "name": "Factura de luz" },
       { "@type": "ListItem", "position": 2, "url": "https://tureclamoexpres.com/factura-gas.html", "name": "Factura de gas" },
@@ -97,6 +113,7 @@
       --ok: #22c55e;
       --pill-bg: #eef6ff;
       --pill-border: #cfe3ff;
+      --danger: #dc2626;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -632,6 +649,85 @@
         margin: 8px 0;
       }
     }
+
+    /* CAPTURA DE INTENTO */
+    .intent-capture {
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: center;
+      display: none;
+    }
+    .intent-capture p {
+      font-weight: 700;
+      color: var(--danger);
+      margin-bottom: 12px;
+    }
+
+    /* CHAT-BOT */
+    #chat-toggle {
+      position: fixed;
+      bottom: 150px;
+      right: 16px;
+      background: #1e40af;
+      color: white;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      z-index: 999;
+      font-size: 24px;
+    }
+    #chat-container {
+      position: fixed;
+      bottom: 80px;
+      right: 16px;
+      width: 340px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      font-family: system-ui, sans-serif;
+      overflow: hidden;
+      z-index: 999;
+      display: none;
+    }
+    #chat-header {
+      background: #1e40af;
+      color: white;
+      padding: 12px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 15px;
+    }
+    #chat-body {
+      padding: 16px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .message { margin: 8px 0; }
+    .bot { text-align: left; }
+    .user { text-align: right; color: #1e40af; }
+    .btn-chat {
+      background: #e0e7ff;
+      color: #1e40af;
+      border: none;
+      padding: 10px 14px;
+      margin: 6px 0;
+      border-radius: 12px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 14px;
+      text-align: left;
+    }
+    .btn-chat:hover { background: #dbeafe; }
+    .input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 12px; margin: 8px 0; }
+
+    @media (max-width: 600px) {
+      #chat-container { width: 90%; right: 5%; }
+    }
   </style>
 </head>
 <body>
@@ -649,11 +745,10 @@
       <ul class="nav-links">
         <li><a href="#como-funciona">Cómo funciona</a></li>
         <li><a href="#que-hacemos">Qué hacemos</a></li>
-        <li><a href="#guias">Guías</a></li>
-        <li><a href="#precios">Precios</a></li>
         <li><a href="#casos">Casos reales</a></li>
+        <li><a href="#precios">Precios</a></li>
         <li><a href="#confianza">Confianza</a></li>
-        <li><a href="#formulario">Solicitar estudio</a></li>
+        <li><a href="#formulario">Estudio GRATIS</a></li>
         <li><a href="#" id="openLegalModalLink">Legales</a></li>
       </ul>
     </nav>
@@ -664,23 +759,36 @@
 
   <main id="main-content" role="main">
     <section class="hero" id="como-funciona">
-      <h1>🔍 Análisis GRATIS de tu factura en 24h</h1>
-      <p>Solo pagas <strong>34,90€</strong> si confirmamos que puedes recuperar dinero.</p>
-      <p class="trustline"><strong>Sin análisis positivo = Sin pago.</strong></p>
+      <h1>¿Te cobran de más en luz, gas o móvil?</h1>
+      <p class="trustline">Como a Juan (Jaén): <strong>132€ recuperados en 10 días</strong></p>
+
       <figure class="media-hero">
-        <img loading="lazy" decoding="async" width="640" height="360" src="hero-mujer-factura.jpg" alt="Mujer revisando una factura con alivio">
+        <picture>
+          <source srcset="hero-mujer-factura.webp" type="image/webp">
+          <img src="hero-mujer-factura.jpg" alt="Factura de 180€ → 48€ devueltos en 10 días" loading="lazy" width="640" height="360">
+        </picture>
+        <figcaption>132€ recuperados en 10 días</figcaption>
       </figure>
+
+      <div id="intent-capture" class="intent-capture">
+        <p>¿Te han cobrado de más este mes?</p>
+        <button class="btn btn-primary" onclick="captureIntent()">SÍ, ANALIZA MI FACTURA GRATIS (24h)</button>
+      </div>
+
       <div>
         <a class="btn btn-primary" href="#formulario">Solicitar estudio gratuito</a>
       </div>
+
       <p class="help" style="margin-top:14px;color:#0f5132;background:#d1fae5;border:1px solid #86efac;border-radius:10px;padding:8px 10px;">
         Análisis profesional en 24h · Datos 100% protegidos · Pago seguro
       </p>
+
       <div class="trust-badges">
         <span class="trust-badge">+5.000 facturas analizadas</span>
         <span class="trust-badge">+250.000 € recuperados</span>
         <span class="trust-badge">4.8/5 en Google</span>
       </div>
+
       <div class="steps">
         <div class="step">
           <b>1) Súbenos tu factura</b>
@@ -692,356 +800,393 @@
         </div>
         <div class="step">
           <b>3) Solo pagas si es viable</b>
-          34,90€ e iniciamos la reclamación completa.
+          39,90€ e iniciamos la reclamación completa.
         </div>
       </div>
     </section>
 
-<section id="que-hacemos" style="margin-top:8px;text-align:center">
-  <h2>Qué hacemos por ti</h2>
-  <div class="media-grid">
-    <img loading="lazy" decoding="async" width="640" height="360" src="persona-hombre-pc.jpg" alt="Asesor digital preparando una reclamación">
-  </div>
-  <button class="guide-toggle" id="toggleServicios" aria-expanded="false" aria-controls="serviciosWrap">
-    <span>Ver servicios</span><span>⌄</span>
-  </button>
-  <div id="serviciosWrap" class="guide-wrap">
-    <div class="inner">
-      <div class="services">
-        <div class="svc">
-          <h3>Estudio inicial de facturas (sin coste)</h3>
-          <p class="help">Analizamos luz, gas y telefonía. Detectamos abusos, duplicados o cargos no solicitados e indicamos si hay importe recuperable.</p>
-        </div>
-        <div class="svc">
-          <h3>Reclamaciones por cobros indebidos</h3>
-          <p class="help">Preparamos tu reclamación personalizada con base legal. En el plan único gestionamos la reclamación completa y te mantenemos informado.</p>
-        </div>
-        <div class="svc">
-          <h3>Telefonía e Internet</h3>
-          <p class="help">Penalizaciones, subidas no informadas, permanencias abusivas y cargos de terceros (SMS premium, etc.).</p>
-        </div>
-        <div class="svc">
-          <h3>Energía (luz y gas)</h3>
-          <p class="help">Revisión de potencia, peajes, ajustes y estimaciones incorrectas. Cuantificamos errores y reclamamos importes.</p>
-        </div>
-        <div class="svc">
-          <h3>Bajas complicadas y altas no consentidas</h3>
-          <p class="help">Si te ponen trabas para la baja o te han dado de alta sin consentimiento, reclamamos y cortamos continuidad.</p>
-        </div>
-        <div class="svc">
-          <h3>Seguimiento completo</h3>
-          <p class="help">Delegas todo: envío, respuestas, réplicas y recordatorios a la entidad hasta cierre del caso.</p>
-        </div>
-        <div class="svc">
-          <h3>Soporte legal externo (si procede)</h3>
-          <p class="help">Si el caso requiere abogado, derivamos con tu consentimiento a colaboradores colegiados (ellos gestionan sus honorarios).</p>
-        </div>
+    <section id="que-hacemos" style="margin-top:8px;text-align:center">
+      <h2>Qué hacemos por ti</h2>
+      <div class="media-grid">
+        <picture>
+          <source srcset="persona-hombre-pc.webp" type="image/webp">
+          <img src="persona-hombre-pc.jpg" alt="Asesor digital revisando tu factura en tiempo real" loading="lazy" width="640" height="360">
+        </picture>
       </div>
-    </div>
-  </div>
-</section>
-<section id="guias" style="margin:60px 20px;background:#fff;">
-  <div class="wrap" style="max-width:1100px;margin:0 auto">
-    <h2>Guías prácticas</h2>
-    <button class="guide-toggle" id="toggleGuides" aria-expanded="false" aria-controls="guidesWrap">
-      <span>Ver guías</span><span>›</span>
-    </button>
-    <div id="guidesWrap" class="guide-wrap">
-      <div class="inner">
-        <div class="grid grid-2" style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
-          <div class="card">
-            <h3>Factura de luz</h3>
-            <p>Detecta cobros indebidos y aprende a reclamar tu recibo de electricidad.</p>
-            <a class="btn btn-outline" href="/factura-luz.html">Ver guía</a>
-          </div>
-          <div class="card">
-            <h3>Factura de gas</h3>
-            <p>Revisa si tu compañía aplica el precio del contrato y reclama ajustes indebidos.</p>
-            <a class="btn btn-outline" href="/factura-gas.html">Ver guía</a>
-          </div>
-          <div class="card">
-            <h3>Teléfono e Internet</h3>
-            <p>Reclama permanencias abusivas, subidas no informadas o SMS premium.</p>
-            <a class="btn btn-outline" href="/reclamar-telefono.html">Ver guía</a>
-          </div>
-          <div class="card">
-            <h3>Seguros</h3>
-            <p>Anula renovaciones automáticas o cobros indebidos en pólizas.</p>
-            <a class="btn btn-outline" href="/reclamar-seguro.html">Ver guía</a>
-          </div>
-          <div class="card">
-            <h3>Banca</h3>
-            <p>Reclama comisiones abusivas o productos no contratados correctamente.</p>
-            <a class="btn btn-outline" href="/reclamar-banca.html">Ver guía</a>
-          </div>
-          <div class="card">
-            <h3>Dar de baja servicios</h3>
-            <p>Aprende a darte de baja y qué hacer si te ponen trabas.</p>
-            <a class="btn btn-outline" href="/dar-de-baja-servicios.html">Ver guía</a>
-          </div>
-          <div class="card">
-            <h3>Altas no consentidas</h3>
-            <p>Te dieron de alta sin permiso. Aprende a reclamar y cortar cobros.</p>
-            <a class="btn btn-outline" href="/altas-no-consentidas.html">Ver guía</a>
+      <button class="guide-toggle" id="toggleServicios" aria-expanded="false" aria-controls="serviciosWrap">
+        <span>Ver servicios</span><span>⌄</span>
+      </button>
+      <div id="serviciosWrap" class="guide-wrap">
+        <div class="inner">
+          <div class="services">
+            <div class="svc">
+              <h3>Estudio inicial de facturas (sin coste)</h3>
+              <p class="help">Analizamos luz, gas y telefonía. Detectamos abusos, duplicados o cargos no solicitados e indicamos si hay importe recuperable.</p>
+            </div>
+            <div class="svc">
+              <h3>Reclamaciones por cobros indebidos</h3>
+              <p class="help">Preparamos tu reclamación personalizada con base legal. En el plan único gestionamos la reclamación completa y te mantenemos informado.</p>
+            </div>
+            <div class="svc">
+              <h3>Telefonía e Internet</h3>
+              <p class="help">Penalizaciones, subidas no informadas, permanencias abusivas y cargos de terceros (SMS premium, etc.).</p>
+            </div>
+            <div class="svc">
+              <h3>Energía (luz y gas)</h3>
+              <p class="help">Revisión de potencia, peajes, ajustes y estimaciones incorrectas. Cuantificamos errores y reclamamos importes.</p>
+            </div>
+            <div class="svc">
+              <h3>Bajas complicadas y altas no consentidas</h3>
+              <p class="help">Si te ponen trabas para la baja o te han dado de alta sin consentimiento, reclamamos y cortamos continuidad.</p>
+            </div>
+            <div class="svc">
+              <h3>Seguimiento completo</h3>
+              <p class="help">Delegas todo: envío, respuestas, réplicas y recordatorios a la entidad hasta cierre del caso.</p>
+            </div>
+            <div class="svc">
+              <h3>Soporte legal externo (si procede)</h3>
+              <p class="help">Si el caso requiere abogado, derivamos con tu consentimiento a colaboradores colegiados (ellos gestionan sus honorarios).</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="precios">
-  <h2>Precio único: 34,90 €</h2>
-  <p class="help" style="margin:.25rem 0 .75rem">Análisis GRATIS · Solo pagas si es viable · IVA incluido</p>
+    <section id="casos" style="margin-top:60px;">
+      <h2>Casos reales (resumen)</h2>
+      <div class="casos-media">
+        <picture>
+          <source srcset="persona-familia.webp" type="image/webp">
+          <img src="persona-familia.jpg" alt="Familia celebrando devolución de 132€" loading="lazy" width="640" height="360">
+        </picture>
+      </div>
+      <div class="testimonials">
+        <div class="case-card">
+          <h3>Iberdrola – 132€ recuperados</h3>
+          <div class="case-meta">Juan G. · Jaén · Potencia mal facturada · 10 días</div>
+          <p>Detectamos exceso en término de potencia. Reclamación presentada y aceptada; devolución aplicada en la siguiente factura.</p>
+          <p class="legal-note">*Datos anonimizados. Comprobantes disponibles bajo solicitud.</p>
+        </div>
+        <div class="case-card">
+          <h3>Naturgy – 2 meses devueltos</h3>
+          <div class="case-meta">María P. · Sevilla · Subida no informada · 14 días</div>
+          <p>Subida unilateral sin notificación válida. Se exigió retroacción de tarifas y devolución de las mensualidades afectadas.</p>
+          <p class="legal-note">*Datos anonimizados. Comprobantes disponibles bajo solicitud.</p>
+        </div>
+        <div class="case-card">
+          <h3>Gas – 89€ de ajuste</h3>
+          <div class="case-meta">Pedro R. · Córdoba · Estimaciones incorrectas · Ajuste inmediato</div>
+          <p>Estimaciones por encima del consumo real. La compañía corrigió lecturas y abonó el exceso en el ciclo siguiente.</p>
+          <p class="legal-note">*Datos anonimizados.</p>
+        </div>
+      </div>
+    </section>
 
-  <div class="plans">
-    <div class="plan recommended">
-      <span class="badge">Análisis + Reclamación</span>
-      <div class="price">34,90 €</div>
-      <ul style="margin-left:1rem;">
-        <li>✅ Estudio completo GRATIS</li>
-        <li>✅ Solo pagas si detectamos cobros indebidos</li>
-        <li>✅ Gestión completa de la reclamación</li>
-        <li>✅ Seguimiento hasta devolución</li>
+    <section id="precios">
+      <h2>Precio único: 39,90 €</h2>
+      <p class="help" style="margin:.25rem 0 .75rem">Análisis GRATIS · Solo pagas si es viable · IVA incluido</p>
+
+      <div class="plans">
+        <div class="plan recommended">
+          <span class="badge">Análisis + Reclamación</span>
+          <div class="price">39,90 €</div>
+          <ul style="margin-left:1rem;">
+            <li>Estudio completo GRATIS</li>
+            <li>Solo pagas si detectamos cobros indebidos</li>
+            <li>Gestión completa de la reclamación</li>
+            <li>Seguimiento hasta devolución</li>
+          </ul>
+          <p class="help" style="margin:.4rem 0 0">Si tu factura está correcta, NO PAGAS NADA.</p>
+
+          <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+          <stripe-buy-button
+            buy-button-id="buy_btn_1SOzcuLXhlWzsxWuMDaMWXiB"
+            publishable-key="pk_live_51Rtv7zLXhlWzsxWuJeZjbKXpizsO4Yu4x8RbbiEBnxPV8VphMjiDPnp5KLUUP8wpGPYB5FIF7HnVvf5MtLHWfA2p00YO3wuRO7">
+          </stripe-buy-button>
+
+          <div class="trust-badges">
+            <span class="trust-badge">Stripe</span>
+            <span class="trust-badge">Visa</span>
+            <span class="trust-badge">Mastercard</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="help" style="margin-top:.75rem;font-size:0.98rem;color:var(--text);">
+        Tu dinero <strong>nunca</strong> pasa por nosotros: la devolución la realiza siempre tu compañía directamente en tu cuenta o factura.
+      </p>
+
+      <p class="help" style="margin-top:.75rem;font-size:.9rem;color:var(--muted);">
+        Servicio administrativo y automatizado; no constituye asesoramiento jurídico individualizado ni representación letrada.
+        Si tu caso requiere abogado, podremos derivarte con tu consentimiento a <strong>colaboradores externos, colegiados y responsables de sus honorarios</strong>.
+      </p>
+    </section>
+
+    <section class="banner-lock">
+      <img class="payment-lock" loading="lazy" decoding="async" width="120" height="80" src="logo-seguridad-pago.jpg" alt="Pago seguro con Stripe">
+    </section>
+
+    <section id="reseñas" style="margin-top:60px;text-align:center">
+      <h2>Opiniones reales de nuestros clientes</h2>
+      <p class="help" style="margin-bottom:1rem;">Valoración media 4.8/5 ⭐⭐⭐⭐⭐</p>
+      <script defer async src="https://cdn.trustindex.io/loader.js?feb5eba57f7640456686ac656ca"></script>
+    </section>
+
+    <section id="confianza">
+      <h2>Por qué confiar en TuReclamoExprés</h2>
+      <ul>
+        <li>Especialistas en luz, gas y telecomunicaciones.</li>
+        <li>Precios cerrados: sabes lo que pagas desde el inicio.</li>
+        <li>Estudio inicial en 24–48h y diagnóstico claro.</li>
+        <li>Datos protegidos (RGPD) y pago seguro con Stripe, Visa y Mastercard.</li>
+        <li>Atención al cliente: <a href="tel:+34953818494">953 818 494</a> · <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a></li>
+        <li>Tu dinero siempre va directo a ti: la devolución la hace tu compañía en tu cuenta o factura.</li>
       </ul>
-      <p class="help" style="margin:.4rem 0 0">Si tu factura está correcta, NO PAGAS NADA.</p>
-
-      <!-- Botón Stripe nuevo -->
-      <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-      <stripe-buy-button
-        buy-button-id="buy_btn_1SOHZ0LXhlWzsxWuKABdHiLN"
-        publishable-key="pk_live_51Rtv7zLXhlWzsxWuJeZjbKXpizsO4Yu4x8RbbiEBnxPV8VphMjiDPnp5KLUUP8wpGPYB5FIF7HnVvf5MtLHWfA2p00YO3wuRO7">
-      </stripe-buy-button>
-
       <div class="trust-badges">
-        <span class="trust-badge">Stripe</span>
-        <span class="trust-badge">Visa</span>
-        <span class="trust-badge">Mastercard</span>
+        <span class="trust-badge">100% Seguro</span>
+        <span class="trust-badge">4.8/5 en Google</span>
+        <span class="trust-badge">+250.000€ recuperados</span>
+      </div>
+    </section>
+
+    <section id="formulario" style="margin-top:60px;">
+      <h2>Solicita tu estudio gratuito</h2>
+      <form id="reclamoForm" action="https://formspree.io/f/mqkrwkqe" method="POST">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="_replyto" placeholder="Correo electrónico" required>
+
+        <label for="mensaje">Cuéntanos tu caso</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Factura alta, corte injusto, cambio sin permiso…" required></textarea>
+
+        <p class="help">Puedes adjuntar la factura enviándola a <strong>info@tureclamoexpres.com</strong>.</p>
+
+        <label>
+          <input type="checkbox" name="privacidad" required> Acepto la <a href="#" id="openLegalModalLink2">Política de Privacidad</a>
+        </label>
+
+        <button class="btn btn-primary" type="submit">Solicitar estudio gratuito</button>
+
+        <p id="formOK">Enviado correctamente</p>
+        <p id="formERR">Error al enviar</p>
+      </form>
+    </section>
+
+    <a class="fab-wa" href="https://wa.me/34695818494" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+
+    <!-- CHAT-BOT AUTÓNOMO -->
+    <div id="chat-toggle">Chat</div>
+    <div id="chat-container">
+      <div id="chat-header">Asesor Reclamaciones</div>
+      <div id="chat-body"></div>
+    </div>
+
+    <footer class="footer">
+      <p>© 2025 <strong>TuReclamoExprés.com</strong> · Titular de la web: <strong>S.A.G. Servicios Digitales</strong></p>
+      <p>
+        <a href="#" id="openLegalModalLink3">Privacidad</a> ·
+        <a href="#" id="openLegalModalLink4">Cookies</a> ·
+        <a href="#" id="openLegalModalLink5">Condiciones</a> ·
+        <a href="#" id="openLegalModalLink6">Aviso legal</a> ·
+        <a href="tel:+34953818494">953 818 494</a> ·
+        <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a>
+      </p>
+      <p class="help">Pago seguro con Stripe · Sin permanencias · Sin letra pequeña</p>
+    </footer>
+
+    <!-- MODAL LEGAL -->
+    <div id="legal-modal" role="dialog" aria-modal="true" aria-labelledby="legal-title">
+      <div class="modal-wrap">
+        <h2 id="legal-title">Políticas legales</h2>
+        <div class="modal-toplinks">
+          <a href="#privacidad" class="chip">Privacidad</a>
+          <a href="#cookies" class="chip">Cookies</a>
+          <a href="#condiciones" class="chip">Condiciones</a>
+          <a href="#aviso" class="chip">Aviso Legal</a>
+        </div>
+        <section id="privacidad">
+          <h3>Política de Privacidad</h3>
+          <p>En virtud del RGPD y la LOPDGDD, los datos que los usuarios remitan vía formularios, correo o servicios vinculados se tratarán con la finalidad de revisión gratuita de facturas, elaboración de diagnósticos preliminares y, en su caso, generación y entrega de documentos automatizados.</p>
+          <p><strong>Responsable:</strong> S.A.G. Servicios Digitales, email info@tureclamoexpres.com.</p>
+          <p>No se cederán datos a terceros salvo obligación legal o necesidad técnica. Derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad mediante solicitud al correo indicado.</p>
+        </section>
+
+        <section id="cookies">
+          <h3>Política de Cookies</h3>
+          <p>Este sitio utiliza únicamente cookies técnicas imprescindibles. Puntualmente podrían usarse cookies analíticas de terceros (p. ej., Google Analytics) previo consentimiento del usuario. Puedes bloquear o eliminar cookies en tu navegador; algunas funciones podrían verse limitadas.</p>
+        </section>
+
+        <section id="condiciones">
+          <h3>Condiciones de Servicio</h3>
+          <p>El acceso al sitio implica la aceptación de estas condiciones. El servicio consiste en la revisión inicial gratuita, identificación de cobros indebidos y, en su caso, generación de documentos automatizados que el usuario puede enviar por sí mismo o autorizar su envío por <strong>39,90€</strong>.</p>
+          <p>La prestación es administrativa y automatizada; no constituye asesoramiento jurídico individualizado ni representación letrada. Precios IVA incluido, pago a través de Stripe. Al ser contenido digital de entrega inmediata, no aplica derecho de desistimiento (art. 103.m TRLGDCU), sin perjuicio de reembolso por incidencias técnicas.</p>
+        </section>
+
+        <section id="aviso">
+          <h3>Aviso Legal</h3>
+          <p>TuReclamoExprés se ofrece a título particular. Los datos identificativos se muestran en cumplimiento de la Ley 34/2002 (LSSI).</p>
+          <p>Este sitio es titularidad de <strong>S.A.G. Servicios Digitales</strong>. Objeto: información general y modelos automatizados de reclamación, sin que ello suponga asesoramiento jurídico ni representación letrada.</p>
+          <p>En supuestos que requieran intervención de abogado, podremos derivar con consentimiento expreso del usuario a abogados colaboradores externos, colegiados y responsables de sus honorarios y actuaciones.</p>
+          <p>A efectos meramente identificativos y de contacto interno del titular del proyecto, se hace constar que <strong>Sergio Arnés Gómez</strong>, DNI 78687563D, C/ Ibañez Marín, Andújar (Jaén), C.P. 23740, participa en la coordinación operativa del servicio, dejando claro que cualquier controversia se someterá a los Juzgados y Tribunales de Jaén, salvo lo dispuesto por normativa de consumidores.</p>
+        </section>
+
+        <button class="btn btn-outline" id="closeLegalModal">Cerrar</button>
       </div>
     </div>
-  </div>
 
-  <p class="help" style="margin-top:.75rem;font-size:0.98rem;color:var(--text);">
-    Tu dinero <strong>nunca</strong> pasa por nosotros: la devolución la realiza siempre tu compañía directamente en tu cuenta o factura.
-  </p>
-
-  <p class="help" style="margin-top:.75rem;font-size:.9rem;color:var(--muted);">
-    Servicio administrativo y automatizado; no constituye asesoramiento jurídico individualizado ni representación letrada.
-    Si tu caso requiere abogado, podremos derivarte con tu consentimiento a <strong>colaboradores externos, colegiados y responsables de sus honorarios</strong>.
-  </p>
-</section>
-
-<section class="banner-lock">
-  <img class="payment-lock" loading="lazy" decoding="async" width="120" height="80" src="logo-seguridad-pago.jpg" alt="Pago seguro con Stripe">
-</section>
-<section id="casos" style="margin-top:60px;">
-<h2>Casos reales (resumen)</h2>
-<div class="casos-media">
-  <img loading="lazy" decoding="async" width="640" height="360" src="persona-familia.jpg" alt="Familia celebrando devolución de dinero">
-  
-  </div>
-  <div class="testimonials">
-    <div class="case-card">
-      <h3>Iberdrola – 132€ recuperados</h3>
-      <div class="case-meta">Juan G. · Jaén · Potencia mal facturada · 10 días</div>
-      <p>Detectamos exceso en término de potencia. Reclamación presentada y aceptada; devolución aplicada en la siguiente factura.</p>
-      <p class="legal-note">*Datos anonimizados. Comprobantes disponibles bajo solicitud.</p>
+    <!-- POPUP DE SALIDA -->
+    <div id="exit-popup" class="exit-popup">
+      <div class="exit-popup-content">
+        <h2>¡No pierdas tu estudio gratuito!</h2>
+        <p>Envía tu factura ahora y descubre GRATIS si puedes recuperar dinero en 24–48h.</p>
+        <a href="#formulario" class="btn btn-primary">Solicitar estudio</a>
+        <button id="closeExitPopup" class="btn btn-outline">Cerrar</button>
+      </div>
     </div>
-    <div class="case-card">
-      <h3>Naturgy – 2 meses devueltos</h3>
-      <div class="case-meta">María P. · Sevilla · Subida no informada · 14 días</div>
-      <p>Subida unilateral sin notificación válida. Se exigió retroacción de tarifas y devolución de las mensualidades afectadas.</p>
-      <p class="legal-note">*Datos anonimizados. Comprobantes disponibles bajo solicitud.</p>
-    </div>
-    <div class="case-card">
-      <h3>Gas – 89€ de ajuste</h3>
-      <div class="case-meta">Pedro R. · Córdoba · Estimaciones incorrectas · Ajuste inmediato</div>
-      <p>Estimaciones por encima del consumo real. La compañía corrigió lecturas y abonó el exceso en el ciclo siguiente.</p>
-      <p class="legal-note">*Datos anonimizados.</p>
-    </div>
-  </div>
-</section>
 
-</section> <!-- cierre de la sección de Casos reales -->
+    <!-- SCRIPTS -->
+    <script>
+      const navToggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.nav');
+      navToggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+      });
 
-<!-- SECCIÓN DE RESEÑAS REALES TRUSTINDEX -->
-<section id="reseñas" style="margin-top:60px;text-align:center">
-  <h2>Opiniones reales de nuestros clientes</h2>
-  <p class="help" style="margin-bottom:1rem;">Valoración media 4.8/5 ⭐⭐⭐⭐⭐</p>
-  <!-- WIDGET TRUSTINDEX -->
-  <script defer async src="https://cdn.trustindex.io/loader.js?feb5eba57f7640456686ac656ca"></script>
-  <!-- FIN WIDGET -->
-</section>
-<!-- FIN DE SECCIÓN DE RESEÑAS -->
+      const toggleServicios = document.getElementById('toggleServicios');
+      const serviciosWrap = document.getElementById('serviciosWrap');
+      toggleServicios.addEventListener('click', () => {
+        serviciosWrap.style.maxHeight = serviciosWrap.style.maxHeight ? null : serviciosWrap.scrollHeight + "px";
+      });
 
+      // Modal legal
+      const legalModal = document.getElementById('legal-modal');
+      const openLegalLinks = document.querySelectorAll('#openLegalModalLink, #openLegalModalLink2, #openLegalModalLink3, #openLegalModalLink4, #openLegalModalLink5, #openLegalModalLink6');
+      const closeLegalModal = document.getElementById('closeLegalModal');
+      openLegalLinks.forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          legalModal.style.display = 'flex';
+        });
+      });
+      closeLegalModal.addEventListener('click', () => legalModal.style.display = 'none');
+      window.addEventListener('click', e => {
+        if (e.target === legalModal) legalModal.style.display = 'none';
+      });
 
-<section id="confianza">
-  <h2>Por qué confiar en TuReclamoExprés</h2>
-  <ul>
-    <li>Especialistas en luz, gas y telecomunicaciones.</li>
-    <li>Precios cerrados: sabes lo que pagas desde el inicio.</li>
-    <li>Estudio inicial en 24–48h y diagnóstico claro.</li>
-    <li>Datos protegidos (RGPD) y pago seguro con Stripe, Visa y Mastercard.</li>
-    <li>Atención al cliente: <a href="tel:+34953818494">953 818 494</a> · <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a></li>
-    <li>Tu dinero siempre va directo a ti: la devolución la hace tu compañía en tu cuenta o factura.</li>
-  </ul>
-  <div class="trust-badges">
-    <span class="trust-badge">100% Seguro</span>
-    <span class="trust-badge">4.8/5 en Google</span>
-    <span class="trust-badge">+250.000€ recuperados</span>
-  </div>
-</section>
+      // Popup de salida
+      const exitPopup = document.getElementById('exit-popup');
+      const closeExitPopup = document.getElementById('closeExitPopup');
+      let popupShown = false;
+      document.addEventListener('mouseout', e => {
+        if (e.clientY < 10 && !popupShown) {
+          exitPopup.style.display = 'flex';
+          popupShown = true;
+        }
+      });
+      closeExitPopup.addEventListener('click', () => exitPopup.style.display = 'none');
 
-<section id="formulario" style="margin-top:60px;">
-  <h2>Solicita tu estudio gratuito</h2>
-  <form id="reclamoForm" action="https://formspree.io/f/mqkrwkqe" method="POST">
-    <label for="nombre">Nombre completo</label>
-    <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+      // Formulario
+      const form = document.getElementById('reclamoForm');
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+        if (res.ok) {
+          document.getElementById('formOK').style.display = 'block';
+          form.reset();
+        } else {
+          document.getElementById('formERR').style.display = 'block';
+        }
+      });
 
-    <label for="email">Correo electrónico</label>
-    <input type="email" id="email" name="_replyto" placeholder="Correo electrónico" required>
+      // CAPTURA DE INTENTO EN 3s
+      setTimeout(() => {
+        document.getElementById('intent-capture').style.display = 'block';
+      }, 3000);
 
-    <label for="mensaje">Cuéntanos tu caso</label>
-    <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos tu caso (compañía, mes de la factura, problema detectado…)" required></textarea>
+      function captureIntent() {
+        gtag('event', 'intent_capture', { source: 'hero_3s' });
+        document.getElementById('formulario').scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('mensaje').value = 'Quiero analizar mi factura (cobro indebido)';
+      }
 
-    <p class="help">Puedes adjuntar la factura enviándola a <strong>info@tureclamoexpres.com</strong>.</p>
+      // CHAT-BOT AUTÓNOMO
+      const chatBody = document.getElementById('chat-body');
+      const chatContainer = document.getElementById('chat-container');
+      let userEmail = '', userIssue = '';
 
-    <label>
-      <input type="checkbox" name="privacidad" required> Acepto la <a href="#" id="openLegalModalLink2">Política de Privacidad</a>
-    </label>
+      function toggleChat() {
+        chatContainer.style.display = chatContainer.style.display === 'block' ? 'none' : 'block';
+        if (chatBody.children.length === 0) startChat();
+      }
 
-    <button class="btn btn-primary" type="submit">Solicitar estudio gratuito</button>
+      document.getElementById('chat-toggle').addEventListener('click', toggleChat);
 
-    <p id="formOK">Enviado correctamente</p>
-    <p id="formERR">Error al enviar</p>
-  </form>
-</section>
+      function startChat() {
+        addBotMessage("¿Te han cobrado de más en luz, gas o móvil?");
+        addButton("Sí, ayúdame");
+      }
 
-<a class="fab-wa" href="https://wa.me/34695818494" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
-<footer class="footer">
-  <p>© 2025 <strong>TuReclamoExprés.com</strong> · Titular de la web: <strong>S.A.G. Servicios Digitales</strong></p>
-  <p>
-    <a href="#" id="openLegalModalLink3">Privacidad</a> ·
-    <a href="#" id="openLegalModalLink4">Cookies</a> ·
-    <a href="#" id="openLegalModalLink5">Condiciones</a> ·
-    <a href="#" id="openLegalModalLink6">Aviso legal</a> ·
-    <a href="tel:+34953818494">953 818 494</a> ·
-    <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a>
-  </p>
-  <p class="help">Pago seguro con Stripe · Sin permanencias · Sin letra pequeña</p>
-</footer>
+      function addBotMessage(text) {
+        const msg = document.createElement('div'); msg.className = 'message bot';
+        msg.innerHTML = `<small>Asesor</small> ${text}`; chatBody.appendChild(msg); scrollChat();
+      }
 
-<!-- MODAL LEGAL -->
-<div id="legal-modal" role="dialog" aria-modal="true" aria-labelledby="legal-title">
-  <div class="modal-wrap">
-    <h2 id="legal-title">Políticas legales</h2>
-    <div class="modal-toplinks">
-      <a href="#privacidad" class="chip">Privacidad</a>
-      <a href="#cookies" class="chip">Cookies</a>
-      <a href="#condiciones" class="chip">Condiciones</a>
-      <a href="#aviso" class="chip">Aviso Legal</a>
-    </div>
-    <section id="privacidad">
-      <h3>Política de Privacidad</h3>
-      <p>En virtud del RGPD y la LOPDGDD, los datos que los usuarios remitan vía formularios, correo o servicios vinculados se tratarán con la finalidad de revisión gratuita de facturas, elaboración de diagnósticos preliminares y, en su caso, generación y entrega de documentos automatizados.</p>
-      <p><strong>Responsable:</strong> S.A.G. Servicios Digitales, email info@tureclamoexpres.com.</p>
-      <p>No se cederán datos a terceros salvo obligación legal o necesidad técnica. Derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad mediante solicitud al correo indicado.</p>
-    </section>
+      function addUserMessage(text) {
+        const msg = document.createElement('div'); msg.className = 'message user';
+        msg.innerHTML = `<small>Tú</small> ${text}`; chatBody.appendChild(msg); scrollChat();
+      }
 
-    <section id="cookies">
-      <h3>Política de Cookies</h3>
-      <p>Este sitio utiliza únicamente cookies técnicas imprescindibles. Puntualmente podrían usarse cookies analíticas de terceros (p. ej., Google Analytics) previo consentimiento del usuario. Puedes bloquear o eliminar cookies en tu navegador; algunas funciones podrían verse limitadas.</p>
-    </section>
+      function addButton(text) {
+        const btn = document.createElement('button'); btn.className = 'btn-chat';
+        btn.textContent = text; btn.onclick = () => handleStep(text); chatBody.appendChild(btn);
+      }
 
-    <section id="condiciones">
-      <h3>Condiciones de Servicio</h3>
-      <p>El acceso al sitio implica la aceptación de estas condiciones. El servicio consiste en la revisión inicial gratuita, identificación de cobros indebidos y, en su caso, generación de documentos automatizados que el usuario puede enviar por sí mismo o autorizar su envío por <strong>34,90€</strong>.</p>
-      <p>La prestación es administrativa y automatizada; no constituye asesoramiento jurídico individualizado ni representación letrada. Precios IVA incluido, pago a través de Stripe. Al ser contenido digital de entrega inmediata, no aplica derecho de desistimiento (art. 103.m TRLGDCU), sin perjuicio de reembolso por incidencias técnicas.</p>
-    </section>
+      function addInput(placeholder, callback) {
+        const input = document.createElement('input'); input.className = 'input'; input.placeholder = placeholder;
+        input.onkeypress = (e) => { if (e.key === 'Enter') callback(input.value); };
+        const sendBtn = document.createElement('button'); sendBtn.textContent = 'Enviar'; sendBtn.onclick = () => callback(input.value);
+        chatBody.appendChild(input); chatBody.appendChild(sendBtn); scrollChat();
+      }
 
-    <section id="aviso">
-      <h3>Aviso Legal</h3>
-      <p>TuReclamoExprés se ofrece a título particular. Los datos identificativos se muestran en cumplimiento de la Ley 34/2002 (LSSI).</p>
-      <p>Este sitio es titularidad de <strong>S.A.G. Servicios Digitales</strong>. Objeto: información general y modelos automatizados de reclamación, sin que ello suponga asesoramiento jurídico ni representación letrada.</p>
-      <p>En supuestos que requieran intervención de abogado, podremos derivar con consentimiento expreso del usuario a abogados colaboradores externos, colegiados y responsables de sus honorarios y actuaciones.</p>
-      <p>A efectos meramente identificativos y de contacto interno del titular del proyecto, se hace constar que <strong>Sergio Arnés Gómez</strong>, DNI 78687563D, C/ Ibañez Marín, Andújar (Jaén), C.P. 23740, participa en la coordinación operativa del servicio, dejando claro que cualquier controversia se someterá a los Juzgados y Tribunales de Jaén, salvo lo dispuesto por normativa de consumidores.</p>
-    </section>
+      function scrollChat() {
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }
 
-    <button class="btn btn-outline" id="closeLegalModal">Cerrar</button>
-  </div>
-</div>
+      function handleStep(response) {
+        if (response === "Sí, ayúdame") {
+          addUserMessage("Sí, ayúdame");
+          addBotMessage("¿Qué te ha pasado?");
+          addButton("Factura más alta");
+          addButton("Corte sin motivo");
+          addButton("Cambio sin permiso");
+          return;
+        }
+        if (["Factura más alta", "Corte sin motivo", "Cambio sin permiso"].includes(response)) {
+          addUserMessage(response); userIssue = response;
+          addBotMessage("Te envío el estudio GRATIS en 24h. ¿Tu email?");
+          addInput("tuemail@ejemplo.com", (email) => {
+            if (!email.includes('@')) return alert('Email válido');
+            userEmail = email; addUserMessage(email);
+            addBotMessage("Estudio enviado. ¿Quieres que lo reclamemos? Solo pagas si ganas.");
+            const btn = document.createElement('button'); btn.className = 'btn-chat'; btn.style.background = '#10b981'; btn.style.color = 'white';
+            btn.textContent = 'Sí, reclamad por mí (39,90€)'; btn.onclick = () => {
+              window.location = `https://buy.stripe.com/buy_btn_1SOzcuLXhlWzsxWuMDaMWXiB?prefilled_email=${userEmail}&client_reference_id=${userIssue}`;
+            };
+            chatBody.appendChild(btn);
+          });
+        }
+      }
 
-<!-- POPUP DE SALIDA -->
-<div id="exit-popup" class="exit-popup">
-  <div class="exit-popup-content">
-    <h2>¡No pierdas tu estudio gratuito!</h2>
-    <p>Envía tu factura ahora y descubre GRATIS si puedes recuperar dinero en 24–48h.</p>
-    <a href="#formulario" class="btn btn-primary">Solicitar estudio</a>
-    <button id="closeExitPopup" class="btn btn-outline">Cerrar</button>
-  </div>
-</div>
-
-<!-- SCRIPTS -->
-<script>
-  const navToggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.nav');
-  navToggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
-  });
-
-  const toggleServicios = document.getElementById('toggleServicios');
-  const serviciosWrap = document.getElementById('serviciosWrap');
-  toggleServicios.addEventListener('click', () => {
-    serviciosWrap.style.maxHeight = serviciosWrap.style.maxHeight ? null : serviciosWrap.scrollHeight + "px";
-  });
-
-  const toggleGuides = document.getElementById('toggleGuides');
-  const guidesWrap = document.getElementById('guidesWrap');
-  toggleGuides.addEventListener('click', () => {
-    guidesWrap.style.maxHeight = guidesWrap.style.maxHeight ? null : guidesWrap.scrollHeight + "px";
-  });
-
-  // Modal legal
-  const legalModal = document.getElementById('legal-modal');
-  const openLegalLinks = document.querySelectorAll('#openLegalModalLink, #openLegalModalLink2, #openLegalModalLink3, #openLegalModalLink4, #openLegalModalLink5, #openLegalModalLink6');
-  const closeLegalModal = document.getElementById('closeLegalModal');
-  openLegalLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      legalModal.style.display = 'flex';
-    });
-  });
-  closeLegalModal.addEventListener('click', () => legalModal.style.display = 'none');
-  window.addEventListener('click', e => {
-    if (e.target === legalModal) legalModal.style.display = 'none';
-  });
-
-  // Popup de salida
-  const exitPopup = document.getElementById('exit-popup');
-  const closeExitPopup = document.getElementById('closeExitPopup');
-  let popupShown = false;
-  document.addEventListener('mouseout', e => {
-    if (e.clientY < 10 && !popupShown) {
-      exitPopup.style.display = 'flex';
-      popupShown = true;
-    }
-  });
-  closeExitPopup.addEventListener('click', () => exitPopup.style.display = 'none');
-
-  // Formulario
-  const form = document.getElementById('reclamoForm');
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    const data = new FormData(form);
-    const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-    if (res.ok) {
-      document.getElementById('formOK').style.display = 'block';
-      form.reset();
-    } else {
-      document.getElementById('formERR').style.display = 'block';
-    }
-  });
-</script>
-
-</body>
+      // ABRIR CHAT EN 5s
+      setTimeout(() => {
+        if (chatBody.children.length === 0) {
+          toggleChat();
+          startChat();
+        }
+      }, 5000);
+    </script>
+  </body>
 </html>
