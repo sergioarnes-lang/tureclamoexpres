@@ -779,13 +779,10 @@
     <nav id="primary-nav" class="nav" role="navigation" aria-label="Navegación principal">
       <ul class="nav-links">
         <li><a href="#como-funciona" aria-current="page">Cómo funciona</a></li>
-        <li><a href="#que-hacemos">Qué hacemos</a></li>
-        <li><a href="#guias">Guías</a></li>
         <li><a href="#precios">Precios</a></li>
-        <li><a href="#casos">Casos reales</a></li>
-        <li><a href="#reseñas">Reseñas</a></li>
-        <li><a href="#confianza">Confianza</a></li>
+        <li><a href="#guias">Guías</a></li>
         <li><a href="#formulario">Enviar factura</a></li>
+        <li><a href="/whatsapp.html">WhatsApp</a></li>
         <li><a href="#" id="openLegalModalLink">Legales</a></li>
       </ul>
     </nav>
@@ -1073,24 +1070,8 @@
     </section>
   </main>
   <footer class="footer" role="contentinfo">
-    <p>
-      © <span id="year"></span> TuReclamoExprés.com ·
-      Titular de la web: <strong>S.A.G. Servicios Digitales</strong> ·
-      <a href="#" id="privacidadLinkFooter" aria-label="Ver política de privacidad">Privacidad</a> ·
-      <a href="#" id="cookiesLinkFooter" aria-label="Ver política de cookies">Cookies</a> ·
-      <a href="#" id="condicionesLinkFooter" aria-label="Ver condiciones de servicio">Condiciones</a> ·
-      <a href="#" id="avisoLegalLinkFooter" aria-label="Ver aviso legal">Aviso legal</a> ·
-      📞 <a href="tel:+34953818494" aria-label="Llamar al 953 818 494">953 818 494</a> ·
-      ✉️ <a href="mailto:info@tureclamoexpres.com" aria-label="Enviar email a info@tureclamoexpres.com">info@tureclamoexpres.com</a> ·
-      ⭐ <a href="https://g.page/r/CYf0jfou4O_XEAE/review" target="_blank" rel="noopener" aria-label="Ver reseñas en Google">Reseñas en Google</a>
-    </p>
-    <div style="text-align:center;margin-top:1.5rem;">
-      <p class="help">🔒 Pago seguro con Stripe · Sin permanencias · Sin letra pequeña</p>
-      <div style="margin-top:10px;">
-        <a class="btn btn-primary" href="/whatsapp.html" aria-label="Revisar factura por WhatsApp" rel="noopener" aria-describedby="cta-desc">¡Reclama tu Dinero Ahora!</a>
-        <a class="btn btn-outline" href="#formulario" aria-label="Enviar factura por email" aria-describedby="cta-desc">Enviar Factura</a>
-      </div>
-    </div>
+    <p>© <span id="year"></span> TuReclamoExprés · <a href="#como-funciona">Cómo funciona</a> · <a href="#precios">Precios</a> · <a href="#guias">Guías</a> · <a href="#formulario">Enviar factura</a> · <a href="/whatsapp.html">WhatsApp</a></p>
+    <p>📞 <a href="tel:+34953818494" aria-label="Llamar al 953 818 494">953 818 494</a> · ✉️ <a href="mailto:info@tureclamoexpres.com" aria-label="Enviar email a info@tureclamoexpres.com">info@tureclamoexpres.com</a></p>
   </footer>
   <!-- MODAL LEGALES -->
   <div id="legal-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
@@ -1180,21 +1161,14 @@
         e.preventDefault();
         abrirLegal();
       });
-      document.getElementById('privacidadLinkFooter').addEventListener('click', e => {
-        e.preventDefault();
-        abrirLegal();
-      });
-      document.getElementById('cookiesLinkFooter').addEventListener('click', e => {
-        e.preventDefault();
-        abrirLegal();
-      });
-      document.getElementById('condicionesLinkFooter').addEventListener('click', e => {
-        e.preventDefault();
-        abrirLegal();
-      });
-      document.getElementById('avisoLegalLinkFooter').addEventListener('click', e => {
-        e.preventDefault();
-        abrirLegal();
+      ['privacidadLinkFooter', 'cookiesLinkFooter', 'condicionesLinkFooter', 'avisoLegalLinkFooter'].forEach(id => {
+        const link = document.getElementById(id);
+        if (link) {
+          link.addEventListener('click', e => {
+            e.preventDefault();
+            abrirLegal();
+          });
+        }
       });
       document.getElementById('rgpdLink').addEventListener('click', e => {
         e.preventDefault();
