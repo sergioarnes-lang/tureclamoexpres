@@ -66,7 +66,7 @@
     <header>
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
-        <div><strong>TuReclamoExprés</strong><br><span class="muted">Revisión GRATIS de facturas</span></div>
+        <div><strong>TuReclamoExprés</strong><br><span class="muted">Revisión sin coste de facturas</span></div>
       </div>
       <nav aria-label="Navegación principal">
         <a href="/">Inicio</a>
@@ -147,8 +147,8 @@
           <textarea name="mensaje" placeholder="Explica tu caso (compañía, tipo de problema)" required></textarea>
           <label><input id="rgpdCheckTel" type="checkbox" required> Acepto la Política de Privacidad</label>
           <button type="submit" class="btn">Enviar factura</button>
-          <p id="formOKTel" style="display:none;color:#028484">✅ Enviado correctamente</p>
-          <p id="formERRTel" style="display:none;color:#b91c1c">❌ Error al enviar</p>
+          <p id="formOKTel" style="display:none;color:#028484">Envío realizado correctamente</p>
+          <p id="formERRTel" style="display:none;color:#b91c1c">Se produjo un error al enviar</p>
         </form>
         <div class="btns">
           <a class="btn-secondary" href="/whatsapp.html" aria-label="Abrir WhatsApp" rel="noopener">Enviar por WhatsApp</a>
@@ -159,7 +159,7 @@
 
     <footer>
       <p>© 2025 TuReclamoExprés · <a href="/#como-funciona">Cómo funciona</a> · <a href="/#precios">Precios</a> · <a href="/#formulario">Enviar factura</a> · <a href="/whatsapp.html">WhatsApp</a></p>
-      <p>📞 <a href="tel:+34953818494" aria-label="Llamar al 953 818 494">953 818 494</a> · ✉️ <a href="mailto:info@tureclamoexpres.com" aria-label="Enviar email a info@tureclamoexpres.com">info@tureclamoexpres.com</a></p>
+      <p><a href="tel:+34953818494" aria-label="Llamar al 953 818 494">953 818 494</a> · <a href="mailto:info@tureclamoexpres.com" aria-label="Enviar email a info@tureclamoexpres.com">info@tureclamoexpres.com</a></p>
     </footer>
   </div>
 
@@ -171,14 +171,14 @@
       const err = document.getElementById('formERRTel');
       ok.style.display='none'; err.style.display='none';
       if(!document.getElementById('rgpdCheckTel').checked){
-        err.textContent='❌ Debes aceptar la Política de Privacidad';
+        err.textContent='Debes aceptar la Política de Privacidad para continuar.';
         err.style.display='block'; return;
       }
       try{
         const r = await fetch(telForm.action,{method:'POST',body:new FormData(telForm),headers:{'Accept':'application/json'}});
         if(r.ok){ telForm.reset(); ok.style.display='block'; window.location.href='/gracias.html'; }
-        else { err.textContent='❌ Error al enviar. Inténtalo de nuevo.'; err.style.display='block'; }
-      }catch(_){ err.textContent='❌ Error de conexión. Inténtalo más tarde.'; err.style.display='block'; }
+        else { err.textContent='Se produjo un error al enviar. Inténtalo de nuevo.'; err.style.display='block'; }
+      }catch(_){ err.textContent='Se produjo un error de conexión. Inténtalo más tarde.'; err.style.display='block'; }
     });
   </script>
 </body>
