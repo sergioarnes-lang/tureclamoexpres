@@ -1451,3 +1451,16 @@ body.dark-mode .exit-popup-content p {
   background: #1d4ed8;
   border-color: #1d4ed8;
 }
+
+.radio {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.radio input[type='radio'] {
+  margin-top: 4px;
+}

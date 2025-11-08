@@ -1,0 +1,24 @@
+{
+  "name": "tureclamoexpres-encuesta",
+  "version": "1.0.0",
+  "description": "Microservicio para gestionar encuestas de autónomos y pymes",
+  "type": "module",
+  "main": "encuesta/index.js",
+  "scripts": {
+    "start": "node encuesta/index.js",
+    "dev": "nodemon encuesta/index.js",
+    "migrate": "node database/migrate.js"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "sqlite3": "^5.1.7",
+    "twilio": "^4.22.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
