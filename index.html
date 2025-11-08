@@ -173,6 +173,7 @@
   <!-- End Google Tag Manager (noscript) -->
   <header class="site-header" role="banner">
     <a class="logo" href="#inicio" aria-label="TuReclamoExprés - Volver al inicio">TuReclamoExprés</a>
+    <button id="theme-toggle" aria-label="Cambiar tema" class="theme-toggle">🌙</button>
     <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú de navegación">
       <span class="nav-toggle-bar"></span>
       <span class="nav-toggle-bar"></span>
@@ -195,6 +196,9 @@
   <main id="main-content" role="main">
     <!-- HERO -->
     <section class="hero" id="inicio">
+      <div class="hero-logo">
+        <img src="logo.jfif" alt="TuReclamoExprés" width="180" height="auto" />
+      </div>
       <h1>Reclama los cobros indebidos de tu factura de luz o gas</h1>
       <p class="trustline">Revisamos tu factura y comprobamos si existen errores o importes indebidos. Incluye un <strong>estudio energético certificado gratuito</strong> con tu análisis.</p>
       <p><strong>Precio único de 39,99 € IVA incluido</strong> cuando decides reclamar. Seguimiento completo y resultado en 24–48 h.</p>
@@ -277,7 +281,7 @@
     </section>
     <!-- PRECIOS -->
     <section id="precios">
-      <div class="precio-unico">
+      <section class="precio-unico">
         <h2>Gestión completa de reclamación</h2>
         <p><strong>39,99 € IVA incluido</strong></p>
         <p>Revisión gratuita e informe certificado. Si detectamos cobros indebidos y decides reclamar, gestionamos todo el proceso por ti hasta la resolución final.</p>
@@ -287,7 +291,7 @@
           <li>Resultado en 24–48 h</li>
         </ul>
         <a href="#revision" class="btn btn-primary">Iniciar revisión gratuita</a>
-      </div>
+      </section>
       <p class="help">Tu devolución se abona siempre directamente por tu compañía en tu cuenta o factura; nosotros únicamente gestionamos el expediente.</p>
       <p class="help">Servicio administrativo y automatizado: no constituye asesoramiento jurídico individualizado ni representación letrada. Si tu caso requiere abogado, derivamos —con tu consentimiento— a <strong>colaboradores externos, colegiados y responsables de sus honorarios</strong>.</p>
       <div class="faq-section" aria-label="Preguntas frecuentes">
@@ -438,7 +442,7 @@
       <img class="payment-lock" loading="lazy" decoding="async" width="120" height="80" src="logo-seguridad-pago.jpg" alt="Ícono de pago seguro con Stripe, Visa y Mastercard">
     </section>
     <!-- CONFIANZA -->
-    <section id="confianza">
+    <section id="confianza" class="confianza">
       <h2>Por qué confiar en TuReclamoExprés</h2>
       <ul>
         <li><strong>Incluye estudio energético certificado</strong> realizado por nuestro equipo especializado.</li>
@@ -469,6 +473,7 @@
     
   </main>
   <footer class="footer" role="contentinfo">
+    <img src="logo.jfif" alt="TuReclamoExprés" class="footer-logo" />
     <p>© <span id="year"></span> TuReclamoExprés · <a href="#como-funciona">Cómo funciona</a> · <a href="#precios">Precios</a> · <a href="#guias">Guías</a> · <a href="#formulario">Enviar factura</a> · <a href="/whatsapp.html">WhatsApp</a></p>
     <p><a href="tel:+34953818494" aria-label="Llamar al 953 818 494">953 818 494</a> · <a href="mailto:info@tureclamoexpres.com" aria-label="Enviar email a info@tureclamoexpres.com">info@tureclamoexpres.com</a></p>
   </footer>
@@ -670,6 +675,13 @@
       closeBtn.addEventListener('click', () => {
         banner.style.display = 'none';
       });
+    });
+  </script>
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
     });
   </script>
 </body>
