@@ -34,7 +34,7 @@ h2,
 h3,
 h4 {
   font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: #111827;
+  color: #0b2f6b;
   margin-bottom: 24px;
 }
 
@@ -261,21 +261,26 @@ main section + section {
     right: 20px;
   }
 }
+
 .hero {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px 60px;
+  background-color: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 12px rgba(11, 47, 107, 0.08);
 }
 
 .hero-logo img {
   display: block;
-  margin: 0 auto 16px auto;
-  width: 180px;
+  margin: 0 auto 24px auto;
+  width: 200px;
   max-width: 100%;
 }
 
 @media (max-width: 768px) {
   .hero-logo img {
-    width: 140px;
+    width: 160px;
   }
 }
 
@@ -298,25 +303,45 @@ main section + section {
   text-align: center;
 }
 
+#que-hacemos {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(11, 47, 107, 0.06);
+}
+
+#que-hacemos .faq-toggle {
+  margin: 32px auto 0;
+  max-width: 720px;
+}
+
+#que-hacemos .faq-wrap .inner {
+  padding: 20px 4px;
+}
+
 .hero p {
   color: var(--text);
-  max-width: 920px;
-  margin: 0 auto 16px;
+  max-width: 760px;
+  margin: 0 auto 18px;
   font-size: 1.08rem;
 }
 
-.trustline {
-  margin-top: 0.25rem;
-  color: #111111;
-  font-weight: 700;
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  color: #1e1e1e;
 }
 
-.hero .trustline,
-.hero p:first-of-type {
-  background: var(--pill-bg);
-  border: 1px solid var(--pill-border);
-  border-radius: 14px;
-  padding: 12px 14px;
+.hero-actions {
+  margin: 24px 0 16px;
+}
+
+.hero-note {
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.media-hero {
+  margin-top: 32px;
 }
 
 .btn {
@@ -447,6 +472,27 @@ main section + section {
   }
 }
 
+.social-proof {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 32px 20px;
+  text-align: center;
+  margin: 40px auto 0;
+  max-width: 840px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.social-proof p {
+  font-weight: 600;
+  color: #1e1e1e;
+  margin-bottom: 16px;
+}
+
+.social-proof .btn {
+  margin: 0;
+}
+
 @media (max-width: 600px) {
   .hero p {
     background: #ffffff;
@@ -488,6 +534,48 @@ main section + section {
   font-family: 'Montserrat';
   font-size: 1.05rem;
   margin-bottom: 8px;
+}
+
+.steps-cta {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.steps-cta .btn {
+  margin: 0 auto;
+}
+
+.analisis-ahorro {
+  background-color: #e6f0fa;
+  color: #1e1e1e;
+  border-radius: 14px;
+  padding: 60px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.analisis-ahorro h2 {
+  color: #0b2f6b;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.analisis-ahorro p {
+  max-width: 720px;
+  margin: 0 auto 16px auto;
+  line-height: 1.6;
+}
+
+.analisis-ahorro .btn-primary {
+  background-color: #22c55e;
+  color: #ffffff;
+  padding: 14px 32px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.analisis-ahorro .btn-primary:hover {
+  background-color: #15803d;
 }
 
 .toggle {
@@ -532,6 +620,7 @@ main section + section {
   border: 1px solid var(--border);
   border-radius: 14px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: left;
 }
 
 .svc h3 {
@@ -566,7 +655,7 @@ main section + section {
 }
 
 .precio-unico {
-  background: #f9fafb;
+  background: #e6f0fa;
   border: 1px solid var(--border);
   border-radius: 14px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -582,27 +671,6 @@ main section + section {
 
 .precio-unico p strong {
   color: #0b2f6b;
-}
-
-.precio-unico ul {
-  list-style: none;
-  margin: 24px auto;
-  padding: 0;
-  max-width: 540px;
-  text-align: left;
-}
-
-.precio-unico ul li {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 16px;
-}
-
-.precio-unico ul li::before {
-  content: '✔';
-  position: absolute;
-  left: 0;
-  color: #22c55e;
 }
 
 .precio-unico + .help {
@@ -754,6 +822,15 @@ main section + section {
   display: block;
   margin: 8px 0;
   font-weight: 600;
+}
+
+#formulario form {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 24px;
 }
 
 #formOK {
@@ -939,12 +1016,16 @@ body.dark-mode .btn-outline:hover {
   color: #22c55e;
 }
 
+body.dark-mode #formulario form {
+  background-color: #10213d;
+  border-color: #1e3a8a;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
 body.dark-mode .card,
 body.dark-mode .step,
 body.dark-mode .svc,
 body.dark-mode .case-card,
-body.dark-mode .precio-unico,
-body.dark-mode .free-study,
 body.dark-mode .highlight-note,
 body.dark-mode .toggle,
 body.dark-mode .faq-toggle,
@@ -955,10 +1036,51 @@ body.dark-mode .exit-popup-content {
   color: #f9fafb;
 }
 
+body.dark-mode .hero,
+body.dark-mode .social-proof {
+  background-color: #10213d;
+  border-color: #1e3a8a;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .social-proof,
+body.dark-mode .social-proof p {
+  color: #ffffff;
+}
+
+body.dark-mode .hero-note,
+body.dark-mode .hero-subtitle {
+  color: #f3f4f6;
+}
+
+body.dark-mode #que-hacemos {
+  background-color: #10213d;
+  border-color: #1e3a8a;
+  color: #ffffff;
+}
+
+body.dark-mode #que-hacemos p {
+  color: #f3f4f6;
+}
+
 body.dark-mode .modal-wrap {
   background: #111827;
   border-color: #374151;
   color: #f9fafb;
+}
+
+body.dark-mode .analisis-ahorro,
+body.dark-mode .precio-unico {
+  background-color: #10213d;
+  border-color: #1e3a8a;
+  color: #ffffff;
+}
+
+body.dark-mode .analisis-ahorro .btn-primary,
+body.dark-mode .precio-unico .btn-primary {
+  background-color: #22c55e;
+  border-color: #22c55e;
+  color: #ffffff;
 }
 
 body.dark-mode .confianza::before {
@@ -967,13 +1089,6 @@ body.dark-mode .confianza::before {
 
 body.dark-mode .trust-badge {
   background: #111827;
-  border-color: #374151;
-  color: #f9fafb;
-}
-
-body.dark-mode .hero .trustline,
-body.dark-mode .hero p:first-of-type {
-  background: #1f2937;
   border-color: #374151;
   color: #f9fafb;
 }
@@ -1120,20 +1235,6 @@ body.dark-mode .exit-popup-content p {
   margin: 6px;
 }
 
-.free-study {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 40px;
-  margin: 40px 0;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.free-study .btn {
-  margin-top: 24px;
-}
-
 @media (max-width: 768px) {
   body {
     line-height: 1.6;
@@ -1169,13 +1270,25 @@ body.dark-mode .exit-popup-content p {
   }
 
   #precios,
-  #estudio-gratis,
   #casos,
   #reseñas,
   #confianza,
   #guias,
-  .precio-unico {
+  .precio-unico,
+  .analisis-ahorro {
     text-align: center;
+  }
+
+  .hero {
+    padding: 60px 16px 48px;
+  }
+
+  .hero-actions {
+    margin-top: 20px;
+  }
+
+  .hero-note {
+    font-size: 0.95rem;
   }
 
   .cta-group {
@@ -1188,8 +1301,12 @@ body.dark-mode .exit-popup-content p {
     padding: 32px 20px;
   }
 
-  .precio-unico ul {
-    max-width: 100%;
+  .analisis-ahorro {
+    padding: 48px 20px;
+  }
+
+  #formulario form {
+    padding: 24px;
   }
 
   #confianza {
