@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Encuesta para autónomos y pymes | TuReclamoExprés</title>
+  <meta name="description" content="Participa en la encuesta de TuReclamoExprés para autónomos y pymes y ayúdanos a conocer tus necesidades energéticas y de servicios." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#FFFFFF" />
+  <link rel="canonical" href="https://tureclamoexpres.com/encuesta-autonomos-pymes.html" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+  <header class="site-header" role="banner">
+    <a class="logo" href="/" aria-label="TuReclamoExprés">
+      <img src="logo-principal.jpg" alt="Logo TuReclamoExprés" loading="lazy" />
+    </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <ul class="nav-links">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/#como-funciona">Cómo funciona</a></li>
+        <li><a href="/#precios">Precios</a></li>
+        <li><a href="/#guias">Guías</a></li>
+        <li><a href="/#formulario">Enviar factura</a></li>
+        <li><a href="/whatsapp.html">WhatsApp</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <section style="padding: 40px 20px; background: #f9fafb; border-bottom: 1px solid var(--border);">
+      <header style="max-width: 960px; margin: 0 auto 32px;">
+        <p class="pill" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: var(--pill-bg); color: var(--link); font-weight: 600;">Encuesta 2025</p>
+        <h1>Queremos conocer las necesidades de tu negocio</h1>
+        <p style="max-width: 720px; color: var(--muted);">
+          Si eres autónomo o gestionas una pequeña empresa, completa esta encuesta rápida para ayudarnos a ofrecerte soluciones personalizadas
+          en energía, telecomunicaciones y servicios profesionales.
+        </p>
+      </header>
+      <div style="display: grid; gap: 24px; max-width: 960px; margin: 0 auto; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <article style="background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: var(--shadow);">
+          <h2 style="margin-top: 0;">¿Por qué te pedimos estos datos?</h2>
+          <ul style="padding-left: 20px;">
+            <li>Para priorizar sectores con más incidencias de facturación.</li>
+            <li>Para entender tu perfil energético y de telecomunicaciones.</li>
+            <li>Para ofrecerte soluciones ajustadas a tus necesidades reales.</li>
+          </ul>
+          <p style="margin-top: 16px; color: var(--muted); font-size: 0.95rem;">Solo compartimos tu información con nuestros consultores internos y proveedores autorizados.</p>
+        </article>
+        <aside style="background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: var(--shadow);">
+          <h2 style="margin-top: 0;">Formulario de participación</h2>
+          <form id="encuestaForm" novalidate>
+            <fieldset style="border: none; margin: 0 0 20px; padding: 0;">
+              <legend style="font-weight: 600; margin-bottom: 12px;">Datos de contacto</legend>
+              <label for="nombre">Nombre completo</label>
+              <input id="nombre" name="nombre" type="text" autocomplete="name" required />
+              <label for="email">Correo electrónico</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+              <label for="telefono">Teléfono de contacto</label>
+              <input id="telefono" name="telefono" type="tel" autocomplete="tel" required />
+            </fieldset>
+
+            <fieldset style="border: none; margin: 0 0 20px; padding: 0;">
+              <legend style="font-weight: 600; margin-bottom: 12px;">Información del negocio</legend>
+              <label for="empresa">Nombre comercial</label>
+              <input id="empresa" name="empresa" type="text" autocomplete="organization" required />
+              <label for="sector">Sector</label>
+              <input id="sector" name="sector" type="text" placeholder="Hostelería, retail, consultoría…" required />
+              <label for="empleados">Número de empleados</label>
+              <select id="empleados" name="empleados" required>
+                <option value="">Selecciona una opción</option>
+                <option value="1-2">1-2</option>
+                <option value="3-9">3-9</option>
+                <option value="10-25">10-25</option>
+                <option value="26-49">26-49</option>
+                <option value="50+">50 o más</option>
+              </select>
+              <label for="facturacion">Facturación anual aproximada</label>
+              <select id="facturacion" name="facturacion" required>
+                <option value="">Selecciona un tramo</option>
+                <option value="0-50000">0 € - 50 000 €</option>
+                <option value="50000-150000">50 000 € - 150 000 €</option>
+                <option value="150000-500000">150 000 € - 500 000 €</option>
+                <option value="500000+">Más de 500 000 €</option>
+              </select>
+            </fieldset>
+
+            <fieldset style="border: none; margin: 0 0 20px; padding: 0;">
+              <legend style="font-weight: 600; margin-bottom: 12px;">Necesidades actuales</legend>
+              <p style="margin-bottom: 12px; color: var(--muted); font-size: 0.95rem;">Selecciona los servicios que te interesan:</p>
+              <label class="checkbox" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <input type="checkbox" name="necesidades" value="energia" /> Optimización de facturas de energía
+              </label>
+              <label class="checkbox" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <input type="checkbox" name="necesidades" value="telecom" /> Revisión de contratos de telefonía e internet
+              </label>
+              <label class="checkbox" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <input type="checkbox" name="necesidades" value="seguros" /> Seguros y coberturas profesionales
+              </label>
+              <label class="checkbox" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <input type="checkbox" name="necesidades" value="financiacion" /> Financiación / circulante
+              </label>
+              <label class="checkbox" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <input type="checkbox" name="necesidades" value="otros" /> Otros servicios
+              </label>
+              <label for="comentarios">Detalle adicional</label>
+              <textarea id="comentarios" name="comentarios" rows="4" placeholder="Cuéntanos qué te preocupa o qué servicio necesitas"></textarea>
+            </fieldset>
+
+            <fieldset style="border: none; margin: 0 0 20px; padding: 0;">
+              <legend style="font-weight: 600; margin-bottom: 12px;">Consentimientos</legend>
+              <label class="checkbox" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <input id="consentimientoRGPD" type="checkbox" name="consentimientoRGPD" required />
+                Acepto la <a href="/index.html#modal-privacidad">Política de Privacidad</a> y el tratamiento de mis datos.
+              </label>
+              <label class="checkbox" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <input id="consentimientoCom" type="checkbox" name="consentimientoCom" />
+                Deseo recibir comunicaciones comerciales personalizadas.
+              </label>
+              <label class="checkbox" style="display: flex; align-items: center; gap: 8px;">
+                <input id="consentimientoWhatsApp" type="checkbox" name="consentimientoWhatsApp" />
+                Acepto que me contacten por WhatsApp Business.
+              </label>
+            </fieldset>
+
+            <button type="submit" class="primary-button" style="width: 100%; padding: 14px 16px; border-radius: 12px; border: none; background: var(--link); color: #fff; font-weight: 700; cursor: pointer;">Enviar encuesta</button>
+            <p id="formSuccess" role="status" aria-live="polite" tabindex="-1" style="display:none; color: var(--ok); margin-top: 12px;">¡Gracias! Hemos recibido tu solicitud.</p>
+            <p id="formError" role="alert" aria-live="assertive" tabindex="-1" style="display:none; color: #b91c1c; margin-top: 12px;"></p>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <section style="padding: 40px 20px;">
+      <div style="max-width: 960px; margin: 0 auto; display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <article style="background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: var(--shadow);">
+          <h2>¿Qué haremos con tu respuesta?</h2>
+          <ol style="padding-left: 20px;">
+            <li>Analizaremos tu perfil y detectaremos oportunidades de ahorro.</li>
+            <li>Te contactaremos por el canal indicado para resolver dudas.</li>
+            <li>Prepararemos un plan con proveedores verificados.</li>
+          </ol>
+        </article>
+        <article style="background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: var(--shadow);">
+          <h2>¿Cuándo recibiré respuesta?</h2>
+          <p>En un máximo de 48 horas laborables recibirás un correo de confirmación y, si has aceptado comunicaciones, un mensaje por WhatsApp con la propuesta inicial.</p>
+        </article>
+        <article style="background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: var(--shadow);">
+          <h2>¿Puedo revocar mi consentimiento?</h2>
+          <p>Por supuesto. Puedes solicitarlo respondiendo al correo de confirmación o escribiendo a <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a>. Eliminaremos tus datos en menos de 72 horas.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: #0b2f6b; color: #ffffff; padding: 32px 20px;">
+    <div style="max-width: 960px; margin: 0 auto; display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+      <div>
+        <p style="font-weight: 600;">TuReclamoExprés</p>
+        <p style="color: rgba(255,255,255,0.8);">Soluciones para autónomos y pymes en energía, telecomunicaciones y servicios.</p>
+      </div>
+      <div>
+        <p style="font-weight: 600;">Contacto</p>
+        <p><a href="tel:+34953818494" style="color: #fff;">953 818 494</a><br /><a href="mailto:info@tureclamoexpres.com" style="color: #fff;">info@tureclamoexpres.com</a></p>
+      </div>
+      <div>
+        <p style="font-weight: 600;">Recursos</p>
+        <p><a href="/#guias" style="color: #fff;">Guías</a><br /><a href="/whatsapp.html" style="color: #fff;">WhatsApp</a></p>
+      </div>
+    </div>
+    <p style="margin-top: 24px; text-align: center; font-size: 0.9rem; color: rgba(255,255,255,0.7);">© 2025 TuReclamoExprés. Todos los derechos reservados.</p>
+  </footer>
+
+  <script type="module" src="scripts/encuesta.js"></script>
+</body>
+</html>
