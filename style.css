@@ -159,11 +159,16 @@ main section + section {
 }
 
 .logo {
-  font-weight: 800;
-  font-size: 1.45rem;
-  color: var(--text);
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  letter-spacing: 0.2px;
+  max-width: 180px;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .nav {
@@ -289,6 +294,10 @@ main section + section {
 }
 
 @media (max-width: 768px) {
+  .logo {
+    max-width: 150px;
+  }
+
   .hero-logo img {
     width: 160px;
   }
@@ -399,7 +408,7 @@ main section + section {
   right: 0;
   background: #22c55e;
   color: #ffffff;
-  padding: 12px 16px;
+  padding: 7px 16px;
   z-index: 9999;
   align-items: center;
   justify-content: space-between;
@@ -680,6 +689,12 @@ main section + section {
   font-size: 1.05rem;
 }
 
+.precio-subtitulo {
+  font-size: clamp(20px, 3vw, 26px);
+  margin-bottom: 16px;
+  display: block;
+}
+
 .precio-unico p strong {
   color: #0b2f6b;
 }
@@ -889,7 +904,6 @@ main section + section {
 .footer-logo {
   width: 160px;
   margin-bottom: 12px;
-  filter: brightness(0) invert(1);
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -1021,7 +1035,7 @@ body.dark-mode .footer a {
 }
 
 body.dark-mode .footer-logo {
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 body.dark-mode .btn-primary {
@@ -1099,6 +1113,44 @@ body.dark-mode .precio-unico {
   background-color: #10213d;
   border-color: #1e3a8a;
   color: #ffffff;
+}
+
+body.dark-mode .servicio-card {
+  background-color: #10213d;
+  border-color: #1e3a8a;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.6);
+  color: #f8fafb;
+}
+
+body.dark-mode .servicio-card p,
+body.dark-mode .servicio-card .servicio-subtexto {
+  color: #e2e8f0;
+}
+
+body.dark-mode .servicio-card .servicio-subtexto {
+  color: #bfdbfe;
+}
+
+body.dark-mode .servicio-comparador {
+  background: #0b2f6b;
+  color: #ffffff;
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.6);
+}
+
+body.dark-mode .servicio-comparador p,
+body.dark-mode .servicio-comparador .servicio-subtexto {
+  color: #ffffff;
+}
+
+body.dark-mode .btn-blue {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+body.dark-mode .btn-blue:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
 }
 
 body.dark-mode .analisis-ahorro .btn-primary,
@@ -1337,4 +1389,65 @@ body.dark-mode .exit-popup-content p {
   #confianza {
     padding: 32px 20px;
   }
+}
+.servicios-destacados {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.servicio-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 12px 30px rgba(11, 47, 107, 0.08);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.servicio-card h3 {
+  font-size: clamp(22px, 3vw, 28px);
+  margin-bottom: 0;
+}
+
+.servicio-card p {
+  margin-bottom: 0;
+}
+
+.servicio-subtexto {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.servicio-card .btn {
+  margin-top: auto;
+  align-self: flex-start;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.servicio-comparador {
+  background: #0b2f6b;
+  color: #ffffff;
+  box-shadow: 0 18px 36px rgba(11, 47, 107, 0.2);
+}
+
+.servicio-comparador h3,
+.servicio-comparador p,
+.servicio-comparador .servicio-subtexto {
+  color: #ffffff;
+}
+
+.btn-blue {
+  background: #2563eb;
+  color: #ffffff;
+  border: 1px solid #2563eb;
+}
+
+.btn-blue:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
 }
