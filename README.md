@@ -54,6 +54,7 @@ Crea un archivo `.env` dentro de `api/` con las credenciales necesarias. Puedes 
 ```
 PORT=3001
 DB_FILE=./database/encuestas_pymes.sqlite
+DB_FILE=./database/encuesta.sqlite
 CORS_ORIGINS=https://tureclamoexpres.com,https://www.tureclamoexpres.com
 
 # SendGrid
@@ -75,26 +76,26 @@ TWILIO_WHATSAPP_TEMPLATE_LANGUAGE=es
 # TWILIO_WHATSAPP_TEMPLATE_COMPONENTS=[{"type":"body","parameters":[{"type":"text","value":"{{nombre}}"}]}]
 ```
 
-> **Nota:** Si no configuras `SENDGRID_TO` o `TWILIO_WHATSAPP_TO`, el sistema enviará las alertas a `info@tureclamoexpres.com` y al número de WhatsApp `+34 953 81 84 94`, respectivamente. El correo electrónico incluye los datos de contacto y un resumen numerado de las 11 preguntas, mientras que el aviso interno de WhatsApp muestra un recordatorio fijo. Con `CORS_ORIGINS` puedes definir una lista separada por comas de dominios autorizados para llamar a `POST /api/encuesta` (usa `*` si expones la API detrás de un proxy que ya filtre el acceso).
+> **Nota:** Si no configuras `SENDGRID_TO` o `TWILIO_WHATSAPP_TO`, el sistema enviará las alertas a `info@tureclamoexpres.com` y al número de WhatsApp `+34 953 81 84 94`, respectivamente. El correo electrónico detalla todos los campos enviados mientras que el aviso interno de WhatsApp muestra un recordatorio resumido. Con `CORS_ORIGINS` puedes definir una lista separada por comas de dominios autorizados para llamar a `POST /api/encuesta` (usa `*` si expones la API detrás de un proxy que ya filtre el acceso).
 
 ### Cómo funcionan las notificaciones de WhatsApp
 
 * **Aviso interno:** cada respuesta genera un mensaje hacia el número configurado en `TWILIO_WHATSAPP_TO` (o `+34 953 81 84 94` por defecto) con el texto fijo `📋 Nueva respuesta en la Encuesta PYMES. Revisa la base encuestas_pymes.`.
-* **Agradecimiento automático:** tras cada envío válido se lanza la plantilla `agradecimiento_encuesta_tureclamoexpres` al teléfono proporcionado por la persona encuestada. Asegúrate de que la plantilla esté aprobada en la consola de Twilio, de definir el `TWILIO_WHATSAPP_TEMPLATE_NAMESPACE` correspondiente y de que el número sea válido en formato internacional.
-* **Variables de la plantilla:** cuando tu mensaje aprobado utilice parámetros, declara `TWILIO_WHATSAPP_TEMPLATE_COMPONENTS` como JSON. Puedes emplear `{{nombre}}`, `{{telefono}}`, `{{sector}}` o rutas como `{{respuestas.q1}}` para insertar valores del payload en el orden esperado por Twilio.
+* **Agradecimiento automático:** si la persona marca el consentimiento de WhatsApp, se envía la plantilla `agradecimiento_encuesta_tureclamoexpres` al número que introdujo en el formulario. Asegúrate de que la plantilla esté aprobada en la consola de Twilio y de definir el `TWILIO_WHATSAPP_TEMPLATE_NAMESPACE` correspondiente.
+* **Variables de la plantilla:** cuando tu mensaje aprobado utilice parámetros, declara `TWILIO_WHATSAPP_TEMPLATE_COMPONENTS` como JSON. Puedes emplear `{{nombre}}`, `{{empresa}}`, `{{telefono}}`, etc., para insertar valores del payload en el orden esperado por Twilio.
 
 Al iniciar el microservicio se registrará en los logs qué plantilla está configurada para confirmar que la integración está activa.
 
 ### Migraciones iniciales
 
-Ejecuta la migración para crear la tabla `encuestas_pymes`:
+Ejecuta la migración para crear la tabla `encuesta_respuestas`:
 
 ```bash
 cd api
 npm run migrate
 ```
 
-Se generará la base de datos SQLite en `api/database/encuestas_pymes.sqlite` (puedes cambiar la ruta ajustando `DB_FILE`).
+Se generará la base de datos SQLite en `api/database/encuesta.sqlite` (puedes cambiar la ruta ajustando `DB_FILE`).
 
 ### Levantar el backend
 

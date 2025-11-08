@@ -5,9 +5,8 @@ const error = document.getElementById('formError');
 if (form && success && error) {
   const API_URL = '/api/encuesta';
 
+  const validateEmail = (value) => /\S+@\S+\.\S+/.test(value);
   const cleanText = (value) => value?.trim() ?? '';
-
-  const requiredQuestions = Array.from({ length: 11 }, (_, index) => `q${index + 1}`);
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -17,31 +16,34 @@ if (form && success && error) {
 
     const formData = new FormData(form);
     const nombre = cleanText(formData.get('nombre'));
+    const email = cleanText(formData.get('email'));
     const telefono = cleanText(formData.get('telefono'));
+    const empresa = cleanText(formData.get('empresa'));
     const sector = cleanText(formData.get('sector'));
-    const respuestas = requiredQuestions.reduce((acc, key) => {
-      acc[key] = cleanText(formData.get(key));
-      return acc;
-    }, {});
+    const empleados = cleanText(formData.get('empleados'));
+    const facturacion = cleanText(formData.get('facturacion'));
+    const comentarios = cleanText(formData.get('comentarios'));
+    const necesidades = formData.getAll('necesidades');
+    const consentimientoRGPD = formData.get('consentimientoRGPD') === 'on';
+    const consentimientoCom = formData.get('consentimientoCom') === 'on';
+    const consentimientoWhatsApp = formData.get('consentimientoWhatsApp') === 'on';
 
-    const missingQuestion = requiredQuestions.find((key) => !respuestas[key]);
-
-    if (!nombre || !telefono || !sector) {
-      error.textContent = 'Por favor, completa tus datos de contacto.';
+    if (!nombre || !email || !telefono || !empresa || !sector || !empleados || !facturacion) {
+      error.textContent = 'Por favor, completa todos los campos obligatorios.';
       error.style.display = 'block';
       error.focus?.();
       return;
     }
 
-    if (telefono.length < 5) {
-      error.textContent = 'Indica un teléfono de contacto válido.';
+    if (!validateEmail(email)) {
+      error.textContent = 'Introduce un correo electrónico válido.';
       error.style.display = 'block';
       error.focus?.();
       return;
     }
 
-    if (missingQuestion) {
-      error.textContent = 'Por favor, responde todas las preguntas de la encuesta.';
+    if (!consentimientoRGPD) {
+      error.textContent = 'Debes aceptar la Política de Privacidad para continuar.';
       error.style.display = 'block';
       error.focus?.();
       return;
@@ -49,9 +51,17 @@ if (form && success && error) {
 
     const payload = {
       nombre,
+      email,
       telefono,
+      empresa,
       sector,
-      respuestas,
+      empleados,
+      facturacion,
+      comentarios,
+      necesidades,
+      consentimientoRGPD,
+      consentimientoCom,
+      consentimientoWhatsApp,
       submittedAt: new Date().toISOString()
     };
 

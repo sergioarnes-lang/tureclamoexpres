@@ -29,130 +29,127 @@
   </header>
 
   <main id="contenido" tabindex="-1">
-    <section style="padding: 48px 20px; background: #f9fafb; border-bottom: 1px solid var(--border);">
-      <div style="max-width: 980px; margin: 0 auto; display: grid; gap: 32px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: start;">
-        <article style="background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 28px; box-shadow: var(--shadow);">
-          <p class="pill" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: var(--pill-bg); color: var(--link); font-weight: 600; margin-bottom: 16px;">Encuesta PYMES 2025</p>
-          <h1 style="margin: 0 0 16px;">Te ayudamos a controlar tus facturas</h1>
-          <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.6;">
-            Completa esta encuesta rápida y descubre cómo podemos optimizar tus servicios de energía, telecomunicaciones y otros costes recurrentes sin complicaciones.
-          </p>
-          <ul style="padding-left: 20px; margin-top: 20px; color: var(--muted);">
-            <li>Solo pedimos los datos imprescindibles para poder llamarte.</li>
-            <li>El formulario se completa en menos de 3 minutos.</li>
-            <li>Recibirás un estudio personalizado sin compromiso.</li>
+    <section style="padding: 40px 20px; background: #f9fafb; border-bottom: 1px solid var(--border);">
+      <header style="max-width: 960px; margin: 0 auto 32px;">
+        <p class="pill" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: var(--pill-bg); color: var(--link); font-weight: 600;">Encuesta 2025</p>
+        <h1>Queremos conocer las necesidades de tu negocio</h1>
+        <p style="max-width: 720px; color: var(--muted);">
+          Si eres autónomo o gestionas una pequeña empresa, completa esta encuesta rápida para ayudarnos a ofrecerte soluciones personalizadas
+          en energía, telecomunicaciones y servicios profesionales.
+        </p>
+      </header>
+      <div style="display: grid; gap: 24px; max-width: 960px; margin: 0 auto; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <article style="background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: var(--shadow);">
+          <h2 style="margin-top: 0;">¿Por qué te pedimos estos datos?</h2>
+          <ul style="padding-left: 20px;">
+            <li>Para priorizar sectores con más incidencias de facturación.</li>
+            <li>Para entender tu perfil energético y de telecomunicaciones.</li>
+            <li>Para ofrecerte soluciones ajustadas a tus necesidades reales.</li>
           </ul>
+          <p style="margin-top: 16px; color: var(--muted); font-size: 0.95rem;">Solo compartimos tu información con nuestros consultores internos y proveedores autorizados.</p>
         </article>
-        <aside style="background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 28px; box-shadow: var(--shadow);">
-          <h2 style="margin-top: 0;">Encuesta para autónomos y pymes</h2>
+        <aside style="background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: var(--shadow);">
+          <h2 style="margin-top: 0;">Formulario de participación</h2>
           <form id="encuestaForm" novalidate>
-            <fieldset style="border: none; margin: 0 0 24px; padding: 0; display: grid; gap: 12px;">
+            <fieldset style="border: none; margin: 0 0 20px; padding: 0;">
               <legend style="font-weight: 600; margin-bottom: 12px;">Datos de contacto</legend>
               <label for="nombre">Nombre completo</label>
               <input id="nombre" name="nombre" type="text" autocomplete="name" required />
-              <label for="telefono">Teléfono</label>
+              <label for="email">Correo electrónico</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+              <label for="telefono">Teléfono de contacto</label>
               <input id="telefono" name="telefono" type="tel" autocomplete="tel" required />
-              <label for="sector">Sector o tipo de negocio</label>
-              <input id="sector" name="sector" type="text" placeholder="Hostelería, comercio, servicios…" required />
             </fieldset>
 
-            <fieldset style="border: none; margin: 0 0 24px; padding: 0; display: grid; gap: 20px;">
-              <legend style="font-weight: 600;">Encuesta</legend>
-
-              <div>
-                <p style="font-weight: 600; margin-bottom: 8px;">1. ¿Cuánto tiempo dedicas al mes a revisar tus facturas de servicios (luz, teléfono, seguros…)?</p>
-                <label class="radio"><input type="radio" name="q1" value="Ninguno" required /> Ninguno</label>
-                <label class="radio"><input type="radio" name="q1" value="Menos de 1 hora" /> Menos de 1 hora</label>
-                <label class="radio"><input type="radio" name="q1" value="Entre 1 y 3 horas" /> Entre 1 y 3 horas</label>
-                <label class="radio"><input type="radio" name="q1" value="Más de 3 horas" /> Más de 3 horas</label>
-              </div>
-
-              <div>
-                <p style="font-weight: 600; margin-bottom: 8px;">2. ¿Sabes si tus tarifas actuales son competitivas?</p>
-                <label class="radio"><input type="radio" name="q2" value="Sí, totalmente" required /> Sí, totalmente</label>
-                <label class="radio"><input type="radio" name="q2" value="Tengo dudas" /> Tengo dudas</label>
-                <label class="radio"><input type="radio" name="q2" value="No lo sé" /> No lo sé</label>
-                <label class="radio"><input type="radio" name="q2" value="Seguro que no" /> Seguro que no</label>
-              </div>
-
-              <div>
-                <p style="font-weight: 600; margin-bottom: 8px;">3. ¿Qué te resulta más molesto de tus facturas o compañías?</p>
-                <label class="radio"><input type="radio" name="q3" value="Subidas sin aviso" required /> Subidas sin aviso</label>
-                <label class="radio"><input type="radio" name="q3" value="Cobros poco claros" /> Cobros poco claros</label>
-                <label class="radio"><input type="radio" name="q3" value="No tener tiempo para revisarlas" /> No tener tiempo para revisarlas</label>
-                <label class="radio"><input type="radio" name="q3" value="Llamadas constantes de comerciales" /> Llamadas constantes de comerciales</label>
-              </div>
-
-              <div>
-                <p style="font-weight: 600; margin-bottom: 8px;">4. ¿Has tenido cobros indebidos o errores en el último año?</p>
-                <label class="radio"><input type="radio" name="q4" value="Sí, varias veces" required /> Sí, varias veces</label>
-                <label class="radio"><input type="radio" name="q4" value="Alguna vez" /> Alguna vez</label>
-                <label class="radio"><input type="radio" name="q4" value="No" /> No</label>
-              </div>
-
-              <div>
-                <p style="font-weight: 600; margin-bottom: 8px;">5. ¿Qué te gustaría controlar mejor?</p>
-                <label class="radio"><input type="radio" name="q5" value="El gasto mensual" required /> El gasto mensual</label>
-                <label class="radio"><input type="radio" name="q5" value="Las condiciones de mis contratos" /> Las condiciones de mis contratos</label>
-                <label class="radio"><input type="radio" name="q5" value="Que no me cobren de más" /> Que no me cobren de más</label>
-                <label class="radio"><input type="radio" name="q5" value="Todo lo anterior" /> Todo lo anterior</label>
-              </div>
-
-              <div>
-                <p style="font-weight: 600; margin-bottom: 8px;">6. ¿Qué valor le darías a tener todos tus contratos y facturas de servicios controlados sin perder tiempo?</p>
-                <label class="radio"><input type="radio" name="q6" value="Me daría mucha tranquilidad" required /> Me daría mucha tranquilidad</label>
-                <label class="radio"><input type="radio" name="q6" value="Lo vería útil si realmente ahorra dinero" /> Lo vería útil si realmente ahorra dinero</label>
-                <label class="radio"><input type="radio" name="q6" value="Solo si no tengo que hacer nada" /> Solo si no tengo que hacer nada</label>
-                <label class="radio"><input type="radio" name="q6" value="No le veo valor" /> No le veo valor</label>
-              </div>
-
-              <div>
-                <p style="font-weight: 600; margin-bottom: 8px;">7. ¿Cada cuánto revisas o renegocias tus contratos de servicios?</p>
-                <label class="radio"><input type="radio" name="q7" value="Cada año" required /> Cada año</label>
-                <label class="radio"><input type="radio" name="q7" value="Solo cuando me suben la factura" /> Solo cuando me suben la factura</label>
-                <label class="radio"><input type="radio" name="q7" value="Rara vez" /> Rara vez</label>
-                <label class="radio"><input type="radio" name="q7" value="Nunca" /> Nunca</label>
-              </div>
-
-              <div>
-                <p style="font-weight: 600; margin-bottom: 8px;">8. ¿Qué tipo de ayuda te parecería más útil?</p>
-                <label class="radio"><input type="radio" name="q8" value="Que alguien revise mis facturas y me avise de errores" required /> Que alguien revise mis facturas y me avise de errores</label>
-                <label class="radio"><input type="radio" name="q8" value="Que me cambien directamente a la mejor opción" /> Que me cambien directamente a la mejor opción</label>
-                <label class="radio"><input type="radio" name="q8" value="Que me envíen un resumen mensual de mis gastos" /> Que me envíen un resumen mensual de mis gastos</label>
-                <label class="radio"><input type="radio" name="q8" value="No necesito ayuda en eso" /> No necesito ayuda en eso</label>
-              </div>
-
-              <div>
-                <p style="font-weight: 600; margin-bottom: 8px;">9. ¿Qué te generaría más confianza en un servicio de este tipo?</p>
-                <label class="radio"><input type="radio" name="q9" value="Que sea independiente de las compañías" required /> Que sea independiente de las compañías</label>
-                <label class="radio"><input type="radio" name="q9" value="Que tenga buena reputación o referencias" /> Que tenga buena reputación o referencias</label>
-                <label class="radio"><input type="radio" name="q9" value="Que explique todo con claridad" /> Que explique todo con claridad</label>
-                <label class="radio"><input type="radio" name="q9" value="Que no me haga perder tiempo" /> Que no me haga perder tiempo</label>
-              </div>
-
-              <div>
-                <p style="font-weight: 600; margin-bottom: 8px;">10. ¿Qué tipo de negocio tienes?</p>
-                <label class="radio"><input type="radio" name="q10" value="Comercio u hostelería" required /> Comercio u hostelería</label>
-                <label class="radio"><input type="radio" name="q10" value="Taller o industria" /> Taller o industria</label>
-                <label class="radio"><input type="radio" name="q10" value="Servicios profesionales" /> Servicios profesionales</label>
-                <label class="radio"><input type="radio" name="q10" value="Otro" /> Otro</label>
-              </div>
-
-              <div>
-                <p style="font-weight: 600; margin-bottom: 8px;">11. Si existiera un servicio que revisa y controla tus facturas sin que tengas que hacer nada, ¿estarías dispuesto a probarlo?</p>
-                <label class="radio"><input type="radio" name="q11" value="Sí, si no tengo que hacer nada" required /> Sí, si no tengo que hacer nada</label>
-                <label class="radio"><input type="radio" name="q11" value="Sí, si me demuestra ahorro real" /> Sí, si me demuestra ahorro real</label>
-                <label class="radio"><input type="radio" name="q11" value="Sí, si el coste es razonable" /> Sí, si el coste es razonable</label>
-                <label class="radio"><input type="radio" name="q11" value="No me interesa" /> No me interesa</label>
-              </div>
+            <fieldset style="border: none; margin: 0 0 20px; padding: 0;">
+              <legend style="font-weight: 600; margin-bottom: 12px;">Información del negocio</legend>
+              <label for="empresa">Nombre comercial</label>
+              <input id="empresa" name="empresa" type="text" autocomplete="organization" required />
+              <label for="sector">Sector</label>
+              <input id="sector" name="sector" type="text" placeholder="Hostelería, retail, consultoría…" required />
+              <label for="empleados">Número de empleados</label>
+              <select id="empleados" name="empleados" required>
+                <option value="">Selecciona una opción</option>
+                <option value="1-2">1-2</option>
+                <option value="3-9">3-9</option>
+                <option value="10-25">10-25</option>
+                <option value="26-49">26-49</option>
+                <option value="50+">50 o más</option>
+              </select>
+              <label for="facturacion">Facturación anual aproximada</label>
+              <select id="facturacion" name="facturacion" required>
+                <option value="">Selecciona un tramo</option>
+                <option value="0-50000">0 € - 50 000 €</option>
+                <option value="50000-150000">50 000 € - 150 000 €</option>
+                <option value="150000-500000">150 000 € - 500 000 €</option>
+                <option value="500000+">Más de 500 000 €</option>
+              </select>
             </fieldset>
 
-            <button type="submit" class="primary-button" style="width: 100%; padding: 16px; border-radius: 12px; border: none; background: var(--link); color: #fff; font-weight: 700; cursor: pointer;">Enviar y recibir mi estudio gratuito</button>
-            <p style="margin-top: 12px; color: var(--muted); font-size: 0.95rem;">🔒 Tus datos se usarán solo para preparar tu estudio energético.<br />No se ceden a terceros ni se guardan con fines comerciales.</p>
-            <p id="formSuccess" role="status" aria-live="polite" tabindex="-1" style="display:none; color: var(--ok); margin-top: 16px;">✅ Gracias por tu tiempo. Te prepararemos un estudio energético personalizado sin compromiso.</p>
-            <p id="formError" role="alert" aria-live="assertive" tabindex="-1" style="display:none; color: #b91c1c; margin-top: 16px;"></p>
+            <fieldset style="border: none; margin: 0 0 20px; padding: 0;">
+              <legend style="font-weight: 600; margin-bottom: 12px;">Necesidades actuales</legend>
+              <p style="margin-bottom: 12px; color: var(--muted); font-size: 0.95rem;">Selecciona los servicios que te interesan:</p>
+              <label class="checkbox" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <input type="checkbox" name="necesidades" value="energia" /> Optimización de facturas de energía
+              </label>
+              <label class="checkbox" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <input type="checkbox" name="necesidades" value="telecom" /> Revisión de contratos de telefonía e internet
+              </label>
+              <label class="checkbox" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <input type="checkbox" name="necesidades" value="seguros" /> Seguros y coberturas profesionales
+              </label>
+              <label class="checkbox" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <input type="checkbox" name="necesidades" value="financiacion" /> Financiación / circulante
+              </label>
+              <label class="checkbox" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <input type="checkbox" name="necesidades" value="otros" /> Otros servicios
+              </label>
+              <label for="comentarios">Detalle adicional</label>
+              <textarea id="comentarios" name="comentarios" rows="4" placeholder="Cuéntanos qué te preocupa o qué servicio necesitas"></textarea>
+            </fieldset>
+
+            <fieldset style="border: none; margin: 0 0 20px; padding: 0;">
+              <legend style="font-weight: 600; margin-bottom: 12px;">Consentimientos</legend>
+              <label class="checkbox" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <input id="consentimientoRGPD" type="checkbox" name="consentimientoRGPD" required />
+                Acepto la <a href="/index.html#modal-privacidad">Política de Privacidad</a> y el tratamiento de mis datos.
+              </label>
+              <label class="checkbox" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <input id="consentimientoCom" type="checkbox" name="consentimientoCom" />
+                Deseo recibir comunicaciones comerciales personalizadas.
+              </label>
+              <label class="checkbox" style="display: flex; align-items: center; gap: 8px;">
+                <input id="consentimientoWhatsApp" type="checkbox" name="consentimientoWhatsApp" />
+                Acepto que me contacten por WhatsApp Business.
+              </label>
+            </fieldset>
+
+            <button type="submit" class="primary-button" style="width: 100%; padding: 14px 16px; border-radius: 12px; border: none; background: var(--link); color: #fff; font-weight: 700; cursor: pointer;">Enviar encuesta</button>
+            <p id="formSuccess" role="status" aria-live="polite" tabindex="-1" style="display:none; color: var(--ok); margin-top: 12px;">¡Gracias! Hemos recibido tu solicitud.</p>
+            <p id="formError" role="alert" aria-live="assertive" tabindex="-1" style="display:none; color: #b91c1c; margin-top: 12px;"></p>
           </form>
         </aside>
+      </div>
+    </section>
+
+    <section style="padding: 40px 20px;">
+      <div style="max-width: 960px; margin: 0 auto; display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <article style="background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: var(--shadow);">
+          <h2>¿Qué haremos con tu respuesta?</h2>
+          <ol style="padding-left: 20px;">
+            <li>Analizaremos tu perfil y detectaremos oportunidades de ahorro.</li>
+            <li>Te contactaremos por el canal indicado para resolver dudas.</li>
+            <li>Prepararemos un plan con proveedores verificados.</li>
+          </ol>
+        </article>
+        <article style="background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: var(--shadow);">
+          <h2>¿Cuándo recibiré respuesta?</h2>
+          <p>En un máximo de 48 horas laborables recibirás un correo de confirmación y, si has aceptado comunicaciones, un mensaje por WhatsApp con la propuesta inicial.</p>
+        </article>
+        <article style="background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: var(--shadow);">
+          <h2>¿Puedo revocar mi consentimiento?</h2>
+          <p>Por supuesto. Puedes solicitarlo respondiendo al correo de confirmación o escribiendo a <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a>. Eliminaremos tus datos en menos de 72 horas.</p>
+        </article>
       </div>
     </section>
   </main>

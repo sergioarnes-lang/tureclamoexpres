@@ -149,40 +149,46 @@ app.use(
 
 app.use(express.json());
 
-const questionSchema = z.object({
-  q1: z.string().min(1),
-  q2: z.string().min(1),
-  q3: z.string().min(1),
-  q4: z.string().min(1),
-  q5: z.string().min(1),
-  q6: z.string().min(1),
-  q7: z.string().min(1),
-  q8: z.string().min(1),
-  q9: z.string().min(1),
-  q10: z.string().min(1),
-  q11: z.string().min(1)
-});
-
 const encuestaSchema = z.object({
   nombre: z.string().min(2),
+  email: z.string().email(),
   telefono: z.string().min(5),
+  empresa: z.string().min(2),
   sector: z.string().min(2),
-  respuestas: questionSchema,
+  empleados: z.string().min(1),
+  facturacion: z.string().min(1),
+  necesidades: z.array(z.string()).default([]),
+  comentarios: z.string().optional().default(''),
+  consentimientoRGPD: z.boolean(),
+  consentimientoCom: z.boolean().optional().default(false),
+  consentimientoWhatsApp: z.boolean().optional().default(false),
   submittedAt: z.string().optional().default(() => new Date().toISOString())
+}).refine((data) => data.consentimientoRGPD, {
+  message: 'Debes aceptar el tratamiento de datos para continuar.',
+  path: ['consentimientoRGPD']
 });
 
 const saveResponse = (payload) => {
   const db = getDatabase();
   const sql = `
-    INSERT INTO encuestas_pymes (
-      nombre, telefono, sector, respuestas, submitted_at
-    ) VALUES (?, ?, ?, ?, ?);
+    INSERT INTO encuesta_respuestas (
+      nombre, email, telefono, empresa, sector, empleados, facturacion, necesidades,
+      comentarios, consentimiento_rgpd, consentimiento_com, consentimiento_whatsapp, submitted_at
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
   `;
   const values = [
     payload.nombre,
+    payload.email,
     payload.telefono,
+    payload.empresa,
     payload.sector,
-    JSON.stringify(payload.respuestas ?? {}),
+    payload.empleados,
+    payload.facturacion,
+    JSON.stringify(payload.necesidades ?? []),
+    payload.comentarios ?? '',
+    payload.consentimientoRGPD ? 1 : 0,
+    payload.consentimientoCom ? 1 : 0,
+    payload.consentimientoWhatsApp ? 1 : 0,
     payload.submittedAt
   ];
 
@@ -210,31 +216,25 @@ const sendEmailNotification = async (payload) => {
 
   sgMail.setApiKey(apiKey);
 
-  const resumen = [
-    `1) ${payload.respuestas.q1}`,
-    `2) ${payload.respuestas.q2}`,
-    `3) ${payload.respuestas.q3}`,
-    `4) ${payload.respuestas.q4}`,
-    `5) ${payload.respuestas.q5}`,
-    `6) ${payload.respuestas.q6}`,
-    `7) ${payload.respuestas.q7}`,
-    `8) ${payload.respuestas.q8}`,
-    `9) ${payload.respuestas.q9}`,
-    `10) ${payload.respuestas.q10}`,
-    `11) ${payload.respuestas.q11}`
-  ].join('\n');
+  const necesidades = (payload.necesidades || []).join(', ') || 'No indicadas';
 
   const msg = {
     to,
     from,
-    subject: `Nueva encuesta PYMES - ${payload.nombre}`,
-    text:
-      `Se ha recibido una nueva respuesta en encuestas_pymes.\n\n` +
+    subject: `Nueva encuesta - ${payload.empresa} (${payload.nombre})`,
+    text: `Se ha recibido una nueva respuesta para la encuesta de autónomos y pymes.\n\n` +
       `Nombre: ${payload.nombre}\n` +
+      `Correo: ${payload.email}\n` +
       `Teléfono: ${payload.telefono}\n` +
-      `Sector: ${payload.sector}\n\n` +
-      `Respuestas:\n${resumen}\n\n` +
-      `Enviado: ${payload.submittedAt}`
+      `Empresa: ${payload.empresa}\n` +
+      `Sector: ${payload.sector}\n` +
+      `Empleados: ${payload.empleados}\n` +
+      `Facturación: ${payload.facturacion}\n` +
+      `Necesidades principales: ${necesidades}\n` +
+      `Comentarios: ${payload.comentarios || 'Sin comentarios'}\n` +
+      `Consentimiento WhatsApp: ${payload.consentimientoWhatsApp ? 'Sí' : 'No'}\n` +
+      `Consentimiento comunicaciones: ${payload.consentimientoCom ? 'Sí' : 'No'}\n` +
+      `Enviado: ${payload.submittedAt}`,
   };
 
   await sgMail.send(msg);
@@ -268,6 +268,11 @@ const sendInternalWhatsAppNotification = async () => {
 };
 
 const sendWhatsAppThankYou = async (payload) => {
+  if (!payload.consentimientoWhatsApp) {
+    console.info('El contacto no autorizó comunicaciones por WhatsApp. No se enviará agradecimiento.');
+    return;
+  }
+
   if (!hasBaseTwilioConfig()) {
     console.warn('Twilio no está configurado para WhatsApp. No se puede enviar el mensaje de agradecimiento.');
     return;
@@ -285,8 +290,7 @@ const sendWhatsAppThankYou = async (payload) => {
   }
 
   const whatsappFrom = ensureWhatsAppPrefix(twilioSettings.from);
-  const telefonoLimpio = payload.telefono.replace(/\s+/g, '');
-  const whatsappTo = ensureWhatsAppPrefix(telefonoLimpio);
+  const whatsappTo = ensureWhatsAppPrefix(payload.telefono);
 
   if (!whatsappTo) {
     console.warn('La respuesta no incluye un teléfono válido para WhatsApp.');
