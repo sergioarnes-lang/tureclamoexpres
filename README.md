@@ -28,6 +28,13 @@ Integra este comando en tu pipeline de CI/CD ejecutándolo justo antes del paso 
 
 El formulario de `encuesta-autonomos-pymes.html` envía los datos a un microservicio Node.js ubicado en `api/`. Este servicio valida los campos, guarda las respuestas en SQLite y lanza notificaciones por email (SendGrid) y WhatsApp (Twilio Business API).
 
+La versión actualizada del formulario mantiene la estética de TuReclamoExprés y se compone de:
+
+* Un bloque de datos de contacto con nombre completo, teléfono y sector/tipo de negocio (campos obligatorios).
+* Once preguntas cerradas con opciones predefinidas para conocer el tiempo dedicado a revisar facturas, el conocimiento de tarifas, los principales dolores y la predisposición a probar un servicio gestionado.
+* Un botón principal “Enviar y recibir mi estudio gratuito” seguido de un aviso de confianza que recuerda el uso limitado de los datos.
+* Un mensaje de confirmación que muestra: `✅ Gracias por tu tiempo. Te prepararemos un estudio energético personalizado sin compromiso.`
+
 ### Requisitos previos
 
 * Node.js 18+
@@ -46,6 +53,7 @@ Crea un archivo `.env` dentro de `api/` con las credenciales necesarias. Puedes 
 
 ```
 PORT=3001
+DB_FILE=./database/encuestas_pymes.sqlite
 DB_FILE=./database/encuesta.sqlite
 CORS_ORIGINS=https://tureclamoexpres.com,https://www.tureclamoexpres.com
 
