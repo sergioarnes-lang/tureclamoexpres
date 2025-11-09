@@ -128,21 +128,20 @@
   </main>
 
 <script>
-document.getElementById('encuestaForm').addEventListener('submit', function(e){
+const googleScriptUrl = "https://script.google.com/macros/s/XXX/exec"; // pegar la URL del script
+document.getElementById('encuestaForm').addEventListener('submit', async function(e){
   e.preventDefault();
   const fd = new FormData(this);
   const data = {};
   fd.forEach((v,k)=>data[k]=v);
-  const csv = Object.keys(data).map(k=>`"${k}","${data[k]}"`).join('\n');
-  const blob = new Blob([csv],{type:'text/csv'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href=url;a.download=`encuesta_${Date.now()}.csv`;a.click();
-
-  // WhatsApp interno
-  const mensaje = encodeURIComponent(`Nueva encuesta TuReclamoExprés:\n${data.nombre} (${data.telefono})\nSector: ${data.sector}`);
-  window.open(`https://wa.me/34953818494?text=${mensaje}`,'_blank');
-
+  await fetch(googleScriptUrl,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify(data)
+  });
+  window.open(`https://wa.me/34953818494?text=` +
+    encodeURIComponent(`Nueva encuesta TuReclamoExprés:\n${data.nombre} (${data.telefono})\nSector: ${data.sector}`),
+    '_blank');
   alert("✅ Gracias por tu tiempo. Te prepararemos un estudio energético personalizado sin compromiso.");
   this.reset();
 });
