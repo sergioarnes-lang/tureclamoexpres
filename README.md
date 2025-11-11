@@ -12,6 +12,12 @@ python3 scripts/check_internal_links.py
 
 El script levanta un servidor HTTP temporal en `127.0.0.1` y rastrea todos los archivos HTML generados. Solo valida enlaces internos (rutas relativas o comenzadas por `/`) e ignora dominios externos, enlaces `mailto:` y `tel:`.
 
+Puedes ajustar el tiempo máximo de espera para cada petición con `--timeout`. Por ejemplo, para reducirlo a 5 segundos:
+
+```bash
+python3 scripts/check_internal_links.py --timeout 5
+```
+
 ### Interpretación de resultados
 
 * Cuando no hay incidencias, el comando finaliza con código `0` y muestra:
