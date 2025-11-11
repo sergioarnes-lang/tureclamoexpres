@@ -92,10 +92,10 @@ def normalize_link(base_url: str, link: str) -> str:
     return normalized
 
 
-def check_link(url: str) -> Tuple[bool, int]:
+def check_link(url: str, timeout: float) -> Tuple[bool, int]:
     request = urllib.request.Request(url, method="HEAD")
     try:
-        with urllib.request.urlopen(request) as response:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
             return True, response.status
     except urllib.error.HTTPError as exc:
         return False, exc.code
@@ -103,7 +103,7 @@ def check_link(url: str) -> Tuple[bool, int]:
         # Retry with GET for servers that do not support HEAD.
         request = urllib.request.Request(url, method="GET")
         try:
-            with urllib.request.urlopen(request) as response:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
                 return True, response.status
         except urllib.error.HTTPError as exc:
             return False, exc.code
@@ -111,9 +111,11 @@ def check_link(url: str) -> Tuple[bool, int]:
             return False, 0
 
 
-def analyze_page(base_url: str, html_path: Path) -> Tuple[Set[str], List[Tuple[str, int]]]:
+def analyze_page(
+    base_url: str, html_path: Path, timeout: float
+) -> Tuple[Set[str], List[Tuple[str, int]]]:
     page_url = normalize_link(base_url, html_path.as_posix())
-    with urllib.request.urlopen(page_url) as response:
+    with urllib.request.urlopen(page_url, timeout=timeout) as response:
         content = response.read().decode("utf-8", errors="ignore")
     extractor = LinkExtractor()
     extractor.feed(content)
@@ -130,7 +132,7 @@ def analyze_page(base_url: str, html_path: Path) -> Tuple[Set[str], List[Tuple[s
         if normalized in checked:
             continue
         checked.add(normalized)
-        ok, status = check_link(normalized)
+        ok, status = check_link(normalized, timeout)
         if not ok or status != 200:
             broken.append((normalized, status))
 
@@ -146,8 +148,16 @@ def main() -> None:
         type=Path,
         help="Path to the folder that contains the generated HTML files.",
     )
+    parser.add_argument(
+        "--timeout",
+        type=float,
+        default=10.0,
+        metavar="SECONDS",
+        help="Tiempo máximo de espera para cada petición HTTP (por defecto: 10 segundos).",
+    )
     args = parser.parse_args()
     root: Path = args.root.resolve()
+    timeout = max(args.timeout, 0.1)
 
     html_files = collect_html_files(root)
     if not html_files:
@@ -159,7 +169,7 @@ def main() -> None:
         print(f"Analizando enlaces internos en {len(html_files)} páginas HTML desde {base_url}\n")
         global_broken: List[Tuple[Path, str, int]] = []
         for html_file in html_files:
-            checked, broken = analyze_page(base_url, html_file.relative_to(root))
+            checked, broken = analyze_page(base_url, html_file.relative_to(root), timeout)
             relative_path = html_file.relative_to(root)
             print(f"- {relative_path}: {len(checked)} enlaces internos verificados")
             for url, status in broken:
