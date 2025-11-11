@@ -1,0 +1,31 @@
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: #ffffff;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+header {
+  background: linear-gradient(90deg, #1d4ed8, #22c55e);
+  color: #fff;
+  padding: 2rem 1rem;
+}
+h1 { margin: 0; font-size: 2rem; }
+h2 { margin-top: 2rem; }
+.btn {
+  background: #1d4ed8;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn.verde { background: #22c55e; }
+section { margin: 2rem auto; max-width: 600px; }
+.tarifa { border: 1px solid #eee; padding: 1rem; border-radius: 12px; margin: 1rem 0; }
+input { width: 80%; padding: 8px; margin: 6px 0; border-radius: 6px; border: 1px solid #ccc; }
+#resultado { margin-top: 1rem; font-size: 1.2rem; font-weight: bold; }
+footer { background: #f5f5f5; padding: 1rem; color: #444; font-size: .9rem; }
