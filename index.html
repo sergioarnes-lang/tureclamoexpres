@@ -173,26 +173,29 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K94XRMDK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <header class="site-header" role="banner">
-    <a class="logo" href="#inicio" aria-label="TuReclamoExprés - Volver al inicio">TuReclamoExprés</a>
-    <button id="theme-toggle" aria-label="Cambiar tema" class="theme-toggle">🌙</button>
-    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú de navegación">
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-    </button>
-    <nav id="primary-nav" class="nav" role="navigation" aria-label="Navegación principal">
-      <ul class="nav-links">
-        <li><a href="#como-funciona" aria-current="page">Cómo funciona</a></li>
-        <li><a href="#precios">Precios</a></li>
-        <li><a href="#guias">Guías</a></li>
-        <li><a href="#formulario">Enviar factura</a></li>
-        <li><a href="/whatsapp.html">WhatsApp</a></li>
-        <li><a href="#" id="openLegalModalLink">Legales</a></li>
-      </ul>
-    </nav>
-    <div class="header-right">
-      <div class="header-contact">Consulta telefónica: <a href="tel:+34953818494" aria-label="Llamar al 953 818 494">953 818 494</a></div>
+    <div class="header-top">
+      <a class="logo" href="#inicio" aria-label="TuReclamoExprés - Volver al inicio">TuReclamoExprés</a>
+      <nav id="primary-nav" class="nav" role="navigation" aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="#como-funciona" aria-current="page">Cómo funciona</a></li>
+          <li><a href="#precios">Precios</a></li>
+          <li><a href="#guias">Guías</a></li>
+          <li><a href="#formulario">Enviar factura</a></li>
+          <li><a data-whatsapp-link href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisar%20mi%20factura%20de%20luz%2C%20gas%20o%20tel%C3%A9fono.%20%C2%BFC%C3%B3mo%20empiezo%3F" aria-label="Abrir chat de WhatsApp">WhatsApp</a></li>
+          <li><a href="#" id="openLegalModalLink">Legales</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-primary header-cta" data-whatsapp-link href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisar%20mi%20factura%20de%20luz%2C%20gas%20o%20tel%C3%A9fono.%20%C2%BFC%C3%B3mo%20empiezo%3F" aria-label="Hablar por WhatsApp">Hablar por WhatsApp</a>
+        <button id="theme-toggle" aria-label="Cambiar tema" class="theme-toggle">🌙</button>
+        <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú de navegación">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
     </div>
+    <div class="header-contact">Consulta telefónica: <a href="tel:+34953818494" aria-label="Llamar al 953 818 494">953 818 494</a></div>
   </header>
   <main id="main-content" role="main">
     <!-- HERO -->
@@ -207,11 +210,11 @@
       <figure class="media-hero" aria-label="Ilustración revisión de factura">
         <img loading="lazy" decoding="async" width="640" height="360" src="hero-mujer-factura.jpg" alt="Mujer revisando una factura de luz con alivio tras recuperar dinero">
       </figure>
-      <div>
-        <a class="btn btn-primary" href="#revision" aria-label="Solicitar revisión gratuita de factura" aria-describedby="cta-desc">Revisión gratuita de factura</a>
-        <a class="btn btn-outline" href="#precios" aria-label="Consultar el precio único del servicio" aria-describedby="cta-desc">Ver precio único</a>
+      <div class="hero-actions">
+        <a class="btn btn-primary" data-whatsapp-link href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisar%20mi%20factura%20de%20luz%2C%20gas%20o%20tel%C3%A9fono.%20%C2%BFC%C3%B3mo%20empiezo%3F" aria-label="Solicitar revisión gratuita por WhatsApp" aria-describedby="cta-desc">Revisión por WhatsApp</a>
+        <a class="btn btn-outline" href="#formulario" aria-label="Enviar factura por email" aria-describedby="cta-desc">Enviar factura por email</a>
       </div>
-      <p id="cta-desc" class="sr-only">Inicia la revisión gratuita de tu factura o consulta nuestro precio único para la gestión completa.</p>
+      <p id="cta-desc" class="sr-only">Inicia la revisión gratuita de tu factura por WhatsApp o envíala mediante el formulario de correo.</p>
       <p class="help highlight-note">Respuesta profesional en 24–48 h, tratamiento confidencial de datos y pago seguro cuando el servicio lo requiera.</p>
       <div class="trust-badges" aria-label="Reseñas y estadísticas de confianza">
         <span class="trust-badge">Más de 5.000 facturas analizadas</span>
@@ -264,7 +267,7 @@
         </div>
       </div>
       <div class="cta-group">
-        <a class="btn btn-primary" href="/whatsapp.html" aria-label="Solicitar revisión por WhatsApp" rel="noopener" aria-describedby="cta-desc">Solicitar revisión ahora</a>
+        <a class="btn btn-primary" data-whatsapp-link href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisar%20mi%20factura%20de%20luz%2C%20gas%20o%20tel%C3%A9fono.%20%C2%BFC%C3%B3mo%20empiezo%3F" aria-label="Solicitar revisión por WhatsApp" aria-describedby="cta-desc">Solicitar revisión por WhatsApp</a>
         <a class="btn btn-outline" href="#precios" aria-label="Consultar el precio único del servicio" aria-describedby="cta-desc">Consultar precio único</a>
       </div>
     </section>
@@ -291,7 +294,7 @@
           <li>Seguimiento telemático y comunicación continua</li>
           <li>Resultado en 24–48 h</li>
         </ul>
-        <a href="#revision" class="btn btn-primary">Iniciar revisión gratuita</a>
+        <a data-whatsapp-link href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisar%20mi%20factura%20de%20luz%2C%20gas%20o%20tel%C3%A9fono.%20%C2%BFC%C3%B3mo%20empiezo%3F" class="btn btn-primary" aria-label="Iniciar revisión por WhatsApp">Iniciar revisión por WhatsApp</a>
       </section>
       <p class="help">Tu devolución se abona siempre directamente por tu compañía en tu cuenta o factura; nosotros únicamente gestionamos el expediente.</p>
       <p class="help">Servicio administrativo y automatizado: no constituye asesoramiento jurídico individualizado ni representación letrada. Si tu caso requiere abogado, derivamos —con tu consentimiento— a <strong>colaboradores externos, colegiados y responsables de sus honorarios</strong>.</p>
@@ -317,7 +320,7 @@
         </div>
       </div>
       <div class="cta-group">
-        <a class="btn btn-primary" href="/whatsapp.html" aria-label="Solicitar revisión por WhatsApp" rel="noopener" aria-describedby="cta-desc">Solicitar revisión por WhatsApp</a>
+        <a class="btn btn-primary" data-whatsapp-link href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisar%20mi%20factura%20de%20luz%2C%20gas%20o%20tel%C3%A9fono.%20%C2%BFC%C3%B3mo%20empiezo%3F" aria-label="Solicitar revisión por WhatsApp" aria-describedby="cta-desc">Solicitar revisión por WhatsApp</a>
         <a class="btn btn-outline" href="#formulario" aria-label="Enviar factura por email" aria-describedby="cta-desc">Enviar factura por email</a>
       </div>
     </section>
@@ -386,7 +389,7 @@
             </div>
           </div>
           <div class="cta-group">
-            <a class="btn btn-primary" href="/whatsapp.html" aria-label="Solicitar revisión por WhatsApp" rel="noopener" aria-describedby="cta-desc">Solicitar revisión por WhatsApp</a>
+            <a class="btn btn-primary" data-whatsapp-link href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisar%20mi%20factura%20de%20luz%2C%20gas%20o%20tel%C3%A9fono.%20%C2%BFC%C3%B3mo%20empiezo%3F" aria-label="Solicitar revisión por WhatsApp" aria-describedby="cta-desc">Solicitar revisión por WhatsApp</a>
             <a class="btn btn-outline" href="#formulario" aria-label="Enviar factura por email" aria-describedby="cta-desc">Enviar factura por email</a>
           </div>
         </div>
@@ -424,7 +427,7 @@
               </div>
             </div>
             <div class="cta-group">
-              <a class="btn btn-primary" href="/whatsapp.html" aria-label="Solicitar revisión por WhatsApp" rel="noopener" aria-describedby="cta-desc">Solicitar revisión por WhatsApp</a>
+              <a class="btn btn-primary" data-whatsapp-link href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisar%20mi%20factura%20de%20luz%2C%20gas%20o%20tel%C3%A9fono.%20%C2%BFC%C3%B3mo%20empiezo%3F" aria-label="Solicitar revisión por WhatsApp" aria-describedby="cta-desc">Solicitar revisión por WhatsApp</a>
               <a class="btn btn-outline" href="#formulario" aria-label="Enviar factura por email" aria-describedby="cta-desc">Enviar factura por email</a>
             </div>
           </div>
@@ -435,7 +438,7 @@
     <section id="estudio-gratis" class="free-study">
       <h2>Estudio energético certificado sin coste</h2>
       <p>Calculamos tu consumo real, contrastamos tarifas vigentes y proponemos ajustes para reducir la factura. El informe es gratuito y solo realizamos reclamaciones adicionales si lo solicitas.</p>
-      <a class="btn btn-outline" href="https://wa.me/34953818494?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20un%20estudio%20energ%C3%A9tico%20gratuito" target="_blank" rel="noopener">
+      <a class="btn btn-outline" data-whatsapp-link href="https://wa.me/34953818494?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20un%20estudio%20energ%C3%A9tico%20gratuito">
         Solicitar estudio por WhatsApp</a>
     </section>
     <!-- BANNER: solo candado -->
@@ -460,7 +463,7 @@
         <span class="trust-badge">Más de 250.000 € recuperados</span>
       </div>
       <div class="cta-group">
-        <a class="btn btn-primary" href="/whatsapp.html" aria-label="Solicitar estudio energético certificado" rel="noopener" aria-describedby="cta-desc">Solicitar estudio energético</a>
+        <a class="btn btn-primary" data-whatsapp-link href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisar%20mi%20factura%20de%20luz%2C%20gas%20o%20tel%C3%A9fono.%20%C2%BFC%C3%B3mo%20empiezo%3F" aria-label="Solicitar estudio energético certificado" aria-describedby="cta-desc">Solicitar estudio energético</a>
         <a class="btn btn-outline" href="#formulario" aria-label="Enviar factura por email" aria-describedby="cta-desc">Enviar factura por email</a>
         <a class="btn btn-primary" href="https://g.page/r/CYf0jfou4O_XEAE/review" target="_blank" rel="noopener" aria-label="Consultar reseñas en Google" aria-describedby="cta-desc">Consultar reseñas en Google</a>
       </div>
@@ -475,7 +478,7 @@
   </main>
   <footer class="footer" role="contentinfo">
     <img src="logo.jfif" alt="TuReclamoExprés" class="footer-logo" />
-    <p>© <span id="year"></span> TuReclamoExprés · <a href="#como-funciona">Cómo funciona</a> · <a href="#precios">Precios</a> · <a href="#guias">Guías</a> · <a href="#formulario">Enviar factura</a> · <a href="/whatsapp.html">WhatsApp</a></p>
+    <p>© <span id="year"></span> TuReclamoExprés · <a href="#como-funciona">Cómo funciona</a> · <a href="#precios">Precios</a> · <a href="#guias">Guías</a> · <a href="#formulario">Enviar factura</a> · <a data-whatsapp-link href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisar%20mi%20factura%20de%20luz%2C%20gas%20o%20tel%C3%A9fono.%20%C2%BFC%C3%B3mo%20empiezo%3F">WhatsApp</a></p>
     <p><a href="tel:+34953818494" aria-label="Llamar al 953 818 494">953 818 494</a> · <a href="mailto:info@tureclamoexpres.com" aria-label="Enviar email a info@tureclamoexpres.com">info@tureclamoexpres.com</a></p>
   </footer>
   <!-- MODAL LEGALES -->
@@ -515,18 +518,18 @@
     <div class="exit-popup-content">
       <h2 id="exit-popup-title">Solicita tu revisión antes de salir</h2>
       <p>Envíanos la factura y te confirmamos en 24–48 h si procede reclamar o ajustar tu tarifa.</p>
-      <a class="btn btn-primary" href="/whatsapp.html" aria-label="Enviar factura por WhatsApp" rel="noopener" aria-describedby="cta-desc">Enviar factura ahora</a>
+      <a class="btn btn-primary" data-whatsapp-link href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisar%20mi%20factura%20de%20luz%2C%20gas%20o%20tel%C3%A9fono.%20%C2%BFC%C3%B3mo%20empiezo%3F" aria-label="Enviar factura por WhatsApp" aria-describedby="cta-desc">Enviar factura ahora</a>
       <button id="exit-popup-close" class="btn btn-outline" type="button" aria-label="Cerrar pop-up">Cerrar</button>
     </div>
   </div>
   <!-- BANNER MÓVIL -->
   <div id="mobile-banner" class="mobile-banner">
     <span>¿Quieres que revisemos tu factura?</span>
-    <a href="/whatsapp.html" class="btn btn-primary mobile-banner-btn" aria-label="Enviar factura por WhatsApp">Solicitar revisión</a>
+    <a href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisar%20mi%20factura%20de%20luz%2C%20gas%20o%20tel%C3%A9fono.%20%C2%BFC%C3%B3mo%20empiezo%3F" data-whatsapp-link class="btn btn-primary mobile-banner-btn" aria-label="Enviar factura por WhatsApp">Solicitar revisión</a>
     <button id="close-banner" class="mobile-banner-close" aria-label="Cerrar banner móvil">Cerrar</button>
   </div>
   <!-- BOTÓN WHATSAPP -->
-  <a class="fab-wa" href="https://wa.me/+34953818494?text=Hola%2C%20quiero%20revisar%20mi%20factura%20de%20luz%2C%20gas%20o%20tel%C3%A9fono.%20%C2%BFC%C3%B3mo%20empiezo%3F" aria-label="Contactar por WhatsApp para revisar factura" rel="noopener">WhatsApp</a>
+  <a class="fab-wa" data-whatsapp-link href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisar%20mi%20factura%20de%20luz%2C%20gas%20o%20tel%C3%A9fono.%20%C2%BFC%C3%B3mo%20empiezo%3F" aria-label="Contactar por WhatsApp para revisar factura" rel="noopener" target="_blank">WhatsApp</a>
   <noscript>
     <div class="alert-banner">
       Este sitio usa funcionalidades JavaScript (formulario, menú, acordeón y guías). Actívalo para una experiencia completa.
@@ -536,22 +539,42 @@
     document.addEventListener('DOMContentLoaded', () => {
       // Año dinámico
       document.getElementById('year').textContent = new Date().getFullYear();
+      // Altura dinámica de cabecera
+      const header = document.querySelector('.site-header');
+      const setHeaderHeight = () => {
+        if (!header) return;
+        document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+      };
+      setHeaderHeight();
+      window.addEventListener('resize', setHeaderHeight);
+      window.addEventListener('load', setHeaderHeight);
+      // Enlaces a WhatsApp
+      document.querySelectorAll('[data-whatsapp-link]').forEach(link => {
+        link.setAttribute('target', '_blank');
+        const currentRel = link.getAttribute('rel') || '';
+        if (!currentRel.toLowerCase().includes('noopener')) {
+          link.setAttribute('rel', `${currentRel} noopener`.trim());
+        }
+      });
       // Menú móvil
       const navToggle = document.querySelector('.nav-toggle');
       const nav = document.getElementById('primary-nav');
-      const navLinks = nav.querySelectorAll('a');
-      navToggle.addEventListener('click', () => {
-        const isOpen = nav.classList.toggle('open');
-        navToggle.setAttribute('aria-expanded', isOpen);
-        navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
-      });
-      navLinks.forEach(link => link.addEventListener('click', () => {
-        if (nav.classList.contains('open')) {
-          nav.classList.remove('open');
-          navToggle.setAttribute('aria-expanded', 'false');
-          navToggle.setAttribute('aria-label', 'Abrir menú');
-        }
-      }));
+      if (nav && navToggle) {
+        const navLinks = nav.querySelectorAll('a');
+        navToggle.addEventListener('click', () => {
+          const isOpen = nav.classList.toggle('open');
+          navToggle.setAttribute('aria-expanded', isOpen);
+          navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+          setHeaderHeight();
+        });
+        navLinks.forEach(link => link.addEventListener('click', () => {
+          if (nav.classList.contains('open')) {
+            nav.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.setAttribute('aria-label', 'Abrir menú');
+          }
+        }));
+      }
       // Modal legales
       const legalModal = document.getElementById('legal-modal');
       const abrirLegal = () => {
