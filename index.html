@@ -172,13 +172,21 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K94XRMDK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <header class="site-header" role="banner">
-    <a class="logo" href="#inicio" aria-label="TuReclamoExprés - Volver al inicio">TuReclamoExprés</a>
-    <button id="theme-toggle" aria-label="Cambiar tema" class="theme-toggle">🌙</button>
-    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú de navegación">
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-    </button>
+    <div class="header-top">
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú de navegación">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <a class="logo" href="#inicio" aria-label="TuReclamoExprés - Volver al inicio">
+        <span class="logo-mark" aria-hidden="true">⚡</span>
+        <span class="logo-wordmark">TuEnergía<span>Exprés</span></span>
+      </a>
+      <div class="header-actions">
+        <div class="header-contact">Consulta telefónica: <a href="tel:+34953818494" aria-label="Llamar al 953 818 494">953 818 494</a></div>
+        <button id="theme-toggle" aria-label="Cambiar tema" class="theme-toggle">🌙</button>
+      </div>
+    </div>
     <nav id="primary-nav" class="nav" role="navigation" aria-label="Navegación principal">
       <ul class="nav-links">
         <li><a href="#como-funciona" aria-current="page">Cómo funciona</a></li>
@@ -189,9 +197,6 @@
         <li><a href="#" id="openLegalModalLink">Legales</a></li>
       </ul>
     </nav>
-    <div class="header-right">
-      <div class="header-contact">Consulta telefónica: <a href="tel:+34953818494" aria-label="Llamar al 953 818 494">953 818 494</a></div>
-    </div>
   </header>
   <main id="main-content" role="main">
     <!-- HERO -->
@@ -464,17 +469,22 @@
         <a class="btn btn-primary" href="https://g.page/r/CYf0jfou4O_XEAE/review" target="_blank" rel="noopener" aria-label="Consultar reseñas en Google" aria-describedby="cta-desc">Consultar reseñas en Google</a>
       </div>
     </section>
-    
-    
-    
-    
-    
-    
-    
+
+    <section id="plan-amigo" class="plan-amigo" aria-label="Programa Plan Amigo">
+      <div class="plan-amigo-card">
+        <div class="plan-amigo-badge" aria-hidden="true">🎉</div>
+        <h2>Plan Amigo: gana 40 €</h2>
+        <p>Por cada amigo que contrate la luz con TuEnergíaExprés te ingresamos 40 € por Bizum o transferencia.</p>
+        <button type="button" class="btn btn-primary plan-amigo-btn" id="copyPlanAmigo" aria-describedby="planAmigoMsg">Compartir mi enlace</button>
+        <p id="planAmigoMsg" class="plan-amigo-msg" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
   </main>
   <footer class="footer" role="contentinfo">
     <img src="logo.jfif" alt="TuReclamoExprés" class="footer-logo" />
     <p>© <span id="year"></span> TuReclamoExprés · <a href="#como-funciona">Cómo funciona</a> · <a href="#precios">Precios</a> · <a href="#guias">Guías</a> · <a href="#formulario">Enviar factura</a> · <a href="/whatsapp.html">WhatsApp</a></p>
+    <p class="footer-secondary"><a href="https://tureclamoexpres.com" target="_blank" rel="noopener" aria-label="Abrir tureclamoexpres.com">tureclamoexpres.com</a></p>
     <p><a href="tel:+34953818494" aria-label="Llamar al 953 818 494">953 818 494</a> · <a href="mailto:info@tureclamoexpres.com" aria-label="Enviar email a info@tureclamoexpres.com">info@tureclamoexpres.com</a></p>
   </footer>
   <!-- MODAL LEGALES -->
@@ -531,6 +541,7 @@
       Este sitio usa funcionalidades JavaScript (formulario, menú, acordeón y guías). Actívalo para una experiencia completa.
     </div>
   </noscript>
+  <script src="main.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Año dinámico
