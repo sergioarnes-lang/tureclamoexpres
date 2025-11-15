@@ -155,7 +155,7 @@ main section + section {
    =========================================== */
 @media (max-width: 768px) {
 
-  /* Quitamos apariencia de barra blanca fija */
+  /* Quitar barra blanca fija del header */
   .site-header {
     position: static !important;
     top: auto !important;
@@ -167,18 +167,33 @@ main section + section {
     margin-bottom: 0 !important;
   }
 
-  /* Evita el hueco que dejaba el menú móvil */
+  /* Evitar hueco que dejaba el menú móvil */
   :root {
     --header-height: 0px !important;
   }
 
-  /* Ajuste del botón día/noche para que se vea bien */
+  /* Ajustar botón día/noche */
   .theme-toggle {
     margin-top: 12px !important;
     align-self: center !important;
   }
-}
 
+  /* ELIMINA la barra blanca real (provenía de .nav) */
+  .nav {
+    background: transparent !important;
+    border-top: none !important;
+    box-shadow: none !important;
+    top: 0 !important; /* no deje hueco ni se vea nada arriba */
+  }
+
+  /* MOSTRAR las 3 rallitas del menú móvil */
+  .nav-toggle {
+    visibility: visible !important;
+    pointer-events: auto !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
 
 
 .header-top {
