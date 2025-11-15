@@ -155,7 +155,6 @@ main section + section {
    =========================================== */
 @media (max-width: 768px) {
 
-  /* Quitar barra blanca fija del header */
   .site-header {
     position: static !important;
     top: auto !important;
@@ -167,26 +166,22 @@ main section + section {
     margin-bottom: 0 !important;
   }
 
-  /* Evitar hueco que dejaba el menú móvil */
   :root {
     --header-height: 0px !important;
   }
 
-  /* Ajustar botón día/noche */
   .theme-toggle {
     margin-top: 12px !important;
     align-self: center !important;
   }
 
-  /* ELIMINA la barra blanca real (provenía de .nav) */
   .nav {
     background: transparent !important;
     border-top: none !important;
     box-shadow: none !important;
-    top: 0 !important; /* no deje hueco ni se vea nada arriba */
+    top: 0 !important;
   }
 
-  /* MOSTRAR las 3 rallitas del menú móvil */
   .nav-toggle {
     visibility: visible !important;
     pointer-events: auto !important;
@@ -194,6 +189,9 @@ main section + section {
     align-items: center;
     justify-content: center;
   }
+}
+
+/* ← ESTE CIERRE FALTABA */
 
 
 .header-top {
