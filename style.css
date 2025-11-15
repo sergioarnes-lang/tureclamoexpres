@@ -128,7 +128,7 @@ main section + section {
 .skip-link:focus {
   outline: 2px solid #ffffff;
 }
-./* ============================
+/* ============================
    HEADER GENERAL (PC + global)
    ============================ */
 .site-header {
@@ -179,7 +179,6 @@ main section + section {
   }
 }
 
-}
 
 
 .header-top {
