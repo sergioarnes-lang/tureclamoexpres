@@ -535,12 +535,15 @@
     <button id="close-banner" class="mobile-banner-close" aria-label="Cerrar banner móvil">Cerrar</button>
   </div>
   <!-- BOTÓN WHATSAPP -->
-  <a class="fab-wa" href="https://wa.me/+34953818494?text=Hola%2C%20quiero%20revisar%20mi%20factura%20de%20luz%2C%20gas%20o%20tel%C3%A9fono.%20%C2%BFC%C3%B3mo%20empiezo%3F" aria-label="Contactar por WhatsApp para revisar factura" rel="noopener">WhatsApp</a>
+  <a class="fab-wa" href="https://wa.me/34953818494" aria-label="Contactar por WhatsApp para revisar factura" rel="noopener">
+    <span class="sr-only">Contactar por WhatsApp</span>
+  </a>
   <noscript>
     <div class="alert-banner">
       Este sitio usa funcionalidades JavaScript (formulario, menú, acordeón y guías). Actívalo para una experiencia completa.
     </div>
   </noscript>
+  <script src="js/whatsapp-redirect.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Año dinámico
