@@ -177,17 +177,11 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header class="site-header" role="banner">
-    <a class="logo" href="#inicio" aria-label="TuReclamoExprés - Volver al inicio">TuReclamoExprés</a>
+    <div class="header-left">
+      <a class="logo" href="#inicio" aria-label="TuReclamoExprés - Volver al inicio">TuReclamoExprés</a>
+    </div>
 
-    <button id="theme-toggle" aria-label="Cambiar tema" class="theme-toggle">🌙</button>
-
-    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú de navegación">
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-    </button>
-
-    <nav id="primary-nav" class="nav" role="navigation" aria-label="Navegación principal">
+    <nav id="primary-nav" class="mobile-menu" role="navigation" aria-label="Navegación principal">
       <ul class="nav-links">
         <li><a href="#como-funciona" aria-current="page">Cómo funciona</a></li>
         <li><a href="#precios">Precios</a></li>
@@ -197,6 +191,16 @@
         <li><a href="#" id="openLegalModalLink">Legales</a></li>
       </ul>
     </nav>
+
+    <div class="header-actions">
+      <button id="theme-toggle" aria-label="Cambiar tema" class="theme-toggle">🌙</button>
+
+      <button class="menu-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú de navegación">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
 
   </header>
   
@@ -542,21 +546,23 @@
       // Año dinámico
       document.getElementById('year').textContent = new Date().getFullYear();
       // Menú móvil
-      const navToggle = document.querySelector('.nav-toggle');
-      const nav = document.getElementById('primary-nav');
-      const navLinks = nav.querySelectorAll('a');
-      navToggle.addEventListener('click', () => {
-        const isOpen = nav.classList.toggle('open');
-        navToggle.setAttribute('aria-expanded', isOpen);
-        navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
-      });
-      navLinks.forEach(link => link.addEventListener('click', () => {
-        if (nav.classList.contains('open')) {
-          nav.classList.remove('open');
-          navToggle.setAttribute('aria-expanded', 'false');
-          navToggle.setAttribute('aria-label', 'Abrir menú');
-        }
-      }));
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mobileMenu = document.getElementById('primary-nav');
+      if (menuToggle && mobileMenu) {
+        const navLinks = mobileMenu.querySelectorAll('a');
+        menuToggle.addEventListener('click', () => {
+          const isOpen = mobileMenu.classList.toggle('open');
+          menuToggle.setAttribute('aria-expanded', isOpen);
+          menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+        });
+        navLinks.forEach(link => link.addEventListener('click', () => {
+          if (mobileMenu.classList.contains('open')) {
+            mobileMenu.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+          }
+        }));
+      }
       // Modal legales
       const legalModal = document.getElementById('legal-modal');
       const abrirLegal = () => {
