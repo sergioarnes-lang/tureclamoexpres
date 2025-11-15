@@ -128,10 +128,13 @@ main section + section {
 .skip-link:focus {
   outline: 2px solid #ffffff;
 }
+./* ============================
+   HEADER GENERAL (PC + global)
+   ============================ */
 .site-header {
   grid-area: header;
   position: static;     /* NO FIJO */
-  top: auto;            /* NO PEGADO */
+  top: auto;
   inset-inline: 0;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: saturate(180%) blur(16px);
@@ -144,6 +147,38 @@ main section + section {
   flex-direction: column;
   gap: 12px;
   z-index: 999;
+}
+
+/* ===========================================
+   AJUSTE PARA MOVIL — eliminar barra fija
+   pero mantener logo + menú + modo oscuro
+   =========================================== */
+@media (max-width: 768px) {
+
+  /* Quitamos apariencia de barra blanca fija */
+  .site-header {
+    position: static !important;
+    top: auto !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Evita el hueco que dejaba el menú móvil */
+  :root {
+    --header-height: 0px !important;
+  }
+
+  /* Ajuste del botón día/noche para que se vea bien */
+  .theme-toggle {
+    margin-top: 12px !important;
+    align-self: center !important;
+  }
+}
+
 }
 
 
