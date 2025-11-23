@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://cdn.tailwindcss.com" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root{color-scheme:light;}*{scroll-behavior:smooth;}body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#f9fafb;color:#0f172a;} .glass{background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);} .shadow-soft{box-shadow:0 15px 40px rgba(0,0,0,0.08);} .gradient{background:linear-gradient(135deg,#06b6d4,#22c55e);} .btn-primary{background:#22c55e;color:#fff;border-radius:12px;padding:12px 20px;transition:transform .2s,box-shadow .2s;} .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(34,197,94,.25);} .tag{background:#e0f2fe;color:#0369a1;padding:4px 10px;border-radius:9999px;font-weight:600;font-size:13px;} .card:hover{transform:translateY(-4px);} .floating{animation:pulse 2.4s infinite;} @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.35);}70%{box-shadow:0 0 0 12px rgba(34,197,94,0);}100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}} .input{border:1px solid #e2e8f0;border-radius:12px;padding:12px;width:100%;} .input:focus{outline:none;border-color:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,0.15);} .badge{font-size:12px;padding:4px 8px;border-radius:8px;}
+    :root{color-scheme:light;}*{scroll-behavior:smooth;}body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:linear-gradient(180deg,#e0f2fe 0%,#f8fafc 40%,#ecfdf3 100%);color:#0f172a;} .glass{background:rgba(255,255,255,0.9);backdrop-filter:blur(10px);} .shadow-soft{box-shadow:0 15px 40px rgba(0,0,0,0.08);} .gradient{background:linear-gradient(135deg,#06b6d4,#22c55e);} .btn-primary{background:#22c55e;color:#fff;border-radius:12px;padding:12px 20px;transition:transform .2s,box-shadow .2s;} .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(34,197,94,.25);} .btn-ghost{background:#ecfeff;color:#0ea5e9;border-radius:12px;padding:12px 16px;border:1px solid #bae6fd;} .tag{background:#e0f2fe;color:#0369a1;padding:4px 10px;border-radius:9999px;font-weight:600;font-size:13px;} .card:hover{transform:translateY(-4px);} .floating{animation:pulse 2.4s infinite;} @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.35);}70%{box-shadow:0 0 0 12px rgba(34,197,94,0);}100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}} .input{border:1px solid #e2e8f0;border-radius:12px;padding:12px;width:100%;} .input:focus{outline:none;border-color:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,0.15);} .badge{font-size:12px;padding:4px 8px;border-radius:8px;}
   </style>
   <script type="application/ld+json">{
     "@context": "https://schema.org",
@@ -25,28 +25,48 @@
   }</script>
 </head>
 <body class="min-h-screen">
-  <header class="relative overflow-hidden bg-white pb-10">
-    <div class="absolute inset-0 bg-gradient-to-b from-cyan-50 to-white"></div>
-    <div class="max-w-6xl mx-auto px-4 py-8 relative z-10">
-      <div class="flex items-center justify-between">
+  <header class="relative overflow-hidden pb-10">
+    <div class="absolute inset-0 bg-gradient-to-b from-cyan-100/70 via-white to-emerald-50"></div>
+    <div class="max-w-6xl mx-auto px-4 py-6 relative z-10">
+      <nav class="flex items-center justify-between gap-4">
         <div class="flex items-center gap-3">
-          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIxNiIgZmlsbD0iI0VGQjQwMiIvPjxwYXRoIGQ9Ik0zMCAyMC41QzMwIDIxLjMyNzQgMjkuMzI3NCAyMiA4IDIyVjQyQzI5LjMyNzQgNDIgMzAgNDIuNjcyNiAzMCA0My41QzMwIDQ1LjE0MjMgMzIuMjk1MiA0NyA0NSA0N0M1NC45MDQ4IDQ3IDU0LjkwNDggNDEgNDUgNDFDMzIuMjk1MiA0MSAzMCAzOC44NTc3IDMwIDM3LjVDMzAgMzYuNjcyNiAyOS4zMjc0IDM2IDI4IDM2QzI2LjY3MjYgMzYgMjYgMzYuNjcyNiAyNiAzNy41IiBzdHJva2U9IiMyMkM1NUUiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iMTciIGN5PSIyMSIgcj0iNiIgZmlsbD0iI0Y1RkFERSIvPjwvc3ZnPg==" alt="Logotipo Nordy" class="w-12 h-12" />
+          <img src="/logo-principal.jpg" alt="TuReclamoExprés" class="w-12 h-12 object-contain" />
           <div>
             <p class="tag">Nordy partner oficial</p>
-            <h1 class="text-2xl md:text-3xl font-bold text-slate-900">Ahorra en tu factura con tarifas reales y sin permanencias</h1>
-            <p class="text-slate-600 mt-1">Revisión gratuita + comparativa real + alta inmediata con Nordy</p>
+            <p class="text-sm text-slate-600">Reclamación y energía sin letra pequeña</p>
           </div>
         </div>
-        <a href="#calculadora" class="btn-primary hidden md:inline-flex items-center gap-2">Calcular mi ahorro <span aria-hidden="true">➡️</span></a>
+        <div class="hidden md:flex items-center gap-3 text-sm font-semibold text-slate-700">
+          <a href="#tarifas" class="hover:text-emerald-600">Tarifas</a>
+          <a href="#calculadora" class="hover:text-emerald-600">Calculadora</a>
+          <a href="#factura" class="hover:text-emerald-600">Sube tu factura</a>
+          <a href="tel:+34953818494" class="btn-ghost inline-flex items-center gap-2"><span aria-hidden="true">📞</span> Llamar 953 81 84 94</a>
+          <a href="#calculadora" class="btn-primary inline-flex items-center gap-2">Calcular ahorro <span aria-hidden="true">➡️</span></a>
+        </div>
+        <button id="menu-toggle" class="md:hidden rounded-xl border border-slate-200 p-2" aria-label="Abrir menú" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </nav>
+
+      <div id="mobile-menu" class="md:hidden hidden mt-4 space-y-3 glass p-4 rounded-2xl shadow-soft">
+        <div class="grid grid-cols-2 gap-3 text-sm font-semibold text-slate-700">
+          <a href="#tarifas" class="btn-ghost text-center">Tarifas</a>
+          <a href="#calculadora" class="btn-ghost text-center">Calculadora</a>
+          <a href="#factura" class="btn-ghost text-center">Factura</a>
+          <a href="https://wa.me/34953818494" class="btn-ghost text-center">WhatsApp</a>
+        </div>
+        <a href="tel:+34953818494" class="btn-primary w-full inline-flex items-center justify-center gap-2">📞 Llamar 953 81 84 94</a>
       </div>
-      <div class="mt-8 grid md:grid-cols-2 gap-6 items-center">
+
+      <div class="mt-6 grid md:grid-cols-2 gap-6 items-center">
         <div class="space-y-4">
+          <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">Ahorra en tu factura con tarifas reales y sin permanencias</h1>
           <p class="text-lg text-slate-700 leading-relaxed">Te mostramos precios oficiales y calculamos tu ahorro real en segundos. Sin letra pequeña, sin permanencias y con soporte humano 24/7.</p>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href="#calculadora" class="btn-primary text-center">Calcular mi ahorro</a>
             <a href="https://wa.me/34953818494" class="px-5 py-3 rounded-xl border border-emerald-200 text-emerald-700 font-semibold bg-emerald-50">Hablar por WhatsApp</a>
           </div>
-          <div class="flex items-center gap-3 text-sm text-slate-600">
+          <div class="flex items-center gap-3 text-sm text-slate-600 flex-wrap">
             <span class="badge bg-emerald-100 text-emerald-700">Alta inmediata</span>
             <span class="badge bg-cyan-100 text-cyan-700">Comparativa real</span>
             <span class="badge bg-indigo-100 text-indigo-700">Sin permanencia</span>
@@ -64,7 +84,7 @@
   </header>
 
   <main class="max-w-6xl mx-auto px-4 space-y-16 pb-20">
-    <section aria-label="Tarifas Nordy" class="space-y-6">
+    <section id="tarifas" aria-label="Tarifas Nordy" class="space-y-6">
       <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
         <div>
           <p class="tag">Tarifas oficiales Nordy</p>
@@ -72,55 +92,63 @@
         </div>
         <span class="text-sm text-slate-600">Sin permanencia • Alta online • Atención inmediata</span>
       </div>
-      <div class="grid md:grid-cols-3 gap-4">
-        <article class="card glass shadow-soft rounded-2xl p-6 border border-slate-100 transition-all" aria-label="Tarifa Fija 24H">
-          <div class="flex items-center gap-3 mb-3">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAiIGhlaWdodD0iNzAiIHZpZXdCb3g9IjAgMCA3MCA3MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNzAiIGhlaWdodD0iNzAiIHJ4PSIxNCIgZmlsbD0iI0VGRiIvPjxwYXRoIGQ9Ik0zNS43NSA1My4zNUM0Mi4zOSA0NS4xOCA0NC43MiAzNy4xNCA0NC43MiAzMC4yNUM0NC43MiAyMC4xNyAzNy44MyAxMyAzNS43NSAxM0MzMy42NyAxMyAyNi43OCAyMC4xNyAyNi43OCAzMC4yNUMyNi43OCAzNy4xNCAyOS4xMSA0NS4xOCAzNS43NSA1My4zNVoiIHN0cm9rZT0iIzIyQzU1RSIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9IiNGRkYiLz48cGF0aCBkPSJNMTkuNSA0MC44OEMyMiAxMiAxMiAxMiAyOS45MyAxIiBzdHJva2U9IiMwMDk5NjYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+" alt="Icono bombilla" class="w-12 h-12" loading="lazy" />
+      <div class="grid md:grid-cols-3 gap-4 items-stretch">
+        <article class="card glass shadow-soft rounded-2xl p-6 border border-slate-100 transition-all flex flex-col gap-4" aria-label="Tarifa Fija 24H">
+          <div class="flex items-center gap-3">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAiIGhlaWdodD0iNzAiIHZpZXdCb3g9IjAgMCA3MCA3MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNzAiIGhlaWdodD0iNzAiIHJ4PSIxNCIgZmlsbD0iI0VGRiIvPjxwYXRoIGQ9Ik0zNS43NSA1My4zNUM0Mi4zOSA0NS4xOCA0NC43MiAzNy4xNCA0NC43MiAzMC4yNUM0NC43MiAyMC4xNyAzNy44MyAxMyAzNS43NSAxM0MzMy42NyAxMyAyNi43OCAyMC4xNyAyNi43OCAzMC4yNUMyNi43OCAzNy4xNCAyOS4xMSA0NS4xOCAzNS43NSA1My4zNVpNMzIuMyAzMi44QzI1LjggMzIuOCAyMy4wNyAyOC42NyAyMy4wNyAyOC42N0wyOS41IDIxLjNDMzEuODcgMTguNzMgMzcuMyAxMy41IDM0Ljg1IDExLjc5QzMyLjQgMTAuMDggMjQuOCA5IDIxLjM1IDE1Ljg5QzE4LjE2IDIyLjQ2IDIxLjU1IDMzLjQgMzIuMyAzMi44Wk0xNyAxMS4xN0M1IDE4LjUyIDEyLjA2IDU0IDI1IDU0QzUwIDU0IDU3IDM0LjUgNTcuMDEgMzMuNTdDNTcuMDYgMzEuOTIgNTUuNzYgMzIuMzQgNTQuNzUgMzIuNzVDNTIuMSAzMy42MyA0OS42NiAzNC42MyA0Ni40NiAzMi44NUM0OC43MSAzMS44NSA1Mi4xMyAyNy4zOSA1MC4xMiAyMC43NEM0Ni4zNyA4LjQyIDMxLjIgNC41MiAxNyAxMS4xN1oiIGZpbGw9IiMwMDk5NjYiLz48L3N2Zz4=" alt="Icono reloj fijo" class="w-12 h-12" loading="lazy" />
             <div>
               <h3 class="text-xl font-semibold text-slate-900">Tarifa Fija 24H</h3>
-              <p class="text-sm text-emerald-600 font-semibold">Precio estable todo el día</p>
+              <p class="text-sm text-emerald-600 font-semibold">Precio estable</p>
             </div>
           </div>
-          <ul class="text-slate-700 space-y-1 mb-4 text-sm">
-            <li>Energia: <strong>0,119 €/kWh</strong></li>
-            <li>Potencia P1/P3: <strong>0,095 €/kW/día</strong></li>
-            <li>Sin permanencia</li>
+          <div class="bg-emerald-50 text-emerald-700 rounded-xl px-4 py-3 text-center font-bold text-xl">
+            0,119 €/kWh
+          </div>
+          <ul class="text-slate-700 space-y-1 text-sm flex-1">
+            <li>Precio estable todo el día</li>
+            <li>Sin sorpresas ni subidas</li>
+            <li>Atención inmediata</li>
           </ul>
           <button class="btn-primary w-full" onclick="document.getElementById('tarifa').value='fija';document.getElementById('calculadora').scrollIntoView({behavior:'smooth'});">Calcular</button>
         </article>
-        <article class="card glass shadow-soft rounded-2xl p-6 border border-slate-100 transition-all" aria-label="Tarifa Flexible Indexada">
-          <div class="flex items-center gap-3 mb-3">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAiIGhlaWdodD0iNzAiIHZpZXdCb3g9IjAgMCA3MCA3MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNzAiIGhlaWdodD0iNzAiIHJ4PSIxNCIgZmlsbD0iI0VGRiIvPjxwYXRoIGQ9Ik0xNiA0OC4xNkMzMS4xNyA0Ny4zMyAzMC43OSAzMy43MiA0NC41MSAzM0M1NS42MiAzMi42OCA1NS42MiAyMC42MyA1NS42MiAxOS43NUM1NS42MiAxNC4yMSA0Ny4yNCAxMyAyOS4zMyAxMyIgIHN0cm9rZT0iIzAwOTk2NiIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9IiNGRkYiLz48Y2lyY2xlIGN4PSIzMyIgY3k9IjQ3IiByPSI3IiBmaWxsPSIjMjJDNjVFIi8+PGNpcmNsZSBjeD0iNDgiIGN5PSIyNSIgcj0iNyIgZmlsbD0iIzAyOGI3ZiIvPjwvc3ZnPg==" alt="Icono gráfico variable" class="w-12 h-12" loading="lazy" />
+        <article class="card glass shadow-soft rounded-2xl p-6 border border-slate-100 transition-all flex flex-col gap-4" aria-label="Tarifa Flexible indexada">
+          <div class="flex items-center gap-3">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAiIGhlaWdodD0iNzAiIHZpZXdCb3g9IjAgMCA3MCA3MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNzAiIGhlaWdodD0iNzAiIHJ4PSIxNCIgZmlsbD0iI0VGRiIvPjxwYXRoIGQ9Ik0yNy4zNCA0MC4yN0wzNC4yNSA0OC4zOEM0MSA1NiAyOCA1NiAyOC41MSA1Nkg0MC45QzU2IDU2IDU2IDM5LjUgNTYuMDEgMzkuNTdDNS42MyA0OC42NCA1NS44MyA1MC4zNSA1My4xIDUwLjEwQzQ5LjA4IDQ5LjczIDQ0LjUyIDUyLjI4IDM2Ljk4IDQ5LjUyQzIxLjk3IDQzLjc0IDE2LjQ1IDMzLjgyIDE0LjgxIDI3LjQ1QzEzLjQ4IDIyLjMgMTUuMTEgMTkuMjMgMTguMTUgMTkuMDlDMjMuNyAxOC44MyAyMy43MyAyNy40MyAyNy4zNCAzMy4yNUMzMC41NiAzOC40MyAzNi42NyA0MC4zNyAzNy44NyA0MC4zN0wyNy4zNCA0MC4yN1oiIHN0cm9rZT0iIzAyOEI3RiIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9IiNGRkYiLz48cGF0aCBkPSJNMjUgMzZDMzAgMzUgMzAgNDEgMjUgNDEiIHN0cm9rZT0iIzAwOTk2NiIgc3Ryb2tlLXdpZHRoPSI0Ii8+PGNpcmNsZSBjeD0iMzIiIGN5PSIyMiIgcj0iNiIgZmlsbD0iIzAyOEI3RiIvPjwvc3ZnPg==" alt="Icono enchufe flexible" class="w-12 h-12" loading="lazy" />
             <div>
-              <h3 class="text-xl font-semibold text-slate-900">Tarifa Flexible Indexada</h3>
-              <p class="text-sm text-cyan-600 font-semibold">Coste + 0,02 €/kWh</p>
+              <h3 class="text-xl font-semibold text-slate-900">Tarifa Flexible indexada</h3>
+              <p class="text-sm text-emerald-600 font-semibold">Coste + 0,02 €/kWh</p>
             </div>
           </div>
-          <ul class="text-slate-700 space-y-1 mb-4 text-sm">
-            <li>Cuota fija: <strong>2,90 €/mes</strong></li>
+          <div class="bg-cyan-50 text-cyan-700 rounded-xl px-4 py-3 text-center font-bold text-xl">
+            Cuota fija 2,90 €/mes
+          </div>
+          <ul class="text-slate-700 space-y-1 text-sm flex-1">
             <li>Potencia: <strong>0,065 €/kW/día</strong></li>
             <li>Ahorra en valles y horarios baratos</li>
+            <li>Precio vivo siempre visible</li>
           </ul>
           <button class="btn-primary w-full" onclick="document.getElementById('tarifa').value='indexada';document.getElementById('calculadora').scrollIntoView({behavior:'smooth'});">Calcular</button>
         </article>
-        <article class="card glass shadow-soft rounded-2xl p-6 border border-slate-100 transition-all" aria-label="Tarifa Empresas 6 tramos">
-          <div class="flex items-center gap-3 mb-3">
+        <article class="card glass shadow-soft rounded-2xl p-6 border border-slate-100 transition-all flex flex-col gap-4" aria-label="Tarifa Empresas 6 tramos">
+          <div class="flex items-center gap-3">
             <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAiIGhlaWdodD0iNzAiIHZpZXdCb3g9IjAgMCA3MCA3MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNzAiIGhlaWdodD0iNzAiIHJ4PSIxNCIgZmlsbD0iI0VGRiIvPjxwYXRoIGQ9Ik0yMCA1Mkg1MFYyM0MzNSAxOSAzNSAyMSAyMCAyM1Y1MlpNMTYgNTJIMTdNNTEgNTJINVYiIHN0cm9rZT0iIzAwOTk2NiIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9IiNGRkYiLz48cGF0aCBkPSJNMTkuNSAzOC41SDI2LjVWMjcuNUgxOS41VjM4LjVaTTI5LjUgMzguNUgzNi41VjIyLjVINjIuNVYyOS41SDQ0LjVWMzguNUg1Mi41VjQ0LjVIMzYuNVY1Mi41SDI5LjVWNDQuNUgyMi41VjMyLjVIMTYuNVYyOS41SDEzLjVWMzIuNUgxNi41VjQ0LjVINy41VjUyLjVIMTUuNVY1OC41SDE5LjVWNTIuNVoiIGZpbGw9IiMyMkM1NUUiLz48L3N2Zz4=" alt="Icono edificio empresas" class="w-12 h-12" loading="lazy" />
             <div>
               <h3 class="text-xl font-semibold text-slate-900">Tarifa Empresas 6P</h3>
               <p class="text-sm text-indigo-600 font-semibold">Coste + 0,025 €/kWh</p>
             </div>
           </div>
-          <ul class="text-slate-700 space-y-1 mb-4 text-sm">
-            <li>Optimizada por periodos</li>
+          <div class="bg-indigo-50 text-indigo-700 rounded-xl px-4 py-3 text-center font-bold text-xl">
+            Optimizada por periodos
+          </div>
+          <ul class="text-slate-700 space-y-1 text-sm flex-1">
             <li>Gestión experta incluida</li>
             <li>Sin permanencia</li>
+            <li>Ajuste por curvas de consumo</li>
           </ul>
           <button class="btn-primary w-full" onclick="document.getElementById('tarifa').value='empresas';document.getElementById('calculadora').scrollIntoView({behavior:'smooth'});">Calcular</button>
         </article>
       </div>
     </section>
-
     <section id="calculadora" class="space-y-4">
       <div>
         <p class="tag">Calculadora avanzada</p>
@@ -205,7 +233,7 @@
       </div>
     </section>
 
-    <section class="space-y-4" aria-label="Subida de factura">
+    <section id="factura" class="space-y-4" aria-label="Subida de factura">
       <div>
         <p class="tag">Sube tu factura</p>
         <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">Analizamos tu factura y te damos alta inmediata</h2>
@@ -254,6 +282,16 @@
     const ahorroEl=document.getElementById('ahorro');
     const porcentajeEl=document.getElementById('porcentaje');
     const mensajeArchivo=document.getElementById('mensaje-archivo');
+    const menuToggle=document.getElementById('menu-toggle');
+    const mobileMenu=document.getElementById('mobile-menu');
+
+    if(menuToggle && mobileMenu){
+      menuToggle.addEventListener('click',()=>{
+        const isOpen=!mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden');
+        menuToggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+    }
 
     function calcular(){
       const consumo=parseFloat(consumoEl.value)||0;
