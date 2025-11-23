@@ -293,15 +293,27 @@
     <!-- PRECIOS -->
     <section id="precios">
       <section class="precio-unico">
-        <h2>Gestión completa de reclamación</h2>
-        <p><strong>39,99 € IVA incluido</strong></p>
-        <p>Revisión gratuita e informe certificado. Si detectamos cobros indebidos y decides reclamar, gestionamos todo el proceso por ti hasta la resolución final.</p>
-        <ul>
-          <li>Reclamación completa en tu nombre</li>
-          <li>Seguimiento telemático y comunicación continua</li>
-          <li>Resultado en 24–48 h</li>
-        </ul>
-        <a href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisar%20mi%20factura" class="btn btn-primary">Iniciar revisión gratuita</a>
+       <h2>Gestión completa de reclamación</h2>
+<p><strong>39,99 € IVA incluido</strong></p>
+
+<!-- BOTÓN DE PAGO STRIPE -->
+<script async src="https://js.stripe.com/v3/buy-button.js"></script>
+<stripe-buy-button
+  buy-button-id="buy_btn_1SOzcuLXhlWzsxWuMDaMWXiB"
+  publishable-key="pk_live_51Rtv7zLXhlWzsxWuJeZjbKXpizsO4Yu4x8RbbiEBnxPV8VphMjiDPnp5KLUUP8wpGPYB5FIF7HnVvf5MtLHWfA2p00YO3wuRO7">
+</stripe-buy-button>
+<!-- FIN STRIPE -->
+
+<p>Revisión gratuita e informe certificado. Si detectamos cobros indebidos y decides reclamar, gestionamos todo el proceso por ti hasta la resolución final.</p>
+<ul>
+  <li>Reclamación completa en tu nombre</li>
+  <li>Seguimiento telemático y comunicación continua</li>
+  <li>Resultado en 24–48 h</li>
+</ul>
+<a href="https://wa.me/34953818494?text=Hola%2C%20quiero%20revisar%20mi%20factura" class="btn btn-primary">
+  Iniciar revisión gratuita
+</a>
+
       </section>
       <p class="help">Tu devolución se abona siempre directamente por tu compañía en tu cuenta o factura; nosotros únicamente gestionamos el expediente.</p>
       <p class="help">Servicio administrativo y automatizado: no constituye asesoramiento jurídico individualizado ni representación letrada. Si tu caso requiere abogado, derivamos —con tu consentimiento— a <strong>colaboradores externos, colegiados y responsables de sus honorarios</strong>.</p>
