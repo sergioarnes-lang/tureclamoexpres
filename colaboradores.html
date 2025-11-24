@@ -4,7 +4,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Colaboradores – TuEnergíaExprés</title>
-<meta name="description" content="Gana 40 € por cada cliente recomendado. Únete al programa oficial de colaboradores de TuEnergíaExprés." />
+<meta name="description" content="Gana 40 € por cada cliente recomendado. Únete al programa oficial de colaboradores de TuEnergíaExprés.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -18,19 +22,21 @@
     --border:#e2e8f0;
   }
 
-  * { box-sizing:border-box; }
+  * { box-sizing:border-box; margin:0; padding:0; }
   body {
-    margin:0;
     font-family:'Inter', system-ui, sans-serif;
     background:var(--bg);
     color:var(--text);
-    line-height:1.6;
+    line-height:1.55;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* HEADER */
+  /* ===== HEADER ===== */
   header {
-    position:sticky; top:0; z-index:100;
-    background:rgba(255,255,255,0.85);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,0.92);
     backdrop-filter:blur(12px);
     border-bottom:1px solid var(--border);
   }
@@ -52,7 +58,7 @@
     text-decoration:none;
   }
 
-  /* BUTTONS */
+  /* ===== BUTTONS ===== */
   .btn {
     display:inline-flex;
     align-items:center;
@@ -60,90 +66,85 @@
     padding:12px 20px;
     border-radius:12px;
     font-weight:700;
-    cursor:pointer;
     text-decoration:none;
-    transition:0.18s ease;
     border:2px solid transparent;
+    cursor:pointer;
+    transition:0.18s ease-in-out;
   }
 
   .btn-primary {
     background:var(--green);
-    color:white;
-    box-shadow:0 10px 24px rgba(34,197,94,0.25);
+    color:#fff;
+    box-shadow:0 10px 20px rgba(34,197,94,0.22);
   }
-
   .btn-primary:hover {
     background:var(--green-dark);
-    transform:translateY(-1px);
+    transform:translateY(-2px);
+  }
+  .btn-primary:active {
+    transform:translateY(0);
   }
 
-  .btn-outline {
-    border:2px solid var(--green);
-    color:var(--green-dark);
-  }
-
-  .btn-outline:hover {
-    background:var(--green);
-    color:white;
+  /* ===== MAIN ===== */
+  main {
+    max-width:1100px;
+    margin:0 auto;
+    padding:30px 16px 70px;
   }
 
   /* HERO */
-  main { max-width:1100px; margin:0 auto; padding:30px 18px 70px; }
-
   .hero {
     text-align:center;
     padding:40px 0 60px;
     display:grid;
-    gap:20px;
+    gap:18px;
   }
 
   .eyebrow {
-    display:inline-flex;
-    padding:6px 14px;
-    border-radius:999px;
     background:#dcfce7;
     color:#166534;
+    padding:6px 14px;
+    border-radius:999px;
     font-size:13px;
     font-weight:700;
+    display:inline-block;
   }
 
   h1 {
-    margin:0;
-    font-size:clamp(32px, 4.6vw, 44px);
-    letter-spacing:-0.03em;
+    font-size:clamp(30px, 5vw, 44px);
+    font-weight:800;
     color:var(--dark);
   }
 
   .subtitle {
     max-width:700px;
     margin:0 auto;
+    font-size:17px;
     color:var(--muted);
-    font-size:18px;
   }
 
-  /* SECTIONS */
+  /* SECTION CARD */
   .section {
     background:var(--card);
     border:1px solid var(--border);
     border-radius:20px;
     padding:30px;
-    margin-bottom:24px;
-    box-shadow:0 20px 60px rgba(15,23,42,0.04);
+    margin-top:20px;
+    box-shadow:0 20px 50px rgba(15,23,42,0.05);
   }
 
   .section h2 {
-    margin-top:0;
-    font-size:26px;
-    color:var(--dark);
+    font-size:24px;
     text-align:center;
+    color:var(--dark);
+    margin-bottom:20px;
   }
 
   /* STEPS */
   .steps {
-    margin-top:20px;
     display:grid;
-    gap:18px;
     grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:16px;
   }
 
   .step {
@@ -155,54 +156,57 @@
   }
 
   .step-number {
-    width:46px; height:46px;
-    border-radius:14px;
+    width:48px;
+    height:48px;
+    border-radius:12px;
     background:#ecfdf3;
     color:var(--green-dark);
-    display:flex; align-items:center; justify-content:center;
-    font-weight:800; margin:0 auto 10px;
-    font-size:18px;
+    font-weight:800;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 12px;
   }
 
   /* CONDITIONS */
   .conditions ul {
-    padding-left:18px;
-    margin:0;
     display:grid;
-    gap:12px;
+    gap:15px;
     color:var(--muted);
+    font-size:16px;
+    padding-left:20px;
   }
 
-  .conditions li strong {
+  .conditions ul li strong {
     color:var(--dark);
   }
 
   /* CTA FINAL */
   .cta-box {
     margin-top:40px;
-    text-align:center;
     padding:30px 20px;
-    background:linear-gradient(135deg, #ecfdf3, #ffffff);
+    text-align:center;
     border:1px solid var(--border);
     border-radius:20px;
+    background:linear-gradient(130deg, #ecfdf3, #ffffff);
     display:grid;
     gap:16px;
   }
 
+  /* FOOTER */
   footer {
     margin-top:60px;
+    text-align:center;
     padding:40px 20px;
     background:var(--card);
-    text-align:center;
     border-top:1px solid var(--border);
     color:var(--muted);
     font-size:14px;
   }
 
-  @media(max-width:640px){
-    .section { padding:22px; }
+  @media(max-width:600px){
     .btn { width:100%; }
-    footer { padding:50px 20px; }
+    .section { padding:24px; }
   }
 </style>
 </head>
@@ -212,66 +216,79 @@
 <header>
   <div class="nav">
     <a class="logo" href="#">TuEnergíaExprés</a>
-    <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdXS-VLELDmcmLlw2jb75TEhJ-qzsw9w11oEHg-ouKbK8xNtQ/viewform?usp=header" target="_blank">Enviar cliente</a>
+
+    <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdXS-VLELDmcmLlw2jb75TEhJ-qzsw9w11oEHg-ouKbK8xNtQ/viewform" target="_blank">
+      Enviar cliente
+    </a>
   </div>
 </header>
 
 <main>
 
+  <!-- HERO -->
   <section class="hero">
-    <span class="eyebrow">PROGRAMa OFICIAL</span>
+    <span class="eyebrow">PROGRAMA OFICIAL</span>
     <h1>Gana 40 € por cada cliente recomendado</h1>
-    <p class="subtitle">Sin vender. Sin llamadas. Sin líos. Tú pasas el contacto y nosotros hacemos TODO el trabajo.</p>
-    <a class="btn btn-primary" href="#condiciones">Quiero colaborar</a>
+    <p class="subtitle">Tú nos pasas el contacto. Nosotros hacemos TODO: estudio, llamada, explicación de tarifas y alta. Tú cobras.</p>
+
+    <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdXS-VLELDmcmLlw2jb75TEhJ-qzsw9w11oEHg-ouKbK8xNtQ/viewform" target="_blank">
+      Enviar cliente
+    </a>
   </section>
 
+  <!-- STEPS -->
   <section class="section">
     <h2>Cómo funciona</h2>
-    <div class="steps">
 
+    <div class="steps">
       <div class="step">
         <div class="step-number">1</div>
-        <h3>Envías el contacto y la factura</h3>
-        <p>Solo rellenas el formulario oficial y adjuntas la factura completa.</p>
+        <h3>Envío del contacto</h3>
+        <p>Solo rellenas el formulario y adjuntas la factura del cliente.</p>
       </div>
 
       <div class="step">
         <div class="step-number">2</div>
-        <h3>Nosotros hacemos estudio + llamada</h3>
-        <p>Analizamos consumos, proponemos tarifa y gestionamos todo.</p>
+        <h3>Estudio + llamada</h3>
+        <p>Nosotros analizamos la factura, llamamos al cliente y explicamos la mejor tarifa.</p>
       </div>
 
       <div class="step">
         <div class="step-number">3</div>
-        <h3>Se activa → tú cobras 40 €</h3>
-        <p>Pago por Bizum o transferencia, siempre a final de mes.</p>
+        <h3>Contrato activado → Cobras</h3>
+        <p>40 € netos por cada contrato activado por Nordy.</p>
       </div>
-
     </div>
   </section>
 
+  <!-- CONDITIONS -->
   <section class="section conditions" id="condiciones">
     <h2>Condiciones del colaborador</h2>
+
     <ul>
-      <li><strong>Datos necesarios:</strong> Nombre del cliente, teléfono, localidad, factura completa (PDF o foto), tu nombre.</li>
-      <li><strong>Cómo enviarlo:</strong> Siempre mediante el formulario del botón superior.</li>
-      <li><strong>No permitido:</strong> No llamar al cliente. No explicar tarifas. No prometer descuentos. No inventar datos.</li>
-      <li><strong>Pagos:</strong> 40 € por contrato activado por Nordy. Pago al final de mes. Solo si se confirma activación.</li>
-      <li><strong>Qué hacemos nosotros:</strong> Llamamos al cliente, explicamos tarifas, analizamos factura, hacemos el alta.</li>
+      <li><strong>Datos necesarios:</strong> Nombre, teléfono, localidad, factura completa y tu nombre.</li>
+      <li><strong>Envío:</strong> Solo mediante el formulario oficial.</li>
+      <li><strong>No permitido:</strong> No llamar al cliente, no explicar tarifas, no prometer descuentos.</li>
+      <li><strong>Pago:</strong> 40 € por contrato activado (Bizum o transferencia mensual).</li>
+      <li><strong>Nuestro trabajo:</strong> Llamamos, analizamos consumos, gestionamos el alta y confirmamos la activación.</li>
     </ul>
   </section>
 
+  <!-- CTA FINAL -->
   <section class="cta-box">
     <h2>¿Listo para ganar dinero?</h2>
-    <p>Envíanos un cliente y cobra 40 € cuando activemos el contrato.</p>
-    <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdXS-VLELDmcmLlw2jb75TEhJ-qzsw9w11oEHg-ouKbK8xNtQ/viewform?usp=header" target="_blank">Enviar cliente</a>
+    <p>Envía un cliente y cobra 40 € cuando activemos su contrato.</p>
+
+    <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdXS-VLELDmcmLlw2jb75TEhJ-qzsw9w11oEHg-ouKbK8xNtQ/viewform" target="_blank">
+      Enviar cliente
+    </a>
   </section>
 
 </main>
 
 <footer>
-  <p>Email: info@tureclamoexpres.com · Teléfono: +34 953 818 494</p>
-  <p>TuEnergíaExprés · Programa privado de colaboradores. Pagos sujetos a activación confirmada.</p>
+  <p>Email: info@tureclamoexpres.com · Tel: +34 953 818 494</p>
+  <p>TuEnergíaExprés · Programa privado de colaboradores</p>
 </footer>
 
 </body>
