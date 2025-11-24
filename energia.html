@@ -3,371 +3,271 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EnergíaExprés | Tarifas oficiales Nordy con TuReclamoExprés</title>
-  <meta name="description" content="Calcula tu ahorro real con las tarifas oficiales de Nordy y sube tu factura para un alta inmediata con TuReclamoExprés." />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://tureclamoexpres.com/energia.html" />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" as="style" onload="this.rel='stylesheet'" />
+
+  <title>EnergíaExprés | Ahorra en tu factura sin permanencias</title>
+  <meta name="description" content="Calcula tu ahorro real, compara tarifas claras y sube tu factura para un alta inmediata. Servicio oficial de TuReclamoExprés con colaboradores como Nordy." />
+
+  <link rel="stylesheet" href="/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="style.css" />
 
+  <!-- MODO OSCURO (compatible con tu botón 🌙/☀️) -->
   <style>
-    body { background: #f5f7fb; }
-
-    /* ————————————————————————
-       SOLO ARREGLOS DE VERSIÓN MÓVIL
-       ———————————————————————— */
-    @media (max-width: 640px) {
-
-      /* Hero centrado */
-      .hero-top {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-      }
-      .logo-energy {
-        justify-content: center !important;
-        text-align: center !important;
-      }
-
-      .hero-actions {
-        width: 100%;
-        display: grid !important;
-        gap: 12px;
-        text-align: center !important;
-        justify-content: center !important;
-      }
-
-      .hero-actions a {
-        width: 100%;
-      }
-
-      /* Teléfono arreglado y centrado */
-      .header-actions {
-        width: 100%;
-        display: flex;
-        justify-content: center !important;
-        align-items: center !important;
-      }
-
-      .header-actions .btn-outline {
-        display: inline-block !important;
-        width: auto;
-        padding: 8px 12px;
-        font-size: 15px;
-        margin-right: 14px;
-      }
-
-      .menu-toggle {
-        margin-left: auto !important;
-      }
+    body.dark-mode {
+      background:#0b0e14;
+      color:#e5e5e5;
+    }
+    body.dark-mode .section-card,
+    body.dark-mode input,
+    body.dark-mode select {
+      background:#121721!important;
+      color:#e5e5e5!important;
+      border-color:#2a2f3a!important;
+    }
+    body.dark-mode .muted { color:#9aa3b2!important; }
+    body.dark-mode .btn-primary { background:#22c55e!important;color:#fff; }
+    body.dark-mode .btn-outline { border-color:#22c55e;color:#22c55e; }
+    body.dark-mode .site-header,
+    body.dark-mode .site-footer {
+      background:#0b0e14!important;
+      border-color:#1a1f27!important;
     }
   </style>
+
+  <!-- CTA FIJO MÓVIL -->
+  <style>
+    #cta-movil {
+      position:fixed;
+      bottom:0;
+      left:0;
+      width:100%;
+      background:#22c55e;
+      color:#fff;
+      text-align:center;
+      padding:14px;
+      font-weight:600;
+      display:none;
+      z-index:9999;
+    }
+    @media(max-width:768px){
+      #cta-movil{display:block;}
+    }
+  </style>
+
 </head>
 
 <body>
-  <a href="#main" class="skip-link sr-only">Ir al contenido principal</a>
 
-  <header class="site-header" role="banner">
+  <!-- HEADER -->
+  <header class="site-header">
     <div class="header-left">
-      <a class="logo" href="/" aria-label="TuReclamoExprés - Volver al inicio">TuReclamoExprés</a>
+      <a class="logo" href="/">TuReclamoExprés</a>
     </div>
 
-    <nav id="primary-nav" class="mobile-menu" role="navigation" aria-label="Navegación principal">
+    <nav id="primary-nav" class="mobile-menu">
       <ul class="nav-links">
         <li><a href="/#como-funciona">Cómo funciona</a></li>
         <li><a href="/#precios">Precios</a></li>
         <li><a href="/#guias">Guías</a></li>
         <li><a href="/#formulario">Enviar factura</a></li>
         <li><a href="/whatsapp.html">WhatsApp</a></li>
-        <li><a href="/energia.html" aria-current="page">Energía</a></li>
-        <li><a href="/#" id="openLegalModalLink">Legales</a></li>
+        <li><a href="/energia.html" aria-current="page">Energía Exprés</a></li>
+        <li><button id="theme-toggle" class="theme-toggle">🌙</button></li>
       </ul>
     </nav>
 
     <div class="header-actions">
-      <a class="btn btn-outline" href="https://wa.me/34953818494">Llamar 953 818 494</a>
-      <button class="menu-toggle" aria-controls="primary-nav" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <a class="btn btn-outline" href="tel:+34953818494">953 818 494</a>
+      <button class="menu-toggle" aria-controls="primary-nav"><span></span><span></span><span></span></button>
     </div>
   </header>
 
-  <main id="main" class="wrap-energy" role="main">
-    <section class="hero-energy" aria-labelledby="energia-hero">
-      <div class="hero-top">
-        <div class="logo-energy">
-          <div class="mark" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12.6 2.1 6 13h4.4l-.4 9.9L18 12h-4.2z" opacity="0.92" />
-              <path d="M19.5 8.5c0-2.6-2.4-4.6-5.3-4.6-2.9 0-5.2 2-5.2 4.6 0 2.5 2.3 4.5 5.2 4.5 1 0 2-.3 2.8-.8l1.6 1.3 1.2-1.6-1.3-.9c.7-.8 1-1.7 1-2.5Z" />
-              <circle cx="11.6" cy="8.5" r="1" fill="#0b2f6b" />
-              <path d="M13 2 5 14h5v8l8-12h-5z" opacity="0.9"/>
-              <path d="M20 9.5A6.5 6.5 0 0 0 7 9.5a6.5 6.5 0 0 0 13 0Zm-10.5 0a4 4 0 1 1 8 0a4 4 0 0 1-8 0Z" />
-            </svg>
-          </div>
-          <div>
-            <p class="badge">Nuevo: EnergíaExprés</p>
-            <h1 id="energia-hero">Tarifas Nordy con la experiencia de TuReclamoExprés</h1>
-            <p class="muted">Calculadora real, precios oficiales y alta inmediata sin permanencia.</p>
-          </div>
-        </div>
+  <!-- HERO PREMIUM -->
+  <main id="main-content">
+    <section class="hero" style="padding:50px 20px;text-align:center;">
+      <img src="/logo-principal.jpg"
+           alt="TuEnergíaExprés"
+           style="width:120px;height:120px;border-radius:26px;object-fit:cover;margin-bottom:25px;">
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#calculadora">Calcular mi ahorro</a>
-          <a class="btn btn-outline" href="https://wa.me/34953818494">Hablar por WhatsApp</a>
-          <a class="btn btn-outline" href="/">Ir a TuReclamoExprés</a>
-          <a class="back-link" href="/">← Volver a TuReclamoExprés</a>
-        </div>
+      <h1 style="max-width:650px;margin:auto;">
+        Ahorra en tu factura de luz sin permanencias
+      </h1>
+
+      <p class="trustline" style="max-width:650px;margin:15px auto;">
+        Calculadora real · tarifas claras · alta inmediata  
+        <br><strong>Colaboramos con varias comercializadoras (incluida Nordy)</strong> para conseguirte el mejor precio.
+      </p>
+
+      <div style="margin-top:25px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a class="btn btn-primary" href="#calculadora">Calcular mi ahorro</a>
+        <a class="btn btn-outline" href="https://wa.me/34953818494">WhatsApp directo</a>
+        <a class="btn btn-outline" href="/">Volver a TRX</a>
       </div>
 
-      <div class="cta-row">
-        <span class="pill">Sin permanencia</span>
-        <span class="pill" style="background:#eef2ff;color:#4338ca;">Precios oficiales Nordy</span>
-        <span class="pill" style="background:#e0f2fe;color:#0ea5e9;">Atención inmediata 953 818 494</span>
+      <figure class="media-hero" style="max-width:650px;margin:40px auto;">
+        <img src="/hero-mujer-factura.jpg" alt="Ahorro de luz" style="width:100%;border-radius:20px;">
+      </figure>
+    </section>
+
+    <!-- TARIFAS PREMIUM -->
+    <section class="section-card" style="margin-top:30px;">
+      <h2 style="text-align:center;margin-bottom:5px;">Tarifas claras y transparentes</h2>
+      <p class="muted" style="text-align:center;">Precios reales ofrecidos por colaboradores como Nordy</p>
+
+      <div class="grid grid-3" style="margin-top:30px;gap:22px;">
+
+        <!-- Fija -->
+        <div class="section-card" style="text-align:center;">
+          <div style="font-size:32px;">⚡</div>
+          <h3>Tarifa Fija 24H</h3>
+          <p><strong>0,119 €/kWh</strong></p>
+          <p><strong>0,095 €/kW/día</strong></p>
+          <p class="muted">Precio estable todo el día</p>
+          <a class="btn btn-primary" href="#calculadora" onclick="tarifa.value='fija'">Calcular</a>
+        </div>
+
+        <!-- Flexible -->
+        <div class="section-card" style="text-align:center;">
+          <div style="font-size:32px;">⏳</div>
+          <h3>Tarifa Flexible</h3>
+          <p>Coste + <strong>0,02 €/kWh</strong></p>
+          <p>0,065 €/kW/día · cuota 2,90€/mes</p>
+          <p class="muted">Perfecta si aprovechas horas valle</p>
+          <a class="btn btn-primary" href="#calculadora" onclick="tarifa.value='indexada'">Calcular</a>
+        </div>
+
+        <!-- Empresas -->
+        <div class="section-card" style="text-align:center;">
+          <div style="font-size:32px;">🏢</div>
+          <h3>Empresas 6P</h3>
+          <p>Coste + <strong>0,025 €/kWh</strong></p>
+          <p class="muted">Optimizada para negocios</p>
+          <a class="btn btn-primary" href="#calculadora" onclick="tarifa.value='empresas'">Calcular</a>
+        </div>
+
       </div>
     </section>
 
-    <!-- TABLA DE TARIFAS (sin cambios) -->
-    <section aria-labelledby="tarifas" class="section-card" style="margin-top:32px;">
-      <div class="hero-top" style="gap:12px 16px;">
-        <div>
-          <p class="muted">Tarifas oficiales Nordy</p>
-          <h2 id="tarifas">Comparativa clara para hogares y empresas</h2>
-        </div>
-        <a class="btn btn-outline" href="#calculadora">Calcular mi ahorro</a>
-      </div>
+    <!-- TESTIMONIO PREMIUM -->
+    <section class="section-card" style="margin-top:35px;text-align:center;">
+      <h2>Clientes que ya están ahorrando</h2>
+      <p class="muted">Experiencia real</p>
 
-      <div class="table-wrapper" style="overflow-x:auto;margin-top:12px;">
-        <table class="tarifa-table">
-          <thead>
-            <tr>
-              <th>Tarifa</th>
-              <th>Energía</th>
-              <th>Potencia</th>
-              <th>Cuota</th>
-              <th>Ideal para</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Fija 24H</strong></td>
-              <td>0,119 €/kWh</td>
-              <td>0,095 €/kW/día</td>
-              <td>Sin cuota</td>
-              <td>Consumo estable todo el día</td>
-              <td><a class="btn btn-outline" href="#calculadora" onclick="document.getElementById('tarifa').value='fija'">Elegir</a></td>
-            </tr>
-            <tr>
-              <td><strong>Indexada</strong></td>
-              <td>Coste + 0,02 €/kWh</td>
-              <td>0,065 €/kW/día</td>
-              <td>2,90 €/mes</td>
-              <td>Aprovechar horas valle</td>
-              <td><a class="btn btn-outline" href="#calculadora" onclick="document.getElementById('tarifa').value='indexada'">Elegir</a></td>
-            </tr>
-            <tr>
-              <td><strong>Empresas 6P</strong></td>
-              <td>Coste + 0,025 €/kWh</td>
-              <td>Según peajes 6.1</td>
-              <td>Sin cuota</td>
-              <td>Gestión por periodos</td>
-              <td><a class="btn btn-outline" href="#calculadora" onclick="document.getElementById('tarifa').value='empresas'">Elegir</a></td>
-            </tr>
-          </tbody>
-        </table>
+      <div style="max-width:600px;margin:20px auto;font-size:17px;">
+        “Envié mi factura por WhatsApp y en menos de 10 minutos tenía una comparativa real.  
+        Cambié de tarifa y estoy pagando unos 24€ menos al mes.”  
+        <br><strong>– Cliente real, Jaén</strong>
       </div>
     </section>
 
-    <!-- CALCULADORA (sin cambios) -->
-    <section id="calculadora" class="section-card" style="margin-top:28px;">
-      <div class="hero-top" style="gap:12px 16px;">
-        <div>
-          <p class="muted">Calculadora Nordy + TuReclamoExprés</p>
-          <h2 id="calc-title">Calcula tu precio y ahorro real</h2>
-        </div>
-        <a class="btn btn-outline" href="https://wa.me/34953818494">Hablar por WhatsApp</a>
+    <!-- CALCULADORA -->
+    <section id="calculadora" class="section-card" style="margin-top:40px;max-width:800px;margin:auto;">
+      <h2 style="text-align:center;">Calcula tu ahorro real</h2>
+
+      <form style="margin-top:20px;display:grid;gap:14px;" onsubmit="event.preventDefault();calcular();">
+        <label>Consumo mensual (kWh)
+          <input id="consumo" type="number" required placeholder="Ej: 300">
+        </label>
+
+        <label>Lo que pagas ahora (€)
+          <input id="actual" type="number" required placeholder="Ej: 75">
+        </label>
+
+        <label>Potencia contratada (kW)
+          <input id="potencia" type="number" placeholder="Ej: 4.6">
+        </label>
+
+        <label>Tarifa
+          <select id="tarifa">
+            <option value="fija">Fija 24H</option>
+            <option value="indexada">Flexible Indexada</option>
+            <option value="empresas">Empresas 6P</option>
+          </select>
+        </label>
+
+        <button class="btn btn-primary" style="width:100%;">Calcular</button>
+      </form>
+
+      <div style="margin-top:20px;text-align:center;">
+        <p><strong>Precio:</strong> <span id="precio">–</span></p>
+        <p><strong>Ahorro / sobrecoste:</strong> <span id="ahorro">–</span></p>
+        <p class="muted" id="porcentaje">–</p>
       </div>
 
-      <div class="calculator" style="margin-top:14px;">
-        <form class="section-card" style="box-shadow:none;" onsubmit="event.preventDefault();calcular();">
-          <label for="consumo">Consumo mensual (kWh)
-            <input id="consumo" type="number" min="0" step="0.01" required placeholder="Ej: 300" />
-          </label>
-          <label for="actual">Lo que pagas ahora (€)
-            <input id="actual" type="number" min="0" step="0.01" required placeholder="Ej: 75" />
-          </label>
-          <label for="potencia">Potencia contratada (kW)
-            <input id="potencia" type="number" min="0" step="0.01" placeholder="Ej: 4.6" />
-          </label>
-          <label for="tarifa">Selecciona tu tarifa
-            <select id="tarifa">
-              <option value="fija">Fija 24H</option>
-              <option value="indexada">Indexada</option>
-              <option value="empresas">Empresas 6P</option>
-            </select>
-          </label>
-          <button class="btn btn-primary" type="submit" style="width:100%;">Calcular mi ahorro</button>
-        </form>
-
-        <div class="section-card" style="box-shadow:none;display:grid;gap:12px;">
-          <div class="result-card">
-            <strong>Precio estimado Nordy</strong>
-            <div id="precio">–</div>
-          </div>
-
-          <div class="result-card">
-            <strong>Ahorro / sobrecoste</strong>
-            <div id="ahorro">–</div>
-            <div id="porcentaje" class="muted">–</div>
-          </div>
-
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,+quiero+analizar+mi+factura">Hablar por WhatsApp</a>
-            <a class="btn btn-outline" href="#subir-factura">Subir factura</a>
-          </div>
-        </div>
+      <div style="margin-top:20px;text-align:center;">
+        <a class="btn btn-primary" href="https://wa.me/34953818494">Enviar factura</a>
       </div>
     </section>
 
-    <!-- POR QUÉ (sin cambios) -->
-    <section class="section-card" style="margin-top:28px;">
-      <div class="hero-top">
-        <div>
-          <p class="muted">Equipo experto</p>
-          <h2>Por qué elegir Nordy + TuReclamoExprés</h2>
-        </div>
-        <a class="btn btn-outline" href="https://wa.me/34953818494">Llamar 953 818 494</a>
-      </div>
+    <!-- SUBIR FACTURA -->
+    <section class="section-card" style="margin-top:40px;text-align:center;">
+      <h2>Sube tu factura y te decimos la mejor tarifa</h2>
+      <p class="muted">PDF o foto · respuesta inmediata</p>
 
-      <div class="grid grid-2" style="margin-top:10px;">
-        <div class="section-card" style="box-shadow:none;">
-          <h3>Beneficios inmediatos</h3>
-          <ul class="list-check">
-            <li>Ahorro real desde la primera factura.</li>
-            <li>Sin permanencias ni costes ocultos.</li>
-            <li>Atención humana y seguimiento en 24 h.</li>
-          </ul>
-        </div>
-
-        <div class="section-card" style="box-shadow:none;">
-          <h3>Gestión sin fricción</h3>
-          <ul class="list-check">
-            <li>Analizamos tu factura y proponemos la mejor tarifa.</li>
-            <li>Tramitamos el alta o cambio con Nordy sin cortes.</li>
-            <li>Informe claro con precios y ahorro estimado.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- SUBIR FACTURA (sin cambios) -->
-    <section id="subir-factura" class="section-card" style="margin-top:28px;">
-      <div class="hero-top">
-        <div>
-          <p class="muted">Envíanos tu factura</p>
-          <h2>Sube tu factura y te damos el alta sin esperas</h2>
-        </div>
-        <a class="btn btn-primary" href="https://wa.me/34953818494?text=Hola,+quiero+subir+mi+factura">Subir factura</a>
-      </div>
-
-      <div class="upload-box">
-        <p class="muted">Adjunta tu factura en PDF o foto y te confirmamos la mejor tarifa en minutos.</p>
-
-        <div class="cta-row">
-          <a class="btn btn-outline" href="https://wa.me/34953818494">Enviar por WhatsApp</a>
-          <a class="btn btn-primary" href="tel:+34953818494">Llamar 953 818 494</a>
-          <a class="btn btn-outline" href="/">Volver a TuReclamoExprés</a>
-        </div>
+      <div style="margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a class="btn btn-primary" href="https://wa.me/34953818494">Enviar por WhatsApp</a>
+        <a class="btn btn-outline" href="/">Volver a TRX</a>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER (sin cambios) -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-top">
       <div>
         <h3>TuReclamoExprés</h3>
-        <p>Revisión gratuita y reclamaciones exprés de facturas.</p>
+        <p>Revisión gratuita · reclamaciones exprés.</p>
       </div>
+
       <div class="footer-links">
         <a href="/">Inicio</a>
         <a href="/#precios">Precios</a>
         <a href="/#guias">Guías</a>
         <a href="/whatsapp.html">WhatsApp</a>
-        <a href="/energia.html">Energía</a>
+        <a href="/energia.html">Energía Exprés</a>
       </div>
+
       <div class="footer-contact">
-        <a href="tel:+34953818494">+34 953 818 494</a>
-        <a href="https://wa.me/34953818494">https://wa.me/34953818494</a>
+        <a href="tel:+34953818494">953 818 494</a>
+        <a href="https://wa.me/34953818494">WhatsApp</a>
         <a href="mailto:info@tureclamoexpres.com">info@tureclamoexpres.com</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2025 TuReclamoExprés</span>
-      <a href="/politica-privacidad">Política de privacidad</a>
-      <a href="/aviso-legal">Aviso legal</a>
-    </div>
   </footer>
 
-  <!-- SCRIPT -->
+  <!-- CTA MÓVIL FIJO -->
+  <a id="cta-movil" href="https://wa.me/34953818494">
+    Enviar factura por WhatsApp
+  </a>
+
+  <!-- SCRIPT CALCULADORA -->
   <script>
-    const consumoEl = document.getElementById('consumo');
-    const actualEl = document.getElementById('actual');
-    const potenciaEl = document.getElementById('potencia');
-    const tarifaEl = document.getElementById('tarifa');
-    const precioEl = document.getElementById('precio');
-    const ahorroEl = document.getElementById('ahorro');
-    const porcentajeEl = document.getElementById('porcentaje');
+    const consumoEl=document.getElementById("consumo");
+    const actualEl=document.getElementById("actual");
+    const potenciaEl=document.getElementById("potencia");
+    const tarifaEl=document.getElementById("tarifa");
+    const precioEl=document.getElementById("precio");
+    const ahorroEl=document.getElementById("ahorro");
+    const porcentajeEl=document.getElementById("porcentaje");
 
-    function calcular() {
-      const consumo = parseFloat(consumoEl.value) || 0;
-      const actual = parseFloat(actualEl.value) || 0;
-      const potencia = parseFloat(potenciaEl.value) || 0;
-      const tarifa = tarifaEl.value;
-      const costeBase = 0.10;
+    function calcular(){
+      const c=parseFloat(consumoEl.value)||0;
+      const a=parseFloat(actualEl.value)||0;
+      const p=parseFloat(potenciaEl.value)||0;
+      const t=tarifaEl.value;
+      let precio=0;
 
-      let precioNordy = 0;
+      if(t==="fija"){ precio=c*0.119 + p*0.095*30; }
+      else if(t==="indexada"){ precio=c*(0.10+0.02) + 2.90 + p*0.065*30; }
+      else { precio=c*(0.10+0.025); }
 
-      if (tarifa === 'fija') {
-        precioNordy = consumo * 0.119 + potencia * 0.095 * 30;
-      } else if (tarifa === 'indexada') {
-        precioNordy = consumo * (costeBase + 0.02) + 2.90 + potencia * 0.065 * 30;
-      } else {
-        precioNordy = consumo * (costeBase + 0.025);
-      }
+      const ahorro=a-precio;
 
-      const ahorro = actual - precioNordy;
-      const porcentaje = actual > 0 ? (ahorro / actual) * 100 : 0;
-
-      precioEl.textContent = `€ ${precioNordy.toFixed(2)}`;
-      ahorroEl.textContent = `${ahorro >= 0 ? 'Ahorro' : 'Sobrecoste'}: € ${Math.abs(ahorro).toFixed(2)}`;
-      porcentajeEl.textContent = `Impacto: ${porcentaje.toFixed(1)}%`;
-    }
-
-    // Menú móvil
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mobileMenu = document.getElementById('primary-nav');
-
-    if (menuToggle && mobileMenu) {
-      const navLinks = mobileMenu.querySelectorAll('a');
-
-      menuToggle.addEventListener('click', () => {
-        const isOpen = mobileMenu.classList.toggle('open');
-        menuToggle.setAttribute('aria-expanded', isOpen);
-      });
-
-      navLinks.forEach(link =>
-        link.addEventListener('click', () => {
-          if (mobileMenu.classList.contains('open')) {
-            mobileMenu.classList.remove('open');
-            menuToggle.setAttribute('aria-expanded', 'false');
-          }
-        })
-      );
+      precioEl.textContent="€ "+precio.toFixed(2);
+      ahorroEl.textContent=(ahorro>=0?"Ahorro: € ":"Sobrecoste: € ")+Math.abs(ahorro).toFixed(2);
+      porcentajeEl.textContent=a>0?"Impacto: "+((ahorro/a)*100).toFixed(1)+"%":"–";
     }
   </script>
+
 </body>
 </html>
