@@ -28,7 +28,6 @@
     background:var(--bg);
     color:var(--text);
     line-height:1.55;
-    -webkit-font-smoothing: antialiased;
   }
 
   header {
@@ -53,6 +52,7 @@
     font-size:22px;
     font-weight:800;
     color:var(--green);
+    letter-spacing:-0.02em;
     text-decoration:none;
   }
 
@@ -66,7 +66,7 @@
     text-decoration:none;
     border:2px solid transparent;
     cursor:pointer;
-    transition:0.18s ease-in-out;
+    transition:0.18s ease;
   }
 
   .btn-primary {
@@ -74,16 +74,13 @@
     color:#fff;
     box-shadow:0 10px 20px rgba(34,197,94,0.22);
   }
+
   .btn-primary:hover {
     background:var(--green-dark);
     transform:translateY(-2px);
   }
 
-  main {
-    max-width:1100px;
-    margin:0 auto;
-    padding:30px 16px 70px;
-  }
+  main { max-width:1100px; margin:0 auto; padding:30px 16px 70px; }
 
   .hero {
     text-align:center;
@@ -102,38 +99,26 @@
     display:inline-block;
   }
 
-  h1 {
-    font-size:clamp(30px, 5vw, 44px);
-    font-weight:800;
-    color:var(--dark);
-  }
-
-  .subtitle {
-    max-width:700px;
-    margin:0 auto;
-    color:var(--muted);
-    font-size:17px;
-  }
-
   .section {
     background:var(--card);
     border:1px solid var(--border);
     border-radius:20px;
     padding:30px;
-    margin-top:20px;
+    margin-top:24px;
     box-shadow:0 20px 50px rgba(15,23,42,0.05);
   }
 
   .section h2 {
     font-size:24px;
     text-align:center;
+    color:var(--dark);
     margin-bottom:20px;
   }
 
   .steps {
     display:grid;
-    gap:16px;
     grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:16px;
   }
 
   .step {
@@ -160,13 +145,9 @@
   .conditions ul {
     display:grid;
     gap:15px;
-    padding-left:20px;
     color:var(--muted);
     font-size:16px;
-  }
-
-  .conditions li strong {
-    color:var(--dark);
+    padding-left:20px;
   }
 
   .cta-box {
@@ -187,11 +168,25 @@
     background:var(--card);
     border-top:1px solid var(--border);
     color:var(--muted);
+    font-size:14px;
   }
 
-  @media(max-width:600px){
-    .btn { width:100%; }
-    .section { padding:24px; }
+  .tarifas {
+    display:grid;
+    gap:18px;
+    margin-top:20px;
+  }
+
+  .tarifa-card {
+    border:1px solid var(--border);
+    padding:20px;
+    border-radius:16px;
+    background:#fff;
+  }
+
+  .tarifa-card h3 {
+    margin-bottom:10px;
+    color:var(--dark);
   }
 </style>
 </head>
@@ -200,11 +195,13 @@
 
 <header>
   <div class="nav">
-    <a class="logo" href="#">TuEnergíaExprés</a>
+    <a class="logo">TuEnergíaExprés</a>
 
-    <!-- FORMULARIO CORRECTO -->
-    <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdXS-VLELDmcmLlw2jb75TEhJ-qzsw9w11oEHg-ouKbK8xNtQ/viewform" target="_blank">
-      Enviar cliente
+    <!-- WHATSAPP DIRECTO -->
+    <a class="btn btn-primary" 
+       href="https://wa.me/34626996310?text=🔌+*Enviar+cliente+para+TuEnergíaExprés*+%0A%0A*Nombre+del+cliente:*+____%0A*Teléfono+del+cliente:*+____%0A*Localidad:*+____%0A*Colaborador:*+____%0A%0AAdjunto+la+factura+en+foto+o+PDF." 
+       target="_blank">
+       Enviar cliente
     </a>
   </div>
 </header>
@@ -214,11 +211,11 @@
   <section class="hero">
     <span class="eyebrow">PROGRAMA OFICIAL</span>
     <h1>Gana 40 € por cada cliente recomendado</h1>
-    <p class="subtitle">Puedes explicar tarifas si quieres. Solo no inventes precios ni ofrezcas descuentos que no existan.</p>
+    <p class="subtitle">Tú nos pasas el contacto. Nosotros analizamos, llamamos, explicamos tarifas y gestionamos el alta. Tú cobras.</p>
 
-    <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdXS-VLELDmcmLlw2jb75TEhJ-qzsw9w11oEHg-ouKbK8xNtQ/viewform" target="_blank">
-      Enviar cliente
-    </a>
+    <a class="btn btn-primary" 
+       href="https://wa.me/34626996310?text=🔌+*Enviar+cliente+para+TuEnergíaExprés*+%0A%0A*Nombre+del+cliente:*+____%0A*Teléfono+del+cliente:*+____%0A*Localidad:*+____%0A*Colaborador:*+____%0A%0AAdjunto+la+factura+en+foto+o+PDF."
+       target="_blank">Enviar cliente</a>
   </section>
 
   <section class="section">
@@ -227,52 +224,70 @@
     <div class="steps">
       <div class="step">
         <div class="step-number">1</div>
-        <h3>Envías el contacto y la factura</h3>
-        <p>Nos mandas el número, la localidad y una factura en PDF o foto.</p>
+        <h3>Envío del contacto</h3>
+        <p>Nos envías nombre, teléfono, localidad y factura del cliente.</p>
       </div>
 
       <div class="step">
         <div class="step-number">2</div>
-        <h3>Hacemos estudio + llamada</h3>
-        <p>Analizamos la factura y explicamos al cliente las tarifas oficiales.</p>
+        <h3>Estudio + llamada</h3>
+        <p>Analizamos consumos, explicamos tarifas y cerramos el alta.</p>
       </div>
 
       <div class="step">
         <div class="step-number">3</div>
         <h3>Contrato activado → Cobras 40 €</h3>
-        <p>Pagamos por Bizum o transferencia al final de cada mes.</p>
+        <p>Bizum o transferencia una vez Nordy activa el contrato.</p>
       </div>
     </div>
   </section>
 
-  <section class="section conditions" id="condiciones">
+  <section class="section">
+    <h2>Tarifas oficiales para explicar al cliente</h2>
+
+    <div class="tarifas">
+
+      <div class="tarifa-card">
+        <h3>🔵 Fija 24H</h3>
+        <p><strong>Energía:</strong> 0,119 €/kWh</p>
+        <p><strong>Potencia:</strong> 0,095 €/kW/día</p>
+        <p><strong>Cuota:</strong> Sin cuota</p>
+      </div>
+
+      <div class="tarifa-card">
+        <h3>🟢 Indexada</h3>
+        <p><strong>Energía:</strong> Coste + 0,02 €/kWh</p>
+        <p><strong>Potencia:</strong> 0,065 €/kW/día</p>
+        <p><strong>Cuota:</strong> 2,90 €</p>
+      </div>
+
+      <div class="tarifa-card">
+        <h3>🟣 Empresas 6P</h3>
+        <p>Coste + 0,025 €/kWh</p>
+        <p>Ideal para negocios con alta potencia</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section conditions">
     <h2>Condiciones del colaborador</h2>
-
     <ul>
-      <li><strong>Puedes:</strong> Hablar con el cliente, explicar tarifas, resolver dudas.</li>
-      <li><strong>No puedes:</strong> Inventarte precios, ofrecer descuentos, prometer regalos.</li>
-
-      <li><strong>Tarifas oficiales Nordy:</strong>
-        <ul style="margin-top:10px; padding-left:20px;">
-          <li>Fija 24H → <strong>0,119 €/kWh</strong>, potencia 0,095 €/kW/día, sin cuota.</li>
-          <li>Indexada → coste + <strong>0,020 €/kWh</strong>, potencia 0,065 €/kW/día, cuota 2,90 €.</li>
-          <li>Empresas 6P → coste + <strong>0,025 €/kWh</strong>, sin cuota.</li>
-        </ul>
-      </li>
-
-      <li><strong>Datos necesarios para enviar:</strong> Nombre, teléfono, localidad, factura completa y tu nombre.</li>
-
-      <li><strong>Pago:</strong> 40 € por contrato activado por Nordy (Bizum o transferencia).</li>
+      <li><strong>Datos necesarios:</strong> Nombre, teléfono, localidad, factura completa y tu nombre.</li>
+      <li><strong>Cómo enviarlo:</strong> Directamente por WhatsApp con el botón superior.</li>
+      <li><strong>Puedes explicar tarifas:</strong> Sí. Siempre que uses las tarifas oficiales de TuEnergíaExprés.</li>
+      <li><strong>Pago:</strong> 40 € por cada contrato activado por Nordy.</li>
+      <li><strong>Nosotros:</strong> Confirmamos la activación y cerramos el proceso con el cliente.</li>
     </ul>
   </section>
 
   <section class="cta-box">
     <h2>¿Listo para ganar dinero?</h2>
-    <p>Envíanos un cliente y cobra 40 € cuando activemos el contrato.</p>
+    <p>Envía un cliente y cobra 40 € cuando activemos su contrato.</p>
 
-    <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdXS-VLELDmcmLlw2jb75TEhJ-qzsw9w11oEHg-ouKbK8xNtQ/viewform" target="_blank">
-      Enviar cliente
-    </a>
+    <a class="btn btn-primary" 
+       href="https://wa.me/34626996310?text=🔌+*Enviar+cliente+para+TuEnergíaExprés*+%0A%0A*Nombre+del+cliente:*+____%0A*Teléfono+del+cliente:*+____%0A*Localidad:*+____%0A*Colaborador:*+____%0A%0AAdjunto+la+factura+en+foto+o+PDF."
+       target="_blank">Enviar cliente</a>
   </section>
 
 </main>
